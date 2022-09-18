@@ -555,14 +555,14 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2022-09-15
+                    2022-09-16
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    989
+                    1k
                 </div>
                 
 
@@ -698,11 +698,11 @@ From 2.2.2.254: bytes=32 seq=5 ttl=255 time=63 ms
 [LSW-GigabitEthernet0/0/3]port link-type trunk 	
 [LSW-GigabitEthernet0/0/3]port trunk allow-pass vlan all<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
-<p>3.配置路由器：首先使用<font color="red"><em><strong>int g0/0/0.10</strong></em></font>和<font color="red">*** int g0/0/0.20***</font>将路由器的g0/0/0口分为两个<font color="red"><em><strong>子接口</strong></em></font></p>
+<p>3.配置路由器：首先使用<font color="red"><em><strong>int g0/0/0.10</strong></em></font>和<font color="red">*** int g0/0/0.20***</font>将路由器的g0/0/0口分为两个<font color="red"><em><strong>子接口</strong></em></font>，每个子接口对应一个vlan（单臂路由的定义）</p>
 <pre class="line-numbers language-none"><code class="language-none">[R1]int g0/0/0.10
-[R1-GigabitEthernet0/0/0.10]dot1q termination  vid 10			//指定这个子接口和哪个vlan相连，vid后跟的就是vlan号
+[R1-GigabitEthernet0/0/0.10]dot1q termination  vid 10			//指定这个子接口和哪个vlan相关联，vid后跟的就是vlan号
 [R1-GigabitEthernet0/0/0.10]arp broadcast enable 				//允许arp广播
-[R1-GigabitEthernet0/0/0.10]ip address 1.1.1.254 24				//配置IP地址<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+[R1-GigabitEthernet0/0/0.10]ip address 1.1.1.254 24				//配置IP地址，同时也是vlan10的网关<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
 
 <p>4.display this查看该接口下配置的命令是否正确</p>
 <pre class="line-numbers language-none"><code class="language-none">[R1-GigabitEthernet0/0/0.10]dis this
@@ -1308,17 +1308,17 @@ From 2.2.2.1: bytes=32 seq=5 ttl=127 time=78 ms
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="far fa-dot-circle"></i>&nbsp;本篇
-            </div>
+                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
-                <a href="/2022-09-15-shi-yan-ensp-san-ceng-jiao-huan-ji-dan-bi-lu-you-shi-yan.html">
+                <a href="/2022-09-16-hexo-fatal-authentication-failed-for-https-github-com-xxx-git.html">
                     <div class="card-image">
                         
-                        <img src="https://img-blog.csdnimg.cn/cd7067b17dc74e46beea354fa2212bef.gif" data-original="https://img-blog.csdnimg.cn/4aa36e431ab84089a57b83c5b025d9ac.jpeg" class="responsive-img" alt="实验ensp-三层交换机&amp;单臂路由实验">
                         
-                        <span class="card-title">实验ensp-三层交换机&amp;单臂路由实验</span>
+                        <img src="https://img-blog.csdnimg.cn/cd7067b17dc74e46beea354fa2212bef.gif" data-original="/medias/featureimages/11.jpg" class="responsive-img" alt="Hexo-hexo deploy 输入Username、Password提示**fatal: Authentication failed for ‘https://github.com/xxx.git/‘**">
+                        
+                        <span class="card-title">Hexo-hexo deploy 输入Username、Password提示**fatal: Authentication failed for ‘https://github.com/xxx.git/‘**</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -1328,27 +1328,26 @@ From 2.2.2.1: bytes=32 seq=5 ttl=127 time=78 ms
                         
                     </div>
                     <div class="publish-info">
-                            <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2022-09-15
-                            </span>
+                        <span class="publish-date">
+                            <i class="far fa-clock fa-fw icon-date"></i>2022-09-16
+                        </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/ensp%E5%AE%9E%E9%AA%8C/" class="post-category">
-                                    ensp实验
+                            <a href="/categories/Hexo/" class="post-category">
+                                    Hexo
                                 </a>
                             
                             
                         </span>
                     </div>
                 </div>
-
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/ensp%E5%AE%9E%E9%AA%8C/">
-                        <span class="chip bg-color">ensp实验</span>
+                    <a href="/tags/Hexo/">
+                        <span class="chip bg-color">Hexo</span>
                     </a>
                     
                 </div>
@@ -1636,7 +1635,7 @@ From 2.2.2.1: bytes=32 seq=5 ttl=127 time=78 ms
             <br>
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">127.6k</span>&nbsp;字&nbsp;|
+                class="white-color">133.5k</span>&nbsp;字&nbsp;|
             
             
             

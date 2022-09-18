@@ -6,7 +6,7 @@
   <link href="https://uprightokra.github.io/atom.xml" rel="self"/>
   
   <link href="https://uprightokra.github.io/"/>
-  <updated>2022-09-15T14:06:35.842Z</updated>
+  <updated>2022-09-18T14:04:37.842Z</updated>
   <id>https://uprightokra.github.io/</id>
   
   <author>
@@ -17,11 +17,137 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>实验ensp-中小型网络系统综合实验</title>
+    <link href="https://uprightokra.github.io/2022-09-18-shi-yan-ensp-zhong-xiao-xing-wang-luo-xi-tong-zong-he-shi-yan.html"/>
+    <id>https://uprightokra.github.io/2022-09-18-shi-yan-ensp-zhong-xiao-xing-wang-luo-xi-tong-zong-he-shi-yan.html</id>
+    <published>2022-09-18T11:42:19.000Z</published>
+    <updated>2022-09-18T14:04:37.842Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h1 id=&quot;中小型网络系统综合实验&quot;&gt;&lt;a href=&quot;#中小型网络系统综合实验&quot; class=&quot;headerlink&quot; title=&quot;中小型网络系统综合实验&quot;&gt;&lt;/a&gt;&lt;center&gt;中小型网络系统综合实验&lt;/center&gt;&lt;/h1&gt;&lt;h3 id=&quot;实验要求&quot;&gt;&lt;a</summary>
+        
+      
+    
+    
+    
+    <category term="ensp实验" scheme="https://uprightokra.github.io/categories/ensp%E5%AE%9E%E9%AA%8C/"/>
+    
+    
+    <category term="ensp实验" scheme="https://uprightokra.github.io/tags/ensp%E5%AE%9E%E9%AA%8C/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>实验ensp-Telnet远程登录实验</title>
+    <link href="https://uprightokra.github.io/2022-09-17-shi-yan-ensp-telnet-yuan-cheng-deng-lu-shi-yan.html"/>
+    <id>https://uprightokra.github.io/2022-09-17-shi-yan-ensp-telnet-yuan-cheng-deng-lu-shi-yan.html</id>
+    <published>2022-09-17T04:50:30.000Z</published>
+    <updated>2022-09-18T14:04:37.842Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h1 id=&quot;通过Telnet远程登录到网络设备&quot;&gt;&lt;a href=&quot;#通过Telnet远程登录到网络设备&quot; class=&quot;headerlink&quot;</summary>
+        
+      
+    
+    
+    
+    <category term="ensp实验" scheme="https://uprightokra.github.io/categories/ensp%E5%AE%9E%E9%AA%8C/"/>
+    
+    
+    <category term="ensp实验" scheme="https://uprightokra.github.io/tags/ensp%E5%AE%9E%E9%AA%8C/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>实验ensp-NAT网络地址转换</title>
+    <link href="https://uprightokra.github.io/2022-09-16-shi-yan-ensp-nat-wang-luo-di-zhi-zhuan-huan.html"/>
+    <id>https://uprightokra.github.io/2022-09-16-shi-yan-ensp-nat-wang-luo-di-zhi-zhuan-huan.html</id>
+    <published>2022-09-16T08:42:47.000Z</published>
+    <updated>2022-09-18T14:04:37.842Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h1 id=&quot;NAT网络地址转化&quot;&gt;&lt;a href=&quot;#NAT网络地址转化&quot; class=&quot;headerlink&quot; title=&quot;NAT网络地址转化&quot;&gt;&lt;/a&gt;&lt;center&gt;NAT网络地址转化&lt;/center&gt;&lt;/h1&gt;&lt;h3 id=&quot;知识点&quot;&gt;&lt;a href=&quot;#知识点&quot;</summary>
+        
+      
+    
+    
+    
+    <category term="ensp实验" scheme="https://uprightokra.github.io/categories/ensp%E5%AE%9E%E9%AA%8C/"/>
+    
+    
+    <category term="ensp实验" scheme="https://uprightokra.github.io/tags/ensp%E5%AE%9E%E9%AA%8C/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>实验ensp-ACL访问控制列表</title>
+    <link href="https://uprightokra.github.io/2022-09-16-shi-yan-ensp-acl-fang-wen-kong-zhi-lie-biao.html"/>
+    <id>https://uprightokra.github.io/2022-09-16-shi-yan-ensp-acl-fang-wen-kong-zhi-lie-biao.html</id>
+    <published>2022-09-16T02:19:02.000Z</published>
+    <updated>2022-09-18T14:04:37.826Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h1 id=&quot;ACL访问控制列表&quot;&gt;&lt;a href=&quot;#ACL访问控制列表&quot; class=&quot;headerlink&quot; title=&quot;ACL访问控制列表&quot;&gt;&lt;/a&gt;&lt;center&gt;ACL访问控制列表&lt;/center&gt;&lt;/h1&gt;&lt;h3 id=&quot;实验要求&quot;&gt;&lt;a</summary>
+        
+      
+    
+    
+    
+    <category term="ensp实验" scheme="https://uprightokra.github.io/categories/ensp%E5%AE%9E%E9%AA%8C/"/>
+    
+    
+    <category term="ensp实验" scheme="https://uprightokra.github.io/tags/ensp%E5%AE%9E%E9%AA%8C/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Hexo-hexo deploy 输入Username、Password提示**fatal: Authentication failed for ‘https://github.com/xxx.git/‘**</title>
+    <link href="https://uprightokra.github.io/2022-09-16-hexo-fatal-authentication-failed-for-https-github-com-xxx-git.html"/>
+    <id>https://uprightokra.github.io/2022-09-16-hexo-fatal-authentication-failed-for-https-github-com-xxx-git.html</id>
+    <published>2022-09-16T01:19:30.000Z</published>
+    <updated>2022-09-16T01:34:17.133Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;p&gt;2022.09.15晚上时隔一个月重新开始往github仓库提交笔记，hexo g -d后弹出窗口提示输入Username以及Password。在正确输入用户名密码后却提示&lt;/p&gt;
+&lt;pre class=&quot;line-numbers language-none&quot;&gt;&lt;code</summary>
+        
+      
+    
+    
+    
+    <category term="Hexo" scheme="https://uprightokra.github.io/categories/Hexo/"/>
+    
+    
+    <category term="Hexo" scheme="https://uprightokra.github.io/tags/Hexo/"/>
+    
+  </entry>
+  
+  <entry>
     <title>实验ensp-三层交换机&amp;单臂路由实验</title>
     <link href="https://uprightokra.github.io/2022-09-15-shi-yan-ensp-san-ceng-jiao-huan-ji-dan-bi-lu-you-shi-yan.html"/>
     <id>https://uprightokra.github.io/2022-09-15-shi-yan-ensp-san-ceng-jiao-huan-ji-dan-bi-lu-you-shi-yan.html</id>
     <published>2022-09-15T11:41:17.000Z</published>
-    <updated>2022-09-15T14:06:35.842Z</updated>
+    <updated>2022-09-16T02:14:38.920Z</updated>
     
     
       
@@ -389,131 +515,6 @@
     
     
     <category term="网络基础" scheme="https://uprightokra.github.io/tags/%E7%BD%91%E7%BB%9C%E5%9F%BA%E7%A1%80/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>数通 02-IP基本原理</title>
-    <link href="https://uprightokra.github.io/2022-07-17-shu-tong-02-ip-ji-ben-yuan-li.html"/>
-    <id>https://uprightokra.github.io/2022-07-17-shu-tong-02-ip-ji-ben-yuan-li.html</id>
-    <published>2022-07-17T14:55:52.000Z</published>
-    <updated>2022-08-12T13:53:42.480Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;h1 id=&quot;IP基本原理&quot;&gt;&lt;a href=&quot;#IP基本原理&quot; class=&quot;headerlink&quot; title=&quot;IP基本原理&quot;&gt;&lt;/a&gt;&lt;strong&gt;&lt;center&gt;IP基本原理&lt;/center&gt;&lt;/strong&gt;&lt;/h1&gt;&lt;h2 id=&quot;1-IP协议概述&quot;&gt;&lt;a</summary>
-        
-      
-    
-    
-    
-    <category term="网络基础" scheme="https://uprightokra.github.io/categories/%E7%BD%91%E7%BB%9C%E5%9F%BA%E7%A1%80/"/>
-    
-    
-    <category term="网络基础" scheme="https://uprightokra.github.io/tags/%E7%BD%91%E7%BB%9C%E5%9F%BA%E7%A1%80/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>数通 01-计算机网络基础</title>
-    <link href="https://uprightokra.github.io/2022-06-25-shu-tong-01-ji-suan-ji-wang-luo-ji-chu.html"/>
-    <id>https://uprightokra.github.io/2022-06-25-shu-tong-01-ji-suan-ji-wang-luo-ji-chu.html</id>
-    <published>2022-06-25T11:04:48.000Z</published>
-    <updated>2022-08-12T13:53:35.877Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;h1 id=&quot;计算机网络基础&quot;&gt;&lt;a href=&quot;#计算机网络基础&quot; class=&quot;headerlink&quot; title=&quot;计算机网络基础&quot;&gt;&lt;/a&gt;&lt;strong&gt;&lt;center&gt;计算机网络基础&lt;/center&gt;&lt;/strong&gt;&lt;/h1&gt;&lt;h2</summary>
-        
-      
-    
-    
-    
-    <category term="网络基础" scheme="https://uprightokra.github.io/categories/%E7%BD%91%E7%BB%9C%E5%9F%BA%E7%A1%80/"/>
-    
-    
-    <category term="网络基础" scheme="https://uprightokra.github.io/tags/%E7%BD%91%E7%BB%9C%E5%9F%BA%E7%A1%80/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>网络安全入门基础教程05-ICMP协议</title>
-    <link href="https://uprightokra.github.io/2022-06-25-wang-luo-an-quan-ru-men-ji-chu-jiao-cheng-05-icmp-xie-yi.html"/>
-    <id>https://uprightokra.github.io/2022-06-25-wang-luo-an-quan-ru-men-ji-chu-jiao-cheng-05-icmp-xie-yi.html</id>
-    <published>2022-06-25T01:51:10.000Z</published>
-    <updated>2022-06-25T02:53:43.261Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;h1 id=&quot;ICMP-协议分析&quot;&gt;&lt;a href=&quot;#ICMP-协议分析&quot; class=&quot;headerlink&quot; title=&quot;ICMP 协议分析&quot;&gt;&lt;/a&gt;ICMP 协议分析&lt;/h1&gt;&lt;h2 id=&quot;1-1-本章简介&quot;&gt;&lt;a href=&quot;#1-1-本章简介&quot;</summary>
-        
-      
-    
-    
-    
-    <category term="网络基础" scheme="https://uprightokra.github.io/categories/%E7%BD%91%E7%BB%9C%E5%9F%BA%E7%A1%80/"/>
-    
-    
-    <category term="网络基础" scheme="https://uprightokra.github.io/tags/%E7%BD%91%E7%BB%9C%E5%9F%BA%E7%A1%80/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>JS从入门到精通19-JSON</title>
-    <link href="https://uprightokra.github.io/2022-05-21-js-cong-ru-men-dao-jing-tong-19-json.html"/>
-    <id>https://uprightokra.github.io/2022-05-21-js-cong-ru-men-dao-jing-tong-19-json.html</id>
-    <published>2022-05-21T06:20:46.000Z</published>
-    <updated>2022-05-21T06:25:56.833Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;h1 id=&quot;【JS从入门到精通】19-JSON&quot;&gt;&lt;a href=&quot;#【JS从入门到精通】19-JSON&quot; class=&quot;headerlink&quot; title=&quot;【JS从入门到精通】19-JSON&quot;&gt;&lt;/a&gt;【JS从入门到精通】19-JSON&lt;/h1&gt;&lt;h1</summary>
-        
-      
-    
-    
-    
-    <category term="JavaScript" scheme="https://uprightokra.github.io/categories/JavaScript/"/>
-    
-    
-    <category term="JavaScript" scheme="https://uprightokra.github.io/tags/JavaScript/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>JS从入门到精通18-定时调用与延时调用</title>
-    <link href="https://uprightokra.github.io/2022-05-21-js-cong-ru-men-dao-jing-tong-18-ding-shi-diao-yong-yu-yan-shi-diao-yong.html"/>
-    <id>https://uprightokra.github.io/2022-05-21-js-cong-ru-men-dao-jing-tong-18-ding-shi-diao-yong-yu-yan-shi-diao-yong.html</id>
-    <published>2022-05-21T06:20:28.000Z</published>
-    <updated>2022-05-21T06:24:46.017Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;h1 id=&quot;【JS从入门到精通】18-定时调用与延时调用&quot;&gt;&lt;a href=&quot;#【JS从入门到精通】18-定时调用与延时调用&quot; class=&quot;headerlink&quot;</summary>
-        
-      
-    
-    
-    
-    <category term="JavaScript" scheme="https://uprightokra.github.io/categories/JavaScript/"/>
-    
-    
-    <category term="JavaScript" scheme="https://uprightokra.github.io/tags/JavaScript/"/>
     
   </entry>
   
