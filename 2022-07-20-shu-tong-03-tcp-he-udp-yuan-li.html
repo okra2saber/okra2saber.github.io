@@ -555,21 +555,21 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2022-08-12
+                    2022-09-20
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    1.1k
+                    1.5k
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    4 分
+                    5 分
                 </div>
                 
 
@@ -641,10 +641,34 @@ Ack = 上一次Seq+length
 <p><img src="https://img-blog.csdnimg.cn/cd7067b17dc74e46beea354fa2212bef.gif" data-original="https://img-blog.csdnimg.cn/66e4abf2a09b426ba81600bb948f6b42.png"></p>
 <h4 id="2-2-2-三次握手"><a href="#2-2-2-三次握手" class="headerlink" title="2.2.2 三次握手"></a>2.2.2 三次握手</h4><p><img src="https://img-blog.csdnimg.cn/cd7067b17dc74e46beea354fa2212bef.gif" data-original="https://img-blog.csdnimg.cn/5442b0bc75314cfc9c681de53a335e86.png"></p>
 <p><img src="https://img-blog.csdnimg.cn/cd7067b17dc74e46beea354fa2212bef.gif" data-original="https://img-blog.csdnimg.cn/46c892eed45e46918fc160d1c4b386c0.png"></p>
-<h4 id="2-2-3-四次挥手"><a href="#2-2-3-四次挥手" class="headerlink" title="2.2.3 四次挥手"></a>2.2.3 四次挥手</h4><h4 id="2-2-4-RST结束连接"><a href="#2-2-4-RST结束连接" class="headerlink" title="2.2.4 RST结束连接"></a>2.2.4 RST结束连接</h4><p>收到RST置位的包后，立即结束TCP连接。</p>
+<h4 id="2-2-3-四次挥手"><a href="#2-2-3-四次挥手" class="headerlink" title="2.2.3 四次挥手"></a>2.2.3 四次挥手</h4><p><img src="https://img-blog.csdnimg.cn/cd7067b17dc74e46beea354fa2212bef.gif" data-original="https://img-blog.csdnimg.cn/172ea1a5659947628f990dc21fc8c89a.png"></p>
+<p> 由于TCP连接是全双工的,断开一个TCP连接,需要客户端与服务器发送四个包来确认连接的断开<br>简述四次挥手的过程:</p>
+<pre><code>1·因为TCP是全双工的,因此,每个方向都要单独关闭
+2·当一方完成数据发送任务后,发送一个FIN来终止这一方向的连接,收到一个FIN只是意味着
+3·一方向不会再收到数据了,但是这个TCP连接上仍然能够发送数据,直到这一方也发送了FIN.
+4·首先进行关闭的一方执行主动关闭,另一方执行被动关闭.第一个关闭的最后等待2MSL
+</code></pre>
+<p>第一次挥手:</p>
+<pre><code>1·Client将FIN置为1,序号seq=M,发送给Server,进入FIN_WAIT_1状态
+</code></pre>
+<p>第二次挥手</p>
+<pre><code>1·Server收到后,将ACK置为1,ack=M+1,响应给Client,进入CLOSE_WAIT状态
+2·Client收到响应后,进入FIN_WAIT_2状态
+</code></pre>
+<p>第三次挥手</p>
+<pre><code>1·Server在结束所有数据传输后,将Fin置为1,seq=N+1,发送给Client,进入
+2·LAST_ACK状态
+</code></pre>
+<p>第四次挥手</p>
+<pre><code>1·Client收到后,将ACK置为1,ack=N+1,响应给Server,进入TIME_WAIT状态,等待
+2·2MSL后,进入CLOSED状态
+3·Server收到后,进入CLOSED状态
+</code></pre>
+<h4 id="2-2-4-RST结束连接"><a href="#2-2-4-RST结束连接" class="headerlink" title="2.2.4 RST结束连接"></a>2.2.4 RST结束连接</h4><p>收到RST置位的包后，立即结束TCP连接。</p>
 <p>发出RST置位的包后，不必等待对方的确认，直接结束TCP连接。</p>
 <h4 id="2-2-5-窗口机制"><a href="#2-2-5-窗口机制" class="headerlink" title="2.2.5 窗口机制"></a>2.2.5 窗口机制</h4><p>滑动窗口 </p>
 <p>​    通过通告对方本机接收能力，来实现流量控制。</p>
+<p><img src="https://img-blog.csdnimg.cn/cd7067b17dc74e46beea354fa2212bef.gif" data-original="https://img-blog.csdnimg.cn/7750e03a85f845a299bf0682ff566020.png"></p>
 <h4 id="2-2-6-完整性校验"><a href="#2-2-6-完整性校验" class="headerlink" title="2.2.6 完整性校验"></a>2.2.6 完整性校验</h4><p>通过Checksum来检查数据完整性。</p>
 <h3 id="2-3-TCP特征"><a href="#2-3-TCP特征" class="headerlink" title="2.3 TCP特征"></a>2.3 TCP特征</h3><p>优点：传输可靠性高</p>
 <p>缺点：占用带宽高，传输延迟高</p>
@@ -1222,12 +1246,12 @@ Ack = 上一次Seq+length
             <div class="article-badge left-badge text-color">
                 <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
-                <a href="/2022-07-22-shu-tong-shi-yan-ip-he-tcp-zhua-bao-fen-xi-shi-yan.html">
+                <a href="/2022-07-22-shi-yan-ensp-ip-he-tcp-zhua-bao-fen-xi-shi-yan.html">
                     <div class="card-image">
                         
-                        <img src="https://img-blog.csdnimg.cn/cd7067b17dc74e46beea354fa2212bef.gif" data-original="https://img-blog.csdnimg.cn/b3e51b3b8e4d4b618e97bb3a30163591.jpeg" class="responsive-img" alt="ensp 实验-IP和TCP抓包分析实验">
+                        <img src="https://img-blog.csdnimg.cn/cd7067b17dc74e46beea354fa2212bef.gif" data-original="https://img-blog.csdnimg.cn/4aa36e431ab84089a57b83c5b025d9ac.jpeg" class="responsive-img" alt="实验ensp-IP和TCP抓包分析实验">
                         
-                        <span class="card-title">ensp 实验-IP和TCP抓包分析实验</span>
+                        <span class="card-title">实验ensp-IP和TCP抓包分析实验</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -1244,8 +1268,8 @@ Ack = 上一次Seq+length
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/H3CNE%E5%AE%9E%E9%AA%8C/" class="post-category">
-                                    H3CNE实验
+                            <a href="/categories/ensp%E5%AE%9E%E9%AA%8C/" class="post-category">
+                                    ensp实验
                                 </a>
                             
                             
@@ -1255,8 +1279,8 @@ Ack = 上一次Seq+length
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/H3CNE%E5%AE%9E%E9%AA%8C/">
-                        <span class="chip bg-color">H3CNE实验</span>
+                    <a href="/tags/ensp%E5%AE%9E%E9%AA%8C/">
+                        <span class="chip bg-color">ensp实验</span>
                     </a>
                     
                 </div>
@@ -1544,7 +1568,7 @@ Ack = 上一次Seq+length
             <br>
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">133.5k</span>&nbsp;字&nbsp;|
+                class="white-color">134.6k</span>&nbsp;字&nbsp;|
             
             
             
@@ -1895,13 +1919,13 @@ $(function () {
 document.addEventListener("visibilitychange", function () { document.hidden ? (document.title = "Σ(っ °Д °;)っ喔哟，崩溃啦！", clearTimeout(st)) : (document.title = "φ(゜▽゜*)♪咦，又好了！", st = setTimeout(function () { document.title = OriginTitile }, 3e3)) }) </script>
 
 
-<script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"model":{"jsonPath":"/live2dw/assets/hijiki.model.json"},"display":{"position":"right","width":280,"height":280},"mobile":{"show":false},"log":false,"pluginJsPath":"lib/","pluginModelPath":"assets/","pluginRootPath":"live2dw/","tagMode":false});</script><script>
+<script>
             window.imageLazyLoadSetting = {
                 isSPA: false,
                 preloadRatio: 1,
                 processImages: null,
             };
-        </script><script>window.addEventListener("load",function(){var t=/\.(gif|jpg|jpeg|tiff|png)$/i,r=/^data:image\/[a-z]+;base64,/;Array.prototype.slice.call(document.querySelectorAll("img[data-original]")).forEach(function(a){var e=a.parentNode;"A"===e.tagName&&(e.href.match(t)||e.href.match(r))&&(e.href=a.dataset.original)})});</script><script>!function(n){n.imageLazyLoadSetting.processImages=o;var e=n.imageLazyLoadSetting.isSPA,i=n.imageLazyLoadSetting.preloadRatio||1,r=Array.prototype.slice.call(document.querySelectorAll("img[data-original]"));function o(){e&&(r=Array.prototype.slice.call(document.querySelectorAll("img[data-original]")));for(var t,a=0;a<r.length;a++)0<=(t=(t=r[a]).getBoundingClientRect()).bottom&&0<=t.left&&t.top<=(n.innerHeight*i||document.documentElement.clientHeight*i)&&function(){var t,e,n,i,o=r[a];t=o,e=function(){r=r.filter(function(t){return o!==t})},n=new Image,i=t.getAttribute("data-original"),n.onload=function(){t.src=i,e&&e()},t.src!==i&&(n.src=i)}()}o(),n.addEventListener("scroll",function(){var t,e;t=o,e=n,clearTimeout(t.tId),t.tId=setTimeout(function(){t.call(e)},500)})}(this);</script></body>
+        </script><script>window.addEventListener("load",function(){var t=/\.(gif|jpg|jpeg|tiff|png)$/i,r=/^data:image\/[a-z]+;base64,/;Array.prototype.slice.call(document.querySelectorAll("img[data-original]")).forEach(function(a){var e=a.parentNode;"A"===e.tagName&&(e.href.match(t)||e.href.match(r))&&(e.href=a.dataset.original)})});</script><script>!function(n){n.imageLazyLoadSetting.processImages=o;var e=n.imageLazyLoadSetting.isSPA,i=n.imageLazyLoadSetting.preloadRatio||1,r=Array.prototype.slice.call(document.querySelectorAll("img[data-original]"));function o(){e&&(r=Array.prototype.slice.call(document.querySelectorAll("img[data-original]")));for(var t,a=0;a<r.length;a++)0<=(t=(t=r[a]).getBoundingClientRect()).bottom&&0<=t.left&&t.top<=(n.innerHeight*i||document.documentElement.clientHeight*i)&&function(){var t,e,n,i,o=r[a];t=o,e=function(){r=r.filter(function(t){return o!==t})},n=new Image,i=t.getAttribute("data-original"),n.onload=function(){t.src=i,e&&e()},t.src!==i&&(n.src=i)}()}o(),n.addEventListener("scroll",function(){var t,e;t=o,e=n,clearTimeout(t.tId),t.tId=setTimeout(function(){t.call(e)},500)})}(this);</script><script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"model":{"jsonPath":"/live2dw/assets/hijiki.model.json"},"display":{"position":"right","width":280,"height":280},"mobile":{"show":false},"log":false,"pluginJsPath":"lib/","pluginModelPath":"assets/","pluginRootPath":"live2dw/","tagMode":false});</script></body>
 
 </html>
 

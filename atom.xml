@@ -6,7 +6,7 @@
   <link href="https://uprightokra.github.io/atom.xml" rel="self"/>
   
   <link href="https://uprightokra.github.io/"/>
-  <updated>2022-09-18T14:04:37.842Z</updated>
+  <updated>2022-09-25T12:43:15.489Z</updated>
   <id>https://uprightokra.github.io/</id>
   
   <author>
@@ -15,6 +15,48 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>数通 07-OSPF</title>
+    <link href="https://uprightokra.github.io/2022-09-25-shu-tong-07-ospf.html"/>
+    <id>https://uprightokra.github.io/2022-09-25-shu-tong-07-ospf.html</id>
+    <published>2022-09-25T08:40:58.000Z</published>
+    <updated>2022-09-25T12:43:15.489Z</updated>
+    
+    
+    
+    
+    <category term="网络基础" scheme="https://uprightokra.github.io/categories/%E7%BD%91%E7%BB%9C%E5%9F%BA%E7%A1%80/"/>
+    
+    
+    <category term="网络基础" scheme="https://uprightokra.github.io/tags/%E7%BD%91%E7%BB%9C%E5%9F%BA%E7%A1%80/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>数通 06-路由</title>
+    <link href="https://uprightokra.github.io/2022-09-25-shu-tong-06-lu-you.html"/>
+    <id>https://uprightokra.github.io/2022-09-25-shu-tong-06-lu-you.html</id>
+    <published>2022-09-25T08:09:37.000Z</published>
+    <updated>2022-09-25T12:43:15.471Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h1 id=&quot;路由&quot;&gt;&lt;a href=&quot;#路由&quot; class=&quot;headerlink&quot; title=&quot;路由&quot;&gt;&lt;/a&gt;&lt;strong&gt;&lt;center&gt;路由&lt;/center&gt;&lt;/strong&gt;&lt;/h1&gt;&lt;h3 id=&quot;路由的分类&quot;&gt;&lt;a href=&quot;#路由的分类&quot;</summary>
+        
+      
+    
+    
+    
+    <category term="网络基础" scheme="https://uprightokra.github.io/categories/%E7%BD%91%E7%BB%9C%E5%9F%BA%E7%A1%80/"/>
+    
+    
+    <category term="网络基础" scheme="https://uprightokra.github.io/tags/%E7%BD%91%E7%BB%9C%E5%9F%BA%E7%A1%80/"/>
+    
+  </entry>
   
   <entry>
     <title>实验ensp-中小型网络系统综合实验</title>
@@ -348,7 +390,7 @@
     <link href="https://uprightokra.github.io/2022-08-12-shu-tong-04-ming-ling-xing-pei-zhi-ji-chu.html"/>
     <id>https://uprightokra.github.io/2022-08-12-shu-tong-04-ming-ling-xing-pei-zhi-ji-chu.html</id>
     <published>2022-08-12T13:51:58.000Z</published>
-    <updated>2022-08-13T16:15:51.023Z</updated>
+    <updated>2022-09-25T07:24:35.571Z</updated>
     
     
       
@@ -465,56 +507,6 @@
     
     
     <category term="ensp实验" scheme="https://uprightokra.github.io/tags/ensp%E5%AE%9E%E9%AA%8C/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>ensp 实验-IP和TCP抓包分析实验</title>
-    <link href="https://uprightokra.github.io/2022-07-22-shu-tong-shi-yan-ip-he-tcp-zhua-bao-fen-xi-shi-yan.html"/>
-    <id>https://uprightokra.github.io/2022-07-22-shu-tong-shi-yan-ip-he-tcp-zhua-bao-fen-xi-shi-yan.html</id>
-    <published>2022-07-22T05:35:16.000Z</published>
-    <updated>2022-08-12T14:05:05.486Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;h1 id=&quot;IP和TCP抓包分析实验&quot;&gt;&lt;a href=&quot;#IP和TCP抓包分析实验&quot; class=&quot;headerlink&quot; title=&quot;IP和TCP抓包分析实验&quot;&gt;&lt;/a&gt;&lt;center&gt;IP和TCP抓包分析实验&lt;/center&gt;&lt;/h1&gt;&lt;h3 id=&quot;拓扑图&quot;&gt;&lt;a</summary>
-        
-      
-    
-    
-    
-    <category term="H3CNE实验" scheme="https://uprightokra.github.io/categories/H3CNE%E5%AE%9E%E9%AA%8C/"/>
-    
-    
-    <category term="H3CNE实验" scheme="https://uprightokra.github.io/tags/H3CNE%E5%AE%9E%E9%AA%8C/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>数通 03-TCP和UDP原理</title>
-    <link href="https://uprightokra.github.io/2022-07-20-shu-tong-03-tcp-he-udp-yuan-li.html"/>
-    <id>https://uprightokra.github.io/2022-07-20-shu-tong-03-tcp-he-udp-yuan-li.html</id>
-    <published>2022-07-20T12:46:37.000Z</published>
-    <updated>2022-08-12T13:53:47.241Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;h1 id=&quot;TCP和UDP原理&quot;&gt;&lt;a href=&quot;#TCP和UDP原理&quot; class=&quot;headerlink&quot; title=&quot;TCP和UDP原理&quot;&gt;&lt;/a&gt;&lt;center&gt;TCP和UDP原理&lt;/center&gt;&lt;/h1&gt;&lt;h2 id=&quot;1-端口&quot;&gt;&lt;a</summary>
-        
-      
-    
-    
-    
-    <category term="网络基础" scheme="https://uprightokra.github.io/categories/%E7%BD%91%E7%BB%9C%E5%9F%BA%E7%A1%80/"/>
-    
-    
-    <category term="网络基础" scheme="https://uprightokra.github.io/tags/%E7%BD%91%E7%BB%9C%E5%9F%BA%E7%A1%80/"/>
     
   </entry>
   

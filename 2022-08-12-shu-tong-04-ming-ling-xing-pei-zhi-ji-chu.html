@@ -555,21 +555,21 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2022-08-14
+                    2022-09-25
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    261
+                    860
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    1 分
+                    3 分
                 </div>
                 
 
@@ -639,6 +639,97 @@
 <h4 id="2-2-命令行基本使用"><a href="#2-2-命令行基本使用" class="headerlink" title="2.2 命令行基本使用"></a>2.2 命令行基本使用</h4><p><img src="https://img-blog.csdnimg.cn/cd7067b17dc74e46beea354fa2212bef.gif" data-original="https://img-blog.csdnimg.cn/3ab8aa2ffc044767ab04202717c8ab12.png"></p>
 <p><img src="https://img-blog.csdnimg.cn/cd7067b17dc74e46beea354fa2212bef.gif" data-original="https://img-blog.csdnimg.cn/8c570bfbf87b4256b074fba8d2353bac.png"></p>
 <p><img src="https://img-blog.csdnimg.cn/cd7067b17dc74e46beea354fa2212bef.gif" data-original="https://img-blog.csdnimg.cn/159ba9fb006e4d109a7a94bba5b4f631.png"></p>
+<h3 id="VRP用户级别"><a href="#VRP用户级别" class="headerlink" title="VRP用户级别"></a>VRP用户级别</h3><p>VRP提供基本的权限控制，可以实现不同级别用户能够执行不同级别的命令，用以限制不同用户对设备的操作。</p>
+<p><img src="https://img-blog.csdnimg.cn/cd7067b17dc74e46beea354fa2212bef.gif" data-original="https://img-blog.csdnimg.cn/fd6e7f4426234278a7d1d77cb9f79557.png"></p>
+<h3 id="常见文件系统操作命令"><a href="#常见文件系统操作命令" class="headerlink" title="常见文件系统操作命令"></a>常见文件系统操作命令</h3><p>1.查看当前目录</p>
+<pre class="line-numbers language-none"><code class="language-none">&lt;Huawei&gt;pwd<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<p>2.显示当前文件下的目录信息</p>
+<pre class="line-numbers language-none"><code class="language-none">&lt;Huawei&gt;dir<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<p>3.查看文本文件的具体内容</p>
+<pre class="line-numbers language-none"><code class="language-none">&lt;Huawei&gt;more<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<p>4.修改用户当前界面的工作目录</p>
+<pre class="line-numbers language-none"><code class="language-none">&lt;Huawei&gt;cd<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<p>5.创建新的目录</p>
+<pre class="line-numbers language-none"><code class="language-none">&lt;Huawei&gt;mkdir<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<p>6.删除目录</p>
+<pre class="line-numbers language-none"><code class="language-none">&lt;Huawei&gt;rmdir<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<p>7.复制文件</p>
+<pre class="line-numbers language-none"><code class="language-none">&lt;Huawei&gt;copy<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<p>8.移动文件</p>
+<pre class="line-numbers language-none"><code class="language-none">&lt;Huawei&gt;move<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<p>9.重命名文件</p>
+<pre class="line-numbers language-none"><code class="language-none">&lt;Huawei&gt;rename<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<p>10.删除文件</p>
+<pre class="line-numbers language-none"><code class="language-none">&lt;Huawei&gt;delete<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<p>11.恢复删除的文件</p>
+<pre class="line-numbers language-none"><code class="language-none">&lt;Huawei&gt;undelete<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<p>12.彻底删除回收站的文件</p>
+<pre class="line-numbers language-none"><code class="language-none">&lt;Huawei&gt;reset recyle-bin<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<h3 id="基本配置命令"><a href="#基本配置命令" class="headerlink" title="基本配置命令"></a>基本配置命令</h3><p>1.配置设备名称</p>
+<pre class="line-numbers language-none"><code class="language-none">[Huawei]sysname name<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<p>2.设置系统时钟</p>
+<pre class="line-numbers language-none"><code class="language-none">display clock<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<p>用于查看设备时间</p>
+<pre class="line-numbers language-none"><code class="language-none">&lt;Huawei&gt;clock timezone time-zone-name{add|minus} offset<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<p>用来对本地时区信息进行设置</p>
+<pre class="line-numbers language-none"><code class="language-none">&lt;Huawei&gt;clock datatime [utc]HH:MM:SS YYYY-MM-DD<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<p>用来设置设备当前或HTC日期和时间</p>
+<pre class="line-numbers language-none"><code class="language-none">&lt;Huawei&gt;clock daylight-saving-time<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<p>用来设置设备的夏令时</p>
+<p>3.配置命令等级</p>
+<pre class="line-numbers language-none"><code class="language-none">[Huawei]command-privilege level {0-15的级别} view {view-name command-key}
+
+例如：设置用户级别为5的用户可以执行save命令
+[Huawei]command-privilege level 5 view save<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>用来设置指定视图内命令的级别。命令级别分为参观、监控、配置、管理4个级别。</p>
+<p>4.配置用户通过Password方式登录设备</p>
+<pre class="line-numbers language-none"><code class="language-none">[Huawei]user-interface vty 0 4
+[Huawei-ui-vty0-4]set authentication password cipher information<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+
+<p>5.配置用户界面参数</p>
+<pre class="line-numbers language-none"><code class="language-none">[Huawei]idle-timeout minutes [seconds]<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<p>用来设置用户界面断开连接的超时时间，缺省情况下，超时时间是10分钟。</p>
+<p>6.查看当前运行的配置文件</p>
+<pre class="line-numbers language-none"><code class="language-none">&lt;Huawei&gt;display current-configuration<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<p>7.配置文件保存</p>
+<pre class="line-numbers language-none"><code class="language-none">&lt;Huawei&gt;save<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<p>8.查看保存的配置</p>
+<pre class="line-numbers language-none"><code class="language-none">&lt;Huawei&gt;display save-configuration<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<p>9.清除已保存的配置</p>
+<pre class="line-numbers language-none"><code class="language-none">&lt;Huawei&gt;reset saved-configuration<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<p>10.查看系统配置参数</p>
+<pre class="line-numbers language-none"><code class="language-none">&lt;Huawei&gt;display startup<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<p>用来查看设备本次及下次启动相关的系统软件、备份系统软件、配置文件….</p>
+<p>11.配置系统下次启动时使用的配置文件</p>
+<pre class="line-numbers language-none"><code class="language-none">&lt;Huawei&gt;startup saved-configuration 文件名<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<p>12.配置设备重启</p>
+<pre class="line-numbers language-none"><code class="language-none">&lt;Huaawei&gt;reboot<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
 
                 
             </div>
@@ -1531,7 +1622,7 @@
             <br>
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">133.5k</span>&nbsp;字&nbsp;|
+                class="white-color">134.6k</span>&nbsp;字&nbsp;|
             
             
             
@@ -1882,13 +1973,13 @@ $(function () {
 document.addEventListener("visibilitychange", function () { document.hidden ? (document.title = "Σ(っ °Д °;)っ喔哟，崩溃啦！", clearTimeout(st)) : (document.title = "φ(゜▽゜*)♪咦，又好了！", st = setTimeout(function () { document.title = OriginTitile }, 3e3)) }) </script>
 
 
-<script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"model":{"jsonPath":"/live2dw/assets/hijiki.model.json"},"display":{"position":"right","width":280,"height":280},"mobile":{"show":false},"log":false,"pluginJsPath":"lib/","pluginModelPath":"assets/","pluginRootPath":"live2dw/","tagMode":false});</script><script>
+<script>
             window.imageLazyLoadSetting = {
                 isSPA: false,
                 preloadRatio: 1,
                 processImages: null,
             };
-        </script><script>window.addEventListener("load",function(){var t=/\.(gif|jpg|jpeg|tiff|png)$/i,r=/^data:image\/[a-z]+;base64,/;Array.prototype.slice.call(document.querySelectorAll("img[data-original]")).forEach(function(a){var e=a.parentNode;"A"===e.tagName&&(e.href.match(t)||e.href.match(r))&&(e.href=a.dataset.original)})});</script><script>!function(n){n.imageLazyLoadSetting.processImages=o;var e=n.imageLazyLoadSetting.isSPA,i=n.imageLazyLoadSetting.preloadRatio||1,r=Array.prototype.slice.call(document.querySelectorAll("img[data-original]"));function o(){e&&(r=Array.prototype.slice.call(document.querySelectorAll("img[data-original]")));for(var t,a=0;a<r.length;a++)0<=(t=(t=r[a]).getBoundingClientRect()).bottom&&0<=t.left&&t.top<=(n.innerHeight*i||document.documentElement.clientHeight*i)&&function(){var t,e,n,i,o=r[a];t=o,e=function(){r=r.filter(function(t){return o!==t})},n=new Image,i=t.getAttribute("data-original"),n.onload=function(){t.src=i,e&&e()},t.src!==i&&(n.src=i)}()}o(),n.addEventListener("scroll",function(){var t,e;t=o,e=n,clearTimeout(t.tId),t.tId=setTimeout(function(){t.call(e)},500)})}(this);</script></body>
+        </script><script>window.addEventListener("load",function(){var t=/\.(gif|jpg|jpeg|tiff|png)$/i,r=/^data:image\/[a-z]+;base64,/;Array.prototype.slice.call(document.querySelectorAll("img[data-original]")).forEach(function(a){var e=a.parentNode;"A"===e.tagName&&(e.href.match(t)||e.href.match(r))&&(e.href=a.dataset.original)})});</script><script>!function(n){n.imageLazyLoadSetting.processImages=o;var e=n.imageLazyLoadSetting.isSPA,i=n.imageLazyLoadSetting.preloadRatio||1,r=Array.prototype.slice.call(document.querySelectorAll("img[data-original]"));function o(){e&&(r=Array.prototype.slice.call(document.querySelectorAll("img[data-original]")));for(var t,a=0;a<r.length;a++)0<=(t=(t=r[a]).getBoundingClientRect()).bottom&&0<=t.left&&t.top<=(n.innerHeight*i||document.documentElement.clientHeight*i)&&function(){var t,e,n,i,o=r[a];t=o,e=function(){r=r.filter(function(t){return o!==t})},n=new Image,i=t.getAttribute("data-original"),n.onload=function(){t.src=i,e&&e()},t.src!==i&&(n.src=i)}()}o(),n.addEventListener("scroll",function(){var t,e;t=o,e=n,clearTimeout(t.tId),t.tId=setTimeout(function(){t.call(e)},500)})}(this);</script><script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"model":{"jsonPath":"/live2dw/assets/hijiki.model.json"},"display":{"position":"right","width":280,"height":280},"mobile":{"show":false},"log":false,"pluginJsPath":"lib/","pluginModelPath":"assets/","pluginRootPath":"live2dw/","tagMode":false});</script></body>
 
 </html>
 
