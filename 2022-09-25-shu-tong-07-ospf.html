@@ -398,7 +398,7 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('https://img-blog.csdnimg.cn/b3e51b3b8e4d4b618e97bb3a30163591.jpeg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('https://img-blog.csdnimg.cn/3329ca491b794194a23d6b71671933c7.jpeg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
@@ -555,21 +555,21 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2022-09-25
+                    2022-09-27
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    0
+                    1.5k
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    1 分
+                    5 分
                 </div>
                 
 
@@ -597,7 +597,56 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                
+                <h1 id="OSPF"><a href="#OSPF" class="headerlink" title="OSPF"></a><strong><center>OSPF</center></strong></h1><h3 id="1、定义"><a href="#1、定义" class="headerlink" title="1、定义"></a>1、定义</h3><p>​        开放式最短路径优先OSPF（Open Shortest Path First）是IETF组织开发的一个基于链路状态的内部网关协议（Interior Gateway Protocol）。本文的OSPF均指对IPv4协议使用的OSPFv2。</p>
+<h3 id="2、特点"><a href="#2、特点" class="headerlink" title="2、特点"></a>2、特点</h3><p>​        由于RIP协议存在收敛慢、路由环路及扩展性差等问题，不适合大规模网络。与RIP等路由协议相比，OSPF具有如下特点：</p>
+<ul>
+<li>适应范围广：支持各种规模的网络，特别是大型网络。</li>
+<li>收敛速度快：在网络拓扑结构发生变化后立即发送更新报文，并将变化在AS（Autonomous System，自治系统即由一组使用相同路由协议来交换路由信息的路由设备组成的网络）中同步。</li>
+<li>无路由自环：OSPF根据收集到的链路状态利用最短路径树算法计算路由，从算法本身保证了不会形成路由自环。</li>
+<li>支持区域划分：允许将网络划分成不同区域来分层管理，区域间传送的路由信息被进一步抽象，从而减少了占用的网络带宽。</li>
+<li>支持等价路由：支持到同一目的地址的多条等价路由。</li>
+<li>支持组播：在某些类型的链路上以组播地址发送协议报文，减少对其它设备的干扰。</li>
+<li>OSPF中对路由信息的描述都是封装在链路状态通告LSA（Link State Advertisement）中发布出去的。</li>
+</ul>
+<h3 id="3、路由设备ID号"><a href="#3、路由设备ID号" class="headerlink" title="3、路由设备ID号"></a>3、路由设备ID号</h3><p>​        一台路由设备如果要运行OSPF协议，则必须存在Router ID（路由设备ID）。Router ID是一个32比特无符号整数，可以在一个自治系统中唯一的标识一台路由设备。Router  ID可以由系统选举产生，也可以手动进行配置。Router ID选举规则如下：</p>
+<ul>
+<li>若存在配置IP地址的Loopback接口，则选择Loopback接口地址中最大的作为Router ID；</li>
+<li>若没有配置IP地址的Loopback接口，则从IP接口中选择IP地址最大的作为Router ID；</li>
+<li>若IP地址已经被其它OSPF进程选用，则不能被该进程选用；</li>
+<li>若没有配置任何IP地址，则无法选举Router ID，无法创建进程，只能手动配置Router ID。</li>
+</ul>
+<h3 id="4、OSPF的网络类型"><a href="#4、OSPF的网络类型" class="headerlink" title="4、OSPF的网络类型"></a>4、OSPF的网络类型</h3><p>​        根据链路层协议类型，OSPF将网络分为以下几种类型：</p>
+<ul>
+<li>广播（Broadcast）类型：当链路层协议是Ethernet或FDDI时，OSPF缺省认为网络类型是Broadcast。在该类型的网络中，通常以组播形式（组播地址为224.0.0.5和224.0.0.6）发送协议报文。</li>
+<li>P2MP（Point-to-MultiPoint，点到多点）类型：没有一种链路层协议会被缺省的认为是P2MP类型，必须是由其他的网络类型强制更改的。常用做法是将NBMA改为P2MP。在该类型的网络中，缺省情况下，以组播形式（组播地址为224.0.0.5）发送协议报文。可以根据用户需要，以单播形式发送协议报文。</li>
+<li>P2P（Point-to-Point，点到点）类型：当链路层协议是PPP或HDLC（High-Level Data Link  Control，高级数据链路控制）时，OSPF缺省认为网络类型是P2P。在该类型的网络中，以组播形式（组播地址为224.0.0.5）发送协议报文。</li>
+<li>NBMA（Non-Broadcast Multi-Access）类型：当链路层协议是帧中继、X.25时，缺省情况下，OSPF认为网络类型是NBMA。在该类型的网络中，以单播形式发送协议报文。</li>
+</ul>
+<h3 id="5、OSPF的5种报文"><a href="#5、OSPF的5种报文" class="headerlink" title="5、OSPF的5种报文"></a>5、OSPF的5种报文</h3><p>OSPF协议报文主要包括以下几种：</p>
+<img src="https://img-blog.csdnimg.cn/cd7067b17dc74e46beea354fa2212bef.gif" data-original="https://img-blog.csdnimg.cn/img_convert/e22449df9ad170a48963665d8c12485f.jpeg" alt="img" style="zoom: 80%;">
+
+<h3 id="6-OSPF的3张表"><a href="#6-OSPF的3张表" class="headerlink" title="6.OSPF的3张表"></a>6.OSPF的3张表</h3><p>​        OSPF的工作过程分为三大步骤，分别是形成邻居关系、形成邻接关系、计算路由。</p>
+<p>​        OSPF建立邻居必须要收集lsa，收集完成形成邻接，收集到的lsa计算路由。完成这三个步骤，会分别形成三张表OSPF邻居表、LSDB邻接表、OSPF路由表。</p>
+<h4 id="邻居和邻接："><a href="#邻居和邻接：" class="headerlink" title="邻居和邻接："></a>邻居和邻接：</h4><p>​        在OSPF网络中，邻居设备之间为了交换路由信息，邻居设备之间首先要建立邻接关系，邻居（Neighbors）关系和邻接（Adjacencies）关系是两个不同的概念：</p>
+<ul>
+<li><p><strong>邻居关系</strong>：OSPF设备启动后，会通过OSPF接口向外发送Hello报文，收到Hello报文的OSPF设备会检查报文中所定义的参数，如果双方一致就会形成邻居关系，两端设备互为邻居。</p>
+</li>
+<li><p><strong>邻接关系</strong>：形成邻居关系后，如果两端设备成功交换DD报文和LSA，才建立邻接关系。</p>
+</li>
+</ul>
+<p>​        邻居和邻接状态是通过OSPF状态机表现的，OSPF共有8种邻居状态机，分别是Down、Attempt、Init、2-way、Exstart、Exchange、Loading、Full，如下图所示。Down、2-way、Full是稳定状态，Attempt、Init、Exstart、Exchange、Loading是不稳定状态。不稳定状态是在转换过程中瞬间存在的状态，一般不会超过几分钟。</p>
+<p><img src="https://img-blog.csdnimg.cn/cd7067b17dc74e46beea354fa2212bef.gif" data-original="https://img-blog.csdnimg.cn/img_convert/573bb75c6c87e2d382495c03b9b3abd8.jpeg" alt="img"></p>
+<p>OSPF邻居状态机及含义如下表：</p>
+<img src="https://img-blog.csdnimg.cn/cd7067b17dc74e46beea354fa2212bef.gif" data-original="https://img-blog.csdnimg.cn/img_convert/88fe6feea3f48daef6b58dc2af32cb47.jpeg" alt="img" style="zoom:80%;">
+
+<h3 id="7、OSPF路由的计算过程"><a href="#7、OSPF路由的计算过程" class="headerlink" title="7、OSPF路由的计算过程"></a>7、OSPF路由的计算过程</h3><p>OSPF协议中，路由的计算过程如下：</p>
+<ul>
+<li>每台OSPF路由设备根据网络拓扑结构生成LSA，并通过更新报文将LSA发送给网络中的其它OSPF路由设备。</li>
+<li>每台OSPF路由设备都会收集其它路由设备通告的LSA，所有的LSA组成了LSDB。LSA是对路由设备周围网络拓扑结构的描述，LSDB则是对整个自治系统的网络拓扑结构的描述。</li>
+<li>OSPF路由设备将LSDB转换成一张带权值的有向图，这张图便是对整个网络拓扑结构的真实反映。各个路由设备得到的有向图是完全相同的。</li>
+<li>每台路由设备根据有向图，使用SPF（Shortest Path First，最短路径优先）算法计算出一棵以自己为根的最短路径树，这棵树给出了到自治系统中各节点的路由。</li>
+</ul>
+
                 
             </div>
             <hr/>
@@ -1162,17 +1211,16 @@
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="far fa-dot-circle"></i>&nbsp;本篇
-            </div>
+                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
-                <a href="/2022-09-25-shu-tong-07-ospf.html">
+                <a href="/2022-09-27-shi-yan-ensp-ospf-pei-zhi-shi-yan.html">
                     <div class="card-image">
                         
-                        <img src="https://img-blog.csdnimg.cn/cd7067b17dc74e46beea354fa2212bef.gif" data-original="https://img-blog.csdnimg.cn/b3e51b3b8e4d4b618e97bb3a30163591.jpeg" class="responsive-img" alt="数通 07-OSPF">
+                        <img src="https://img-blog.csdnimg.cn/cd7067b17dc74e46beea354fa2212bef.gif" data-original="https://img-blog.csdnimg.cn/4aa36e431ab84089a57b83c5b025d9ac.jpeg" class="responsive-img" alt="实验ensp OSPF配置实验">
                         
-                        <span class="card-title">数通 07-OSPF</span>
+                        <span class="card-title">实验ensp OSPF配置实验</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -1182,27 +1230,26 @@
                         
                     </div>
                     <div class="publish-info">
-                            <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2022-09-25
-                            </span>
+                        <span class="publish-date">
+                            <i class="far fa-clock fa-fw icon-date"></i>2022-09-27
+                        </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/%E7%BD%91%E7%BB%9C%E5%9F%BA%E7%A1%80/" class="post-category">
-                                    网络基础
+                            <a href="/categories/ensp%E5%AE%9E%E9%AA%8C/" class="post-category">
+                                    ensp实验
                                 </a>
                             
                             
                         </span>
                     </div>
                 </div>
-
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/%E7%BD%91%E7%BB%9C%E5%9F%BA%E7%A1%80/">
-                        <span class="chip bg-color">网络基础</span>
+                    <a href="/tags/ensp%E5%AE%9E%E9%AA%8C/">
+                        <span class="chip bg-color">ensp实验</span>
                     </a>
                     
                 </div>
@@ -1219,7 +1266,7 @@
                 <a href="/2022-09-25-shu-tong-06-lu-you.html">
                     <div class="card-image">
                         
-                        <img src="https://img-blog.csdnimg.cn/cd7067b17dc74e46beea354fa2212bef.gif" data-original="https://img-blog.csdnimg.cn/b3e51b3b8e4d4b618e97bb3a30163591.jpeg" class="responsive-img" alt="数通 06-路由">
+                        <img src="https://img-blog.csdnimg.cn/cd7067b17dc74e46beea354fa2212bef.gif" data-original="https://img-blog.csdnimg.cn/3329ca491b794194a23d6b71671933c7.jpeg" class="responsive-img" alt="数通 06-路由">
                         
                         <span class="card-title">数通 06-路由</span>
                     </div>
@@ -1490,7 +1537,7 @@
             <br>
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">134.6k</span>&nbsp;字&nbsp;|
+                class="white-color">137.7k</span>&nbsp;字&nbsp;|
             
             
             

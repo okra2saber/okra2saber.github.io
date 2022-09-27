@@ -6,7 +6,7 @@
   <link href="https://uprightokra.github.io/atom.xml" rel="self"/>
   
   <link href="https://uprightokra.github.io/"/>
-  <updated>2022-09-25T12:43:15.489Z</updated>
+  <updated>2022-09-27T07:52:34.326Z</updated>
   <id>https://uprightokra.github.io/</id>
   
   <author>
@@ -17,12 +17,70 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>loopback本地回环接口</title>
+    <link href="https://uprightokra.github.io/2022-09-27-loopback-ben-di-hui-huan-jie-kou.html"/>
+    <id>https://uprightokra.github.io/2022-09-27-loopback-ben-di-hui-huan-jie-kou.html</id>
+    <published>2022-09-27T05:30:38.000Z</published>
+    <updated>2022-09-27T07:52:34.326Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h1 id=&quot;loopback&quot;&gt;&lt;a href=&quot;#loopback&quot; class=&quot;headerlink&quot; title=&quot;loopback&quot;&gt;&lt;/a&gt;&lt;center&gt;&lt;strong&gt;loopback&lt;/strong&gt;&lt;/center&gt;&lt;/h1&gt;&lt;p&gt;​       </summary>
+        
+      
+    
+    
+    
+    <category term="网络基础" scheme="https://uprightokra.github.io/categories/%E7%BD%91%E7%BB%9C%E5%9F%BA%E7%A1%80/"/>
+    
+    
+    <category term="loopback" scheme="https://uprightokra.github.io/tags/loopback/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>实验ensp OSPF配置实验</title>
+    <link href="https://uprightokra.github.io/2022-09-27-shi-yan-ensp-ospf-pei-zhi-shi-yan.html"/>
+    <id>https://uprightokra.github.io/2022-09-27-shi-yan-ensp-ospf-pei-zhi-shi-yan.html</id>
+    <published>2022-09-27T01:31:47.000Z</published>
+    <updated>2022-09-27T07:47:48.099Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h1 id=&quot;OSPF配置实验&quot;&gt;&lt;a href=&quot;#OSPF配置实验&quot; class=&quot;headerlink&quot; title=&quot;OSPF配置实验&quot;&gt;&lt;/a&gt;&lt;center&gt;OSPF配置实验&lt;/center&gt;&lt;/h1&gt;&lt;h3 id=&quot;拓扑图&quot;&gt;&lt;a href=&quot;#拓扑图&quot;</summary>
+        
+      
+    
+    
+    
+    <category term="ensp实验" scheme="https://uprightokra.github.io/categories/ensp%E5%AE%9E%E9%AA%8C/"/>
+    
+    
+    <category term="ensp实验" scheme="https://uprightokra.github.io/tags/ensp%E5%AE%9E%E9%AA%8C/"/>
+    
+  </entry>
+  
+  <entry>
     <title>数通 07-OSPF</title>
     <link href="https://uprightokra.github.io/2022-09-25-shu-tong-07-ospf.html"/>
     <id>https://uprightokra.github.io/2022-09-25-shu-tong-07-ospf.html</id>
     <published>2022-09-25T08:40:58.000Z</published>
-    <updated>2022-09-25T12:43:15.489Z</updated>
+    <updated>2022-09-27T01:20:06.764Z</updated>
     
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h1 id=&quot;OSPF&quot;&gt;&lt;a href=&quot;#OSPF&quot; class=&quot;headerlink&quot; title=&quot;OSPF&quot;&gt;&lt;/a&gt;&lt;strong&gt;&lt;center&gt;OSPF&lt;/center&gt;&lt;/strong&gt;&lt;/h1&gt;&lt;h3 id=&quot;1、定义&quot;&gt;&lt;a href=&quot;#1、定义&quot;</summary>
+        
+      
     
     
     
@@ -38,7 +96,7 @@
     <link href="https://uprightokra.github.io/2022-09-25-shu-tong-06-lu-you.html"/>
     <id>https://uprightokra.github.io/2022-09-25-shu-tong-06-lu-you.html</id>
     <published>2022-09-25T08:09:37.000Z</published>
-    <updated>2022-09-25T12:43:15.471Z</updated>
+    <updated>2022-09-27T01:18:03.408Z</updated>
     
     
       
@@ -289,7 +347,7 @@
     <link href="https://uprightokra.github.io/2022-08-14-shu-tong-05-wang-luo-she-bei-diao-shi.html"/>
     <id>https://uprightokra.github.io/2022-08-14-shu-tong-05-wang-luo-she-bei-diao-shi.html</id>
     <published>2022-08-13T17:16:44.000Z</published>
-    <updated>2022-09-15T13:57:11.719Z</updated>
+    <updated>2022-09-27T01:17:58.406Z</updated>
     
     
       
@@ -390,7 +448,7 @@
     <link href="https://uprightokra.github.io/2022-08-12-shu-tong-04-ming-ling-xing-pei-zhi-ji-chu.html"/>
     <id>https://uprightokra.github.io/2022-08-12-shu-tong-04-ming-ling-xing-pei-zhi-ji-chu.html</id>
     <published>2022-08-12T13:51:58.000Z</published>
-    <updated>2022-09-25T07:24:35.571Z</updated>
+    <updated>2022-09-27T01:17:50.505Z</updated>
     
     
       
@@ -457,56 +515,6 @@
     
     
     <category term="NISP二级" scheme="https://uprightokra.github.io/tags/NISP%E4%BA%8C%E7%BA%A7/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>实验ensp-配置通过FTP进行文件操作</title>
-    <link href="https://uprightokra.github.io/2022-07-22-shi-yan-ensp-pei-zhi-tong-guo-ftp-jin-xing-wen-jian-cao-zuo.html"/>
-    <id>https://uprightokra.github.io/2022-07-22-shi-yan-ensp-pei-zhi-tong-guo-ftp-jin-xing-wen-jian-cao-zuo.html</id>
-    <published>2022-07-22T05:48:54.000Z</published>
-    <updated>2022-09-15T14:06:29.863Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;h1 id=&quot;eNSP——配置通过FTP进行文件操作&quot;&gt;&lt;a href=&quot;#eNSP——配置通过FTP进行文件操作&quot; class=&quot;headerlink&quot; title=&quot;eNSP——配置通过FTP进行文件操作&quot;&gt;&lt;/a&gt;&lt;a</summary>
-        
-      
-    
-    
-    
-    <category term="ensp实验" scheme="https://uprightokra.github.io/categories/ensp%E5%AE%9E%E9%AA%8C/"/>
-    
-    
-    <category term="ensp实验" scheme="https://uprightokra.github.io/tags/ensp%E5%AE%9E%E9%AA%8C/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>实验ensp-IP和TCP抓包分析实验</title>
-    <link href="https://uprightokra.github.io/2022-07-22-shi-yan-ensp-ip-he-tcp-zhua-bao-fen-xi-shi-yan.html"/>
-    <id>https://uprightokra.github.io/2022-07-22-shi-yan-ensp-ip-he-tcp-zhua-bao-fen-xi-shi-yan.html</id>
-    <published>2022-07-22T05:35:16.000Z</published>
-    <updated>2022-09-15T14:06:49.111Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;h1 id=&quot;IP和TCP抓包分析实验&quot;&gt;&lt;a href=&quot;#IP和TCP抓包分析实验&quot; class=&quot;headerlink&quot; title=&quot;IP和TCP抓包分析实验&quot;&gt;&lt;/a&gt;&lt;center&gt;IP和TCP抓包分析实验&lt;/center&gt;&lt;/h1&gt;&lt;h3 id=&quot;拓扑图&quot;&gt;&lt;a</summary>
-        
-      
-    
-    
-    
-    <category term="ensp实验" scheme="https://uprightokra.github.io/categories/ensp%E5%AE%9E%E9%AA%8C/"/>
-    
-    
-    <category term="ensp实验" scheme="https://uprightokra.github.io/tags/ensp%E5%AE%9E%E9%AA%8C/"/>
     
   </entry>
   
