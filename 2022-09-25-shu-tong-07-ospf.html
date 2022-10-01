@@ -617,10 +617,15 @@
 </ul>
 <h3 id="4、OSPF的网络类型"><a href="#4、OSPF的网络类型" class="headerlink" title="4、OSPF的网络类型"></a>4、OSPF的网络类型</h3><p>​        根据链路层协议类型，OSPF将网络分为以下几种类型：</p>
 <ul>
-<li>广播（Broadcast）类型：当链路层协议是Ethernet或FDDI时，OSPF缺省认为网络类型是Broadcast。在该类型的网络中，通常以组播形式（组播地址为224.0.0.5和224.0.0.6）发送协议报文。</li>
-<li>P2MP（Point-to-MultiPoint，点到多点）类型：没有一种链路层协议会被缺省的认为是P2MP类型，必须是由其他的网络类型强制更改的。常用做法是将NBMA改为P2MP。在该类型的网络中，缺省情况下，以组播形式（组播地址为224.0.0.5）发送协议报文。可以根据用户需要，以单播形式发送协议报文。</li>
-<li>P2P（Point-to-Point，点到点）类型：当链路层协议是PPP或HDLC（High-Level Data Link  Control，高级数据链路控制）时，OSPF缺省认为网络类型是P2P。在该类型的网络中，以组播形式（组播地址为224.0.0.5）发送协议报文。</li>
-<li>NBMA（Non-Broadcast Multi-Access）类型：当链路层协议是帧中继、X.25时，缺省情况下，OSPF认为网络类型是NBMA。在该类型的网络中，以单播形式发送协议报文。</li>
+<li><p><strong>广播（Broadcast）类型</strong>：当链路层协议是Ethernet或FDDI时，OSPF缺省认为网络类型是Broadcast。在该类型的网络中，通常以组播形式（组播地址为224.0.0.5和224.0.0.6）发送协议报文。</p>
+</li>
+<li><p>P2MP（Point-to-MultiPoint，点到多点）类型：没有一种链路层协议会被缺省的认为是P2MP类型，必须是由其他的网络类型强制更改的。常用做法是将NBMA改为P2MP。在该类型的网络中，缺省情况下，以组播形式（组播地址为224.0.0.5）发送协议报文。可以根据用户需要，以单播形式发送协议报文。</p>
+</li>
+<li><p><strong>P2P（Point-to-Point，点到点）类型</strong>：当链路层协议是PPP或HDLC（High-Level Data Link  Control，高级数据链路控制）时，OSPF缺省认为网络类型是P2P。在该类型的网络中，以组播形式（组播地址为224.0.0.5）发送协议报文。</p>
+</li>
+<li><p>NBMA（Non-Broadcast Multi-Access）类型：当链路层协议是帧中继、X.25时，缺省情况下，OSPF认为网络类型是NBMA。在该类型的网络中，以单播形式发送协议报文。</p>
+<p><strong><font color="red">注意现在只有P2P和广播的OSPF网络类型，其他两个已经淘汰</font></strong></p>
+</li>
 </ul>
 <h3 id="5、OSPF的5种报文"><a href="#5、OSPF的5种报文" class="headerlink" title="5、OSPF的5种报文"></a>5、OSPF的5种报文</h3><p>OSPF协议报文主要包括以下几种：</p>
 <img src="https://img-blog.csdnimg.cn/cd7067b17dc74e46beea354fa2212bef.gif" data-original="https://img-blog.csdnimg.cn/img_convert/e22449df9ad170a48963665d8c12485f.jpeg" alt="img" style="zoom: 80%;">
@@ -646,6 +651,11 @@
 <li>OSPF路由设备将LSDB转换成一张带权值的有向图，这张图便是对整个网络拓扑结构的真实反映。各个路由设备得到的有向图是完全相同的。</li>
 <li>每台路由设备根据有向图，使用SPF（Shortest Path First，最短路径优先）算法计算出一棵以自己为根的最短路径树，这棵树给出了到自治系统中各节点的路由。</li>
 </ul>
+<h3 id="8-OSPF邻接关系建立流程"><a href="#8-OSPF邻接关系建立流程" class="headerlink" title="8.OSPF邻接关系建立流程"></a>8.OSPF邻接关系建立流程</h3><img src="https://img-blog.csdnimg.cn/cd7067b17dc74e46beea354fa2212bef.gif" data-original="https://img-blog.csdnimg.cn/bc4e167f037f497fb7e6a4528e932d96.png" style="zoom: 33%;">
+
+<img src="https://img-blog.csdnimg.cn/cd7067b17dc74e46beea354fa2212bef.gif" data-original="https://img-blog.csdnimg.cn/5ca3eebd92b0421389ab211a63dcb61a.png" style="zoom:33%;">
+
+<img src="https://img-blog.csdnimg.cn/cd7067b17dc74e46beea354fa2212bef.gif" data-original="https://img-blog.csdnimg.cn/d88c09c33a564b78ac32063f01531ebe.png" style="zoom: 50%;">
 
                 
             </div>
@@ -1537,7 +1547,7 @@
             <br>
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">137.7k</span>&nbsp;字&nbsp;|
+                class="white-color">140.8k</span>&nbsp;字&nbsp;|
             
             
             
@@ -1888,13 +1898,13 @@ $(function () {
 document.addEventListener("visibilitychange", function () { document.hidden ? (document.title = "Σ(っ °Д °;)っ喔哟，崩溃啦！", clearTimeout(st)) : (document.title = "φ(゜▽゜*)♪咦，又好了！", st = setTimeout(function () { document.title = OriginTitile }, 3e3)) }) </script>
 
 
-<script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"model":{"jsonPath":"/live2dw/assets/hijiki.model.json"},"display":{"position":"right","width":280,"height":280},"mobile":{"show":false},"log":false,"pluginJsPath":"lib/","pluginModelPath":"assets/","pluginRootPath":"live2dw/","tagMode":false});</script><script>
+<script>
             window.imageLazyLoadSetting = {
                 isSPA: false,
                 preloadRatio: 1,
                 processImages: null,
             };
-        </script><script>window.addEventListener("load",function(){var t=/\.(gif|jpg|jpeg|tiff|png)$/i,r=/^data:image\/[a-z]+;base64,/;Array.prototype.slice.call(document.querySelectorAll("img[data-original]")).forEach(function(a){var e=a.parentNode;"A"===e.tagName&&(e.href.match(t)||e.href.match(r))&&(e.href=a.dataset.original)})});</script><script>!function(n){n.imageLazyLoadSetting.processImages=o;var e=n.imageLazyLoadSetting.isSPA,i=n.imageLazyLoadSetting.preloadRatio||1,r=Array.prototype.slice.call(document.querySelectorAll("img[data-original]"));function o(){e&&(r=Array.prototype.slice.call(document.querySelectorAll("img[data-original]")));for(var t,a=0;a<r.length;a++)0<=(t=(t=r[a]).getBoundingClientRect()).bottom&&0<=t.left&&t.top<=(n.innerHeight*i||document.documentElement.clientHeight*i)&&function(){var t,e,n,i,o=r[a];t=o,e=function(){r=r.filter(function(t){return o!==t})},n=new Image,i=t.getAttribute("data-original"),n.onload=function(){t.src=i,e&&e()},t.src!==i&&(n.src=i)}()}o(),n.addEventListener("scroll",function(){var t,e;t=o,e=n,clearTimeout(t.tId),t.tId=setTimeout(function(){t.call(e)},500)})}(this);</script></body>
+        </script><script>window.addEventListener("load",function(){var t=/\.(gif|jpg|jpeg|tiff|png)$/i,r=/^data:image\/[a-z]+;base64,/;Array.prototype.slice.call(document.querySelectorAll("img[data-original]")).forEach(function(a){var e=a.parentNode;"A"===e.tagName&&(e.href.match(t)||e.href.match(r))&&(e.href=a.dataset.original)})});</script><script>!function(n){n.imageLazyLoadSetting.processImages=o;var e=n.imageLazyLoadSetting.isSPA,i=n.imageLazyLoadSetting.preloadRatio||1,r=Array.prototype.slice.call(document.querySelectorAll("img[data-original]"));function o(){e&&(r=Array.prototype.slice.call(document.querySelectorAll("img[data-original]")));for(var t,a=0;a<r.length;a++)0<=(t=(t=r[a]).getBoundingClientRect()).bottom&&0<=t.left&&t.top<=(n.innerHeight*i||document.documentElement.clientHeight*i)&&function(){var t,e,n,i,o=r[a];t=o,e=function(){r=r.filter(function(t){return o!==t})},n=new Image,i=t.getAttribute("data-original"),n.onload=function(){t.src=i,e&&e()},t.src!==i&&(n.src=i)}()}o(),n.addEventListener("scroll",function(){var t,e;t=o,e=n,clearTimeout(t.tId),t.tId=setTimeout(function(){t.call(e)},500)})}(this);</script><script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"model":{"jsonPath":"/live2dw/assets/hijiki.model.json"},"display":{"position":"right","width":280,"height":280},"mobile":{"show":false},"log":false,"pluginJsPath":"lib/","pluginModelPath":"assets/","pluginRootPath":"live2dw/","tagMode":false});</script></body>
 
 </html>
 

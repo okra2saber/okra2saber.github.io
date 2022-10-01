@@ -562,14 +562,14 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    447
+                    1.3k
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    2 分
+                    6 分
                 </div>
                 
 
@@ -648,10 +648,106 @@ Destination/Mask    Proto   Pre  Cost      Flags NextHop         Interface
 <p>3.配置OSPF</p>
 <p>在 RTA 上完成 OSPF 如下配置：</p>
 <pre class="line-numbers language-none"><code class="language-none">[RTA]router id 1.1.1.1
+[RTA]ospf 1<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
 
-[RTA]ospf 1<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+<p>如上配置中，数字 1 的含义是 <font color="red"><strong>OSPF进程号</strong></font>，缺省情况下取值为 1;router id 是将回环地址(loopback)的地址作为Router-ID(<font color="red"><strong>路由器的唯一标识</strong></font>)，作为该路由器的唯一标识。</p>
+<pre class="line-numbers language-none"><code class="language-none">[RTA-ospf-1]area 0.0.0.0		#将该路由器放进区域0
+[RTA-ospf-1-area-0.0.0.0]network 1.1.1.1	0.0.0.0			#宣告回环接口（loopback）网段
+[RTA-ospf-1-area-0.0.0.0]network 192.168.1.0	0.0.0.255		#宣告接口网段
+[RTA-ospf-1-area-0.0.0.0]network 192.168.2.0	0.0.0.255		#宣告接口网段<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
 
-<p>如上配置中，数字 1 的含义是 <font color="red"><strong>OSPF进程号</strong></font>，缺省情况下取值为 1;router id 是将回环地址(loopback)的地址作为Router-ID，作为该路由器的唯一标识。</p>
+<p><strong>在OSPF区域内指定网段接口上启动OSPF时，是否必须包含Router ID的地址？为什么配置是往往会将Router ID的地址包含在内？</strong></p>
+<pre class="line-numbers language-none"><code class="language-none">不需要。OSPF区域指定网段接口上启动OSPF时，配置Router ID地址其实是发布路由器的loopback接口地址 <span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<p>在 RTB 上完成 OSPF 如下配置：</p>
+<pre class="line-numbers language-none"><code class="language-none">[RTB]router id 2.2.2.2
+[RTB]ospf 1
+[RTB-ospf-1]area 0.0.0.0		#将该路由器放进区域0
+[RTB-ospf-1-area-0.0.0.0]network 2.2.2.2	0.0.0.0			#宣告回环接口（loopback）网段
+[RTB-ospf-1-area-0.0.0.0]network 192.168.2.0	0.0.0.255		#宣告接口网段
+[RTB-ospf-1-area-0.0.0.0]network 192.168.3.0	0.0.0.255		#宣告接口网段<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>4.检查路由器 OSPF 邻居状态及路由表</p>
+<p>使用display ospf peer brief（查看ospf邻居的摘要信息）命令查看OSPF邻居表</p>
+<pre class="line-numbers language-none"><code class="language-none">[RTA]dis ospf peer brief 
+
+	 OSPF Process 1 with Router ID 1.1.1.1
+		  Peer Statistic Information
+ ----------------------------------------------------------------------------
+ Area Id          Interface                        Neighbor id      State    
+ 0.0.0.0          GigabitEthernet0/0/1             2.2.2.2          Full        
+ ----------------------------------------------------------------------------
+
+
+[RTB]dis ospf peer brief 
+
+	 OSPF Process 1 with Router ID 2.2.2.2
+		  Peer Statistic Information
+ ----------------------------------------------------------------------------
+ Area Id          Interface                        Neighbor id      State    
+ 0.0.0.0          GigabitEthernet0/0/1             1.1.1.1          Full        
+ ----------------------------------------------------------------------------
+ 
+ 可以看到在RTA和RTB的OSPF邻居表上均发现了对应路由器的route-ID<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>使用display ospf lsdb命令查看路由器之间的链路状态数据库信息,由内容就代表着已经建立了邻接关系</p>
+<pre class="line-numbers language-none"><code class="language-none">[RTA]dis ospf lsdb
+
+	 OSPF Process 1 with Router ID 1.1.1.1
+		 Link State Database 
+
+		         Area: 0.0.0.0
+ Type      LinkState ID    AdvRouter          Age  Len   Sequence   Metric
+ Router    2.2.2.2         2.2.2.2            367  48    80000004       1
+ Router    1.1.1.1         1.1.1.1            358  60    80000008       1
+ Network   192.168.2.1     1.1.1.1            358  32    80000002       0
+ 
+ 
+ [RTB]dis ospf lsdb
+
+	 OSPF Process 1 with Router ID 2.2.2.2
+		 Link State Database 
+
+		         Area: 0.0.0.0
+ Type      LinkState ID    AdvRouter          Age  Len   Sequence   Metric
+ Router    2.2.2.2         2.2.2.2            404  48    80000004       1
+ Router    1.1.1.1         1.1.1.1            397  60    80000008       1
+ Network   192.168.2.1     1.1.1.1            397  32    80000002       0<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>使用 display ip routing-table protocol ospf命令，查看OSPF路由表。可以看到在RTA上已经发现了一条去往3.0网段的路由信息，他的下一条是192.168.2.2，出接口是g0/0/1</p>
+<pre class="line-numbers language-none"><code class="language-none">[RTA]dis ip routing-table protocol ospf
+Route Flags: R - relay, D - download to fib
+------------------------------------------------------------------------------
+Public routing table : OSPF
+         Destinations : 1        Routes : 1        
+
+OSPF routing table status : &lt;Active&gt;
+         Destinations : 1        Routes : 1
+
+Destination/Mask    Proto   Pre  Cost      Flags NextHop         Interface
+
+        2.2.2.2/32  OSPF    10   1           D   192.168.2.2     GigabitEthernet
+0/0/1
+
+OSPF routing table status : &lt;Inactive&gt;
+         Destinations : 0        Routes : 0<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>4.PC1去Ping PC2,检验设备的连通性</p>
+<pre class="line-numbers language-none"><code class="language-none">PC&gt;ping 192.168.3.1
+
+Ping 192.168.3.1: 32 data bytes, Press Ctrl_C to break
+Request timeout!
+From 192.168.3.1: bytes=32 seq=2 ttl=126 time=31 ms
+From 192.168.3.1: bytes=32 seq=3 ttl=126 time=16 ms
+From 192.168.3.1: bytes=32 seq=4 ttl=126 time=16 ms
+From 192.168.3.1: bytes=32 seq=5 ttl=126 time=15 ms
+
+--- 192.168.3.1 ping statistics ---
+  5 packet(s) transmitted
+  4 packet(s) received
+  20.00% packet loss
+  round-trip min/avg/max = 0/19/31 ms<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
 
                 
             </div>
@@ -1543,7 +1639,7 @@ Destination/Mask    Proto   Pre  Cost      Flags NextHop         Interface
             <br>
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">137.7k</span>&nbsp;字&nbsp;|
+                class="white-color">140.8k</span>&nbsp;字&nbsp;|
             
             
             
@@ -1894,13 +1990,13 @@ $(function () {
 document.addEventListener("visibilitychange", function () { document.hidden ? (document.title = "Σ(っ °Д °;)っ喔哟，崩溃啦！", clearTimeout(st)) : (document.title = "φ(゜▽゜*)♪咦，又好了！", st = setTimeout(function () { document.title = OriginTitile }, 3e3)) }) </script>
 
 
-<script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"model":{"jsonPath":"/live2dw/assets/hijiki.model.json"},"display":{"position":"right","width":280,"height":280},"mobile":{"show":false},"log":false,"pluginJsPath":"lib/","pluginModelPath":"assets/","pluginRootPath":"live2dw/","tagMode":false});</script><script>
+<script>
             window.imageLazyLoadSetting = {
                 isSPA: false,
                 preloadRatio: 1,
                 processImages: null,
             };
-        </script><script>window.addEventListener("load",function(){var t=/\.(gif|jpg|jpeg|tiff|png)$/i,r=/^data:image\/[a-z]+;base64,/;Array.prototype.slice.call(document.querySelectorAll("img[data-original]")).forEach(function(a){var e=a.parentNode;"A"===e.tagName&&(e.href.match(t)||e.href.match(r))&&(e.href=a.dataset.original)})});</script><script>!function(n){n.imageLazyLoadSetting.processImages=o;var e=n.imageLazyLoadSetting.isSPA,i=n.imageLazyLoadSetting.preloadRatio||1,r=Array.prototype.slice.call(document.querySelectorAll("img[data-original]"));function o(){e&&(r=Array.prototype.slice.call(document.querySelectorAll("img[data-original]")));for(var t,a=0;a<r.length;a++)0<=(t=(t=r[a]).getBoundingClientRect()).bottom&&0<=t.left&&t.top<=(n.innerHeight*i||document.documentElement.clientHeight*i)&&function(){var t,e,n,i,o=r[a];t=o,e=function(){r=r.filter(function(t){return o!==t})},n=new Image,i=t.getAttribute("data-original"),n.onload=function(){t.src=i,e&&e()},t.src!==i&&(n.src=i)}()}o(),n.addEventListener("scroll",function(){var t,e;t=o,e=n,clearTimeout(t.tId),t.tId=setTimeout(function(){t.call(e)},500)})}(this);</script></body>
+        </script><script>window.addEventListener("load",function(){var t=/\.(gif|jpg|jpeg|tiff|png)$/i,r=/^data:image\/[a-z]+;base64,/;Array.prototype.slice.call(document.querySelectorAll("img[data-original]")).forEach(function(a){var e=a.parentNode;"A"===e.tagName&&(e.href.match(t)||e.href.match(r))&&(e.href=a.dataset.original)})});</script><script>!function(n){n.imageLazyLoadSetting.processImages=o;var e=n.imageLazyLoadSetting.isSPA,i=n.imageLazyLoadSetting.preloadRatio||1,r=Array.prototype.slice.call(document.querySelectorAll("img[data-original]"));function o(){e&&(r=Array.prototype.slice.call(document.querySelectorAll("img[data-original]")));for(var t,a=0;a<r.length;a++)0<=(t=(t=r[a]).getBoundingClientRect()).bottom&&0<=t.left&&t.top<=(n.innerHeight*i||document.documentElement.clientHeight*i)&&function(){var t,e,n,i,o=r[a];t=o,e=function(){r=r.filter(function(t){return o!==t})},n=new Image,i=t.getAttribute("data-original"),n.onload=function(){t.src=i,e&&e()},t.src!==i&&(n.src=i)}()}o(),n.addEventListener("scroll",function(){var t,e;t=o,e=n,clearTimeout(t.tId),t.tId=setTimeout(function(){t.call(e)},500)})}(this);</script><script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"model":{"jsonPath":"/live2dw/assets/hijiki.model.json"},"display":{"position":"right","width":280,"height":280},"mobile":{"show":false},"log":false,"pluginJsPath":"lib/","pluginModelPath":"assets/","pluginRootPath":"live2dw/","tagMode":false});</script></body>
 
 </html>
 

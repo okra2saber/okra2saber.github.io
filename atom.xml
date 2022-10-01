@@ -6,7 +6,7 @@
   <link href="https://uprightokra.github.io/atom.xml" rel="self"/>
   
   <link href="https://uprightokra.github.io/"/>
-  <updated>2022-09-27T07:52:34.326Z</updated>
+  <updated>2022-10-01T07:55:18.195Z</updated>
   <id>https://uprightokra.github.io/</id>
   
   <author>
@@ -15,6 +15,70 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>多区域OSPF基本配置</title>
+    <link href="https://uprightokra.github.io/2022-10-01-shi-yan-ensp-duo-qu-yu-ospf-ji-ben-pei-zhi.html"/>
+    <id>https://uprightokra.github.io/2022-10-01-shi-yan-ensp-duo-qu-yu-ospf-ji-ben-pei-zhi.html</id>
+    <published>2022-10-01T07:55:18.000Z</published>
+    <updated>2022-10-01T07:55:18.195Z</updated>
+    
+    
+    
+    
+    
+  </entry>
+  
+  <entry>
+    <title>实验ensp-VLAN-Hybrid的配置</title>
+    <link href="https://uprightokra.github.io/2022-09-29-shi-yan-ensp-vlan-hybrid-de-pei-zhi.html"/>
+    <id>https://uprightokra.github.io/2022-09-29-shi-yan-ensp-vlan-hybrid-de-pei-zhi.html</id>
+    <published>2022-09-29T01:12:07.000Z</published>
+    <updated>2022-10-01T06:57:57.174Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h1 id=&quot;VLAN-Hybrid的配置&quot;&gt;&lt;a href=&quot;#VLAN-Hybrid的配置&quot; class=&quot;headerlink&quot;</summary>
+        
+      
+    
+    
+    
+    <category term="ensp实验" scheme="https://uprightokra.github.io/categories/ensp%E5%AE%9E%E9%AA%8C/"/>
+    
+    
+    <category term="ensp实验" scheme="https://uprightokra.github.io/tags/ensp%E5%AE%9E%E9%AA%8C/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>OSPF-DR与BDR详解</title>
+    <link href="https://uprightokra.github.io/2022-09-27-ospf-dr-yu-bdr-xiang-jie.html"/>
+    <id>https://uprightokra.github.io/2022-09-27-ospf-dr-yu-bdr-xiang-jie.html</id>
+    <published>2022-09-27T14:21:45.000Z</published>
+    <updated>2022-09-27T14:28:07.681Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h3 id=&quot;一、DR简介：&quot;&gt;&lt;a href=&quot;#一、DR简介：&quot; class=&quot;headerlink&quot; title=&quot;一、DR简介：&quot;&gt;&lt;/a&gt;一、DR简介：&lt;/h3&gt;&lt;p&gt;一个广播性、多接入网络中的指定路由器（Designated Router）&lt;/p&gt;
+&lt;h3</summary>
+        
+      
+    
+    
+    
+    <category term="DR&amp;BDR" scheme="https://uprightokra.github.io/categories/DR-BDR/"/>
+    
+    
+    <category term="网络基础" scheme="https://uprightokra.github.io/tags/%E7%BD%91%E7%BB%9C%E5%9F%BA%E7%A1%80/"/>
+    
+  </entry>
   
   <entry>
     <title>loopback本地回环接口</title>
@@ -46,7 +110,7 @@
     <link href="https://uprightokra.github.io/2022-09-27-shi-yan-ensp-ospf-pei-zhi-shi-yan.html"/>
     <id>https://uprightokra.github.io/2022-09-27-shi-yan-ensp-ospf-pei-zhi-shi-yan.html</id>
     <published>2022-09-27T01:31:47.000Z</published>
-    <updated>2022-09-27T07:47:48.099Z</updated>
+    <updated>2022-09-27T14:07:27.694Z</updated>
     
     
       
@@ -71,7 +135,7 @@
     <link href="https://uprightokra.github.io/2022-09-25-shu-tong-07-ospf.html"/>
     <id>https://uprightokra.github.io/2022-09-25-shu-tong-07-ospf.html</id>
     <published>2022-09-25T08:40:58.000Z</published>
-    <updated>2022-09-27T01:20:06.764Z</updated>
+    <updated>2022-09-27T14:20:17.459Z</updated>
     
     
       
@@ -440,81 +504,6 @@
     
     
     <category term="软件教程" scheme="https://uprightokra.github.io/tags/%E8%BD%AF%E4%BB%B6%E6%95%99%E7%A8%8B/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>数通 04-命令行配置基础</title>
-    <link href="https://uprightokra.github.io/2022-08-12-shu-tong-04-ming-ling-xing-pei-zhi-ji-chu.html"/>
-    <id>https://uprightokra.github.io/2022-08-12-shu-tong-04-ming-ling-xing-pei-zhi-ji-chu.html</id>
-    <published>2022-08-12T13:51:58.000Z</published>
-    <updated>2022-09-27T01:17:50.505Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;h2 id=&quot;1-路由器交换机介绍&quot;&gt;&lt;a href=&quot;#1-路由器交换机介绍&quot; class=&quot;headerlink&quot; title=&quot;1.  路由器交换机介绍&quot;&gt;&lt;/a&gt;1. </summary>
-        
-      
-    
-    
-    
-    <category term="网络基础" scheme="https://uprightokra.github.io/categories/%E7%BD%91%E7%BB%9C%E5%9F%BA%E7%A1%80/"/>
-    
-    
-    <category term="网络基础" scheme="https://uprightokra.github.io/tags/%E7%BD%91%E7%BB%9C%E5%9F%BA%E7%A1%80/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>HISP二级 02网络安全监管</title>
-    <link href="https://uprightokra.github.io/2022-08-01-nisp-er-ji-02-wang-luo-an-quan-jian-guan.html"/>
-    <id>https://uprightokra.github.io/2022-08-01-nisp-er-ji-02-wang-luo-an-quan-jian-guan.html</id>
-    <published>2022-08-01T08:10:40.000Z</published>
-    <updated>2022-08-06T05:43:30.366Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;h1 id=&quot;网络安全监管&quot;&gt;&lt;a href=&quot;#网络安全监管&quot; class=&quot;headerlink&quot; title=&quot;网络安全监管&quot;&gt;&lt;/a&gt;&lt;center&gt;网络安全监管&lt;/center&gt;&lt;/h1&gt;&lt;h2 id=&quot;网络安全法律体系建设&quot;&gt;&lt;a</summary>
-        
-      
-    
-    
-    
-    <category term="NISP二级" scheme="https://uprightokra.github.io/categories/NISP%E4%BA%8C%E7%BA%A7/"/>
-    
-    
-    <category term="NISP二级" scheme="https://uprightokra.github.io/tags/NISP%E4%BA%8C%E7%BA%A7/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>NISP二级 01信息安全保障基础</title>
-    <link href="https://uprightokra.github.io/2022-08-01-nisp-er-ji-01-xin-xi-an-quan-bao-zhang-ji-chu.html"/>
-    <id>https://uprightokra.github.io/2022-08-01-nisp-er-ji-01-xin-xi-an-quan-bao-zhang-ji-chu.html</id>
-    <published>2022-08-01T07:16:10.000Z</published>
-    <updated>2022-08-01T08:59:10.343Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;h1 id=&quot;信息安全保障基础&quot;&gt;&lt;a href=&quot;#信息安全保障基础&quot; class=&quot;headerlink&quot; title=&quot;信息安全保障基础&quot;&gt;&lt;/a&gt;&lt;center&gt;信息安全保障基础&lt;/center&gt;&lt;/h1&gt;&lt;h2 id=&quot;信息安全的定义&quot;&gt;&lt;a</summary>
-        
-      
-    
-    
-    
-    <category term="NISP二级" scheme="https://uprightokra.github.io/categories/NISP%E4%BA%8C%E7%BA%A7/"/>
-    
-    
-    <category term="NISP二级" scheme="https://uprightokra.github.io/tags/NISP%E4%BA%8C%E7%BA%A7/"/>
     
   </entry>
   
