@@ -555,21 +555,21 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2022-09-27
+                    2022-10-01
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    1.5k
+                    2.6k
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    5 分
+                    9 分
                 </div>
                 
 
@@ -656,6 +656,63 @@
 <img src="https://img-blog.csdnimg.cn/cd7067b17dc74e46beea354fa2212bef.gif" data-original="https://img-blog.csdnimg.cn/5ca3eebd92b0421389ab211a63dcb61a.png" style="zoom:33%;">
 
 <img src="https://img-blog.csdnimg.cn/cd7067b17dc74e46beea354fa2212bef.gif" data-original="https://img-blog.csdnimg.cn/d88c09c33a564b78ac32063f01531ebe.png" style="zoom: 50%;">
+
+
+
+<h3 id="9-OSPF的4种路由类型"><a href="#9-OSPF的4种路由类型" class="headerlink" title="9.OSPF的4种路由类型"></a>9.OSPF的4种路由类型</h3><p><strong>1、区域内路由器</strong>                </p>
+<p>​      Internal Router    </p>
+<p>​      该类设备的所有接口都属于同一个OSPF区域。    </p>
+<p><strong>2、区域边界路由器ABR</strong>                </p>
+<p>​      Area Border Router    </p>
+<p>​      该类设备可以同时属于两个以上的区域，但其中一个必须是骨干区域。    </p>
+<p>​      ABR用来连接骨干区域和非骨干区域，它与骨干区域之间既可以是物理连接，也可以是逻辑上的连接。    </p>
+<p><strong>3、骨干路由器</strong>                </p>
+<p>​      Backbone Router    </p>
+<p>​      该类设备至少有一个接口属于骨干区域。    </p>
+<p>​      所有的ABR和位于Area0的内部设备都是骨干路由器。    </p>
+<p><strong>4、自治系统边界路由器ASBR</strong>                </p>
+<p>​      AS Boundary Router    </p>
+<p>​      与其他AS交换路由信息的设备称为ASBR。    </p>
+<p>​      ASBR并不一定位于AS的边界，它可能是区域内设备，也可能是ABR。只要一台OSPF设备引入了外部路由的信息，它就成为ASBR。  </p>
+<h3 id="习题"><a href="#习题" class="headerlink" title="习题"></a>习题</h3><p>1、两台空配置的 MSR 路由器通过图示的方式连接，通过配置 IP 地址，两台路由器的 GE0/0 接口可以互通。如今分别在两台路由器上增加如下配置： </p>
+<p><img src="https://img-blog.csdnimg.cn/cd7067b17dc74e46beea354fa2212bef.gif" data-original="file:///C:/Users/Okra/AppData/Local/Temp/msohtmlclip1/01/clip_image002.png" alt="img"></p>
+<p>RTA：</p>
+<p>[RTA]ospf </p>
+<p>[RTA-ospf-1]area 0 </p>
+<p>[RTA-ospf-1-area-0.0.0.0]network 192.168.1.1 0.0.0.3 </p>
+<p>[RTA-GigabitEthernet0/0]ospf dr-priority 2 </p>
+<p>RTB：</p>
+<p>[RTB]ospf </p>
+<p>[RTB-ospf-1]area 0 </p>
+<p>[RTB-ospf-1-area-0.0.0.0]network 192.168.1.2 0.0.0.3 </p>
+<p>[RTB-GigabitEthernet0/0]ospf dr-priority 2</p>
+<p>那么在 OSPF邻居状态稳定后，_<strong>B</strong>_____。</p>
+<p>A. OSPF 接口优先级相同，在 192.168.1.0/30网段上不进行 OSPF DR选举 </p>
+<p>B. 两台路由器中，一台为DR，一台为 BDR </p>
+<p>C. 两台路由器中，一台为DR，一台为DRother </p>
+<p>D. 两台路由器的邻居状态分别为FULL、2-Way </p>
+<p>实验验证，并截图显示路由器的邻居信息放入下表中：</p>
+<p>​     <img src="https://img-blog.csdnimg.cn/cd7067b17dc74e46beea354fa2212bef.gif" data-original="file:///C:/Users/Okra/AppData/Local/Temp/msohtmlclip1/01/clip_image004.jpg" alt="img">  <img src="https://img-blog.csdnimg.cn/cd7067b17dc74e46beea354fa2212bef.gif" data-original="file:///C:/Users/Okra/AppData/Local/Temp/msohtmlclip1/01/clip_image006.png" alt="img">  </p>
+<p>2、三台 MSR 路由器通过图示的方式连接，192.168.1.0/30 为 RTA 和 RTB 之间的互连网段， 10.10.10.0/30 是 RTB 和 RTC 之间的互连网段。在三台路由器的互连接口上都运行了 OSPF 而且都属于 Area 0，同时在 Area0 里都只发布了三台路由器互连接口网段。假设 OSPF 运行正常，OSPF 邻居建立成功，那么**__**<strong>ACD_</strong>___。 </p>
+<p><img src="https://img-blog.csdnimg.cn/cd7067b17dc74e46beea354fa2212bef.gif" data-original="file:///C:/Users/Okra/AppData/Local/Temp/msohtmlclip1/01/clip_image007.png" alt="说明: 298.png"></p>
+<p>A. 如果三台路由器之间的链路都是以太网，那么网络中至少有两个 DR </p>
+<p>B. 如果三台路由器之间的链路都是以太网，那么网络中可能只有一个 DR </p>
+<p>C. 三台路由器的 OSPF 邻居状态稳定后，三台路由器有同样的 LSDB </p>
+<p>D. RTB 的路由表中没有 OSPF路由 </p>
+<p>实验验证，并截图显示路由器的邻居信息放入下表中：</p>
+<p>  <img src="https://img-blog.csdnimg.cn/cd7067b17dc74e46beea354fa2212bef.gif" data-original="file:///C:/Users/Okra/AppData/Local/Temp/msohtmlclip1/01/clip_image009.jpg" alt="img">     <img src="https://img-blog.csdnimg.cn/cd7067b17dc74e46beea354fa2212bef.gif" data-original="file:///C:/Users/Okra/AppData/Local/Temp/msohtmlclip1/01/clip_image011.jpg" alt="img">     <img src="https://img-blog.csdnimg.cn/cd7067b17dc74e46beea354fa2212bef.gif" data-original="file:///C:/Users/Okra/AppData/Local/Temp/msohtmlclip1/01/clip_image013.jpg" alt="img">  <img src="https://img-blog.csdnimg.cn/cd7067b17dc74e46beea354fa2212bef.gif" data-original="file:///C:/Users/Okra/AppData/Local/Temp/msohtmlclip1/01/clip_image014.png" alt="img">  <img src="https://img-blog.csdnimg.cn/cd7067b17dc74e46beea354fa2212bef.gif" data-original="file:///C:/Users/Okra/AppData/Local/Temp/msohtmlclip1/01/clip_image016.jpg" alt="img">  </p>
+<p>3、三台 MSR 路由器通过图示的方式连接。三台路由器都属于 OSPFArea0，同时在 Area0 里通过 network 命令发布了三台路由器的互连网段。在 RTC 上，网段 NET-1 也通过 network 命令在 OSPFArea0 中发布了。三台路由器之间的 OSPF Cost 如图所示。目前三台路由器的邻居状态稳定，那么____<strong>AB</strong>__。</p>
+<p><img src="https://img-blog.csdnimg.cn/cd7067b17dc74e46beea354fa2212bef.gif" data-original="file:///C:/Users/Okra/AppData/Local/Temp/msohtmlclip1/01/clip_image017.png" alt="说明: 299.png"></p>
+<p>A. 在 RTA 的路由表只有一条到达 NET-1 网段的 OSPF 路由</p>
+<p>B. 在 RTB 的路由表有两条去往目的网段 NET-1 的 OSPF 路由 </p>
+<p>C. 对 RTB 而言，到达目的网段 NET-1 会优先选择 RTB—&gt;RTC 路径 </p>
+<p>D. 网络状态稳定后，在接下来的 45 分钟之内，网络上 OSPF 邻居之间只有 Hello 报文传递</p>
+<p>4、在四台 MSR 路由器之间运行 OSPF 并划分区域，其连接以及划分方式如图。已知网络中所有链路的OSPF Cost 值都为10，那么关于此图描述正确的是_**_**<strong>D_</strong>__。</p>
+<p><img src="https://img-blog.csdnimg.cn/cd7067b17dc74e46beea354fa2212bef.gif" data-original="file:///C:/Users/Okra/AppData/Local/Temp/msohtmlclip1/01/clip_image019.png" alt="说明: 435.png"></p>
+<p>A. 网络中四台路由器都是ABR(Area Border Router)</p>
+<p>B.Area 0之间的链路故障后，RTA访问RTB 的路径为 RTA-&gt;RTD-&gt;RTC-&gt;RTB </p>
+<p>C. RTA访问RTC有两条等值路径，分别为 RTA-&gt;RTB-&gt;RTC和 RTA-&gt;RTD-RTC </p>
+<p>D. RTD访问RTB 会优先选择 RTD-&gt;RTA-&gt;RTB路径 </p>
 
                 
             </div>
@@ -1547,7 +1604,7 @@
             <br>
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">140.8k</span>&nbsp;字&nbsp;|
+                class="white-color">143.4k</span>&nbsp;字&nbsp;|
             
             
             

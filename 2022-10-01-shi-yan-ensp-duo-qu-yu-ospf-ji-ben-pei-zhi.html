@@ -4,7 +4,7 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="多区域OSPF基本配置, Okraの筆記">
+    <meta name="keywords" content="实验ensp-多区域OSPF基本配置, Okraの筆記">
     <meta name="description" content="">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -16,7 +16,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>多区域OSPF基本配置 | Okraの筆記</title>
+    <title>实验ensp-多区域OSPF基本配置 | Okraの筆記</title>
     <link rel="icon" type="image/png" href="https://img-blog.csdnimg.cn/c085cffaa1ae4841b06ba367673ff753.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -398,12 +398,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/4.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('https://img-blog.csdnimg.cn/4aa36e431ab84089a57b83c5b025d9ac.jpeg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">多区域OSPF基本配置</h1>
+                    <h1 class="description center-align post-title">实验ensp-多区域OSPF基本配置</h1>
                 </div>
             </div>
         </div>
@@ -521,12 +521,25 @@
             <div class="row tag-cate">
                 <div class="col s7">
                     
-                          <div class="article-tag">
-                            <span class="chip bg-color">无标签</span>
-                          </div>
+                    <div class="article-tag">
+                        
+                            <a href="/tags/ensp%E5%AE%9E%E9%AA%8C/">
+                                <span class="chip bg-color">ensp实验</span>
+                            </a>
+                        
+                    </div>
                     
                 </div>
                 <div class="col s5 right-align">
+                    
+                    <div class="post-cate">
+                        <i class="fas fa-bookmark fa-fw icon-category"></i>
+                        
+                            <a href="/categories/ensp%E5%AE%9E%E9%AA%8C/" class="post-category">
+                                ensp实验
+                            </a>
+                        
+                    </div>
                     
                 </div>
             </div>
@@ -549,14 +562,14 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    0
+                    1.1k
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    1 分
+                    5 分
                 </div>
                 
 
@@ -584,7 +597,113 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                
+                <h3 id="拓扑图"><a href="#拓扑图" class="headerlink" title="拓扑图"></a>拓扑图</h3><p><img src="https://img-blog.csdnimg.cn/cd7067b17dc74e46beea354fa2212bef.gif" data-original="https://img-blog.csdnimg.cn/5324693a2ea5434bacc77e57f4f02326.png"></p>
+<h3 id="实验步骤"><a href="#实验步骤" class="headerlink" title="实验步骤"></a>实验步骤</h3><h4 id="步骤一：搭建实验环境并完成基本配置"><a href="#步骤一：搭建实验环境并完成基本配置" class="headerlink" title="步骤一：搭建实验环境并完成基本配置"></a>步骤一：搭建实验环境并完成基本配置</h4><h4 id="步骤二：OSPF-基本配置"><a href="#步骤二：OSPF-基本配置" class="headerlink" title="步骤二：OSPF 基本配置"></a>步骤二：OSPF 基本配置</h4><p><strong>RTA 的两个接口都属于 OSPF 区域 0，RTB 的两个接口分别属于 OSPF 区域 0 和区域 1，RTC 的两个接口都属于 OSPF 区域 1。依据该区域划分完成基本 OSPF 配置。在 RTA 完成基本 OSPF 配置，并在相关网段使能 OSPF，其完整命令为</strong></p>
+<pre class="line-numbers language-none"><code class="language-none">[RTA]router id 1.1.1.1 
+
+[RTA]ospf 1
+
+[RTA-ospf-1]area 0.0.0.0
+
+[RTA-ospf-1-area-0.0.0.0]network 1.1.1.1 0.0.0.0
+
+[RTA-ospf-1-area-0.0.0.0]network 10.0.0.0 0.0.0.255
+
+[RTA-ospf-1-area-0.0.0.0]network 20.0.0.0 0.0.0.255<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>在RTB完成基本OSPF配置，并配置正确的区域以及在相关网段使能 OSPF，其完整命令为：</p>
+<pre class="line-numbers language-none"><code class="language-none">[RTB]router id 2.2.2.2 
+
+[RTB]ospf 1
+
+[RTB-ospf-1]area 0.0.0.0
+
+[RTB-ospf-1-area-0.0.0.0]network 2.2.2.2 0.0.0.0
+
+[RTB-ospf-1-area-0.0.0.0]network 20.0.0.0 0.0.0.255 [RTB-ospf-1-area-0.0.0.0]quit
+
+[RTB-ospf-1-area]area 1
+
+[RTB-ospf-1-area-0.0.0.1]network 30.0.0.0 0.0.0.255<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p> 在 RTC 上完成基本 OSPF 配置，并在相关网段使能 OSPF，其完整命令为：</p>
+<pre class="line-numbers language-none"><code class="language-none">[RTC]router id 3.3.3.3 
+
+[RTC]ospf 1
+
+[RTC-ospf-1]area 1
+
+[RTC-ospf-1-area-0.0.0.1]network 3.3.3.3 0.0.0.0
+
+[RTC-ospf-1-area-0.0.0.1]network 10.1.0.0 0.0.0.255
+
+[RTC-ospf-1-area-0.0.0.1]network 30.0.0.0 0.0.0.255<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h4 id="步骤三：检查路由器-OSPF-邻居状态及路由表"><a href="#步骤三：检查路由器-OSPF-邻居状态及路由表" class="headerlink" title="步骤三：检查路由器 OSPF 邻居状态及路由表"></a>步骤三：检查路由器 OSPF 邻居状态及路由表</h4><pre class="line-numbers language-none"><code class="language-none">[Huawei]dis ospf peer 
+
+	 OSPF Process 1 with Router ID 2.2.2.2
+		 Neighbors 
+
+ Area 0.0.0.0 interface 20.0.0.2(GigabitEthernet0/0/0)'s neighbors
+ Router ID: 1.1.1.1          Address: 20.0.0.1        
+   State: Full  Mode:Nbr is  Slave  Priority: 1
+   DR: 20.0.0.1  BDR: 20.0.0.2  MTU: 0    
+   Dead timer due in 40  sec 
+   Retrans timer interval: 5 
+   Neighbor is up for 00:02:20     
+   Authentication Sequence: [ 0 ] 
+
+		 Neighbors 
+
+ Area 0.0.0.1 interface 30.0.0.1(GigabitEthernet0/0/1)'s neighbors
+ Router ID: 3.3.3.3          Address: 30.0.0.2        
+   State: Full  Mode:Nbr is  Master  Priority: 1
+   DR: 30.0.0.1  BDR: 30.0.0.2  MTU: 0    
+   Dead timer due in 35  sec 
+   Retrans timer interval: 5 
+   Neighbor is up for 00:00:30     
+   Authentication Sequence: [ 0 ] 
+
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>​        在 RTB 上使用**(21)** <strong>display ospf peer</strong>   查看路由器 OSPF 邻居状态，根据输出信息可以得知， 在 Area 0.0.0.0 内，RTB 的 G0/0 接口与 RTA 配置 IP 地址为**(22)**  <strong>20.0.0.1</strong>        的接口建立邻居关系， 该邻居所在的网段为 20.0.0.0/24，RTB 配置 IP 地址为 20.0.0.2 的接口为该网段的**(23)**  <strong>DR</strong>   路由器；在 Area 0.0.0.1 内，RTB 的 G0/1 接口与 RTC 配置 IP 地址为**(24)**  <strong>30.0.01</strong>       的接口建立邻居关系， 该邻居所在的网段为 30.0.0.0/24，RTC 配置IP 地址为 30.0.0.1 的接口为该网段的**(25)**   <strong>DR</strong>  路由器。</p>
+<p>​        在 RTB 上使用**(26)**  <strong>display ospf routing</strong>            命令查看路由器 OSPF 路由表，使用**(27)**   <strong>display ip routing-table</strong>       命令查看路由器全局路由表。</p>
+<pre class="line-numbers language-none"><code class="language-none">[Huawei]dis ospf routing 
+
+	 OSPF Process 1 with Router ID 2.2.2.2
+		  Routing Tables 
+
+ Routing for Network 
+ Destination        Cost  Type       NextHop         AdvRouter       Area
+ 20.0.0.0/24        1     Transit    20.0.0.2        2.2.2.2         0.0.0.0
+ 30.0.0.0/24        1     Transit    30.0.0.1        2.2.2.2         0.0.0.1
+ 1.1.1.1/32         1     Stub       20.0.0.1        1.1.1.1         0.0.0.0
+ 10.0.0.0/24        2     Stub       20.0.0.1        1.1.1.1         0.0.0.0
+ 10.1.0.0/24        2     Stub       30.0.0.2        3.3.3.3         0.0.0.1
+
+ Total Nets: 5  
+ Intra Area: 5  Inter Area: 0  ASE: 0  NSSA: 0 <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+
+
+<h4 id="步骤四：检查网络连通性"><a href="#步骤四：检查网络连通性" class="headerlink" title="步骤四：检查网络连通性"></a>步骤四：检查网络连通性</h4><p>​     在 ClientA 上 ping ClientB(IP 地址为 10.1.0.1)，其结果是**(28)**  <strong>可以</strong>  可以/不可以互通； 在 ClientB 上 ping ClientA(IP 地址为 10.0.0.1)，其结果是**(29)**  <strong>可以</strong>  可以/不可以互通。</p>
+<pre class="line-numbers language-none"><code class="language-none">
+PC&gt;ping 10.1.0.1
+
+Ping 10.1.0.1: 32 data bytes, Press Ctrl_C to break
+Request timeout!
+From 10.1.0.1: bytes=32 seq=2 ttl=125 time=32 ms
+From 10.1.0.1: bytes=32 seq=3 ttl=125 time=31 ms
+From 10.1.0.1: bytes=32 seq=4 ttl=125 time=16 ms
+From 10.1.0.1: bytes=32 seq=5 ttl=125 time=31 ms
+
+--- 10.1.0.1 ping statistics ---
+  5 packet(s) transmitted
+  4 packet(s) received
+  20.00% packet loss
+  round-trip min/avg/max = 0/27/32 ms<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+
                 
             </div>
             <hr/>
@@ -647,7 +766,11 @@
                 <div class="post-meta__tag-list" style="display: inline-block;">
                     
                         <div class="article-tag">
-                            <span class="chip bg-color">无标签</span>
+                            
+                                <a href="/tags/ensp%E5%AE%9E%E9%AA%8C/">
+                                    <span class="chip bg-color">ensp实验</span>
+                                </a>
+                            
                         </div>
                     
                 </div>
@@ -1145,18 +1268,16 @@
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="far fa-dot-circle"></i>&nbsp;本篇
-            </div>
+                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
-                <a href="/2022-10-01-shi-yan-ensp-duo-qu-yu-ospf-ji-ben-pei-zhi.html">
+                <a href="/2022-10-01-shi-yan-ensp-san-ceng-tong-xin-guo-cheng-jie-xi.html">
                     <div class="card-image">
                         
+                        <img src="https://img-blog.csdnimg.cn/cd7067b17dc74e46beea354fa2212bef.gif" data-original="https://img-blog.csdnimg.cn/4aa36e431ab84089a57b83c5b025d9ac.jpeg" class="responsive-img" alt="实验ensp-三层通信过程解析">
                         
-                        <img src="https://img-blog.csdnimg.cn/cd7067b17dc74e46beea354fa2212bef.gif" data-original="/medias/featureimages/4.jpg" class="responsive-img" alt="多区域OSPF基本配置">
-                        
-                        <span class="card-title">多区域OSPF基本配置</span>
+                        <span class="card-title">实验ensp-三层通信过程解析</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -1166,18 +1287,29 @@
                         
                     </div>
                     <div class="publish-info">
-                            <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2022-10-01
-                            </span>
+                        <span class="publish-date">
+                            <i class="far fa-clock fa-fw icon-date"></i>2022-10-01
+                        </span>
                         <span class="publish-author">
                             
-                            <i class="fas fa-user fa-fw"></i>
-                            UprightOkra
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/ensp%E5%AE%9E%E9%AA%8C/" class="post-category">
+                                    ensp实验
+                                </a>
+                            
                             
                         </span>
                     </div>
                 </div>
-
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/ensp%E5%AE%9E%E9%AA%8C/">
+                        <span class="chip bg-color">ensp实验</span>
+                    </a>
+                    
+                </div>
                 
             </div>
         </div>
@@ -1462,7 +1594,7 @@
             <br>
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">140.8k</span>&nbsp;字&nbsp;|
+                class="white-color">143.4k</span>&nbsp;字&nbsp;|
             
             
             
