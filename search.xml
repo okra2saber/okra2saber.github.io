@@ -4,6 +4,56 @@
   
     
     <entry>
+      <title>数通 09-RSTP</title>
+      <link href="/2022-10-02-shu-tong-09-rstp.html"/>
+      <url>/2022-10-02-shu-tong-09-rstp.html</url>
+      
+        <content type="html"><![CDATA[]]></content>
+      
+      
+      <categories>
+          
+          <category> 网络基础 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> RSTP </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>数通 08-STP</title>
+      <link href="/2022-10-01-shu-tong-08-stp.html"/>
+      <url>/2022-10-01-shu-tong-08-stp.html</url>
+      
+        <content type="html"><![CDATA[<h1 id="STP-生成树"><a href="#STP-生成树" class="headerlink" title="STP 生成树"></a><strong><center>STP 生成树</center></strong></h1><h2 id="技术背景："><a href="#技术背景：" class="headerlink" title="技术背景："></a>技术背景：</h2><p><img src="https://img-blog.csdnimg.cn/5f7508b9a2804b7a96f42abfbc137988.png"></p><p>环路带来的问题：</p><p><img src="https://img-blog.csdnimg.cn/7c72dca549ea440f8f21405517acb616.png"></p><p>生成树协议是在网络中部署生成树后，交换机之间会进行生成树协议报文的交互并进行无环拓扑计算，最终将网络中的某个接口进行堵塞（block）从而打破环路。</p><p><img src="https://img-blog.csdnimg.cn/ecf770f551b248f4b048ecd6fb13049e.png"></p><p>交换机上运行的生成树协议会持续监控网络的拓扑结构，当网络拓扑结构发生变化时，生成树可以感知这些变化，并自动做出调整。因此，生成树既能解决二层环路问题，也能为网络的冗余性提供一种方案。</p><h2 id="二层环路以及三层环路"><a href="#二层环路以及三层环路" class="headerlink" title="二层环路以及三层环路"></a>二层环路以及三层环路</h2><p><img src="https://img-blog.csdnimg.cn/96dc480f6f724481ba4c0259e0b3825b.png"></p><pre class="line-numbers language-none"><code class="language-none">相对于二层环路来说三层环路危害更小，IP报文在经过一定次数的转发TTL值会变为0，该报文就会被丢弃。而二层环路会无休止的复制转发报文，不会丢弃报文。<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre><h2 id="生成树协议在园区网络中的应用"><a href="#生成树协议在园区网络中的应用" class="headerlink" title="生成树协议在园区网络中的应用"></a>生成树协议在园区网络中的应用</h2><p><img src="https://img-blog.csdnimg.cn/7032a48bec31423a9255b3a823917fe2.png"></p><h2 id="stp基本概念："><a href="#stp基本概念：" class="headerlink" title="stp基本概念："></a>stp基本概念：</h2><h5 id="1-桥id"><a href="#1-桥id" class="headerlink" title="1.桥id"></a><strong>1.桥id</strong></h5><p>每一台运行stp的交换机都拥有一个唯一的桥id，桥id一共8byte，包含16bit的<font color="red"><strong>桥优先级</strong></font>和48bit的<font color="red"><strong>桥MAC地址</strong></font>，其中桥优先级占据桥id的高16bit，而mac地址占据其余的48bit。</p><h5 id="2-根桥"><a href="#2-根桥" class="headerlink" title="2.根桥"></a>2.根桥</h5><p>STP的主要作用之一是在整个交换网路中计算出一颗无环的“树”，这棵树一旦生成，网络中的无环拓扑也就形成了。对于这棵树而言，树根是非常重要的，树根一旦明确了，“树枝”才能沿着网络拓扑进行延展，STP的根桥就是这棵树的树根，树根的角色至关重要，STP的一系列计算均以树根为参考点。当STP开始工作后，第一件事就是在网络中选举出根桥。在一个交换网络中，根桥只会有一个。<br>网络中拥有最小桥ID的交换机将成为根桥。在比较桥id时，首先比的时桥优先级，桥优先级的值最小的交换机将胜出成为根桥，如果桥优先级相等，那摩MAC地址最 小的交换机将成为根桥。<br>华为交换机缺省的桥优先级为32768.可在系统视图下使用<strong>stp priority</strong>命令修改，<font color="red"><strong>桥优先级</strong></font><strong>的取值范围是0~61440，并且必须为4096的倍数，例如0、4096、8192等</strong>。</p><img src="https://img-blog.csdnimg.cn/3c39e79e1bed4645bf947040439e71ec.png" style="zoom: 50%;"><p><font color="blue">可以使用display stp查看哪台交换机是根桥</font></p><pre class="line-numbers language-none"><code class="language-none">[Huawei]dis stp-------[CIST Global Info][Mode MSTP]-------CIST Bridge         :32768.4c1f-cc8e-09b5Config Times        :Hello 2s MaxAge 20s FwDly 15s MaxHop 20Active Times        :Hello 2s MaxAge 20s FwDly 15s MaxHop 20CIST Root/ERPC      :32768.4c1f-cc8e-09b5 / 0//这里显示的就是根桥的桥ipCIST RegRoot/IRPC   :32768.4c1f-cc8e-09b5 / 0//可以看出本交换机的桥ip和根桥的桥ip一致，说明这台交换机就是根桥CIST RootPortId     :0.0BPDU-Protection     :DisabledTC or TCN received  :2TC count per hello  :0STP Converge Mode   :Normal Time since last TC  :0 days 0h:1m:17sNumber of TC        :2Last TC occurred    :Ethernet0/0/2<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre><p><font color="blue">可以使用display int vlan 1查看本交换机的MAC地址</font></p><pre class="line-numbers language-none"><code class="language-none">[Huawei]dis int vlan 1Vlanif1 current state : UPLine protocol current state : DOWNDescription:Route Port,The Maximum Transmit Unit is 1500Internet protocol processing : disabledIP Sending Frames' Format is PKTFMT_ETHNT_2, Hardware address is 4c1f-cc8e-09b5//这里显示的就是桥ipCurrent system time: 2022-10-02 19:44:44-08:00    Input bandwidth utilization  : --    Output bandwidth utilization : --<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre><h5 id="3-开销（Cost）与根路径开销（Root-Path-Cost，RPC）"><a href="#3-开销（Cost）与根路径开销（Root-Path-Cost，RPC）" class="headerlink" title="3.开销（Cost）与根路径开销（Root Path Cost，RPC）"></a>3.开销（Cost）与根路径开销（Root Path Cost，RPC）</h5><p>每一个激活了STP的接口都维护着一个Cost值，接口的Cost主要用于计算RPC，也就是计算到达根的开销。接口的缺省Cost除了与其速率、工作模式有关，还与交换机使用的Stp Cost计算方法有关。华为的交换产品支持3种计算方法，它们分别是IEEE802.1D-1998标准方法、IEEE802.1t标准方法以及华为私有的计算方法。<br>在交换机的系统视图下使用<strong>stp pathcost-standard</strong>命令，可修改Cost计算方法，该命令有3个可选关键字。</p><pre><code>dot1d-1998：IEEE 802.1D-1998标准方法。dot1t：IEEE802.1t标准方法。legacy：华为计算方法。</code></pre><p><img src="https://img-blog.csdnimg.cn/886964f081574b5b85112a92f43aaae4.png"></p><p><strong>注：当然修改交换机Cost计算方法需要非常谨慎，如果确实需要修改，那么需保证交换网络中所有STP设备使用一致的计算方法。</strong><br>接口Cost是一个非常重要的变量，它将影响STP对于链路的优选。在STP的拓扑计算过程中，一个非常重要的环节就是“丈量”交换机某个接口到根桥的“成本”，我们将这个“成本”称为RPC(Root Path Cost，根路径开销)。</p><h5 id="4-接口id（Port-Identification）"><a href="#4-接口id（Port-Identification）" class="headerlink" title="4.接口id（Port Identification）"></a>4.接口id（Port Identification）</h5><p>运行STP的交换机使用接口ID来标识每个接口，接口id主要用于在特定场景下选举指定接口。接口ID长度为16bit，由两部分组成，其中高4bit是接口优先级，低12bit是接口编号。以华为S5700交换机为例，缺省时接口优先级为128，可在接口视图下使用<strong>stp port priority</strong>命令修改，<strong>端口优先级</strong>的取值范围是0~240，并且必须是16的倍数，例如0、16、32等。</p><h2 id="STP的基本操作过程"><a href="#STP的基本操作过程" class="headerlink" title="STP的基本操作过程"></a>STP的基本操作过程</h2><h4 id="STP通过4个步骤来保证网络中不存在二层环路-STP计算过程-："><a href="#STP通过4个步骤来保证网络中不存在二层环路-STP计算过程-：" class="headerlink" title="STP通过4个步骤来保证网络中不存在二层环路(STP计算过程)："></a>STP通过4个步骤来保证网络中不存在二层环路(STP计算过程)：</h4><pre class="line-numbers language-none"><code class="language-none">1、选出根桥：每个交换机运行了stp，有一个桥id，桥id最小的交换机为根桥2、选出根端口：每个非根桥上，选出1个根端口，收到bpdu最优的端口3、选出指定端口：一个接口，发的bpdu，比收到的bpdu，更优，是指定端口4、阻塞其他端口<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre><h5 id="1-在交换机网络中选举一个根桥（Root-Bridge，RB）"><a href="#1-在交换机网络中选举一个根桥（Root-Bridge，RB）" class="headerlink" title="1.在交换机网络中选举一个根桥（Root Bridge，RB）"></a>1.在交换机网络中选举一个根桥（Root Bridge，RB）</h5><p>网络中拥有最小桥ID的交换机将成为根桥。在比较桥id时，首先比的时桥优先级，桥优先级的值最小的交换机将胜出成为根桥，如果桥优先级相等，那摩MAC地址最小的交换机将成为根桥。STP的正常工作依赖于该协议所使用的报文的正常交互，这种报文就是BPDU(Bridge Protocol Data Unit，网桥协议数据单元)。</p><h5 id="2-在每个非根桥上选举一个根接口（Root-Port，RP）"><a href="#2-在每个非根桥上选举一个根接口（Root-Port，RP）" class="headerlink" title="2.在每个非根桥上选举一个根接口（Root Port，RP）"></a>2.在每个非根桥上选举一个根接口（Root Port，RP）</h5><p>在一个交换网络中，除了根桥之外的其他交换机都是非根桥，STP将为每个非根桥选举一个根接口，所谓根接口，实际上是非根桥上所有接口中收到最优BPDU的接口，可以简单地将其理解为交换机在STP树上“朝向”根桥的接口。非根桥可能会有一个或多个接口接入同一个交换网络，STP将会在这些接口中选举并且只会选出一个根接口。在STP收敛完成后，根桥依然会周期性的向网络中发送BPDU，而非根桥则会周期性的在自己的根接口上收到BPDU,并沿着STP树向下游转发。</p><p>使用display stp brief命令可以确定交换机的根接口</p><pre class="line-numbers language-none"><code class="language-none">[Huawei]dis stp brief MSTID  Port                        Role  STP State     Protection   0    Ethernet0/0/1               ROOT  FORWARDING      NONE//root 就是RP   0    Ethernet0/0/2               ALTE  DISCARDING      NONE<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre><h5 id="3-选举指定接口（Designated-Port，DP）"><a href="#3-选举指定接口（Designated-Port，DP）" class="headerlink" title="3.选举指定接口（Designated Port，DP）"></a><strong>3.选举指定接口（Designated Port，DP）</strong></h5><p>STP将在每个网段中选举一个指定接口，这个接口是该网段内所有接口到达根桥的最优接口。此外，指定接口还负责向该网段发送BPDU。<br>对于非根桥而言，其所有接口中收到最优BPDU的接口将成为该设备的根接口，随后该非根桥使用自己接受的最优BPDU，为本设备上的其他接口各计算一个BPDU，然后使用计算出的BPDU与接口上所维护的BPDU（接口自身也会从网络中收到BPDU，并将该BPDU保存起来）进行比较，如果前者更优，那么该接口将成为指定接口，并且其所保存的BPDU也被前者替代，交换机将替代后的BPDU从该指定接口转发给下游交换机；如果后者更优，那么该接口将成为非指定接口（非指定接口指的是既不是根接口，也不是指定接口的接口）。<br>综上所述，对于非根桥而言，根接口的选举过程是非根桥将自己所收到的所有BPDU进行比较，而制定接口的选举过程则是非根桥用自己计算出的BPDU与别的设备发过来的BPDU进行比较。<br>一般而言，根桥的所有接口都是指定接口。</p><pre class="line-numbers language-none"><code class="language-none">[Huawei]dis stp brief MSTID  Port                        Role  STP State     Protection   0    Ethernet0/0/1               DESI  FORWARDING      NONE//DESI就是DP   0    Ethernet0/0/2               DESI  FORWARDING      NONE<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre><h5 id="4-阻塞非指定接口，打破二层环路"><a href="#4-阻塞非指定接口，打破二层环路" class="headerlink" title="4.阻塞非指定接口，打破二层环路"></a>4.阻塞非指定接口，打破二层环路</h5><p>经STP计算后，如果交换机的某个（或某些）接口既不是根接口又不是指定接口（我们将这种接口称为非指定接口），那么该接口将会被STP阻塞，如此一来网络中的二层环路也就被打破了。</p><h2 id="STP报文"><a href="#STP报文" class="headerlink" title="STP报文"></a>STP报文</h2><p>在一个交换网络中，STP能够正常工作的基本前提是BPDU的正常交互。STP的BPDU有两种类型：配置BPDU(Configuration BPDU)及TCN BPDU(Topology Change Notification BPDU)。两种BPDU各有各的用途。BPDU载荷被直接封装在以太网数据帧中，数据帧的目的MAC地址是组播MAC地址：0180-C200-0000。<br><strong>1.配置BPDU</strong><br><strong>配置BPDU是STP进行拓扑计算的关键。</strong>在交换网络的初始化过程中，每台交换机都从自己激活了STP的接口向外发送配置BPDU。当STP收敛完成后，只有根桥才会周期性的发送配置BPDU（缺省时，以2s为周期发送配置BPDU，可以在设备的系统视图下使用stp timer hello命令修改发送周期），而非根桥则会在自己的根接口上收到上游发送过来的配置BPDU，并立即被触发而产生自己的配置BPDU，然后从自己的指定接口发送出去。这一过程看起来就像是根桥发出的配置BPDU逐跳地“经过”了其他的交换机。<br><strong>2.TCN BPDU</strong><br>TCN BPDU的格式非常简单，只有“协议ID”、”协议版本ID”以及”BPDU类型”三个字段，并且“BPDU”字段的值为0x80。TCN BPDU用于在网络拓扑发成变化时向根桥通知变化的发生。<br>对于STP而言，当拓扑发生变更时，远离变更点的交换机无法直接感知到变化的发生，此时它们的MAC地址表项还是老旧的，如果依然通过这些MAC地址表项来指导数据转发，便有可能出现问题。因此STP需要一种机制，用于在网络中发生拓扑变更时促使全网的交换机尽快老化自己的MAC地址表项，以适应新的网络拓扑。当拓扑稳定时，网路中只会出现配置BPDU，而当拓扑发生变更时，STP会使用TCN BPDU，以及两种特殊的配置BPDU。<br><strong>（1）TCN BPDU</strong><br>TCN BPDU用于在网络拓扑发生变化时向根桥通知变化的发生。TCN BPDU需要从发现拓扑变更的交换机传递到根桥，而该交换机与根桥之间可能隔着多台交换机，感知到拓扑变化的交换机会从其根接口发送TCN BPDU，也就是朝着根桥的方向发送TCN BPDU，该报文会一跳一跳的向上游传递，直至抵达根桥。<br><strong>（2）“标志”字段中TCA比特位被设置为1的配置BPDU</strong><br>STP要求TCN BPDU从发现拓扑变更的交换机传递到根桥的过程时可靠的，因此当一台交换机收到下游发送上来的TCN BPDU后，需要使用“标志”字段中TCA比特位被设置为1的配置BPDU回应对方并向自己的上游发送TCN BPDU。这个过程将一直持续，直到根桥收到该TCN BPDU。<br><strong>（3）“标志”字段中TC比特位被设置为1的配置BPDU</strong><br>根桥收到TCN BPDU后，也就意识到了拓扑变化的发生，接下来它要将该变化通知到全网，它将向网络中泛洪“标志”字段中TC比特位被设置为1的配置BPDU，网络中的交换机收到该配置BPDU后，会立即将其MAC地址表的老化时间从原有的值调整为一个较小的值（该值等于转发延迟时间），使MAC地址表能够尽快刷新，以便适应新的网络拓扑。</p><h3 id="配置BPDU的报文格式"><a href="#配置BPDU的报文格式" class="headerlink" title="配置BPDU的报文格式"></a>配置BPDU的报文格式</h3><p><img src="https://img-blog.csdnimg.cn/f7b5ef60527e404a8132af13b951ff50.png"></p><h3 id="配置BPDU的比较原则"><a href="#配置BPDU的比较原则" class="headerlink" title="配置BPDU的比较原则"></a>配置BPDU的比较原则</h3><p><font color="red"><strong>注意：在选取RP和DP时也是采用这一原则</strong></font></p><p><img src="https://img-blog.csdnimg.cn/8c8009bfab57457db68ce9e7e6f50d29.png"></p><h3 id="思考题：识别以下拓扑中的根桥以及各种接口角色"><a href="#思考题：识别以下拓扑中的根桥以及各种接口角色" class="headerlink" title="思考题：识别以下拓扑中的根桥以及各种接口角色"></a>思考题：识别以下拓扑中的根桥以及各种接口角色</h3><p><img src="https://img-blog.csdnimg.cn/5ba050398fb34a8782345413cdf2a1e5.png"></p><pre class="line-numbers language-none"><code class="language-none">1.先判断根桥SW1——网络中拥有最小桥ID的交换机将成为根桥2.再判断根接口SW2-GE0/0/1、SW3-GE0/0/2、SW4-GE0/0/1——每个非根桥选举一个根接口，所谓根接口，实际上是非根桥上所有接口中收到最优BPDU的接口（参照BPDU的比较原则）3.再判断指定接口SW2-GE0/0/2、SW3-GE0/0/1、SW1-GE0/0/1|GE0/0/2——这个接口是该网段内所有接口到达根桥的最优接口。（参照BPDU的比较原则）<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre><h3 id="STP的接口状态"><a href="#STP的接口状态" class="headerlink" title="STP的接口状态"></a>STP的接口状态</h3><table><thead><tr><th align="center">状态名称</th><th>状态描述</th></tr></thead><tbody><tr><td align="center">禁用（Disable）</td><td>该接口不能收发BPDU，也不能收发业务数据帧，例如接口为down</td></tr><tr><td align="center">阻塞（Blocking）</td><td>该接口被STP阻塞。处于阻塞状态的接口不能发送BPDU，但是会持续侦听BPDU，而且不能收发业务数据帧，也不会进行MAC地址学习</td></tr><tr><td align="center">侦听（Listening）</td><td>当接口处于该状态时，表明STP初步认定该接口为根接口或指定接口，但接口依然处于STP计算的过程中，此时接口可以收发BPDU，但是不能收发业务数据帧，也不会进行MAC地址学习</td></tr><tr><td align="center">学习（Learning）</td><td>当接口处于该状态时，会侦听业务数据帧（但是不能转发业务数据帧），并且在收到业务数据帧后进行MAC地址学习</td></tr><tr><td align="center">转发（Forwarding）</td><td>处于该状态的接口可以正常地收发业务数据帧，也会进行BPDU处理。接口的角色需是根接口或指定接口才能进入转发状态</td></tr></tbody></table><h2 id="STP的接口状态迁移"><a href="#STP的接口状态迁移" class="headerlink" title="STP的接口状态迁移"></a>STP的接口状态迁移</h2><p><img src="https://img-blog.csdnimg.cn/03e741afadc749b1aca40c5b61e31dd7.png"></p><h2 id="STP的时间参数"><a href="#STP的时间参数" class="headerlink" title="STP的时间参数"></a>STP的时间参数</h2><p><strong>STP定义的三个重要的时间参数。</strong></p><ul><li><strong>Hello Time（Hello时间）</strong>：运行了STP的交换机发送配置BPDU的时间间隔，缺省为2s。如需修改STP发送配置BPDU的时间间隔，那么必须在根桥上修改，修改完成后，所有的非根桥都与根桥对其该时间值。</li><li><strong>Forward Delay（转发延时）</strong>：运行了STP的接口从侦听状态进入学习状态，或者从学习状态进入转发状态的延迟时间，缺省为15s。为了避免在生成树收敛过程中网络接口可能出现临时环路，或者短暂的数据帧泛洪现象，STP定义了侦听及学习这两种接口状态，并要求接口从阻塞状态进入转发状态前必须先经历这两个状态，而且分别在这两个状态各停留一个转发延时时间。这意味着对STP而言，一个被阻塞的接口被选举为根接口或指定接口后，进入转发状态之前至少需要经历30s的时间。</li><li><strong>MAX Age（最大生存时间）</strong>：BPDU的最大生存时间，也被称为BPDU的老化时间，缺省为20s。以非根桥的根接口为例，该设备将在这个接口上保存来自上游的最优BPDU，这个BPDU关联着一个最大生存时间，如果在该BPDU到达最大生存时间之间，接口再一次收到了BPDU，那么其最大生存时间将被重置，而如果接口一直没有收到BPDU从而导致该接口上保存的BPDU到达最大生存时间，那么该BPDU将被老化，此时设备将会重新在接口上选择最优BPDU，也就是重新进行根接口的选举。受限于几个时间参数的设计，一个STP接口要从阻塞状态进入转发状态可能需要花费约30~50s左右的时间，而这段时间内，网络中的业务可能就会受到影响。</li></ul><p>STP的基础配置命令</p><p>1.配置生成树工作模式</p><pre class="line-numbers language-none"><code class="language-none">[Huawei]stp mode {stp|rstp|mstp}<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre><p>2.（可选）配制根桥</p><pre class="line-numbers language-none"><code class="language-none">[Huawei]stp root primary<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre><p>3.(可选)备份根桥</p><pre class="line-numbers language-none"><code class="language-none">[Huawei]stp root secondary<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre><p>4.(可选)配置交换机的STP优先级</p><pre class="line-numbers language-none"><code class="language-none">[Huawei]stp priority 优先级取值(32768为缺省情况)<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre><p>5.（可选）配置接口路径开销</p><p>设置接口开销计算方法</p><pre class="line-numbers language-none"><code class="language-none">[Huawei]stp pathcost-standard{dot1d-1998|dot1t|legacy}<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre><p>设置当前路径开销</p><pre class="line-numbers language-none"><code class="language-none">[Huawei-GigabitEthernet0/0/1]stp cost 开销值<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre><p>6.（可选）配置接口优先级</p><pre class="line-numbers language-none"><code class="language-none">[Huawei-intf]stp priority 优先级数（128为缺省情况）<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre><p>7.启用STP/RSTP/MSTP</p><pre class="line-numbers language-none"><code class="language-none">[Huawei]stp enable<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>]]></content>
+      
+      
+      <categories>
+          
+          <category> 网络基础 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> STP </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>实验ensp-三层通信过程解析</title>
       <link href="/2022-10-01-shi-yan-ensp-san-ceng-tong-xin-guo-cheng-jie-xi.html"/>
       <url>/2022-10-01-shi-yan-ensp-san-ceng-tong-xin-guo-cheng-jie-xi.html</url>
@@ -20,7 +70,7 @@
       
         <tags>
             
-            <tag> ensp实验 </tag>
+            <tag> 三层通信过程 </tag>
             
         </tags>
       
@@ -33,7 +83,7 @@
       <link href="/2022-10-01-shi-yan-ensp-duo-qu-yu-ospf-ji-ben-pei-zhi.html"/>
       <url>/2022-10-01-shi-yan-ensp-duo-qu-yu-ospf-ji-ben-pei-zhi.html</url>
       
-        <content type="html"><![CDATA[<h3 id="拓扑图"><a href="#拓扑图" class="headerlink" title="拓扑图"></a>拓扑图</h3><p><img src="https://img-blog.csdnimg.cn/5324693a2ea5434bacc77e57f4f02326.png"></p><h3 id="实验步骤"><a href="#实验步骤" class="headerlink" title="实验步骤"></a>实验步骤</h3><h4 id="步骤一：搭建实验环境并完成基本配置"><a href="#步骤一：搭建实验环境并完成基本配置" class="headerlink" title="步骤一：搭建实验环境并完成基本配置"></a>步骤一：搭建实验环境并完成基本配置</h4><h4 id="步骤二：OSPF-基本配置"><a href="#步骤二：OSPF-基本配置" class="headerlink" title="步骤二：OSPF 基本配置"></a>步骤二：OSPF 基本配置</h4><p><strong>RTA 的两个接口都属于 OSPF 区域 0，RTB 的两个接口分别属于 OSPF 区域 0 和区域 1，RTC 的两个接口都属于 OSPF 区域 1。依据该区域划分完成基本 OSPF 配置。在 RTA 完成基本 OSPF 配置，并在相关网段使能 OSPF，其完整命令为</strong></p><pre class="line-numbers language-none"><code class="language-none">[RTA]router id 1.1.1.1 [RTA]ospf 1[RTA-ospf-1]area 0.0.0.0[RTA-ospf-1-area-0.0.0.0]network 1.1.1.1 0.0.0.0[RTA-ospf-1-area-0.0.0.0]network 10.0.0.0 0.0.0.255[RTA-ospf-1-area-0.0.0.0]network 20.0.0.0 0.0.0.255<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre><p>在RTB完成基本OSPF配置，并配置正确的区域以及在相关网段使能 OSPF，其完整命令为：</p><pre class="line-numbers language-none"><code class="language-none">[RTB]router id 2.2.2.2 [RTB]ospf 1[RTB-ospf-1]area 0.0.0.0[RTB-ospf-1-area-0.0.0.0]network 2.2.2.2 0.0.0.0[RTB-ospf-1-area-0.0.0.0]network 20.0.0.0 0.0.0.255 [RTB-ospf-1-area-0.0.0.0]quit[RTB-ospf-1-area]area 1[RTB-ospf-1-area-0.0.0.1]network 30.0.0.0 0.0.0.255<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre><p> 在 RTC 上完成基本 OSPF 配置，并在相关网段使能 OSPF，其完整命令为：</p><pre class="line-numbers language-none"><code class="language-none">[RTC]router id 3.3.3.3 [RTC]ospf 1[RTC-ospf-1]area 1[RTC-ospf-1-area-0.0.0.1]network 3.3.3.3 0.0.0.0[RTC-ospf-1-area-0.0.0.1]network 10.1.0.0 0.0.0.255[RTC-ospf-1-area-0.0.0.1]network 30.0.0.0 0.0.0.255<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre><h4 id="步骤三：检查路由器-OSPF-邻居状态及路由表"><a href="#步骤三：检查路由器-OSPF-邻居状态及路由表" class="headerlink" title="步骤三：检查路由器 OSPF 邻居状态及路由表"></a>步骤三：检查路由器 OSPF 邻居状态及路由表</h4><pre class="line-numbers language-none"><code class="language-none">[Huawei]dis ospf peer  OSPF Process 1 with Router ID 2.2.2.2 Neighbors  Area 0.0.0.0 interface 20.0.0.2(GigabitEthernet0/0/0)'s neighbors Router ID: 1.1.1.1          Address: 20.0.0.1           State: Full  Mode:Nbr is  Slave  Priority: 1   DR: 20.0.0.1  BDR: 20.0.0.2  MTU: 0       Dead timer due in 40  sec    Retrans timer interval: 5    Neighbor is up for 00:02:20        Authentication Sequence: [ 0 ]  Neighbors  Area 0.0.0.1 interface 30.0.0.1(GigabitEthernet0/0/1)'s neighbors Router ID: 3.3.3.3          Address: 30.0.0.2           State: Full  Mode:Nbr is  Master  Priority: 1   DR: 30.0.0.1  BDR: 30.0.0.2  MTU: 0       Dead timer due in 35  sec    Retrans timer interval: 5    Neighbor is up for 00:00:30        Authentication Sequence: [ 0 ] <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre><p>​        在 RTB 上使用**(21)** <strong>display ospf peer</strong>   查看路由器 OSPF 邻居状态，根据输出信息可以得知， 在 Area 0.0.0.0 内，RTB 的 G0/0 接口与 RTA 配置 IP 地址为**(22)**  <strong>20.0.0.1</strong>        的接口建立邻居关系， 该邻居所在的网段为 20.0.0.0/24，RTB 配置 IP 地址为 20.0.0.2 的接口为该网段的**(23)**  <strong>DR</strong>   路由器；在 Area 0.0.0.1 内，RTB 的 G0/1 接口与 RTC 配置 IP 地址为**(24)**  <strong>30.0.01</strong>       的接口建立邻居关系， 该邻居所在的网段为 30.0.0.0/24，RTC 配置IP 地址为 30.0.0.1 的接口为该网段的**(25)**   <strong>DR</strong>  路由器。</p><p>​        在 RTB 上使用**(26)**  <strong>display ospf routing</strong>            命令查看路由器 OSPF 路由表，使用**(27)**   <strong>display ip routing-table</strong>       命令查看路由器全局路由表。</p><pre class="line-numbers language-none"><code class="language-none">[Huawei]dis ospf routing  OSPF Process 1 with Router ID 2.2.2.2  Routing Tables  Routing for Network  Destination        Cost  Type       NextHop         AdvRouter       Area 20.0.0.0/24        1     Transit    20.0.0.2        2.2.2.2         0.0.0.0 30.0.0.0/24        1     Transit    30.0.0.1        2.2.2.2         0.0.0.1 1.1.1.1/32         1     Stub       20.0.0.1        1.1.1.1         0.0.0.0 10.0.0.0/24        2     Stub       20.0.0.1        1.1.1.1         0.0.0.0 10.1.0.0/24        2     Stub       30.0.0.2        3.3.3.3         0.0.0.1 Total Nets: 5   Intra Area: 5  Inter Area: 0  ASE: 0  NSSA: 0 <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre><h4 id="步骤四：检查网络连通性"><a href="#步骤四：检查网络连通性" class="headerlink" title="步骤四：检查网络连通性"></a>步骤四：检查网络连通性</h4><p>​     在 ClientA 上 ping ClientB(IP 地址为 10.1.0.1)，其结果是**(28)**  <strong>可以</strong>  可以/不可以互通； 在 ClientB 上 ping ClientA(IP 地址为 10.0.0.1)，其结果是**(29)**  <strong>可以</strong>  可以/不可以互通。</p><pre class="line-numbers language-none"><code class="language-none">PC&gt;ping 10.1.0.1Ping 10.1.0.1: 32 data bytes, Press Ctrl_C to breakRequest timeout!From 10.1.0.1: bytes=32 seq=2 ttl=125 time=32 msFrom 10.1.0.1: bytes=32 seq=3 ttl=125 time=31 msFrom 10.1.0.1: bytes=32 seq=4 ttl=125 time=16 msFrom 10.1.0.1: bytes=32 seq=5 ttl=125 time=31 ms--- 10.1.0.1 ping statistics ---  5 packet(s) transmitted  4 packet(s) received  20.00% packet loss  round-trip min/avg/max = 0/27/32 ms<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>]]></content>
+        <content type="html"><![CDATA[<h1 id="实验ensp-多区域OSPF基本配置"><a href="#实验ensp-多区域OSPF基本配置" class="headerlink" title="实验ensp-多区域OSPF基本配置"></a><center>实验ensp-多区域OSPF基本配置</center></h1><h3 id="拓扑图"><a href="#拓扑图" class="headerlink" title="拓扑图"></a>拓扑图</h3><p><img src="https://img-blog.csdnimg.cn/5324693a2ea5434bacc77e57f4f02326.png"></p><h3 id="实验步骤"><a href="#实验步骤" class="headerlink" title="实验步骤"></a>实验步骤</h3><h4 id="步骤一：搭建实验环境并完成基本配置"><a href="#步骤一：搭建实验环境并完成基本配置" class="headerlink" title="步骤一：搭建实验环境并完成基本配置"></a>步骤一：搭建实验环境并完成基本配置</h4><h4 id="步骤二：OSPF-基本配置"><a href="#步骤二：OSPF-基本配置" class="headerlink" title="步骤二：OSPF 基本配置"></a>步骤二：OSPF 基本配置</h4><p><strong>RTA 的两个接口都属于 OSPF 区域 0，RTB 的两个接口分别属于 OSPF 区域 0 和区域 1，RTC 的两个接口都属于 OSPF 区域 1。依据该区域划分完成基本 OSPF 配置。在 RTA 完成基本 OSPF 配置，并在相关网段使能 OSPF，其完整命令为</strong></p><pre class="line-numbers language-none"><code class="language-none">[RTA]router id 1.1.1.1 [RTA]ospf 1[RTA-ospf-1]area 0.0.0.0[RTA-ospf-1-area-0.0.0.0]network 1.1.1.1 0.0.0.0[RTA-ospf-1-area-0.0.0.0]network 10.0.0.0 0.0.0.255[RTA-ospf-1-area-0.0.0.0]network 20.0.0.0 0.0.0.255<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre><p>在RTB完成基本OSPF配置，并配置正确的区域以及在相关网段使能 OSPF，其完整命令为：</p><pre class="line-numbers language-none"><code class="language-none">[RTB]router id 2.2.2.2 [RTB]ospf 1[RTB-ospf-1]area 0.0.0.0[RTB-ospf-1-area-0.0.0.0]network 2.2.2.2 0.0.0.0[RTB-ospf-1-area-0.0.0.0]network 20.0.0.0 0.0.0.255 [RTB-ospf-1-area-0.0.0.0]quit[RTB-ospf-1-area]area 1[RTB-ospf-1-area-0.0.0.1]network 30.0.0.0 0.0.0.255<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre><p> 在 RTC 上完成基本 OSPF 配置，并在相关网段使能 OSPF，其完整命令为：</p><pre class="line-numbers language-none"><code class="language-none">[RTC]router id 3.3.3.3 [RTC]ospf 1[RTC-ospf-1]area 1[RTC-ospf-1-area-0.0.0.1]network 3.3.3.3 0.0.0.0[RTC-ospf-1-area-0.0.0.1]network 10.1.0.0 0.0.0.255[RTC-ospf-1-area-0.0.0.1]network 30.0.0.0 0.0.0.255<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre><h4 id="步骤三：检查路由器-OSPF-邻居状态及路由表"><a href="#步骤三：检查路由器-OSPF-邻居状态及路由表" class="headerlink" title="步骤三：检查路由器 OSPF 邻居状态及路由表"></a>步骤三：检查路由器 OSPF 邻居状态及路由表</h4><pre class="line-numbers language-none"><code class="language-none">[Huawei]dis ospf peer  OSPF Process 1 with Router ID 2.2.2.2 Neighbors  Area 0.0.0.0 interface 20.0.0.2(GigabitEthernet0/0/0)'s neighbors Router ID: 1.1.1.1          Address: 20.0.0.1           State: Full  Mode:Nbr is  Slave  Priority: 1   DR: 20.0.0.1  BDR: 20.0.0.2  MTU: 0       Dead timer due in 40  sec    Retrans timer interval: 5    Neighbor is up for 00:02:20        Authentication Sequence: [ 0 ]  Neighbors  Area 0.0.0.1 interface 30.0.0.1(GigabitEthernet0/0/1)'s neighbors Router ID: 3.3.3.3          Address: 30.0.0.2           State: Full  Mode:Nbr is  Master  Priority: 1   DR: 30.0.0.1  BDR: 30.0.0.2  MTU: 0       Dead timer due in 35  sec    Retrans timer interval: 5    Neighbor is up for 00:00:30        Authentication Sequence: [ 0 ] <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre><p>​        在 RTB 上使用**(21)** <strong>display ospf peer</strong>   查看路由器 OSPF 邻居状态，根据输出信息可以得知， 在 Area 0.0.0.0 内，RTB 的 G0/0 接口与 RTA 配置 IP 地址为**(22)**  <strong>20.0.0.1</strong>        的接口建立邻居关系， 该邻居所在的网段为 20.0.0.0/24，RTB 配置 IP 地址为 20.0.0.2 的接口为该网段的**(23)**  <strong>DR</strong>   路由器；在 Area 0.0.0.1 内，RTB 的 G0/1 接口与 RTC 配置 IP 地址为**(24)**  <strong>30.0.01</strong>       的接口建立邻居关系， 该邻居所在的网段为 30.0.0.0/24，RTC 配置IP 地址为 30.0.0.1 的接口为该网段的**(25)**   <strong>DR</strong>  路由器。</p><p>​        在 RTB 上使用**(26)**  <strong>display ospf routing</strong>            命令查看路由器 OSPF 路由表，使用**(27)**   <strong>display ip routing-table</strong>       命令查看路由器全局路由表。</p><pre class="line-numbers language-none"><code class="language-none">[Huawei]dis ospf routing  OSPF Process 1 with Router ID 2.2.2.2  Routing Tables  Routing for Network  Destination        Cost  Type       NextHop         AdvRouter       Area 20.0.0.0/24        1     Transit    20.0.0.2        2.2.2.2         0.0.0.0 30.0.0.0/24        1     Transit    30.0.0.1        2.2.2.2         0.0.0.1 1.1.1.1/32         1     Stub       20.0.0.1        1.1.1.1         0.0.0.0 10.0.0.0/24        2     Stub       20.0.0.1        1.1.1.1         0.0.0.0 10.1.0.0/24        2     Stub       30.0.0.2        3.3.3.3         0.0.0.1 Total Nets: 5   Intra Area: 5  Inter Area: 0  ASE: 0  NSSA: 0 <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre><h4 id="步骤四：检查网络连通性"><a href="#步骤四：检查网络连通性" class="headerlink" title="步骤四：检查网络连通性"></a>步骤四：检查网络连通性</h4><p>​     在 ClientA 上 ping ClientB(IP 地址为 10.1.0.1)，其结果是**(28)**  <strong>可以</strong>  可以/不可以互通； 在 ClientB 上 ping ClientA(IP 地址为 10.0.0.1)，其结果是**(29)**  <strong>可以</strong>  可以/不可以互通。</p><pre class="line-numbers language-none"><code class="language-none">PC&gt;ping 10.1.0.1Ping 10.1.0.1: 32 data bytes, Press Ctrl_C to breakRequest timeout!From 10.1.0.1: bytes=32 seq=2 ttl=125 time=32 msFrom 10.1.0.1: bytes=32 seq=3 ttl=125 time=31 msFrom 10.1.0.1: bytes=32 seq=4 ttl=125 time=16 msFrom 10.1.0.1: bytes=32 seq=5 ttl=125 time=31 ms--- 10.1.0.1 ping statistics ---  5 packet(s) transmitted  4 packet(s) received  20.00% packet loss  round-trip min/avg/max = 0/27/32 ms<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>]]></content>
       
       
       <categories>
@@ -45,7 +95,7 @@
       
         <tags>
             
-            <tag> ensp实验 </tag>
+            <tag> 多区域OSPF </tag>
             
         </tags>
       
@@ -70,7 +120,7 @@
       
         <tags>
             
-            <tag> ensp实验 </tag>
+            <tag> VLAN-Hybrid </tag>
             
         </tags>
       
@@ -145,7 +195,7 @@
       
         <tags>
             
-            <tag> ensp实验 </tag>
+            <tag> OSPF </tag>
             
         </tags>
       
@@ -170,7 +220,7 @@
       
         <tags>
             
-            <tag> 网络基础 </tag>
+            <tag> OSPF </tag>
             
         </tags>
       
@@ -195,7 +245,7 @@
       
         <tags>
             
-            <tag> 网络基础 </tag>
+            <tag> 路由 </tag>
             
         </tags>
       
@@ -245,7 +295,7 @@
       
         <tags>
             
-            <tag> ensp实验 </tag>
+            <tag> Telnet </tag>
             
         </tags>
       
@@ -270,7 +320,7 @@
       
         <tags>
             
-            <tag> ensp实验 </tag>
+            <tag> NAT </tag>
             
         </tags>
       
@@ -295,7 +345,7 @@
       
         <tags>
             
-            <tag> ensp实验 </tag>
+            <tag> ACL </tag>
             
         </tags>
       
@@ -345,7 +395,7 @@
       
         <tags>
             
-            <tag> ensp实验 </tag>
+            <tag> 单臂路由 </tag>
             
         </tags>
       
@@ -370,7 +420,7 @@
       
         <tags>
             
-            <tag> ensp实验 </tag>
+            <tag> VLAN </tag>
             
         </tags>
       
@@ -395,7 +445,7 @@
       
         <tags>
             
-            <tag> ensp实验 </tag>
+            <tag> 静态路由 </tag>
             
         </tags>
       
@@ -420,7 +470,7 @@
       
         <tags>
             
-            <tag> ensp实验 </tag>
+            <tag> DHCP&amp;DNS </tag>
             
         </tags>
       
@@ -495,7 +545,7 @@
       
         <tags>
             
-            <tag> H3CNE实验 </tag>
+            <tag> Telnet </tag>
             
         </tags>
       
@@ -620,7 +670,7 @@
       
         <tags>
             
-            <tag> ensp实验 </tag>
+            <tag> FTP </tag>
             
         </tags>
       
@@ -645,7 +695,7 @@
       
         <tags>
             
-            <tag> ensp实验 </tag>
+            <tag> TCP抓包 </tag>
             
         </tags>
       
@@ -670,7 +720,7 @@
       
         <tags>
             
-            <tag> 网络基础 </tag>
+            <tag> TCP&amp;UDP </tag>
             
         </tags>
       
@@ -695,7 +745,7 @@
       
         <tags>
             
-            <tag> 网络基础 </tag>
+            <tag> IP </tag>
             
         </tags>
       
