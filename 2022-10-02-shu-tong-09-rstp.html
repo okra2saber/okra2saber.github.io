@@ -555,21 +555,21 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2022-10-02
+                    2022-10-03
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    0
+                    728
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    1 分
+                    2 分
                 </div>
                 
 
@@ -597,7 +597,108 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                
+                <h1 id="RSTP"><a href="#RSTP" class="headerlink" title="RSTP"></a><center>RSTP</center></h1><p>​        STP协议虽然能够解决环路问题，但是收敛速度慢，影响了用户通信质量。IEEE于2001年发布的802.1w标准定义了快速生成树协议RSTP（Rapid Spanning-Tree Protocol），RSTP在STP基础上进行了改进，实现了网络拓扑快速收敛。</p>
+<h2 id="RSTP相关概念"><a href="#RSTP相关概念" class="headerlink" title="RSTP相关概念"></a>RSTP相关概念</h2><h2 id="backup、alternate端口"><a href="#backup、alternate端口" class="headerlink" title="backup、alternate端口"></a>backup、alternate端口</h2><p>如图所示，RSTP的端口角色共有4种：根端口、指定端口、Alternate端口和Backup端口，与STP相比，新增加了Backup和Alternate 2种端口角色。</p>
+<p><img src="https://img-blog.csdnimg.cn/cd7067b17dc74e46beea354fa2212bef.gif" data-original="https://img-blog.csdnimg.cn/84c1c39aecdf4d62a868c5cf7791daac.png"></p>
+<table>
+<thead>
+<tr>
+<th>角色</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Backup（备份端口）</td>
+<td><strong>Backup端口</strong>作为<strong>指定端口</strong>的备份，提供了另外一条从根桥到非根桥的备份链路。</td>
+</tr>
+<tr>
+<td>Alternate（预备端口）</td>
+<td><strong>Alternate端口</strong>作为<strong>根端口</strong>的备份端口，提供了从指定桥到根桥的另一条备份路径。</td>
+</tr>
+</tbody></table>
+<p>RSTP选举原理和STP类似：选举根交换机-选举非根交换机上的根端口-选举指定端口-选举预备端口和备份端口。</p>
+<h3 id="边缘端口"><a href="#边缘端口" class="headerlink" title="边缘端口"></a>边缘端口</h3><p><img src="https://img-blog.csdnimg.cn/cd7067b17dc74e46beea354fa2212bef.gif" data-original="https://img-blog.csdnimg.cn/bfb434697d4f4712bbcdcea04e972c54.png"></p>
+<h3 id="端口状态"><a href="#端口状态" class="headerlink" title="端口状态"></a>端口状态</h3><p>不同于STP的5种端口状态，RSTP将端口状态缩减为3种。</p>
+<table>
+<thead>
+<tr>
+<th><strong>STP</strong></th>
+<th><strong>RSTP</strong></th>
+<th><strong>端口角色</strong></th>
+<th><strong>数据转发情况</strong></th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Disabled</td>
+<td>Discarding</td>
+<td>Disable</td>
+<td>不转发用户流量也不学习MAC地址</td>
+</tr>
+<tr>
+<td>Blocking</td>
+<td>Discarding</td>
+<td>Alternate端口、Backup端口</td>
+<td>不转发用户流量也不学习MAC地址</td>
+</tr>
+<tr>
+<td>Listening</td>
+<td>Discarding</td>
+<td>根端口、指定端口</td>
+<td>不转发用户流量也不学习MAC地址</td>
+</tr>
+<tr>
+<td>Learning</td>
+<td>Learning</td>
+<td>根端口、指定端口</td>
+<td>不转发用户流量，但是学习MAC地址</td>
+</tr>
+<tr>
+<td>Forwarding</td>
+<td>Forwarding</td>
+<td>根端口、指定端口</td>
+<td>既转发用户流量又学习MAC地址</td>
+</tr>
+</tbody></table>
+<h2 id="RST-BPDU"><a href="#RST-BPDU" class="headerlink" title="RST BPDU"></a>RST BPDU</h2><p>除了部分参数不同，RST  BPDU报文和STP的BPDU报文类似。</p>
+<ol>
+<li><p>BPDU Type用来区分STP的BPDU报文和RST BPDU报文。</p>
+<ul>
+<li>STP的配置BPDU报文的BPDU Type值为0(0x00)。</li>
+</ul>
+</li>
+</ol>
+<pre><code>- TCN BPDU报文的BPDU Type值为128 (0x80）。
+
+
+- RST BPDU报文的BPDU Type值为2 (0x02)。
+</code></pre>
+<ol start="2">
+<li><p>Flags字段，使用了原来保留的中间6位</p>
+<ul>
+<li>STP的BPDU报文的Flags字段中只定义了拓扑变化TC标志和拓扑变化确认TCA标志，其他字段保留。</li>
+</ul>
+</li>
+</ol>
+<ul>
+<li><p>在RST BPDU报文的Flags字段里，除了TC和TCA，还使用了其他字段。包括P/A进程字段和定义端口角色以及端口状态的字段。</p>
+<p><img src="https://img-blog.csdnimg.cn/cd7067b17dc74e46beea354fa2212bef.gif" data-original="https://img-blog.csdnimg.cn/img_convert/33cb31a9275a79ab500999b70aa5e705.png"></p>
+</li>
+</ul>
+<ol start="3">
+<li><p>发送BPDU的方式不同</p>
+<ul>
+<li>STP中，当网络拓扑稳定后，根桥按照Hello Timer规定的时间间隔发送配置BPDU报文，非根桥设备只有在收到上游设备发来的配置BPDU报文后，才会触发发出配置BPDU报文。</li>
+</ul>
+</li>
+</ol>
+<pre><code>- RSTP种，当网络拓扑稳定后，无论非根桥设备是否接收到根桥传来的配置BPDU报文，都会按照Hello Timer规定的时间间隔发送配置BPDU。
+
+  
+
+  
+</code></pre>
+<h5 id="RSTP对STP改进的5大场景以及相对应的实验请参考大佬的笔记"><a href="#RSTP对STP改进的5大场景以及相对应的实验请参考大佬的笔记" class="headerlink" title="RSTP对STP改进的5大场景以及相对应的实验请参考大佬的笔记"></a><font color="red"><strong>RSTP对STP改进的5大场景以及相对应的实验请参考大佬的笔记</strong></font></h5><p>————————————————<br>本篇笔记大部分取自csdn上阿豪的笔记，感谢大佬精心制作的笔记。<br>原文链接：<a target="_blank" rel="noopener" href="https://blog.csdn.net/qq_32044265/article/details/125656277">https://blog.csdn.net/qq_32044265/article/details/125656277</a></p>
+
                 
             </div>
             <hr/>
@@ -1162,17 +1263,16 @@
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="far fa-dot-circle"></i>&nbsp;本篇
-            </div>
+                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
-                <a href="/2022-10-02-shu-tong-09-rstp.html">
+                <a href="/2022-10-03-shu-tong-10-vbst-mstp.html">
                     <div class="card-image">
                         
-                        <img src="https://img-blog.csdnimg.cn/cd7067b17dc74e46beea354fa2212bef.gif" data-original="https://img-blog.csdnimg.cn/3329ca491b794194a23d6b71671933c7.jpeg" class="responsive-img" alt="数通 09-RSTP">
+                        <img src="https://img-blog.csdnimg.cn/cd7067b17dc74e46beea354fa2212bef.gif" data-original="https://img-blog.csdnimg.cn/3329ca491b794194a23d6b71671933c7.jpeg" class="responsive-img" alt="数通 10-VBST&amp;MSTP">
                         
-                        <span class="card-title">数通 09-RSTP</span>
+                        <span class="card-title">数通 10-VBST&amp;MSTP</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -1182,9 +1282,9 @@
                         
                     </div>
                     <div class="publish-info">
-                            <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2022-10-02
-                            </span>
+                        <span class="publish-date">
+                            <i class="far fa-clock fa-fw icon-date"></i>2022-10-03
+                        </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
@@ -1197,12 +1297,11 @@
                         </span>
                     </div>
                 </div>
-
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/RSTP/">
-                        <span class="chip bg-color">RSTP</span>
+                    <a href="/tags/VBST-MSTP/">
+                        <span class="chip bg-color">VBST&amp;MSTP</span>
                     </a>
                     
                 </div>
@@ -1490,7 +1589,7 @@
             <br>
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">147.7k</span>&nbsp;字&nbsp;|
+                class="white-color">148.7k</span>&nbsp;字&nbsp;|
             
             
             
