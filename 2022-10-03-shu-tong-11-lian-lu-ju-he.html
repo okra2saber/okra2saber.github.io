@@ -555,21 +555,21 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2022-10-03
+                    2022-10-09
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    0
+                    703
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    1 分
+                    2 分
                 </div>
                 
 
@@ -597,7 +597,44 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                
+                <h1 id="链路聚合"><a href="#链路聚合" class="headerlink" title="链路聚合"></a><center>链路聚合</center></h1><h3 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h3><p>生成树——&gt;多根链路：最大的问题—线路会被阻塞掉<br>链路聚合是运行在STP之上——＞多根链路＝不阻塞</p>
+<p>链路聚合 （端口聚合 链路捆绑）：<br>多根链路逻辑上的捆绑在一起，当STP进行拓扑计算时，此时会按照聚合之后的链路计算。</p>
+<p><img src="https://img-blog.csdnimg.cn/cd7067b17dc74e46beea354fa2212bef.gif" data-original="https://img-blog.csdnimg.cn/bcc178867d184429a179aadcf8bd379c.png"></p>
+<h3 id="链路聚合的特点"><a href="#链路聚合的特点" class="headerlink" title="链路聚合的特点"></a>链路聚合的特点</h3><p>1.提升带宽</p>
+<p>2.提高网络的高可用性——当链路聚合的线路中有一条出现问题，能快速的切换到其他线路，不影响网络业务使用</p>
+<p>3.负载分担——链路聚合只可以<strong>逐流</strong>进行负载分担，路由器可以<strong>逐包</strong>也可以逐流</p>
+<p>注意：在HCIA阶段所学习的链路聚合属于原生的链路聚合，也就是<strong>点对点的两个设备之间聚合</strong>；后期在IP和IE阶段会学习<strong>跨设备的链路聚合</strong>，进行更深入的学习。 </p>
+<img src="https://img-blog.csdnimg.cn/cd7067b17dc74e46beea354fa2212bef.gif" data-original="https://img-blog.csdnimg.cn/cc8ca03d333d4bcaa550a68f5e4b53be.png" style="zoom:50%;">
+
+<h3 id="链路聚合模式"><a href="#链路聚合模式" class="headerlink" title="链路聚合模式"></a>链路聚合模式</h3><img src="https://img-blog.csdnimg.cn/cd7067b17dc74e46beea354fa2212bef.gif" data-original="https://img-blog.csdnimg.cn/e38873b42d25413486543acff98235af.png" style="zoom:67%;">
+
+<p>手工负载分担模式是华为设备独有的，也是默认的链路聚合模式（只支持点对点的设备）；LACP模式是公有模式（可以支持跨设备的设备进行链路聚合——<strong>E-trunk</strong>）。</p>
+<pre class="line-numbers language-none"><code class="language-none">E-trunk是一种实现跨设备链路聚合的机制，基于LACP进行了扩展；能够实现多台设备间的链路聚合，从而把链路可靠性从单板级提高到了设备级<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<ul>
+<li><p>手工负载分担模式下所有活动接口都参与数据的转发，分担负载流量（也就是说只要接口是up的就会向外发数据，不管线路连接是否正确）。</p>
+</li>
+<li><p>LACP模式支持链路备份（和手动模式不同，LACP支持检查错连，一旦发现线路错误那该线路不会发送数据，接口会直接断开）。</p>
+<img src="https://img-blog.csdnimg.cn/cd7067b17dc74e46beea354fa2212bef.gif" data-original="https://img-blog.csdnimg.cn/8e195929c870464cb83221bba683ed8a.png" style="zoom: 67%;"></li>
+</ul>
+<p><font color="red"><strong>注意：华为设备一般在和其他厂商思科、锐捷的设备连接时会用到LACP来配置链路聚合，同是华为设备时一般的都用华为独有的手工模式，跟运营商互联的时候也用LACP。</strong></font></p>
+<h3 id="数据流控制"><a href="#数据流控制" class="headerlink" title="数据流控制"></a>数据流控制</h3><img src="https://img-blog.csdnimg.cn/cd7067b17dc74e46beea354fa2212bef.gif" data-original="https://img-blog.csdnimg.cn/5a38e5c83cbb4b7aa5438738dc2230ed.png" style="zoom: 67%;">
+
+<p>Eth-Trunk链路两端相连的物理接口的数量、速率、双工方式、流控方式必须一致。</p>
+<h3 id="二层链路聚合配置"><a href="#二层链路聚合配置" class="headerlink" title="二层链路聚合配置"></a>二层链路聚合配置</h3><p><img src="https://img-blog.csdnimg.cn/cd7067b17dc74e46beea354fa2212bef.gif" data-original="https://img-blog.csdnimg.cn/933e400fab4448a394192b201729d8e2.png"></p>
+<h3 id="三层链路聚合配置"><a href="#三层链路聚合配置" class="headerlink" title="三层链路聚合配置"></a>三层链路聚合配置</h3><p><img src="https://img-blog.csdnimg.cn/cd7067b17dc74e46beea354fa2212bef.gif" data-original="https://img-blog.csdnimg.cn/1e808b69f7e6404aa896a80db132e8d7.png"></p>
+<pre class="line-numbers language-none"><code class="language-none">[RTA]interface eth-trunk 1 		//创建逻辑聚合接口
+[RTA-Eth-Trunk1Jundo portswitch		//portswitch将接口变成二层口，undo portswitch将接口变成三层口。
+[RTA-Eth-Trunk1]ip address 100.1.1.1 24 		//创建逻辑地址
+[RTA-Eth-Trunk1]quit
+[RTA]interface GigabitEthernet 0/0/1 		//将需要聚合的接口放入创建的th-trunk口
+[RTA-GigabitEthernet0/0/1]eth-trunk 1 
+[RTA-GigabitEthernet0/0/1]quit
+[RTA]Jinterface GigabitEthernet0/0/2 
+[RTA-GigabitEthernet0/0/2]eth-trunk 1 
+[RTA-GigabitEthernet0/0/2]quit<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+
                 
             </div>
             <hr/>
@@ -1490,7 +1527,7 @@
             <br>
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">148.7k</span>&nbsp;字&nbsp;|
+                class="white-color">149.5k</span>&nbsp;字&nbsp;|
             
             
             
@@ -1841,13 +1878,13 @@ $(function () {
 document.addEventListener("visibilitychange", function () { document.hidden ? (document.title = "Σ(っ °Д °;)っ喔哟，崩溃啦！", clearTimeout(st)) : (document.title = "φ(゜▽゜*)♪咦，又好了！", st = setTimeout(function () { document.title = OriginTitile }, 3e3)) }) </script>
 
 
-<script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"model":{"jsonPath":"/live2dw/assets/hijiki.model.json"},"display":{"position":"right","width":280,"height":280},"mobile":{"show":false},"log":false,"pluginJsPath":"lib/","pluginModelPath":"assets/","pluginRootPath":"live2dw/","tagMode":false});</script><script>
+<script>
             window.imageLazyLoadSetting = {
                 isSPA: false,
                 preloadRatio: 1,
                 processImages: null,
             };
-        </script><script>window.addEventListener("load",function(){var t=/\.(gif|jpg|jpeg|tiff|png)$/i,r=/^data:image\/[a-z]+;base64,/;Array.prototype.slice.call(document.querySelectorAll("img[data-original]")).forEach(function(a){var e=a.parentNode;"A"===e.tagName&&(e.href.match(t)||e.href.match(r))&&(e.href=a.dataset.original)})});</script><script>!function(n){n.imageLazyLoadSetting.processImages=o;var e=n.imageLazyLoadSetting.isSPA,i=n.imageLazyLoadSetting.preloadRatio||1,r=Array.prototype.slice.call(document.querySelectorAll("img[data-original]"));function o(){e&&(r=Array.prototype.slice.call(document.querySelectorAll("img[data-original]")));for(var t,a=0;a<r.length;a++)0<=(t=(t=r[a]).getBoundingClientRect()).bottom&&0<=t.left&&t.top<=(n.innerHeight*i||document.documentElement.clientHeight*i)&&function(){var t,e,n,i,o=r[a];t=o,e=function(){r=r.filter(function(t){return o!==t})},n=new Image,i=t.getAttribute("data-original"),n.onload=function(){t.src=i,e&&e()},t.src!==i&&(n.src=i)}()}o(),n.addEventListener("scroll",function(){var t,e;t=o,e=n,clearTimeout(t.tId),t.tId=setTimeout(function(){t.call(e)},500)})}(this);</script></body>
+        </script><script>window.addEventListener("load",function(){var t=/\.(gif|jpg|jpeg|tiff|png)$/i,r=/^data:image\/[a-z]+;base64,/;Array.prototype.slice.call(document.querySelectorAll("img[data-original]")).forEach(function(a){var e=a.parentNode;"A"===e.tagName&&(e.href.match(t)||e.href.match(r))&&(e.href=a.dataset.original)})});</script><script>!function(n){n.imageLazyLoadSetting.processImages=o;var e=n.imageLazyLoadSetting.isSPA,i=n.imageLazyLoadSetting.preloadRatio||1,r=Array.prototype.slice.call(document.querySelectorAll("img[data-original]"));function o(){e&&(r=Array.prototype.slice.call(document.querySelectorAll("img[data-original]")));for(var t,a=0;a<r.length;a++)0<=(t=(t=r[a]).getBoundingClientRect()).bottom&&0<=t.left&&t.top<=(n.innerHeight*i||document.documentElement.clientHeight*i)&&function(){var t,e,n,i,o=r[a];t=o,e=function(){r=r.filter(function(t){return o!==t})},n=new Image,i=t.getAttribute("data-original"),n.onload=function(){t.src=i,e&&e()},t.src!==i&&(n.src=i)}()}o(),n.addEventListener("scroll",function(){var t,e;t=o,e=n,clearTimeout(t.tId),t.tId=setTimeout(function(){t.call(e)},500)})}(this);</script><script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"model":{"jsonPath":"/live2dw/assets/hijiki.model.json"},"display":{"position":"right","width":280,"height":280},"mobile":{"show":false},"log":false,"pluginJsPath":"lib/","pluginModelPath":"assets/","pluginRootPath":"live2dw/","tagMode":false});</script></body>
 
 </html>
 
