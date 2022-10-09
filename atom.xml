@@ -6,7 +6,7 @@
   <link href="https://uprightokra.github.io/atom.xml" rel="self"/>
   
   <link href="https://uprightokra.github.io/"/>
-  <updated>2022-10-09T04:12:41.838Z</updated>
+  <updated>2022-10-09T08:53:01.071Z</updated>
   <id>https://uprightokra.github.io/</id>
   
   <author>
@@ -15,6 +15,135 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>掩码、通配符掩码、反掩码</title>
+    <link href="https://uprightokra.github.io/2022-10-09-yan-ma-tong-pei-fu-yan-ma-fan-yan-ma.html"/>
+    <id>https://uprightokra.github.io/2022-10-09-yan-ma-tong-pei-fu-yan-ma-fan-yan-ma.html</id>
+    <published>2022-10-09T08:46:36.000Z</published>
+    <updated>2022-10-09T08:53:01.071Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h3 id=&quot;掩码&quot;&gt;&lt;a href=&quot;#掩码&quot; class=&quot;headerlink&quot; title=&quot;掩码&quot;&gt;&lt;/a&gt;掩码&lt;/h3&gt;&lt;ul&gt;
+&lt;li&gt;采用&lt;strong&gt;按位与&lt;/strong&gt;运算，计算一个ip地址的网络号&lt;/li&gt;
+&lt;li&gt;0 &amp;amp; 0 = 0  1</summary>
+        
+      
+    
+    
+    
+    <category term="网络基础" scheme="https://uprightokra.github.io/categories/%E7%BD%91%E7%BB%9C%E5%9F%BA%E7%A1%80/"/>
+    
+    
+    <category term="掩码、通配符掩码、反掩码" scheme="https://uprightokra.github.io/tags/%E6%8E%A9%E7%A0%81%E3%80%81%E9%80%9A%E9%85%8D%E7%AC%A6%E6%8E%A9%E7%A0%81%E3%80%81%E5%8F%8D%E6%8E%A9%E7%A0%81/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>数通 12-ACL</title>
+    <link href="https://uprightokra.github.io/2022-10-09-shu-tong-12-acl.html"/>
+    <id>https://uprightokra.github.io/2022-10-09-shu-tong-12-acl.html</id>
+    <published>2022-10-09T05:56:57.000Z</published>
+    <updated>2022-10-09T08:41:33.392Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h1 id=&quot;ACL&quot;&gt;&lt;a href=&quot;#ACL&quot; class=&quot;headerlink&quot;</summary>
+        
+      
+    
+    
+    
+    <category term="网络基础" scheme="https://uprightokra.github.io/categories/%E7%BD%91%E7%BB%9C%E5%9F%BA%E7%A1%80/"/>
+    
+    
+    <category term="ACL" scheme="https://uprightokra.github.io/tags/ACL/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>数通 00-小知识点</title>
+    <link href="https://uprightokra.github.io/2022-10-09-shu-tong-00-xiao-zhi-shi-dian.html"/>
+    <id>https://uprightokra.github.io/2022-10-09-shu-tong-00-xiao-zhi-shi-dian.html</id>
+    <published>2022-10-09T05:50:27.000Z</published>
+    <updated>2022-10-09T08:45:55.280Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h3 id=&quot;五元组&quot;&gt;&lt;a href=&quot;#五元组&quot; class=&quot;headerlink&quot; title=&quot;五元组&quot;&gt;&lt;/a&gt;五元组&lt;/h3&gt;&lt;p&gt;五元组是通信术语。通常是指源IP地址，源端口，目的IP地址，目的端口和传输层协议&lt;/p&gt;
+&lt;h3</summary>
+        
+      
+    
+    
+    
+    <category term="网络基础" scheme="https://uprightokra.github.io/categories/%E7%BD%91%E7%BB%9C%E5%9F%BA%E7%A1%80/"/>
+    
+    
+    <category term="网络基础" scheme="https://uprightokra.github.io/tags/%E7%BD%91%E7%BB%9C%E5%9F%BA%E7%A1%80/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>实验ensp-ACL访问控制列表(二)</title>
+    <link href="https://uprightokra.github.io/2022-10-09-shi-yan-ensp-acl-fang-wen-kong-zhi-lie-biao-er.html"/>
+    <id>https://uprightokra.github.io/2022-10-09-shi-yan-ensp-acl-fang-wen-kong-zhi-lie-biao-er.html</id>
+    <published>2022-10-09T05:40:27.000Z</published>
+    <updated>2022-10-09T08:39:41.589Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h3 id=&quot;实验要求&quot;&gt;&lt;a href=&quot;#实验要求&quot; class=&quot;headerlink&quot; title=&quot;实验要求&quot;&gt;&lt;/a&gt;实验要求&lt;/h3&gt;&lt;p&gt;1.PC1——&amp;gt;无法访问PC3和server 1&lt;/p&gt;
+&lt;p&gt;2.Client1——&amp;gt;无法访问Server</summary>
+        
+      
+    
+    
+    
+    <category term="ensp实验" scheme="https://uprightokra.github.io/categories/ensp%E5%AE%9E%E9%AA%8C/"/>
+    
+    
+    <category term="ACL" scheme="https://uprightokra.github.io/tags/ACL/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>实验ensp-二层链路聚合配置</title>
+    <link href="https://uprightokra.github.io/2022-10-09-shi-yan-ensp-er-ceng-lian-lu-ju-he-pei-zhi.html"/>
+    <id>https://uprightokra.github.io/2022-10-09-shi-yan-ensp-er-ceng-lian-lu-ju-he-pei-zhi.html</id>
+    <published>2022-10-09T04:29:54.000Z</published>
+    <updated>2022-10-09T04:57:54.541Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h1 id=&quot;二层链路聚合配置&quot;&gt;&lt;a href=&quot;#二层链路聚合配置&quot; class=&quot;headerlink&quot; title=&quot;二层链路聚合配置&quot;&gt;&lt;/a&gt;&lt;center&gt;二层链路聚合配置&lt;/center&gt;&lt;/h1&gt;&lt;h3 id=&quot;拓扑图&quot;&gt;&lt;a href=&quot;#拓扑图&quot;</summary>
+        
+      
+    
+    
+    
+    <category term="ensp实验" scheme="https://uprightokra.github.io/categories/ensp%E5%AE%9E%E9%AA%8C/"/>
+    
+    
+    <category term="二层链路聚合" scheme="https://uprightokra.github.io/tags/%E4%BA%8C%E5%B1%82%E9%93%BE%E8%B7%AF%E8%81%9A%E5%90%88/"/>
+    
+  </entry>
   
   <entry>
     <title>数通 11-链路聚合</title>
@@ -196,7 +325,7 @@
     <link href="https://uprightokra.github.io/2022-09-27-ospf-dr-yu-bdr-xiang-jie.html"/>
     <id>https://uprightokra.github.io/2022-09-27-ospf-dr-yu-bdr-xiang-jie.html</id>
     <published>2022-09-27T14:21:45.000Z</published>
-    <updated>2022-10-01T07:56:50.317Z</updated>
+    <updated>2022-10-09T08:47:22.870Z</updated>
     
     
       
@@ -210,10 +339,10 @@
     
     
     
-    <category term="DR&amp;BDR" scheme="https://uprightokra.github.io/categories/DR-BDR/"/>
+    <category term="网络基础" scheme="https://uprightokra.github.io/categories/%E7%BD%91%E7%BB%9C%E5%9F%BA%E7%A1%80/"/>
     
     
-    <category term="网络基础" scheme="https://uprightokra.github.io/tags/%E7%BD%91%E7%BB%9C%E5%9F%BA%E7%A1%80/"/>
+    <category term="DR&amp;BDR" scheme="https://uprightokra.github.io/tags/DR-BDR/"/>
     
   </entry>
   
@@ -389,132 +518,6 @@
     
     
     <category term="NAT" scheme="https://uprightokra.github.io/tags/NAT/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>实验ensp-ACL访问控制列表</title>
-    <link href="https://uprightokra.github.io/2022-09-16-shi-yan-ensp-acl-fang-wen-kong-zhi-lie-biao.html"/>
-    <id>https://uprightokra.github.io/2022-09-16-shi-yan-ensp-acl-fang-wen-kong-zhi-lie-biao.html</id>
-    <published>2022-09-16T02:19:02.000Z</published>
-    <updated>2022-10-02T12:39:37.170Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;h1 id=&quot;ACL访问控制列表&quot;&gt;&lt;a href=&quot;#ACL访问控制列表&quot; class=&quot;headerlink&quot; title=&quot;ACL访问控制列表&quot;&gt;&lt;/a&gt;&lt;center&gt;ACL访问控制列表&lt;/center&gt;&lt;/h1&gt;&lt;h3 id=&quot;实验要求&quot;&gt;&lt;a</summary>
-        
-      
-    
-    
-    
-    <category term="ensp实验" scheme="https://uprightokra.github.io/categories/ensp%E5%AE%9E%E9%AA%8C/"/>
-    
-    
-    <category term="ACL" scheme="https://uprightokra.github.io/tags/ACL/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Hexo-hexo deploy 输入Username、Password提示**fatal: Authentication failed for ‘https://github.com/xxx.git/‘**</title>
-    <link href="https://uprightokra.github.io/2022-09-16-hexo-fatal-authentication-failed-for-https-github-com-xxx-git.html"/>
-    <id>https://uprightokra.github.io/2022-09-16-hexo-fatal-authentication-failed-for-https-github-com-xxx-git.html</id>
-    <published>2022-09-16T01:19:30.000Z</published>
-    <updated>2022-09-16T01:34:17.133Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;p&gt;2022.09.15晚上时隔一个月重新开始往github仓库提交笔记，hexo g -d后弹出窗口提示输入Username以及Password。在正确输入用户名密码后却提示&lt;/p&gt;
-&lt;pre class=&quot;line-numbers language-none&quot;&gt;&lt;code</summary>
-        
-      
-    
-    
-    
-    <category term="Hexo" scheme="https://uprightokra.github.io/categories/Hexo/"/>
-    
-    
-    <category term="Hexo" scheme="https://uprightokra.github.io/tags/Hexo/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>实验ensp-三层交换机&amp;单臂路由实验</title>
-    <link href="https://uprightokra.github.io/2022-09-15-shi-yan-ensp-san-ceng-jiao-huan-ji-dan-bi-lu-you-shi-yan.html"/>
-    <id>https://uprightokra.github.io/2022-09-15-shi-yan-ensp-san-ceng-jiao-huan-ji-dan-bi-lu-you-shi-yan.html</id>
-    <published>2022-09-15T11:41:17.000Z</published>
-    <updated>2022-10-02T12:40:02.693Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;h1 id=&quot;三层交换机-amp-单臂路由实验&quot;&gt;&lt;a href=&quot;#三层交换机-amp-单臂路由实验&quot; class=&quot;headerlink&quot;</summary>
-        
-      
-    
-    
-    
-    <category term="ensp实验" scheme="https://uprightokra.github.io/categories/ensp%E5%AE%9E%E9%AA%8C/"/>
-    
-    
-    <category term="单臂路由" scheme="https://uprightokra.github.io/tags/%E5%8D%95%E8%87%82%E8%B7%AF%E7%94%B1/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>实验ensp-VLAN实验</title>
-    <link href="https://uprightokra.github.io/2022-09-15-shi-yan-ensp-vlan-shi-yan.html"/>
-    <id>https://uprightokra.github.io/2022-09-15-shi-yan-ensp-vlan-shi-yan.html</id>
-    <published>2022-09-15T07:43:20.000Z</published>
-    <updated>2022-10-02T12:38:25.926Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;h1 id=&quot;VLAN实验&quot;&gt;&lt;a href=&quot;#VLAN实验&quot; class=&quot;headerlink&quot; title=&quot;VLAN实验&quot;&gt;&lt;/a&gt;&lt;center&gt;VLAN实验&lt;/center&gt;&lt;/h1&gt;&lt;h3 id=&quot;知识点&quot;&gt;&lt;a href=&quot;#知识点&quot;</summary>
-        
-      
-    
-    
-    
-    <category term="ensp实验" scheme="https://uprightokra.github.io/categories/ensp%E5%AE%9E%E9%AA%8C/"/>
-    
-    
-    <category term="VLAN" scheme="https://uprightokra.github.io/tags/VLAN/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>实验ensp-静态路由实验</title>
-    <link href="https://uprightokra.github.io/2022-09-15-shi-yan-ensp-jing-tai-lu-you-shi-yan.html"/>
-    <id>https://uprightokra.github.io/2022-09-15-shi-yan-ensp-jing-tai-lu-you-shi-yan.html</id>
-    <published>2022-09-15T07:17:12.000Z</published>
-    <updated>2022-10-02T12:40:19.476Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;h1 id=&quot;静态路由实验&quot;&gt;&lt;a href=&quot;#静态路由实验&quot; class=&quot;headerlink&quot; title=&quot;静态路由实验&quot;&gt;&lt;/a&gt;&lt;center&gt;静态路由实验&lt;/center&gt;&lt;/h1&gt;&lt;h3 id=&quot;拓扑图&quot;&gt;&lt;a href=&quot;#拓扑图&quot;</summary>
-        
-      
-    
-    
-    
-    <category term="ensp实验" scheme="https://uprightokra.github.io/categories/ensp%E5%AE%9E%E9%AA%8C/"/>
-    
-    
-    <category term="静态路由" scheme="https://uprightokra.github.io/tags/%E9%9D%99%E6%80%81%E8%B7%AF%E7%94%B1/"/>
     
   </entry>
   
