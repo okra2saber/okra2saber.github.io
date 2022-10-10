@@ -6,7 +6,7 @@
   <link href="https://uprightokra.github.io/atom.xml" rel="self"/>
   
   <link href="https://uprightokra.github.io/"/>
-  <updated>2022-10-09T08:53:01.071Z</updated>
+  <updated>2022-10-10T08:12:54.134Z</updated>
   <id>https://uprightokra.github.io/</id>
   
   <author>
@@ -17,11 +17,66 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>AAA配置</title>
+    <link href="https://uprightokra.github.io/2022-10-10-aaa-pei-zhi.html"/>
+    <id>https://uprightokra.github.io/2022-10-10-aaa-pei-zhi.html</id>
+    <published>2022-10-10T08:12:12.000Z</published>
+    <updated>2022-10-10T08:12:54.134Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;p&gt;&lt;img src=&quot;https://img-blog.csdnimg.cn/c42fce4bed504a8dbe68b610fe651ba5.png&quot;&gt;&lt;img</summary>
+        
+      
+    
+    
+    
+    <category term="网络基础" scheme="https://uprightokra.github.io/categories/%E7%BD%91%E7%BB%9C%E5%9F%BA%E7%A1%80/"/>
+    
+    
+    <category term="AAA" scheme="https://uprightokra.github.io/tags/AAA/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>设备上架与调试步骤</title>
+    <link href="https://uprightokra.github.io/2022-10-10-she-bei-shang-jia-yu-diao-shi-bu-zou.html"/>
+    <id>https://uprightokra.github.io/2022-10-10-she-bei-shang-jia-yu-diao-shi-bu-zou.html</id>
+    <published>2022-10-10T07:50:22.000Z</published>
+    <updated>2022-10-10T08:12:54.144Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;p&gt;1．web界面 （网页调试）&lt;/p&gt;
+&lt;p&gt;显示的内容较少、有限；且一个功能默认参数不同&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;适合：多台设备 同一个品牌 简单功能／小众品牌— 命令行不熟悉 方便—单机功能&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;不适合：功能性复杂 路由协议BGP</summary>
+        
+      
+    
+    
+    
+    <category term="网络基础" scheme="https://uprightokra.github.io/categories/%E7%BD%91%E7%BB%9C%E5%9F%BA%E7%A1%80/"/>
+    
+    
+    <category term="设备上架与调试" scheme="https://uprightokra.github.io/tags/%E8%AE%BE%E5%A4%87%E4%B8%8A%E6%9E%B6%E4%B8%8E%E8%B0%83%E8%AF%95/"/>
+    
+  </entry>
+  
+  <entry>
     <title>掩码、通配符掩码、反掩码</title>
     <link href="https://uprightokra.github.io/2022-10-09-yan-ma-tong-pei-fu-yan-ma-fan-yan-ma.html"/>
     <id>https://uprightokra.github.io/2022-10-09-yan-ma-tong-pei-fu-yan-ma-fan-yan-ma.html</id>
     <published>2022-10-09T08:46:36.000Z</published>
-    <updated>2022-10-09T08:53:01.071Z</updated>
+    <updated>2022-10-09T08:54:16.620Z</updated>
     
     
       
@@ -48,7 +103,7 @@
     <link href="https://uprightokra.github.io/2022-10-09-shu-tong-12-acl.html"/>
     <id>https://uprightokra.github.io/2022-10-09-shu-tong-12-acl.html</id>
     <published>2022-10-09T05:56:57.000Z</published>
-    <updated>2022-10-09T08:41:33.392Z</updated>
+    <updated>2022-10-09T08:54:16.629Z</updated>
     
     
       
@@ -73,7 +128,7 @@
     <link href="https://uprightokra.github.io/2022-10-09-shu-tong-00-xiao-zhi-shi-dian.html"/>
     <id>https://uprightokra.github.io/2022-10-09-shu-tong-00-xiao-zhi-shi-dian.html</id>
     <published>2022-10-09T05:50:27.000Z</published>
-    <updated>2022-10-09T08:45:55.280Z</updated>
+    <updated>2022-10-09T08:54:16.620Z</updated>
     
     
       
@@ -99,7 +154,7 @@
     <link href="https://uprightokra.github.io/2022-10-09-shi-yan-ensp-acl-fang-wen-kong-zhi-lie-biao-er.html"/>
     <id>https://uprightokra.github.io/2022-10-09-shi-yan-ensp-acl-fang-wen-kong-zhi-lie-biao-er.html</id>
     <published>2022-10-09T05:40:27.000Z</published>
-    <updated>2022-10-09T08:39:41.589Z</updated>
+    <updated>2022-10-09T08:54:16.615Z</updated>
     
     
       
@@ -125,7 +180,7 @@
     <link href="https://uprightokra.github.io/2022-10-09-shi-yan-ensp-er-ceng-lian-lu-ju-he-pei-zhi.html"/>
     <id>https://uprightokra.github.io/2022-10-09-shi-yan-ensp-er-ceng-lian-lu-ju-he-pei-zhi.html</id>
     <published>2022-10-09T04:29:54.000Z</published>
-    <updated>2022-10-09T04:57:54.541Z</updated>
+    <updated>2022-10-09T08:54:16.620Z</updated>
     
     
       
@@ -468,56 +523,6 @@
     
     
     <category term="ensp实验" scheme="https://uprightokra.github.io/tags/ensp%E5%AE%9E%E9%AA%8C/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>实验ensp-Telnet远程登录实验</title>
-    <link href="https://uprightokra.github.io/2022-09-17-shi-yan-ensp-telnet-yuan-cheng-deng-lu-shi-yan.html"/>
-    <id>https://uprightokra.github.io/2022-09-17-shi-yan-ensp-telnet-yuan-cheng-deng-lu-shi-yan.html</id>
-    <published>2022-09-17T04:50:30.000Z</published>
-    <updated>2022-10-02T12:38:47.423Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;h1 id=&quot;通过Telnet远程登录到网络设备&quot;&gt;&lt;a href=&quot;#通过Telnet远程登录到网络设备&quot; class=&quot;headerlink&quot;</summary>
-        
-      
-    
-    
-    
-    <category term="ensp实验" scheme="https://uprightokra.github.io/categories/ensp%E5%AE%9E%E9%AA%8C/"/>
-    
-    
-    <category term="Telnet" scheme="https://uprightokra.github.io/tags/Telnet/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>实验ensp-NAT网络地址转换</title>
-    <link href="https://uprightokra.github.io/2022-09-16-shi-yan-ensp-nat-wang-luo-di-zhi-zhuan-huan.html"/>
-    <id>https://uprightokra.github.io/2022-09-16-shi-yan-ensp-nat-wang-luo-di-zhi-zhuan-huan.html</id>
-    <published>2022-09-16T08:42:47.000Z</published>
-    <updated>2022-10-02T12:39:00.874Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;h1 id=&quot;NAT网络地址转化&quot;&gt;&lt;a href=&quot;#NAT网络地址转化&quot; class=&quot;headerlink&quot; title=&quot;NAT网络地址转化&quot;&gt;&lt;/a&gt;&lt;center&gt;NAT网络地址转化&lt;/center&gt;&lt;/h1&gt;&lt;h3 id=&quot;知识点&quot;&gt;&lt;a href=&quot;#知识点&quot;</summary>
-        
-      
-    
-    
-    
-    <category term="ensp实验" scheme="https://uprightokra.github.io/categories/ensp%E5%AE%9E%E9%AA%8C/"/>
-    
-    
-    <category term="NAT" scheme="https://uprightokra.github.io/tags/NAT/"/>
     
   </entry>
   

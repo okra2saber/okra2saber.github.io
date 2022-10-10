@@ -4,6 +4,56 @@
   
     
     <entry>
+      <title>AAA配置</title>
+      <link href="/2022-10-10-aaa-pei-zhi.html"/>
+      <url>/2022-10-10-aaa-pei-zhi.html</url>
+      
+        <content type="html"><![CDATA[<p><img src="https://img-blog.csdnimg.cn/c42fce4bed504a8dbe68b610fe651ba5.png"><img src="https://img-blog.csdnimg.cn/00ba3249d08f4dadb1a4ae4a7b5f0a5e.png"><img src="https://img-blog.csdnimg.cn/2f73e019c78345f3a421ed2d077721f2.png"><img src="https://img-blog.csdnimg.cn/1345823c0ae1434eaeef8ef8145fd836.png"><img src="https://img-blog.csdnimg.cn/f31e0c09504c4e18b22615a2af4ae77f.png"><img src="https://img-blog.csdnimg.cn/6b02a036e673482eb75ce55ced716741.png"></p>]]></content>
+      
+      
+      <categories>
+          
+          <category> 网络基础 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> AAA </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>设备上架与调试步骤</title>
+      <link href="/2022-10-10-she-bei-shang-jia-yu-diao-shi-bu-zou.html"/>
+      <url>/2022-10-10-she-bei-shang-jia-yu-diao-shi-bu-zou.html</url>
+      
+        <content type="html"><![CDATA[<p>1．web界面 （网页调试）</p><p>显示的内容较少、有限；且一个功能默认参数不同</p><ul><li><p>适合：多台设备 同一个品牌 简单功能／小众品牌— 命令行不熟悉 方便—单机功能</p></li><li><p>不适合：功能性复杂 路由协议BGP ISIS MPLS—VPN—非单机功能</p></li></ul><p>2．命令行调试</p><p>不是学习命令行本身，而是学习功能的本身特点—系统层面—设备里的系统 </p><p><strong>本地调试／远程调试</strong></p><p>本地：多用于设备开局调试</p><table><thead><tr><th>电脑</th><th>CPU</th><th>内存</th><th>硬盘</th><th>电源</th></tr></thead><tbody><tr><td>网络设备</td><td>CPU</td><td>内存</td><td>Flash卡</td><td>电源</td></tr></tbody></table><p>4种 常见存储器：</p><p>1．FLASH卡—C盘一样 存放系统文件</p><ul><li>CF卡—传统卡—读取速度慢 数据稳定性高 不容易故障 </li><li>SD卡—读取速度快 容易故障</li></ul><p>启动系统：把FLASH卡的系统文件 读取到RAM中（内存）</p><p>2．RAM—内存条</p><p>3．ROM—主板存储器 存放引导系统—BIOS </p><p>4．NVRAM—存放配置文件</p><table><thead><tr><th>设备厂商</th><th>主系统</th><th>引入系统</th></tr></thead><tbody><tr><td>思科</td><td>ISO</td><td></td></tr><tr><td>华为</td><td>VRP</td><td></td></tr></tbody></table><p>主系统—配置系统 操作系统—display show等等</p><p>每一台设备—2套系统＝主系统＋引导系统</p><h3 id="设备系统升级方法"><a href="#设备系统升级方法" class="headerlink" title="设备系统升级方法"></a>设备系统升级方法</h3><p><img src="https://img-blog.csdnimg.cn/8603e60519ba4e378128f407c772d547.png"></p><p>波特率（B）：9600</p><p>—console接口 传输速度—紧急情况下有用</p><p>—设备升级 镜像系统—系统版本有bug／设备系统功能有bug／当前版本某个功能不支持</p><p>两种方法：</p><p>1．USB升级—携带usb接口—插入U盘 外置—面板上 直接连接 copy</p><p>2．FTP—文件传输协议—文件传到设备里</p><p>—远程调试—telnet不加密的 不安全／ssh—stelnet加密的＝用户权限 够的—设备系统—思科 华为 基础命令行开局调试—telnet—演示～～</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> 网络基础 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 设备上架与调试 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>掩码、通配符掩码、反掩码</title>
       <link href="/2022-10-09-yan-ma-tong-pei-fu-yan-ma-fan-yan-ma.html"/>
       <url>/2022-10-09-yan-ma-tong-pei-fu-yan-ma-fan-yan-ma.html</url>
