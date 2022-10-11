@@ -6,7 +6,7 @@
   <link href="https://uprightokra.github.io/atom.xml" rel="self"/>
   
   <link href="https://uprightokra.github.io/"/>
-  <updated>2022-10-10T08:12:54.134Z</updated>
+  <updated>2022-10-11T08:10:15.813Z</updated>
   <id>https://uprightokra.github.io/</id>
   
   <author>
@@ -15,6 +15,56 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>实验ensp-DHCP全局地址池和接口地址池的配置</title>
+    <link href="https://uprightokra.github.io/2022-10-11-shi-yan-ensp-dhcp-quan-ju-di-zhi-chi-he-jie-kou-di-zhi-chi-de-pei-zhi.html"/>
+    <id>https://uprightokra.github.io/2022-10-11-shi-yan-ensp-dhcp-quan-ju-di-zhi-chi-he-jie-kou-di-zhi-chi-de-pei-zhi.html</id>
+    <published>2022-10-11T07:46:21.000Z</published>
+    <updated>2022-10-11T08:10:15.813Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h1 id=&quot;DHCP全局地址池和接口地址池的配置&quot;&gt;&lt;a href=&quot;#DHCP全局地址池和接口地址池的配置&quot; class=&quot;headerlink&quot;</summary>
+        
+      
+    
+    
+    
+    <category term="ensp实验" scheme="https://uprightokra.github.io/categories/ensp%E5%AE%9E%E9%AA%8C/"/>
+    
+    
+    <category term="全局、接口地址池" scheme="https://uprightokra.github.io/tags/%E5%85%A8%E5%B1%80%E3%80%81%E6%8E%A5%E5%8F%A3%E5%9C%B0%E5%9D%80%E6%B1%A0/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>数通 13-DHCP+DNS+PPPOE</title>
+    <link href="https://uprightokra.github.io/2022-10-11-shu-tong-13-dhcp-dns-pppoe.html"/>
+    <id>https://uprightokra.github.io/2022-10-11-shu-tong-13-dhcp-dns-pppoe.html</id>
+    <published>2022-10-11T05:18:29.000Z</published>
+    <updated>2022-10-11T13:55:16.491Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h1 id=&quot;DHCP-DNS-PPPOE&quot;&gt;&lt;a href=&quot;#DHCP-DNS-PPPOE&quot; class=&quot;headerlink&quot; title=&quot;DHCP+DNS+PPPOE&quot;&gt;&lt;/a&gt;&lt;center&gt;DHCP+DNS+PPPOE&lt;/center&gt;&lt;/h1&gt;&lt;p&gt;&lt;a</summary>
+        
+      
+    
+    
+    
+    <category term="网络基础" scheme="https://uprightokra.github.io/categories/%E7%BD%91%E7%BB%9C%E5%9F%BA%E7%A1%80/"/>
+    
+    
+    <category term="DHCP+DNS+PPPOE" scheme="https://uprightokra.github.io/tags/DHCP-DNS-PPPOE/"/>
+    
+  </entry>
   
   <entry>
     <title>AAA配置</title>
@@ -128,15 +178,17 @@
     <link href="https://uprightokra.github.io/2022-10-09-shu-tong-00-xiao-zhi-shi-dian.html"/>
     <id>https://uprightokra.github.io/2022-10-09-shu-tong-00-xiao-zhi-shi-dian.html</id>
     <published>2022-10-09T05:50:27.000Z</published>
-    <updated>2022-10-09T08:54:16.620Z</updated>
+    <updated>2022-10-11T14:22:52.413Z</updated>
     
     
       
       
         
         
-    <summary type="html">&lt;h3 id=&quot;五元组&quot;&gt;&lt;a href=&quot;#五元组&quot; class=&quot;headerlink&quot; title=&quot;五元组&quot;&gt;&lt;/a&gt;五元组&lt;/h3&gt;&lt;p&gt;五元组是通信术语。通常是指源IP地址，源端口，目的IP地址，目的端口和传输层协议&lt;/p&gt;
-&lt;h3</summary>
+    <summary type="html">&lt;p&gt;作为网络工程师在组建网络初，需要购买公网IP和宽带&lt;/p&gt;
+&lt;p&gt;一般100人对应一个公网IP&lt;/p&gt;
+&lt;p&gt;经济化组网，以太网使用光纤    便宜&lt;/p&gt;
+&lt;h3 id=&quot;ICT&quot;&gt;&lt;a href=&quot;#ICT&quot; class=&quot;headerlink&quot;</summary>
         
       
     
@@ -473,56 +525,6 @@
     
     
     <category term="OSPF" scheme="https://uprightokra.github.io/tags/OSPF/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>数通 06-路由</title>
-    <link href="https://uprightokra.github.io/2022-09-25-shu-tong-06-lu-you.html"/>
-    <id>https://uprightokra.github.io/2022-09-25-shu-tong-06-lu-you.html</id>
-    <published>2022-09-25T08:09:37.000Z</published>
-    <updated>2022-10-02T12:36:53.323Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;h1 id=&quot;路由&quot;&gt;&lt;a href=&quot;#路由&quot; class=&quot;headerlink&quot; title=&quot;路由&quot;&gt;&lt;/a&gt;&lt;strong&gt;&lt;center&gt;路由&lt;/center&gt;&lt;/strong&gt;&lt;/h1&gt;&lt;h3 id=&quot;路由的分类&quot;&gt;&lt;a href=&quot;#路由的分类&quot;</summary>
-        
-      
-    
-    
-    
-    <category term="网络基础" scheme="https://uprightokra.github.io/categories/%E7%BD%91%E7%BB%9C%E5%9F%BA%E7%A1%80/"/>
-    
-    
-    <category term="路由" scheme="https://uprightokra.github.io/tags/%E8%B7%AF%E7%94%B1/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>实验ensp-中小型网络系统综合实验</title>
-    <link href="https://uprightokra.github.io/2022-09-18-shi-yan-ensp-zhong-xiao-xing-wang-luo-xi-tong-zong-he-shi-yan.html"/>
-    <id>https://uprightokra.github.io/2022-09-18-shi-yan-ensp-zhong-xiao-xing-wang-luo-xi-tong-zong-he-shi-yan.html</id>
-    <published>2022-09-18T11:42:19.000Z</published>
-    <updated>2022-09-18T14:04:37.842Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;h1 id=&quot;中小型网络系统综合实验&quot;&gt;&lt;a href=&quot;#中小型网络系统综合实验&quot; class=&quot;headerlink&quot; title=&quot;中小型网络系统综合实验&quot;&gt;&lt;/a&gt;&lt;center&gt;中小型网络系统综合实验&lt;/center&gt;&lt;/h1&gt;&lt;h3 id=&quot;实验要求&quot;&gt;&lt;a</summary>
-        
-      
-    
-    
-    
-    <category term="ensp实验" scheme="https://uprightokra.github.io/categories/ensp%E5%AE%9E%E9%AA%8C/"/>
-    
-    
-    <category term="ensp实验" scheme="https://uprightokra.github.io/tags/ensp%E5%AE%9E%E9%AA%8C/"/>
     
   </entry>
   
