@@ -6,7 +6,7 @@
   <link href="https://uprightokra.github.io/atom.xml" rel="self"/>
   
   <link href="https://uprightokra.github.io/"/>
-  <updated>2022-10-11T08:10:15.813Z</updated>
+  <updated>2022-10-12T13:20:53.271Z</updated>
   <id>https://uprightokra.github.io/</id>
   
   <author>
@@ -17,11 +17,86 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>无线Fat AP与Fit AP区别</title>
+    <link href="https://uprightokra.github.io/2022-10-12-wu-xian-fat-ap-yu-fit-ap-qu-bie.html"/>
+    <id>https://uprightokra.github.io/2022-10-12-wu-xian-fat-ap-yu-fit-ap-qu-bie.html</id>
+    <published>2022-10-12T12:23:37.000Z</published>
+    <updated>2022-10-12T13:20:53.271Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h1 id=&quot;无线Fat-AP和Fit-AP如何区分&quot;&gt;&lt;a href=&quot;#无线Fat-AP和Fit-AP如何区分&quot; class=&quot;headerlink&quot; title=&quot;无线Fat AP和Fit AP如何区分&quot;&gt;&lt;/a&gt;&lt;center&gt;无线Fat AP和Fit</summary>
+        
+      
+    
+    
+    
+    <category term="网络基础" scheme="https://uprightokra.github.io/categories/%E7%BD%91%E7%BB%9C%E5%9F%BA%E7%A1%80/"/>
+    
+    
+    <category term="Fat AP&amp;Fit AP" scheme="https://uprightokra.github.io/tags/Fat-AP-Fit-AP/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>数通 15-园区典型组网</title>
+    <link href="https://uprightokra.github.io/2022-10-12-shu-tong-15-yuan-qu-dian-xing-zu-wang.html"/>
+    <id>https://uprightokra.github.io/2022-10-12-shu-tong-15-yuan-qu-dian-xing-zu-wang.html</id>
+    <published>2022-10-12T11:58:07.000Z</published>
+    <updated>2022-10-12T13:20:53.271Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h1 id=&quot;园区网典型组网&quot;&gt;&lt;a href=&quot;#园区网典型组网&quot; class=&quot;headerlink&quot; title=&quot;园区网典型组网&quot;&gt;&lt;/a&gt;&lt;center&gt;园区网典型组网&lt;/center&gt;&lt;/h1&gt;&lt;h3 id=&quot;什么是园区网&quot;&gt;&lt;a href=&quot;#什么是园区网&quot;</summary>
+        
+      
+    
+    
+    
+    <category term="网络基础" scheme="https://uprightokra.github.io/categories/%E7%BD%91%E7%BB%9C%E5%9F%BA%E7%A1%80/"/>
+    
+    
+    <category term="园区网" scheme="https://uprightokra.github.io/tags/%E5%9B%AD%E5%8C%BA%E7%BD%91/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>数通 14-SDN与NFV概述</title>
+    <link href="https://uprightokra.github.io/2022-10-12-shu-tong-14-sdn-yu-nfv-gai-shu.html"/>
+    <id>https://uprightokra.github.io/2022-10-12-shu-tong-14-sdn-yu-nfv-gai-shu.html</id>
+    <published>2022-10-12T10:09:34.000Z</published>
+    <updated>2022-10-12T13:20:53.281Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h1 id=&quot;SDN与NFV概述&quot;&gt;&lt;a href=&quot;#SDN与NFV概述&quot; class=&quot;headerlink&quot; title=&quot;SDN与NFV概述&quot;&gt;&lt;/a&gt;&lt;center&gt;SDN与NFV概述&lt;/center&gt;&lt;/h1&gt;&lt;p&gt;​        </summary>
+        
+      
+    
+    
+    
+    <category term="网络基础" scheme="https://uprightokra.github.io/categories/%E7%BD%91%E7%BB%9C%E5%9F%BA%E7%A1%80/"/>
+    
+    
+    <category term="SDN、NFV" scheme="https://uprightokra.github.io/tags/SDN%E3%80%81NFV/"/>
+    
+  </entry>
+  
+  <entry>
     <title>实验ensp-DHCP全局地址池和接口地址池的配置</title>
     <link href="https://uprightokra.github.io/2022-10-11-shi-yan-ensp-dhcp-quan-ju-di-zhi-chi-he-jie-kou-di-zhi-chi-de-pei-zhi.html"/>
     <id>https://uprightokra.github.io/2022-10-11-shi-yan-ensp-dhcp-quan-ju-di-zhi-chi-he-jie-kou-di-zhi-chi-de-pei-zhi.html</id>
     <published>2022-10-11T07:46:21.000Z</published>
-    <updated>2022-10-11T08:10:15.813Z</updated>
+    <updated>2022-10-11T14:57:51.039Z</updated>
     
     
       
@@ -46,7 +121,7 @@
     <link href="https://uprightokra.github.io/2022-10-11-shu-tong-13-dhcp-dns-pppoe.html"/>
     <id>https://uprightokra.github.io/2022-10-11-shu-tong-13-dhcp-dns-pppoe.html</id>
     <published>2022-10-11T05:18:29.000Z</published>
-    <updated>2022-10-11T13:55:16.491Z</updated>
+    <updated>2022-10-11T14:57:51.049Z</updated>
     
     
       
@@ -71,14 +146,15 @@
     <link href="https://uprightokra.github.io/2022-10-10-aaa-pei-zhi.html"/>
     <id>https://uprightokra.github.io/2022-10-10-aaa-pei-zhi.html</id>
     <published>2022-10-10T08:12:12.000Z</published>
-    <updated>2022-10-10T08:12:54.134Z</updated>
+    <updated>2022-10-12T12:44:36.846Z</updated>
     
     
       
       
         
         
-    <summary type="html">&lt;p&gt;&lt;img src=&quot;https://img-blog.csdnimg.cn/c42fce4bed504a8dbe68b610fe651ba5.png&quot;&gt;&lt;img</summary>
+    <summary type="html">&lt;p&gt;&lt;em&gt;AAA&lt;/em&gt;是认证（Authentication）、授权（Authorization）和计费（Accounting）的简称，是网络安全中进行访问控制的一种安全管理机制，提供认证、授权和计费三种安全服务。&lt;/p&gt;
+&lt;p&gt;&lt;img</summary>
         
       
     
@@ -178,7 +254,7 @@
     <link href="https://uprightokra.github.io/2022-10-09-shu-tong-00-xiao-zhi-shi-dian.html"/>
     <id>https://uprightokra.github.io/2022-10-09-shu-tong-00-xiao-zhi-shi-dian.html</id>
     <published>2022-10-09T05:50:27.000Z</published>
-    <updated>2022-10-11T14:22:52.413Z</updated>
+    <updated>2022-10-12T13:00:48.333Z</updated>
     
     
       
@@ -188,7 +264,7 @@
     <summary type="html">&lt;p&gt;作为网络工程师在组建网络初，需要购买公网IP和宽带&lt;/p&gt;
 &lt;p&gt;一般100人对应一个公网IP&lt;/p&gt;
 &lt;p&gt;经济化组网，以太网使用光纤    便宜&lt;/p&gt;
-&lt;h3 id=&quot;ICT&quot;&gt;&lt;a href=&quot;#ICT&quot; class=&quot;headerlink&quot;</summary>
+&lt;h3 id=&quot;802-3和802-11&quot;&gt;&lt;a href=&quot;#802-3和802-11&quot;</summary>
         
       
     
@@ -450,81 +526,6 @@
     
     
     <category term="DR&amp;BDR" scheme="https://uprightokra.github.io/tags/DR-BDR/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>loopback本地回环接口</title>
-    <link href="https://uprightokra.github.io/2022-09-27-loopback-ben-di-hui-huan-jie-kou.html"/>
-    <id>https://uprightokra.github.io/2022-09-27-loopback-ben-di-hui-huan-jie-kou.html</id>
-    <published>2022-09-27T05:30:38.000Z</published>
-    <updated>2022-09-27T07:52:34.326Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;h1 id=&quot;loopback&quot;&gt;&lt;a href=&quot;#loopback&quot; class=&quot;headerlink&quot; title=&quot;loopback&quot;&gt;&lt;/a&gt;&lt;center&gt;&lt;strong&gt;loopback&lt;/strong&gt;&lt;/center&gt;&lt;/h1&gt;&lt;p&gt;​       </summary>
-        
-      
-    
-    
-    
-    <category term="网络基础" scheme="https://uprightokra.github.io/categories/%E7%BD%91%E7%BB%9C%E5%9F%BA%E7%A1%80/"/>
-    
-    
-    <category term="loopback" scheme="https://uprightokra.github.io/tags/loopback/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>实验ensp OSPF配置实验</title>
-    <link href="https://uprightokra.github.io/2022-09-27-shi-yan-ensp-ospf-pei-zhi-shi-yan.html"/>
-    <id>https://uprightokra.github.io/2022-09-27-shi-yan-ensp-ospf-pei-zhi-shi-yan.html</id>
-    <published>2022-09-27T01:31:47.000Z</published>
-    <updated>2022-10-02T12:38:54.171Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;h1 id=&quot;OSPF配置实验&quot;&gt;&lt;a href=&quot;#OSPF配置实验&quot; class=&quot;headerlink&quot; title=&quot;OSPF配置实验&quot;&gt;&lt;/a&gt;&lt;center&gt;OSPF配置实验&lt;/center&gt;&lt;/h1&gt;&lt;h3 id=&quot;拓扑图&quot;&gt;&lt;a href=&quot;#拓扑图&quot;</summary>
-        
-      
-    
-    
-    
-    <category term="ensp实验" scheme="https://uprightokra.github.io/categories/ensp%E5%AE%9E%E9%AA%8C/"/>
-    
-    
-    <category term="OSPF" scheme="https://uprightokra.github.io/tags/OSPF/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>数通 07-OSPF</title>
-    <link href="https://uprightokra.github.io/2022-09-25-shu-tong-07-ospf.html"/>
-    <id>https://uprightokra.github.io/2022-09-25-shu-tong-07-ospf.html</id>
-    <published>2022-09-25T08:40:58.000Z</published>
-    <updated>2022-10-02T12:36:37.574Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;h1 id=&quot;OSPF&quot;&gt;&lt;a href=&quot;#OSPF&quot; class=&quot;headerlink&quot; title=&quot;OSPF&quot;&gt;&lt;/a&gt;&lt;strong&gt;&lt;center&gt;OSPF&lt;/center&gt;&lt;/strong&gt;&lt;/h1&gt;&lt;h3 id=&quot;1、定义&quot;&gt;&lt;a href=&quot;#1、定义&quot;</summary>
-        
-      
-    
-    
-    
-    <category term="网络基础" scheme="https://uprightokra.github.io/categories/%E7%BD%91%E7%BB%9C%E5%9F%BA%E7%A1%80/"/>
-    
-    
-    <category term="OSPF" scheme="https://uprightokra.github.io/tags/OSPF/"/>
     
   </entry>
   

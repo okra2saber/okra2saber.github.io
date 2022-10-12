@@ -4,6 +4,81 @@
   
     
     <entry>
+      <title>无线Fat AP与Fit AP区别</title>
+      <link href="/2022-10-12-wu-xian-fat-ap-yu-fit-ap-qu-bie.html"/>
+      <url>/2022-10-12-wu-xian-fat-ap-yu-fit-ap-qu-bie.html</url>
+      
+        <content type="html"><![CDATA[<h1 id="无线Fat-AP和Fit-AP如何区分"><a href="#无线Fat-AP和Fit-AP如何区分" class="headerlink" title="无线Fat AP和Fit AP如何区分"></a><center>无线Fat AP和Fit AP如何区分</center></h1><p>无线AP分为Fat AP和Fit AP两类，两种类型只有少数能可从外观区分，大部分从外观上比较难区别，但可以通过作原理和功能辨别。</p><p>无线AP分为Fat AP和Fit AP两类，两种类型只有少数能可从外观区分，大部分从外观上比较难区别，但可以通过作原理和功能辨别。</p><h3 id="Fat-AP和Fit-AP"><a href="#Fat-AP和Fit-AP" class="headerlink" title="Fat AP和Fit AP"></a><strong>Fat AP和Fit AP</strong></h3><p><img src="http://www.choseal.net.cn/repository/image/VRAD8EnMQUOAoi_rdFmFdg.png?k=1588217885000"></p><p>​        Fat  AP除了具备无线接入功能外，一般还同时具备WAN、LAN端口，支持DHCP服务器、DNS和MAC地址克隆、VPN接入、防火墙等安全功能。Fat  AP通常有自带的完整操作系统，是可以独立工作的网络设备，可以实现拨号、路由等功能，一个典型的例子就是我们常见的无线路由器。</p><p>​       Fat AP简单地理解为具有管理功能的AP。Fat AP是具有其自己的管理功能并且广播SSID并且还连接到终端的AP。它属于小而完整的麻雀类型。</p><p>​        Fit AP，理解的形象是瘦Fat  AP，删除路由、DNS、DHCP服务器和许多其他加载功能，只保留无线接入部分。我们经常提到的AP指的是这样的Fit  AP，其相当于无线交换机或集线器，并且仅提供一种有线/无线信号转换和无线信号接收/发送功能。作为无线局域网的一个组成部分，Fit  AP无法独立工作。它必须与AC管理合作才能成为一个完整的系统。</p><p>​       Fit AP没有管理功能。可以理解为信号发送和接收天线。其管理功能由后端执行，称为无线控制器（AC）。</p><p>​       Fit AP无法自行管理。AC需要管理。Fit AP仅负责广播SSID和连接终端。通常，超小型网络使用Fat AP，而小型网络使用Fit AP。</p><p>​       其原因主要是因为在许多无线路由器的情况下，大型企业部署了校园的无线覆盖范围。拥有数百个无线路由器是正常的，但管理起来非常麻烦。像家庭路由器一样使用一台路由器是不可能的。要进行配置，AC的所有统一管理都更加方便快捷。</p><p>​       高端无线控制器（AC）可以管理数十万个无线AP，并且可以集中配置和交付配置。企业级无线AP实际上可以很胖，可以通过不同的软件进行编辑。实现，但在大规模部署的情况下没有意义。</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> 网络基础 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> Fat AP&amp;Fit AP </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>数通 15-园区典型组网</title>
+      <link href="/2022-10-12-shu-tong-15-yuan-qu-dian-xing-zu-wang.html"/>
+      <url>/2022-10-12-shu-tong-15-yuan-qu-dian-xing-zu-wang.html</url>
+      
+        <content type="html"><![CDATA[<h1 id="园区网典型组网"><a href="#园区网典型组网" class="headerlink" title="园区网典型组网"></a><center>园区网典型组网</center></h1><h3 id="什么是园区网"><a href="#什么是园区网" class="headerlink" title="什么是园区网"></a>什么是园区网</h3><p><img src="https://img-blog.csdnimg.cn/cea1c9bc15c7462f99207443df3a0a04.png"></p><pre class="line-numbers language-none"><code class="language-none">终端层：最接近用户的一层，如打印机、PC等就是在这一层接入园区出口层：这一层放的就是要对外向internet去访问的设备，如防火墙、路由器、入侵检测等过滤外网攻击，安全防御的区域边界设备DMZ：是英文“demilitarized zone”的缩写，中文名称为“隔离区”，也称“非军事化区”。它是为了解决安装防火墙后外部网络的访问用户不能访问内部网络服务器的问题，而设立的一个非安全系统与安全系统之间的缓冲区。该缓冲区位于企业内部网络和外部网络之间的小网络区域内。在这个小网络区域内可以放置一些必须公开的服务器设施，如企业Web服务器、FTP服务器和论坛等。另一方面，通过这样一个DMZ区域，更加有效地保护了内部网络。因为这种网络部署，比起一般的防火墙方案，对来自外网的攻击者来说又多了一道关卡。<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre><h3 id="园区网络典型架构"><a href="#园区网络典型架构" class="headerlink" title="园区网络典型架构"></a>园区网络典型架构</h3><p><img src="https://img-blog.csdnimg.cn/9c5ef856476d4cd5af0f688910f0cde2.png"></p><h3 id="小型园区网络典型架构"><a href="#小型园区网络典型架构" class="headerlink" title="小型园区网络典型架构"></a>小型园区网络典型架构</h3><img src="https://img-blog.csdnimg.cn/24f58e68a9ce4fa3ba9da8233a8c7658.png" style="zoom:50%;"><p>小型园区网络应用于接入用户数量较少的场景，一般支持几个至几十个用户。网络覆盖范围也仅限于一个地点，网络不分层次结构。网络建设的目的常常就是为了满足内部资源互访。</p><table><thead><tr><th align="center">终端用户数（个）</th><th align="center">&lt;200</th></tr></thead><tbody><tr><td align="center">网元数量（个）</td><td align="center">&lt;25</td></tr></tbody></table><p>小型园区网特点：</p><ul><li>用户数量较少</li><li>仅单个地点</li><li>网络无层次性</li><li>网络结构简单</li></ul><h3 id="中型园区网络典型结构"><a href="#中型园区网络典型结构" class="headerlink" title="中型园区网络典型结构"></a>中型园区网络典型结构</h3><img src="https://img-blog.csdnimg.cn/6d195e77c1e343cc8b074eda94139291.png" style="zoom: 67%;"><p>中型园区网络能够支撑几百至上千用户的接入。</p><p>中型网络引入了按功能进行分区的理念，也就是模块化的设计思路，但功能模块相对较少。一般根据业务需要进行灵活分区。</p><table><thead><tr><th align="center">终端用户数（个）</th><th align="center">200~2000</th></tr></thead><tbody><tr><td align="center">网元数量（个）</td><td align="center">25~100</td></tr></tbody></table><p>中型园区网络特点：</p><ul><li>规模中等</li><li>使用场景最多</li><li>功能分区</li><li>一般采用三层网络结构：核心、汇聚、接入</li></ul><h3 id="大型园区网络典型结构"><a href="#大型园区网络典型结构" class="headerlink" title="大型园区网络典型结构"></a>大型园区网络典型结构</h3><p><img src="https://img-blog.csdnimg.cn/1b348e9d534b4453b071bbb93fefc208.png"></p><p>大型园区网络可能是覆盖多幢建筑的网络，也可能是通过WAN连接一个城市内的多个园区的网络。一般会提供接入服务，允许出差员工通过VPN等技术接入公司内部网络。</p><table><thead><tr><th align="center">终端用户数（个）</th><th align="center">&gt;2000</th></tr></thead><tbody><tr><td align="center">网元数量（个）</td><td align="center">&gt;100</td></tr></tbody></table><p>大型园区网络特点：</p><ul><li>覆盖范围广</li><li>用户数量多</li><li>网络需求复杂</li><li>功能模块全</li><li>网络层次丰富</li></ul><h3 id="园区网络主要协议-技术"><a href="#园区网络主要协议-技术" class="headerlink" title="园区网络主要协议/技术"></a>园区网络主要协议/技术</h3><p><img src="https://img-blog.csdnimg.cn/bba324fdd46d40cfa80c234a359d94bd.png"></p><h3 id="园区网络项目生命周期"><a href="#园区网络项目生命周期" class="headerlink" title="园区网络项目生命周期"></a>园区网络项目生命周期</h3><p><img src="https://img-blog.csdnimg.cn/5bd4a7998e814c86b60c5700d956c118.png"></p><h3 id="小型园区网络设计"><a href="#小型园区网络设计" class="headerlink" title="小型园区网络设计"></a>小型园区网络设计</h3><p><img src="https://img-blog.csdnimg.cn/acc99c67507f435e87d5254587ced475.png"></p>]]></content>
+      
+      
+      <categories>
+          
+          <category> 网络基础 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 园区网 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>数通 14-SDN与NFV概述</title>
+      <link href="/2022-10-12-shu-tong-14-sdn-yu-nfv-gai-shu.html"/>
+      <url>/2022-10-12-shu-tong-14-sdn-yu-nfv-gai-shu.html</url>
+      
+        <content type="html"><![CDATA[<h1 id="SDN与NFV概述"><a href="#SDN与NFV概述" class="headerlink" title="SDN与NFV概述"></a><center>SDN与NFV概述</center></h1><p>​         SDN起源于2006年斯坦福大学的Clean Slate研究课题。2009年，Mckeown教授正式提出了SDN概念。</p><p>​        为了解决传统网络发展滞后、运维成本高的问题，服务提供商开始探索新的网络架构，希望能够将控制面（操作系统和各种软件）与硬件解耦，实现底层操作系统、基础软件协议以及增值业务软件的开源自研，这就诞生了SDN技术。</p><p>​        SDN，软件定义网络（Software-defined Networking），本质是网络软件化， 是Emulex网络一种新型网络创新架构，是网络虚拟化的一种实现方式，支持动态可编程的网络配置，核心技术OpenFlow通过将网络设备控制面与数据面分离开来，从而实现了网络流量的灵活控制，具有成本低、集中管理、灵活调度等优点。</p><pre><code>      耦合是指两个或两个以上的体系或两种运动形式间通过相互作用而彼此影响以至联合起来的现象。 解耦就是用数学方法将两种运动分离开来处理问题，常用解耦方法就是忽略或简化对所研究问题影响较小的一种运动，只分析主要的运动。</code></pre><p>​        网络软件化的定义是一种通过软件编程来设计、实现、部署、管理和维护网络设备和网络组件的总变革趋势。</p><p>​        网络虚拟化就是在一个物理网络上模拟出多个逻辑网络来。网络虚拟化的内容一般指虚拟专用网络 (VPN)。 </p><p>​        OpenFlow是一种网络通信协议，应用于SDN架构中控制器和转发器之间的通信。软件定义网络SDN的一个核心思想就是“转发、控制分离”，要实现转、控分离，就需要在控制器与转发器之间建立一个通信接口标准，允许控制器直接访问和控制转发器的转发平面。OpenFlow引入了“流表”的概念，转发器通过流表来指导数据包的转发。控制器正是通过OpenFlow提供的接口在转发器上部署相应的流表，从而实现对转发平面的控制。</p><p>​        我们分别将用于控制的网络称为“控制面”，将用于数据包发送的网络称为“数据面”。</p><h3 id="SDN的本质述求"><a href="#SDN的本质述求" class="headerlink" title="SDN的本质述求"></a>SDN的本质述求</h3><ul><li>SDN的本质诉求是让网络更加开放、灵活和简单。它的实现方式是为网络构建一个集中的大脑，通过全局视图集中控制，实现或业务快速部署、或流量调优、或网络业务开放等目标。</li><li>SDN的价值是：<ul><li>集中管理，简化网络管理与运维；</li><li>屏蔽技术细节，降低网络复杂度，降低运维成本（像BGP、ISIS、VXLAN、SSLVPN太复杂）；</li><li>自动化调优（拥有一个AI的智能数据库），提高网络利用率；</li><li>快速业务部署，缩短业务上线时间（ZTP自动化）；</li><li>网络开放，支撑开放可编程的第三方应用（app）。</li></ul></li></ul><h3 id="SDN架构"><a href="#SDN架构" class="headerlink" title="SDN架构"></a>SDN架构</h3><p>应用层还包括了负载均衡和防火墙等</p><p>设备层：路由器、交换机、防火墙等底层设备通过南向协议接口<strong>openflow</strong>被控制器所归纳管理。</p><p><img src="https://img-blog.csdnimg.cn/d08363832c28475e98cc764f853fbcde.png"></p><h4 id="华为SDN网络架构"><a href="#华为SDN网络架构" class="headerlink" title="华为SDN网络架构"></a>华为SDN网络架构</h4><p><img src="https://img-blog.csdnimg.cn/362c4574af324342a4a7a5d24ade0a3e.png"></p><h3 id="iMaster-NCE"><a href="#iMaster-NCE" class="headerlink" title="iMaster NCE"></a>iMaster NCE</h3><p>自动驾驶网络管理与系统，是华为及管理、控制、分析和AI智能功能于一体的网络化与智能化平台</p><p><img src="https://img-blog.csdnimg.cn/15eac527fd22447ab3ad969db22d6af7.png"></p><h3 id="极简ZTP部署"><a href="#极简ZTP部署" class="headerlink" title="极简ZTP部署"></a>极简ZTP部署</h3><img src="https://img-blog.csdnimg.cn/11f6e5f60cdc4d0a857cdd2c31c1f655.png" style="zoom:50%;"><p>ZTP部署流程：<br>1．网络管理员点击启动ZTP任务。</p><p>2．设备自动获取IP地址访问控制器。</p><p>3．控制器判断设备角色（Spine or Leaf），对上线设备下发管理IP、SNMP、NETCONF等配置，并 通过管理IP纳管设备。</p><p>4．控制器全局下发互联配置及OSPF、BGP等配置。</p><p>5．设备上线成功，管理员NCE查看全网信息。<br>注：Spine—Leaf是数据中心网络架构</p><h3 id="NFV"><a href="#NFV" class="headerlink" title="NFV"></a>NFV</h3><p>NFV（Network Functions Virtualization）是运营商为了解决电信网络硬件繁多、部署运维复  杂、业务创新困难等问题而提出的。NFV在重构电信网络的同时，给运营商带来的价值如下：</p><ul><li>缩短业务上线时间</li><li>降低建网成本 </li><li>提升网络运维效率 </li><li>构建开放的生态系统</li></ul><p><strong>NFV是虚拟化的部署</strong></p><h3 id="NFV关键技术：虚拟化"><a href="#NFV关键技术：虚拟化" class="headerlink" title="NFV关键技术：虚拟化"></a>NFV关键技术：虚拟化</h3><ul><li>在NFV的道路上，虚拟化是基础，云化是关键。</li><li>传统电信网络中，各个网元都是由专用硬件实现，成本高、运维难。虚拟化具有分区、隔离、封装和相对于硬件独立的特征，能够很好匹配NFV的需求。运营商引入此模式，将网元软件化，运行在通用基础设施上。</li></ul><p><img src="https://img-blog.csdnimg.cn/d1b2f0159e9b463fbba8463029aed8b7.png"></p><h3 id="NFV关键技术：云化"><a href="#NFV关键技术：云化" class="headerlink" title="NFV关键技术：云化"></a>NFV关键技术：云化</h3><ul><li>美国国家标准与技术研究院（NIST）定义：云计算是一种模型，它可以实现随时随地，便捷地，随需应变地从可配置计算资源共享池中获取所需的资源（例如，网络、服务器、存储、应用、及服务），资源能够快速供应并释放，使管理资源的工作量和与服务提供商的交互减小到最低限度。</li><li>云计算拥有诸多好处。运营商网络中网络功能的云化更多的是利用了资源池化和快速弹性伸缩两个特征。</li></ul><h3 id="NFV框架"><a href="#NFV框架" class="headerlink" title="NFV框架"></a>NFV框架</h3><p>NFV架构分NFVI（Network Functions Virtualization Infrastructure，基础设施层）、VNF（Virtualized Network Function，虚拟化网络功能层）和MANO（Management and Orchestration，管理编排域），同还要支持现有的BSS／OSS （Business support system／Operation support system）。</p><p><img src="https://img-blog.csdnimg.cn/8f35f9197f344fb3ad383126601bb8b3.png"></p>]]></content>
+      
+      
+      <categories>
+          
+          <category> 网络基础 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> SDN、NFV </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>实验ensp-DHCP全局地址池和接口地址池的配置</title>
       <link href="/2022-10-11-shi-yan-ensp-dhcp-quan-ju-di-zhi-chi-he-jie-kou-di-zhi-chi-de-pei-zhi.html"/>
       <url>/2022-10-11-shi-yan-ensp-dhcp-quan-ju-di-zhi-chi-he-jie-kou-di-zhi-chi-de-pei-zhi.html</url>
@@ -58,7 +133,7 @@
       <link href="/2022-10-10-aaa-pei-zhi.html"/>
       <url>/2022-10-10-aaa-pei-zhi.html</url>
       
-        <content type="html"><![CDATA[<p><img src="https://img-blog.csdnimg.cn/c42fce4bed504a8dbe68b610fe651ba5.png"><img src="https://img-blog.csdnimg.cn/00ba3249d08f4dadb1a4ae4a7b5f0a5e.png"><img src="https://img-blog.csdnimg.cn/2f73e019c78345f3a421ed2d077721f2.png"><img src="https://img-blog.csdnimg.cn/1345823c0ae1434eaeef8ef8145fd836.png"><img src="https://img-blog.csdnimg.cn/f31e0c09504c4e18b22615a2af4ae77f.png"><img src="https://img-blog.csdnimg.cn/6b02a036e673482eb75ce55ced716741.png"></p>]]></content>
+        <content type="html"><![CDATA[<p><em>AAA</em>是认证（Authentication）、授权（Authorization）和计费（Accounting）的简称，是网络安全中进行访问控制的一种安全管理机制，提供认证、授权和计费三种安全服务。</p><p><img src="https://img-blog.csdnimg.cn/c42fce4bed504a8dbe68b610fe651ba5.png"><img src="https://img-blog.csdnimg.cn/00ba3249d08f4dadb1a4ae4a7b5f0a5e.png"><img src="https://img-blog.csdnimg.cn/2f73e019c78345f3a421ed2d077721f2.png"><img src="https://img-blog.csdnimg.cn/1345823c0ae1434eaeef8ef8145fd836.png"><img src="https://img-blog.csdnimg.cn/f31e0c09504c4e18b22615a2af4ae77f.png"><img src="https://img-blog.csdnimg.cn/6b02a036e673482eb75ce55ced716741.png"></p>]]></content>
       
       
       <categories>
@@ -158,7 +233,7 @@
       <link href="/2022-10-09-shu-tong-00-xiao-zhi-shi-dian.html"/>
       <url>/2022-10-09-shu-tong-00-xiao-zhi-shi-dian.html</url>
       
-        <content type="html"><![CDATA[<p>作为网络工程师在组建网络初，需要购买公网IP和宽带</p><p>一般100人对应一个公网IP</p><p>经济化组网，以太网使用光纤    便宜</p><h3 id="ICT"><a href="#ICT" class="headerlink" title="ICT"></a>ICT</h3><p>ICT=IT+CT</p><p>IT（information technology） 信息技术——PC、服务器属于IT</p><p>CT（communication technology）通信技术——网络互联属于CT</p><h3 id="五元组"><a href="#五元组" class="headerlink" title="五元组"></a>五元组</h3><p>五元组是通信术语。通常是指源IP地址，源端口，目的IP地址，目的端口和传输层协议</p><h3 id="掩码、通配符掩码、反掩码"><a href="#掩码、通配符掩码、反掩码" class="headerlink" title="掩码、通配符掩码、反掩码"></a>掩码、通配符掩码、反掩码</h3><ul><li>掩码，用于计算ip地址的网络号，1代表网络位，0代表主机位</li><li>通配符，含义和功能与掩码完全无关，0代表严格匹配，1代表无需匹配，且0和1可以连续也可以不连续</li><li>反掩码，特殊的通配符，0代表严格匹配，1代表无需匹配，且0和1是连续的</li></ul><h3 id="特殊地址"><a href="#特殊地址" class="headerlink" title="特殊地址"></a>特殊地址</h3><ul><li>0.0.0.0</li></ul><p>1.未指定的地址——DHCP发送报文</p><p>2.路由层面：全网所有地址</p><ul><li>127.0.0.0——环回地址   127.0.0.0——127.255.255.255</li></ul><p>用于设备内部的TCP/IP协议栈使用的</p><h3 id="网络管理"><a href="#网络管理" class="headerlink" title="网络管理"></a>网络管理</h3><p><img src="https://img-blog.csdnimg.cn/2e7529289d9c48af8dac320f0225c849.png"></p>]]></content>
+        <content type="html"><![CDATA[<p>作为网络工程师在组建网络初，需要购买公网IP和宽带</p><p>一般100人对应一个公网IP</p><p>经济化组网，以太网使用光纤    便宜</p><h3 id="802-3和802-11"><a href="#802-3和802-11" class="headerlink" title="802.3和802.11"></a>802.3和802.11</h3><p>802.3：以太网</p><p>802.11（abcd…）：无线网</p><h3 id="ICT"><a href="#ICT" class="headerlink" title="ICT"></a>ICT</h3><p>ICT=IT+CT</p><p>IT（information technology） 信息技术——PC、服务器属于IT</p><p>CT（communication technology）通信技术——网络互联属于CT</p><h3 id="五元组"><a href="#五元组" class="headerlink" title="五元组"></a>五元组</h3><p>五元组是通信术语。通常是指源IP地址，源端口，目的IP地址，目的端口和传输层协议</p><h3 id="掩码、通配符掩码、反掩码"><a href="#掩码、通配符掩码、反掩码" class="headerlink" title="掩码、通配符掩码、反掩码"></a>掩码、通配符掩码、反掩码</h3><ul><li>掩码，用于计算ip地址的网络号，1代表网络位，0代表主机位</li><li>通配符，含义和功能与掩码完全无关，0代表严格匹配，1代表无需匹配，且0和1可以连续也可以不连续</li><li>反掩码，特殊的通配符，0代表严格匹配，1代表无需匹配，且0和1是连续的</li></ul><h3 id="特殊地址"><a href="#特殊地址" class="headerlink" title="特殊地址"></a>特殊地址</h3><ul><li>0.0.0.0</li></ul><p>1.未指定的地址——DHCP发送报文</p><p>2.路由层面：全网所有地址</p><ul><li>127.0.0.0——环回地址   127.0.0.0——127.255.255.255</li></ul><p>用于设备内部的TCP/IP协议栈使用的</p><h3 id="DHCP-Snooping"><a href="#DHCP-Snooping" class="headerlink" title="DHCP-Snooping"></a>DHCP-Snooping</h3><p>当企业网内有dhcp服务器，有员工将一台无线AP接入交换机，那么PC就接收到来自DHCP服务器和无线AP的不同报文，这个时候就需要开启交换机的DHCP-Snooping，将交换机和DHCP Server之间的接口设为信任接口，阻止pc接收到来自AP的DHCP报文</p><p><strong>注意：snooping技术只能基于二层接口开启，三层接口不行</strong></p><p><img src="https://img-blog.csdnimg.cn/dd5430581b3f470781b04e42ff54b49c.png"></p><h3 id="网络管理"><a href="#网络管理" class="headerlink" title="网络管理"></a>网络管理</h3><p><img src="https://img-blog.csdnimg.cn/2e7529289d9c48af8dac320f0225c849.png"></p><h3 id="IDS、IPS、DDOS、CSRF、XSS"><a href="#IDS、IPS、DDOS、CSRF、XSS" class="headerlink" title="IDS、IPS、DDOS、CSRF、XSS"></a>IDS、IPS、DDOS、CSRF、XSS</h3><p>IDS：入侵检测系统</p><p>IPS：入侵防御系统</p><p>DDOS:拒绝服务攻击</p><p>CSRF：跨站请求伪造</p><p>XSS：跨站脚本攻击</p>]]></content>
       
       
       <categories>
