@@ -6,7 +6,7 @@
   <link href="https://uprightokra.github.io/atom.xml" rel="self"/>
   
   <link href="https://uprightokra.github.io/"/>
-  <updated>2022-10-12T13:20:53.271Z</updated>
+  <updated>2022-10-13T12:53:04.493Z</updated>
   <id>https://uprightokra.github.io/</id>
   
   <author>
@@ -15,6 +15,59 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>ensp-USG6000V防火墙开机一直跳###的解决方法</title>
+    <link href="https://uprightokra.github.io/2022-10-13-ensp-usg6000v-fang-huo-qiang-kai-ji-yi-zhi-tiao-de-jie-jue-fang-fa.html"/>
+    <id>https://uprightokra.github.io/2022-10-13-ensp-usg6000v-fang-huo-qiang-kai-ji-yi-zhi-tiao-de-jie-jue-fang-fa.html</id>
+    <published>2022-10-13T12:47:20.000Z</published>
+    <updated>2022-10-13T12:53:04.493Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;p&gt;&lt;img src=&quot;https://img-blog.csdnimg.cn/20210502112900312.png&quot;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;↑问题就像这样&lt;/strong&gt;&lt;/p&gt;
+&lt;hr&gt;
+&lt;p&gt;&lt;strong&gt;首先我们打开Oracle VM</summary>
+        
+      
+    
+    
+    
+    <category term="网络基础" scheme="https://uprightokra.github.io/categories/%E7%BD%91%E7%BB%9C%E5%9F%BA%E7%A1%80/"/>
+    
+    
+    <category term="问题解决" scheme="https://uprightokra.github.io/tags/%E9%97%AE%E9%A2%98%E8%A7%A3%E5%86%B3/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>实验ensp 典型企业网组建</title>
+    <link href="https://uprightokra.github.io/2022-10-13-shi-yan-ensp-dian-xing-qi-ye-wang-zu-jian.html"/>
+    <id>https://uprightokra.github.io/2022-10-13-shi-yan-ensp-dian-xing-qi-ye-wang-zu-jian.html</id>
+    <published>2022-10-13T06:30:17.000Z</published>
+    <updated>2022-10-13T12:53:04.493Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h1 id=&quot;典型企业网组建&quot;&gt;&lt;a href=&quot;#典型企业网组建&quot; class=&quot;headerlink&quot;</summary>
+        
+      
+    
+    
+    
+    <category term="ensp实验" scheme="https://uprightokra.github.io/categories/ensp%E5%AE%9E%E9%AA%8C/"/>
+    
+    
+    <category term="企业网" scheme="https://uprightokra.github.io/tags/%E4%BC%81%E4%B8%9A%E7%BD%91/"/>
+    
+  </entry>
   
   <entry>
     <title>无线Fat AP与Fit AP区别</title>
@@ -475,57 +528,6 @@
     
     
     <category term="多区域OSPF" scheme="https://uprightokra.github.io/tags/%E5%A4%9A%E5%8C%BA%E5%9F%9FOSPF/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>实验ensp-VLAN-Hybrid的配置</title>
-    <link href="https://uprightokra.github.io/2022-09-29-shi-yan-ensp-vlan-hybrid-de-pei-zhi.html"/>
-    <id>https://uprightokra.github.io/2022-09-29-shi-yan-ensp-vlan-hybrid-de-pei-zhi.html</id>
-    <published>2022-09-29T01:12:07.000Z</published>
-    <updated>2022-10-02T12:38:37.413Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;h1 id=&quot;VLAN-Hybrid的配置&quot;&gt;&lt;a href=&quot;#VLAN-Hybrid的配置&quot; class=&quot;headerlink&quot;</summary>
-        
-      
-    
-    
-    
-    <category term="ensp实验" scheme="https://uprightokra.github.io/categories/ensp%E5%AE%9E%E9%AA%8C/"/>
-    
-    
-    <category term="VLAN-Hybrid" scheme="https://uprightokra.github.io/tags/VLAN-Hybrid/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>OSPF-DR与BDR详解</title>
-    <link href="https://uprightokra.github.io/2022-09-27-ospf-dr-yu-bdr-xiang-jie.html"/>
-    <id>https://uprightokra.github.io/2022-09-27-ospf-dr-yu-bdr-xiang-jie.html</id>
-    <published>2022-09-27T14:21:45.000Z</published>
-    <updated>2022-10-09T08:47:22.870Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;h3 id=&quot;一、DR简介：&quot;&gt;&lt;a href=&quot;#一、DR简介：&quot; class=&quot;headerlink&quot; title=&quot;一、DR简介：&quot;&gt;&lt;/a&gt;一、DR简介：&lt;/h3&gt;&lt;p&gt;一个广播性、多接入网络中的指定路由器（Designated Router）&lt;/p&gt;
-&lt;h3</summary>
-        
-      
-    
-    
-    
-    <category term="网络基础" scheme="https://uprightokra.github.io/categories/%E7%BD%91%E7%BB%9C%E5%9F%BA%E7%A1%80/"/>
-    
-    
-    <category term="DR&amp;BDR" scheme="https://uprightokra.github.io/tags/DR-BDR/"/>
     
   </entry>
   
