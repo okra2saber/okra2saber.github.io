@@ -6,7 +6,7 @@
   <link href="https://uprightokra.github.io/atom.xml" rel="self"/>
   
   <link href="https://uprightokra.github.io/"/>
-  <updated>2022-10-13T12:53:04.493Z</updated>
+  <updated>2022-10-14T15:31:24.092Z</updated>
   <id>https://uprightokra.github.io/</id>
   
   <author>
@@ -15,6 +15,34 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Centos 7常用命令</title>
+    <link href="https://uprightokra.github.io/2022-10-14-centos-7-chang-yong-ming-ling.html"/>
+    <id>https://uprightokra.github.io/2022-10-14-centos-7-chang-yong-ming-ling.html</id>
+    <published>2022-10-14T02:19:51.000Z</published>
+    <updated>2022-10-14T15:31:24.092Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h2 id=&quot;1-查看系统信息&quot;&gt;&lt;a href=&quot;#1-查看系统信息&quot; class=&quot;headerlink&quot; title=&quot;1.查看系统信息&quot;&gt;&lt;/a&gt;1.查看系统信息&lt;/h2&gt;&lt;ul&gt;
+&lt;li&gt;硬盘大小&lt;/li&gt;
+&lt;/ul&gt;
+&lt;pre</summary>
+        
+      
+    
+    
+    
+    <category term="Linux" scheme="https://uprightokra.github.io/categories/Linux/"/>
+    
+    
+    <category term="CentOS 7" scheme="https://uprightokra.github.io/tags/CentOS-7/"/>
+    
+  </entry>
   
   <entry>
     <title>ensp-USG6000V防火墙开机一直跳###的解决方法</title>
@@ -503,31 +531,6 @@
     
     
     <category term="三层通信过程" scheme="https://uprightokra.github.io/tags/%E4%B8%89%E5%B1%82%E9%80%9A%E4%BF%A1%E8%BF%87%E7%A8%8B/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>实验ensp-多区域OSPF基本配置</title>
-    <link href="https://uprightokra.github.io/2022-10-01-shi-yan-ensp-duo-qu-yu-ospf-ji-ben-pei-zhi.html"/>
-    <id>https://uprightokra.github.io/2022-10-01-shi-yan-ensp-duo-qu-yu-ospf-ji-ben-pei-zhi.html</id>
-    <published>2022-10-01T07:55:18.000Z</published>
-    <updated>2022-10-02T12:41:13.035Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;h1 id=&quot;实验ensp-多区域OSPF基本配置&quot;&gt;&lt;a href=&quot;#实验ensp-多区域OSPF基本配置&quot; class=&quot;headerlink&quot;</summary>
-        
-      
-    
-    
-    
-    <category term="ensp实验" scheme="https://uprightokra.github.io/categories/ensp%E5%AE%9E%E9%AA%8C/"/>
-    
-    
-    <category term="多区域OSPF" scheme="https://uprightokra.github.io/tags/%E5%A4%9A%E5%8C%BA%E5%9F%9FOSPF/"/>
     
   </entry>
   
