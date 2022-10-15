@@ -29,9 +29,9 @@
 	<link rel="stylesheet" type="text/css" href="/css/loading.css">
     <script src="/libs/jquery/jquery.min.js"></script>
 
-<meta name="generator" content="Hexo 5.4.0"><link rel="alternate" href="/atom.xml" title="Okraの筆記" type="application/atom+xml">
-
+<meta name="generator" content="Hexo 5.4.0">
 <style>.github-emoji { position: relative; display: inline-block; width: 1.2em; min-height: 1.2em; overflow: hidden; vertical-align: top; color: transparent; }  .github-emoji > span { position: relative; z-index: 10; }  .github-emoji img, .github-emoji .fancybox { margin: 0 !important; padding: 0 !important; border: none !important; outline: none !important; text-decoration: none !important; user-select: none !important; cursor: auto !important; }  .github-emoji img { height: 1.2em !important; width: 1.2em !important; position: absolute !important; left: 50% !important; top: 50% !important; transform: translate(-50%, -50%) !important; user-select: none !important; cursor: auto !important; } .github-emoji-fallback { color: inherit; } .github-emoji-fallback img { opacity: 0 !important; }</style>
+<link rel="alternate" href="/atom.xml" title="Okraの筆記" type="application/atom+xml">
 </head>
 
 
@@ -555,21 +555,21 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2022-10-14
+                    2022-10-15
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    2.6k
+                    2.9k
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    10 分
+                    12 分
                 </div>
                 
 
@@ -968,9 +968,15 @@ gunzip allfile/tar.gz<span aria-hidden="true" class="line-numbers-rows"><span></
 <p>解包</p>
 <pre class="line-numbers language-none"><code class="language-none">tar -xf 【包名】 -C 【解包路径】（可不写-C后的路径，就在当前路径下解压）<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 
-<p>一条命令实现打包压缩</p>
+<p>一条命令实现gzip的打包压缩</p>
 <pre class="line-numbers language-none"><code class="language-none">tar -zcf /tmp/allfile.tar.gz【压缩包名】 bigfile【文件】
 tar -zxf 【包名】 -C 【解包路径】（可不写-C后的路径，就在当前路径下解压）<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+
+<p>一条命令实现bzip2的打包压缩</p>
+<pre class="line-numbers language-none"><code class="language-none">tar -jcvf /tmp/allfile.tar.gz【压缩包名】 bigfile【文件】
+tar -jxvf 【包名】 -C 【解包路径】（可不写-C后的路径，就在当前路径下解压）<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+
+
 
 <h2 id="8-vim编辑器"><a href="#8-vim编辑器" class="headerlink" title="8.vim编辑器"></a>8.vim编辑器</h2><img src="https://img-blog.csdnimg.cn/cd7067b17dc74e46beea354fa2212bef.gif" data-original="https://img-blog.csdnimg.cn/e2b3a0674aba42949df1b208e72696ac.png" style="zoom:50%;">
 
@@ -1011,6 +1017,45 @@ hello
 <p>​    1.解包</p>
 <p>​    2.进入解压路径，了解软件的作用以及安装方法</p>
 <p>编译 可以指定安装的路径以及编译所需要的功能</p>
+<h3 id="安装httpd源码包"><a href="#安装httpd源码包" class="headerlink" title="安装httpd源码包"></a>安装httpd源码包</h3><p><a target="_blank" rel="noopener" href="https://httpd.apache.org/download.cgi">httpd下载地址</a></p>
+<p>1.首先将源码包拖入linux桌面，<del>查看可以发现这个包的颜色不是我们常见的红色。这是因为window下载的包自带编译内容有所不同</del></p>
+<img src="https://img-blog.csdnimg.cn/cd7067b17dc74e46beea354fa2212bef.gif" data-original="https://img-blog.csdnimg.cn/0b0506e6d5654b9ab05b59f8af5c7450.png" style="zoom:25%;">
+
+<p><img src="https://img-blog.csdnimg.cn/cd7067b17dc74e46beea354fa2212bef.gif" data-original="https://img-blog.csdnimg.cn/d0624d5185d944318fbdd7320c3a49d8.png"></p>
+<p>2.解包解压缩，解压到/usr/src目录下</p>
+<pre class="line-numbers language-none"><code class="language-none">[okra@localhost 桌面]$ sudo tar -zxf /home/okra/桌面/httpd-2.4.54.tar.gz -C /usr/src/
+
+cd /usr/src
+[okra@localhost src]$ ls
+debug  httpd-2.4.54  kernels
+[okra@localhost src]$ cd httpd-2.4.54/
+[okra@localhost httpd-2.4.54]$ ls
+ABOUT_APACHE     CHANGES          httpd.mak       Makefile.in       ROADMAP
+acinclude.m4     changes-entries  httpd.spec      Makefile.win      server
+Apache-apr2.dsw  CMakeLists.txt   include         modules           srclib
+Apache.dsw       config.layout    INSTALL         NOTICE            support
+apache_probes.d  configure        InstallBin.dsp  NWGNUmakefile     test
+ap.d             configure.in     LAYOUT          os                VERSIONING
+build            docs             libhttpd.dep    README
+BuildAll.dsp     emacs-style      libhttpd.dsp    README.CHANGES
+BuildBin.dsp     httpd.dep        libhttpd.mak    README.cmake
+buildconf        httpd.dsp        LICENSE         README.platforms<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>3.ReadMe文件，查看httpd说明，INSTALL文件，查看安装方法</p>
+<pre class="line-numbers language-none"><code class="language-none">vim INSTALL
+
+	 $ ./configure --prefix=PREFIX
+     $ make
+     $ make install
+     $ PREFIX/bin/apachectl start<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p><img src="https://img-blog.csdnimg.cn/cd7067b17dc74e46beea354fa2212bef.gif" data-original="https://img-blog.csdnimg.cn/60fa4a3d2987454aa543020de179696a.png"></p>
+<p>4.设置脚本指定安装路径和功能，并且生成makefile编译脚本文件</p>
+<pre class="line-numbers language-none"><code class="language-none">[okra@localhost httpd-2.4.54]$ vim INSTALL 
+[okra@localhost httpd-2.4.54]$ ./configure --prefix=/usr/local/webserver		
+																//安装路径为/usr/local/webserver<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+
+<p>…..请参考<a target="_blank" rel="noopener" href="https://blog.csdn.net/qq_45478359/article/details/123940257">Centos7源码安装Apache(httpd-2.4.53)及问题解决</a></p>
 
                 
             </div>
@@ -1576,18 +1621,16 @@ hello
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="far fa-dot-circle"></i>&nbsp;本篇
-            </div>
+                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
-                <a href="/2022-10-14-centos-7-chang-yong-ming-ling.html">
+                <a href="/2022-10-15-shi-yan-ensp-fu-dong-jing-tai-lu-you-ji-fu-zai-jun-heng.html">
                     <div class="card-image">
                         
+                        <img src="https://img-blog.csdnimg.cn/cd7067b17dc74e46beea354fa2212bef.gif" data-original="https://img-blog.csdnimg.cn/4aa36e431ab84089a57b83c5b025d9ac.jpeg" class="responsive-img" alt="实验ensp 浮动静态路由及负载均衡">
                         
-                        <img src="https://img-blog.csdnimg.cn/cd7067b17dc74e46beea354fa2212bef.gif" data-original="/medias/featureimages/12.jpg" class="responsive-img" alt="Centos 7常用命令">
-                        
-                        <span class="card-title">Centos 7常用命令</span>
+                        <span class="card-title">实验ensp 浮动静态路由及负载均衡</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -1597,27 +1640,26 @@ hello
                         
                     </div>
                     <div class="publish-info">
-                            <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2022-10-14
-                            </span>
+                        <span class="publish-date">
+                            <i class="far fa-clock fa-fw icon-date"></i>2022-10-15
+                        </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/Linux/" class="post-category">
-                                    Linux
+                            <a href="/categories/ensp%E5%AE%9E%E9%AA%8C/" class="post-category">
+                                    ensp实验
                                 </a>
                             
                             
                         </span>
                     </div>
                 </div>
-
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/CentOS-7/">
-                        <span class="chip bg-color">CentOS 7</span>
+                    <a href="/tags/%E6%B5%AE%E5%8A%A8%E8%B7%AF%E7%94%B1/">
+                        <span class="chip bg-color">浮动路由</span>
                     </a>
                     
                 </div>
@@ -1905,7 +1947,7 @@ hello
             <br>
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">164.9k</span>&nbsp;字&nbsp;|
+                class="white-color">166.6k</span>&nbsp;字&nbsp;|
             
             
             
@@ -2256,13 +2298,13 @@ $(function () {
 document.addEventListener("visibilitychange", function () { document.hidden ? (document.title = "Σ(っ °Д °;)っ喔哟，崩溃啦！", clearTimeout(st)) : (document.title = "φ(゜▽゜*)♪咦，又好了！", st = setTimeout(function () { document.title = OriginTitile }, 3e3)) }) </script>
 
 
-<script>
+<script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"model":{"jsonPath":"/live2dw/assets/hijiki.model.json"},"display":{"position":"right","width":280,"height":280},"mobile":{"show":false},"log":false,"pluginJsPath":"lib/","pluginModelPath":"assets/","pluginRootPath":"live2dw/","tagMode":false});</script><script>
             window.imageLazyLoadSetting = {
                 isSPA: false,
                 preloadRatio: 1,
                 processImages: null,
             };
-        </script><script>window.addEventListener("load",function(){var t=/\.(gif|jpg|jpeg|tiff|png)$/i,r=/^data:image\/[a-z]+;base64,/;Array.prototype.slice.call(document.querySelectorAll("img[data-original]")).forEach(function(a){var e=a.parentNode;"A"===e.tagName&&(e.href.match(t)||e.href.match(r))&&(e.href=a.dataset.original)})});</script><script>!function(n){n.imageLazyLoadSetting.processImages=o;var e=n.imageLazyLoadSetting.isSPA,i=n.imageLazyLoadSetting.preloadRatio||1,r=Array.prototype.slice.call(document.querySelectorAll("img[data-original]"));function o(){e&&(r=Array.prototype.slice.call(document.querySelectorAll("img[data-original]")));for(var t,a=0;a<r.length;a++)0<=(t=(t=r[a]).getBoundingClientRect()).bottom&&0<=t.left&&t.top<=(n.innerHeight*i||document.documentElement.clientHeight*i)&&function(){var t,e,n,i,o=r[a];t=o,e=function(){r=r.filter(function(t){return o!==t})},n=new Image,i=t.getAttribute("data-original"),n.onload=function(){t.src=i,e&&e()},t.src!==i&&(n.src=i)}()}o(),n.addEventListener("scroll",function(){var t,e;t=o,e=n,clearTimeout(t.tId),t.tId=setTimeout(function(){t.call(e)},500)})}(this);</script><script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"model":{"jsonPath":"/live2dw/assets/hijiki.model.json"},"display":{"position":"right","width":280,"height":280},"mobile":{"show":false},"log":false,"pluginJsPath":"lib/","pluginModelPath":"assets/","pluginRootPath":"live2dw/","tagMode":false});</script></body>
+        </script><script>window.addEventListener("load",function(){var t=/\.(gif|jpg|jpeg|tiff|png)$/i,r=/^data:image\/[a-z]+;base64,/;Array.prototype.slice.call(document.querySelectorAll("img[data-original]")).forEach(function(a){var e=a.parentNode;"A"===e.tagName&&(e.href.match(t)||e.href.match(r))&&(e.href=a.dataset.original)})});</script><script>!function(n){n.imageLazyLoadSetting.processImages=o;var e=n.imageLazyLoadSetting.isSPA,i=n.imageLazyLoadSetting.preloadRatio||1,r=Array.prototype.slice.call(document.querySelectorAll("img[data-original]"));function o(){e&&(r=Array.prototype.slice.call(document.querySelectorAll("img[data-original]")));for(var t,a=0;a<r.length;a++)0<=(t=(t=r[a]).getBoundingClientRect()).bottom&&0<=t.left&&t.top<=(n.innerHeight*i||document.documentElement.clientHeight*i)&&function(){var t,e,n,i,o=r[a];t=o,e=function(){r=r.filter(function(t){return o!==t})},n=new Image,i=t.getAttribute("data-original"),n.onload=function(){t.src=i,e&&e()},t.src!==i&&(n.src=i)}()}o(),n.addEventListener("scroll",function(){var t,e;t=o,e=n,clearTimeout(t.tId),t.tId=setTimeout(function(){t.call(e)},500)})}(this);</script></body>
 
 </html>
 
