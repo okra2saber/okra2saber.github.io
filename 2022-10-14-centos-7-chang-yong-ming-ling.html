@@ -555,21 +555,21 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2022-10-15
+                    2022-10-16
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    2.9k
+                    5.3k
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    12 分
+                    22 分
                 </div>
                 
 
@@ -722,7 +722,7 @@ sudo ./vmware-install.pl -d<span aria-hidden="true" class="line-numbers-rows"><s
 
 浅蓝色			---符号链接（快捷方式）
 
-黑底黄字			---设备文件（硬盘文件...）
+黑底黄字		---设备文件（硬盘文件...）
 
 绿色			---带有执行权限的文件
 
@@ -990,6 +990,7 @@ tar -jxvf 【包名】 -C 【解包路径】（可不写-C后的路径，就在�
 末行模式下常用命令：
 :wq---保存退出
 :q!---不保存退出
+:w !sudo tee %命令来强制保存 会报警告，这是因为正在编辑的文件已经在别处被修改了，vim 询问是否要重载新文件进来，按L重载即可
 :set nu---显示行号
 :% s/old/new/g---每一行中的old替换成new
 :50,55d---删除50到55行
@@ -1001,7 +1002,7 @@ dd---删除当前行
 gg---回到第一行
 G---回到最后一行
 50G---回到50行
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
 <p>例如：在/tmp/目录下建立一个名叫test.txt的文件并写入hello</p>
 <pre class="line-numbers language-none"><code class="language-none">[okra@localhost tmp]$ vim /tmp/test.txt
@@ -1017,7 +1018,12 @@ hello
 <p>​    1.解包</p>
 <p>​    2.进入解压路径，了解软件的作用以及安装方法</p>
 <p>编译 可以指定安装的路径以及编译所需要的功能</p>
+<p>软件包的分类：</p>
+<p>rpm         red hat  package  manager 红帽包管理</p>
+<p>deb        Debian德班</p>
 <h3 id="安装httpd源码包"><a href="#安装httpd源码包" class="headerlink" title="安装httpd源码包"></a>安装httpd源码包</h3><p><a target="_blank" rel="noopener" href="https://httpd.apache.org/download.cgi">httpd下载地址</a></p>
+<p>请参考</p>
+<p><a target="_blank" rel="noopener" href="https://blog.csdn.net/qq_45478359/article/details/123940257">Centos7源码安装Apache(httpd-2.4.53)及问题解决</a></p>
 <p>1.首先将源码包拖入linux桌面，<del>查看可以发现这个包的颜色不是我们常见的红色。这是因为window下载的包自带编译内容有所不同</del></p>
 <img src="https://img-blog.csdnimg.cn/cd7067b17dc74e46beea354fa2212bef.gif" data-original="https://img-blog.csdnimg.cn/0b0506e6d5654b9ab05b59f8af5c7450.png" style="zoom:25%;">
 
@@ -1055,7 +1061,339 @@ buildconf        httpd.dsp        LICENSE         README.platforms<span aria-hid
 [okra@localhost httpd-2.4.54]$ ./configure --prefix=/usr/local/webserver		
 																//安装路径为/usr/local/webserver<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
 
-<p>…..请参考<a target="_blank" rel="noopener" href="https://blog.csdn.net/qq_45478359/article/details/123940257">Centos7源码安装Apache(httpd-2.4.53)及问题解决</a></p>
+<p>…..</p>
+<h3 id="安装tree"><a href="#安装tree" class="headerlink" title="安装tree"></a>安装tree</h3><p>1.检查是否安装过tree</p>
+<pre class="line-numbers language-none"><code class="language-none">rpm -qa			列出所有安装了的rpm软件包
+rpm -qa | grep "tree" 			检查是否安装过tree<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+
+<p><img src="https://img-blog.csdnimg.cn/cd7067b17dc74e46beea354fa2212bef.gif" data-original="https://img-blog.csdnimg.cn/b69f698b35724e838f20c6120479b3f7.png"></p>
+<p>2.确认该软件</p>
+<pre class="line-numbers language-none"><code class="language-none">rpm -qpi tree...(tab补齐)			确认软件作用
+rpm -qpl tree...(tab补齐)			确认软件安装路径<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+
+<p>3.使用”sudo <a target="_blank" rel="noopener" href="https://so.csdn.net/so/search?q=yum&amp;spm=1001.2101.3001.7020">yum</a> -y install tree”命令，安装tree命令</p>
+<pre class="line-numbers language-none"><code class="language-none">rpm -ivh tree...(tab补齐)				方法一
+sudo yum -y install tree			方法二<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+
+<p><img src="https://img-blog.csdnimg.cn/cd7067b17dc74e46beea354fa2212bef.gif" data-original="https://img-blog.csdnimg.cn/515b19a37f794dce90916d848abb70fd.png"></p>
+<p>4.使用tree命令。如下图：CentOS 7中安装tree之后，使用”tree”命令不能正常显示中文字符。需要使用”tree -N”命令。（”-N”选项：按原样打印不可打印字符。</p>
+<img src="https://img-blog.csdnimg.cn/cd7067b17dc74e46beea354fa2212bef.gif" data-original="https://img-blog.csdnimg.cn/20201026151526548.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L29uZV9kYXk0MTU=,size_16,color_FFFFFF,t_70#pic_center" style="zoom:50%;">
+
+<img src="https://img-blog.csdnimg.cn/cd7067b17dc74e46beea354fa2212bef.gif" data-original="https://img-blog.csdnimg.cn/20201026151537104.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L29uZV9kYXk0MTU=,size_16,color_FFFFFF,t_70#pic_center" style="zoom:50%;">
+
+<p>5.卸载软件</p>
+<pre class="line-numbers language-none"><code class="language-none">rpm -e tree<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+
+
+<h3 id="yum安装方法"><a href="#yum安装方法" class="headerlink" title="yum安装方法"></a>yum安装方法</h3><p>根据光盘中依赖关系列表进行软件安装卸载（yum源安装）</p>
+<p>1.要告诉操作系统依赖关系列表的位置</p>
+<pre class="line-numbers language-none"><code class="language-none">vim /etc/yum.repos.d/dvd.repo 
+[dvdrom]		标签
+name= "yum dvd rom"		描述
+baseurl =file:/media/CentOS_6.9_Final(自己的文件名) 
+gpgcheck=0		是否做密钥对验证<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>2.通过yum工具进行软件的卸载与安装</p>
+<h2 id="10-Linux操作系统的用户分类"><a href="#10-Linux操作系统的用户分类" class="headerlink" title="10.Linux操作系统的用户分类"></a>10.Linux操作系统的用户分类</h2><p>超级管理员</p>
+<p>普通用户</p>
+<p>程序用户</p>
+<ul>
+<li>切换方法：</li>
+</ul>
+<pre class="line-numbers language-none"><code class="language-none">root——&gt;okra       su - okra(不需要密码)
+
+okra——&gt;root		su(需要密码)<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+
+<h4 id="用户的分类和组"><a href="#用户的分类和组" class="headerlink" title="用户的分类和组"></a>用户的分类和组</h4><p>／etc／passwd 保存了操作系统中所有用户的信息</p>
+<pre class="line-numbers language-none"><code class="language-none">vim ／etc／passwd
+root：x：0：  0：  root：  /root：      /bin/bash
+okra：x：500：500：：      /home/okra： /bin/bash 
+
+字段1：用户名
+字段2：密码占位符
+字段3：用户的uid 0表示超级用户，500—60000普通用户，1—499程序用户
+字段4：基本组的gid 先有组才有用户
+字段5：用户信息记录字段
+字段6：用户的家目录
+字段7：用户登录系统后使用的命令解释器<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>／etc／shadow 保存了用户密码信息</p>
+<pre class="line-numbers language-none"><code class="language-none">root: $6$hsPrPUKSv0fM6utT$Rv6YGho/: 18085: 0: 99999: 7: : : 
+
+字段1：用户名
+字段2：用户的密码加密后的字符串
+字段3：距离1970／1／1密码最近一次的修改时间
+字段4：密码的最短有效期
+字段5：密码的最长有效期90
+字段6：密码过期前7天警告
+字段7：密码的不活跃期
+字段8：用户的失效时间<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>／etc／group 记录了系统中所有组的信息</p>
+<h4 id="创建组和用户"><a href="#创建组和用户" class="headerlink" title="创建组和用户"></a>创建组和用户</h4><p>group</p>
+<p>创建组class1</p>
+<pre class="line-numbers language-none"><code class="language-none">groupadd class1			---默认组id
+或者
+group -g 2000 class1		---在创建组时设置组id2000
+[root@localhost 桌面]# groupadd class1
+[root@localhost 桌面]# cat /etc/group
+root:x:0:
+...
+class1:x:1001:<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>修改组class1的组id为2000</p>
+<pre class="line-numbers language-none"><code class="language-none">groupmod -g 2000 class1
+
+[root@localhost 桌面]# groupmod -g 2000 class1
+[root@localhost 桌面]# cat /etc/group
+root:x:0:
+...
+class1:x:2000:<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>创建用户</p>
+<pre class="line-numbers language-none"><code class="language-none">创建用户tom
+useradd tom
+建立tom用户要求器基本组为class1组，附加组为class2组，tom用户uid为600
+useradd -g class1 -G class2 -u 600 tom			---g为基本组G为附加组<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>查看用户信息</p>
+<pre class="line-numbers language-none"><code class="language-none">id 
+查看tom信息
+id tom
+
+[root@localhost 桌面]# useradd -g class1 -G class2 -u 600 tom
+[root@localhost 桌面]# id tom
+uid=600(tom) gid=2000(class1) 组=2000(class1),2001(class2)<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>建立一个程序用户uid为250，用户名为testuser，没有家目录</p>
+<pre class="line-numbers language-none"><code class="language-none">useradd -u 250 -M -s /sbin/nologin testuser
+-u   设置uid
+-M   设置没有家目录
+-s /sbin/nologin   设置为程序用户，无法通过su - testuser切换用户
+
+
+[root@localhost 桌面]# useradd -u 250 -M -s /sbin/nologin testuser
+[root@localhost 桌面]# id testuser
+uid=250(testuser) gid=2002(testuser) 组=2002(testuser)
+[root@localhost 桌面]# su - testuser
+su: 警告：无法更改到 /home/testuser 目录: 没有那个文件或目录
+This account is currently not available.<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>设置密码</p>
+<pre class="line-numbers language-none"><code class="language-none">passwd [user]<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<p>设置密码最长有效期90天</p>
+<pre class="line-numbers language-none"><code class="language-none">chage -M 90 【user】
+
+可以通过命令 cat /etc/shadow文件查看密码最长有效期是否设置成功<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+
+<p>对用户密码进行锁定，使其无法登录</p>
+<pre class="line-numbers language-none"><code class="language-none">[root@localhost 桌面]# passwd -l tom
+锁定用户 tom 的密码 。
+passwd: 操作成功
+[root@localhost 桌面]# passwd -S tom
+tom LK 2022-10-16 0 99999 7 -1 (密码已被锁定。)<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p><strong>在shadow文件可以看见tom用户在锁定后在密码前多了两个！！，这也是判断用户密码是否被锁定的方法</strong></p>
+<p><img src="https://img-blog.csdnimg.cn/cd7067b17dc74e46beea354fa2212bef.gif" data-original="https://img-blog.csdnimg.cn/93a1054d229d4e3e879276c64e4480ef.png"></p>
+<p>对用户密码进行解锁，使其可以正常登录</p>
+<pre class="line-numbers language-none"><code class="language-none">[root@localhost 桌面]# passwd -u tom			---解锁
+解锁用户 tom 的密码。
+passwd: 操作成功
+[root@localhost 桌面]# passwd -S tom			---查看
+tom PS 2022-10-16 0 99999 7 -1 (密码已设置，使用 SHA512 算法。)<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>删除用户、删除组</p>
+<pre class="line-numbers language-none"><code class="language-none">userdel -r [user]
+groupdel [组]
+
+[root@localhost 桌面]# userdel -r tom
+[root@localhost 桌面]# userdel -r testuser
+userdel：未找到 testuser 的主目录“/home/testuser”
+[root@localhost 桌面]# groupdel class1
+[root@localhost 桌面]# groupdel class2
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h2 id="11-Linux文件及目录的权限"><a href="#11-Linux文件及目录的权限" class="headerlink" title="11.Linux文件及目录的权限"></a>11.Linux文件及目录的权限</h2><h4 id="查看文件和目录的权限"><a href="#查看文件和目录的权限" class="headerlink" title="查看文件和目录的权限"></a>查看文件和目录的权限</h4><pre class="line-numbers language-none"><code class="language-none">ls -l [文件]				- rw- r-- r--
+ls -ld [目录]				d rwx r-x r-x<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+
+<table>
+<thead>
+<tr>
+<th align="center"></th>
+<th align="center">r</th>
+<th align="center">w</th>
+<th align="center">x</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">文件</td>
+<td align="center">可读</td>
+<td align="center">可写</td>
+<td align="center">可执行</td>
+</tr>
+<tr>
+<td align="center">目录</td>
+<td align="center">可以查看目录内容</td>
+<td align="center">可以增加删除文件</td>
+<td align="center">可以进入目录</td>
+</tr>
+</tbody></table>
+<pre class="line-numbers language-none"><code class="language-none">- rw- r-- r--        test.txt文件的权限
+d rwx r-x r-x
+字段1：文件类型 -普通文件 d目录 l符号链接 b快设备
+字段2：文件所属者对该文件的权限
+字段3：文件所属组对该文件的权限
+字段4：其他用户对该文件的权限（既不是文件所属者也不是文件所属组中的用户）<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p><img src="https://img-blog.csdnimg.cn/cd7067b17dc74e46beea354fa2212bef.gif" data-original="https://img-blog.csdnimg.cn/7b05f45d7a214c559cafd99ca65bfb0f.png"></p>
+<p><strong>创建一个tom用户，没有添加到root组，可以查看test.txt文件，却不可以修改该文件。</strong></p>
+<h4 id="修改文件权限"><a href="#修改文件权限" class="headerlink" title="修改文件权限"></a>修改文件权限</h4><pre class="line-numbers language-none"><code class="language-none">chmod 对象 算数运算符 权限 文件
+
+对象：u（所属者）g（所属组）o（其他用户）a（all）
+算数运算符：-＋＝
+权限：rwx 
+
+r--      4     
+-w-      2
+--x      1<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>删除其他用户对test.txt文件的可读权限</p>
+<pre class="line-numbers language-none"><code class="language-none">chmod o-r /test.txt[文件路径]
+或者
+chmod 640 /test.txt[文件路径]<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+
+<h4 id="改变文件的所属者和所属组"><a href="#改变文件的所属者和所属组" class="headerlink" title="改变文件的所属者和所属组"></a>改变文件的所属者和所属组</h4><pre class="line-numbers language-none"><code class="language-none">chown 用户 文件
+chgrp 用户 文件<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+
+<p>改变test.txt文件所属者为tom，所属组为tom</p>
+<pre class="line-numbers language-none"><code class="language-none">chown tom /test.txt
+chgrp tom /test.txt<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+
+<h4 id="粘滞位-sgid-suid-权限"><a href="#粘滞位-sgid-suid-权限" class="headerlink" title="粘滞位 sgid suid 权限"></a>粘滞位 sgid suid 权限</h4><ul>
+<li>粘滞位针对目录赋权，目录中创建的</li>
+<li>文件只有建立者可以删除</li>
+</ul>
+<p>例如：创建用户tom和用户jerry，使用tom用户创建/test目录，分别在/test目录下创建tom.txt和jerry.txt文件，/test目录权限为777.这个时候tom可以删除jerry.txt文件，反之亦然。但是一旦修改test目录添加粘滞位，那么jerry用户就不可以删除tom.txt文件了。</p>
+<pre class="line-numbers language-none"><code class="language-none">chmod o+t test
+
+t代表粘滞位
+/tmp临时目录默认就开启了粘滞位<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+
+<ul>
+<li>sgid针对目录建立的权限，再该目录中建立的文件所属组继承父目录的属组</li>
+</ul>
+<pre class="line-numbers language-none"><code class="language-none">chmod g+s [目录]<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<ul>
+<li>suid 对可执行文件建立。</li>
+</ul>
+<p>谁允许该文件，具有文件所属者的权限</p>
+<p><img src="https://img-blog.csdnimg.cn/cd7067b17dc74e46beea354fa2212bef.gif" data-original="https://img-blog.csdnimg.cn/050d9fc49ffe4f0094ab21247431f42f.png"></p>
+<p>执行了以上命令后，再切换到tom用户就是可以查看/shado文件了，且ll查看权限还是000</p>
+<p><img src="https://img-blog.csdnimg.cn/cd7067b17dc74e46beea354fa2212bef.gif" data-original="https://img-blog.csdnimg.cn/f6d7e654cf494bb69ae7327c3d6445cc.png"></p>
+<p>撤销粘滞位、sgid、suid命令</p>
+<pre class="line-numbers language-none"><code class="language-none">chmod 对象 - 权限  文件<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<p><img src="https://img-blog.csdnimg.cn/cd7067b17dc74e46beea354fa2212bef.gif" data-original="https://img-blog.csdnimg.cn/cf9bc85b8e964ae5841a788abd1d2bac.png"></p>
+<p>如何实现不允许添加新用户</p>
+<pre class="line-numbers language-none"><code class="language-none">chattr +i /etc/passwd /etc/shadow
+lsattr /etc/passwd /etc/shadow
+
+
+解除不允许添加新用户
+chattr -i /etc/passwd /etc/shadow<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p><img src="https://img-blog.csdnimg.cn/cd7067b17dc74e46beea354fa2212bef.gif" data-original="https://img-blog.csdnimg.cn/7562dc73433641b1aaecbb8e7afe580c.png"></p>
+<h4 id="umask简介"><a href="#umask简介" class="headerlink" title="umask简介"></a>umask简介</h4><p>文件权限=0777-umask</p>
+<p>rwxr-xr-x         755</p>
+<p>目录的最高权限0777—0022＝0755</p>
+<p>文件    666—022＝644</p>
+<p>027 ——一般公司服务器规定umask为027，也就是其他用户没有权限</p>
+<pre class="line-numbers language-none"><code class="language-none">使用vim /etc/profile命令查看umask值
+使用vim /etc/bashrc命令查看umask值<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+
+<p><img src="https://img-blog.csdnimg.cn/cd7067b17dc74e46beea354fa2212bef.gif" data-original="https://img-blog.csdnimg.cn/42779680c48e498894e4471fa1007b92.png"></p>
+<p>修改默认密码最长有效期，一般都是99999，建议改为90</p>
+<pre class="line-numbers language-none"><code class="language-none">vim /etc/login.defs
+第25行<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+
+<p><img src="https://img-blog.csdnimg.cn/cd7067b17dc74e46beea354fa2212bef.gif" data-original="https://img-blog.csdnimg.cn/957a0ee4e083450caa39e7e0c93e3f9e.png"></p>
+<h2 id="12-网络地址配置"><a href="#12-网络地址配置" class="headerlink" title="12.网络地址配置"></a>12.网络地址配置</h2><p>1.确认系统的网卡信息和ip地址</p>
+<pre class="line-numbers language-none"><code class="language-none">ip addr<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<pre class="line-numbers language-none"><code class="language-none">[okra@localhost ~]$ ip addr
+1: lo: &lt;LOOPBACK,UP,LOWER_UP&gt; mtu 65536 qdisc noqueue state UNKNOWN group default qlen 1000
+    link/loopback 00:00:00:00:00:00 brd 00:00:00:00:00:00
+    inet 127.0.0.1/8 scope host lo
+       valid_lft forever preferred_lft forever
+    inet6 ::1/128 scope host 
+       valid_lft forever preferred_lft forever
+2: ens33: &lt;BROADCAST,MULTICAST,UP,LOWER_UP&gt; mtu 1500 qdisc pfifo_fast state UP group default qlen 1000
+    link/ether 00:0c:29:76:3e:10 brd ff:ff:ff:ff:ff:ff
+3: ens34: &lt;BROADCAST,MULTICAST,UP,LOWER_UP&gt; mtu 1500 qdisc pfifo_fast state UP group default qlen 1000
+    link/ether 00:0c:29:76:3e:1a brd ff:ff:ff:ff:ff:ff
+4: virbr0: &lt;NO-CARRIER,BROADCAST,MULTICAST,UP&gt; mtu 1500 qdisc noqueue state DOWN group default qlen 1000
+    link/ether 52:54:00:af:68:5d brd ff:ff:ff:ff:ff:ff
+    inet 192.168.122.1/24 brd 192.168.122.255 scope global virbr0
+       valid_lft forever preferred_lft forever
+5: virbr0-nic: &lt;BROADCAST,MULTICAST&gt; mtu 1500 qdisc pfifo_fast master virbr0 state DOWN group default qlen 1000
+    link/ether 52:54:00:af:68:5d brd ff:ff:ff:ff:ff:ff<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>可以看见本地换回地址和其他4张网卡信息</p>
+<p>2.关闭natworkmanager服务</p>
+<pre class="line-numbers language-none"><code class="language-none">service NetworkManager stop
+chkconfig --level 345 NetworkManager off<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+
+<p>3.配置ip地址</p>
+<pre class="line-numbers language-none"><code class="language-none">ip addr add 172.20.149.107/24 dev eth0
+
+我的centos的网络接口是ens33
+dev---代表设备<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>4.开启网络接口eth0，不然光配地址是不行的</p>
+<pre class="line-numbers language-none"><code class="language-none">ip link set eth0 up<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<p>5.设置网关</p>
+<pre class="line-numbers language-none"><code class="language-none">ip route add default via 【网关ip】 dev eth0<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<p>6.访问百度</p>
+<pre class="line-numbers language-none"><code class="language-none">nslookup www.baidu.com<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<p>失败</p>
+<p>在/etc/resolv.conf添加百度服务器地址</p>
+<pre class="line-numbers language-none"><code class="language-none">vim /etc/resolv.conf
+在空行添加
+servername 202.106.0.20
+保存退出<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>访问百度成功</p>
+<p>7.修改IP地址</p>
+<pre class="line-numbers language-none"><code class="language-none">vim /etc/sysconfig/network-scripts/ifcfg-ens33(这是我的网络接口)
+
+DEVICE＝eth0网卡设备
+TYPE＝Ethernet 类型
+ONBOOT＝yes 是否允许network服务管理该文件 
+BOOTPROTO＝static 静态获取
+IPADDR=192.168.1.254 
+NETMASK=255.255.255.0 
+
+
+重启服务
+/etc/init.d/network restart<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p><img src="https://img-blog.csdnimg.cn/cd7067b17dc74e46beea354fa2212bef.gif" data-original="https://img-blog.csdnimg.cn/ad81cea413bc403e99d025b19019147a.png"></p>
+<h2 id="13-日志的管理与分析"><a href="#13-日志的管理与分析" class="headerlink" title="13.日志的管理与分析"></a>13.日志的管理与分析</h2><p>Linux的日志文件存放在/var目录下</p>
+<p>日志分类</p>
+<ul>
+<li>系统日志—messages</li>
+<li>登录日志—secure</li>
+<li>程序日志</li>
+</ul>
+<p>日志管理服务</p>
+<pre class="line-numbers language-none"><code class="language-none"><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
 
                 
             </div>
@@ -1947,7 +2285,7 @@ buildconf        httpd.dsp        LICENSE         README.platforms<span aria-hid
             <br>
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">166.6k</span>&nbsp;字&nbsp;|
+                class="white-color">169k</span>&nbsp;字&nbsp;|
             
             
             
@@ -2298,13 +2636,13 @@ $(function () {
 document.addEventListener("visibilitychange", function () { document.hidden ? (document.title = "Σ(っ °Д °;)っ喔哟，崩溃啦！", clearTimeout(st)) : (document.title = "φ(゜▽゜*)♪咦，又好了！", st = setTimeout(function () { document.title = OriginTitile }, 3e3)) }) </script>
 
 
-<script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"model":{"jsonPath":"/live2dw/assets/hijiki.model.json"},"display":{"position":"right","width":280,"height":280},"mobile":{"show":false},"log":false,"pluginJsPath":"lib/","pluginModelPath":"assets/","pluginRootPath":"live2dw/","tagMode":false});</script><script>
+<script>
             window.imageLazyLoadSetting = {
                 isSPA: false,
                 preloadRatio: 1,
                 processImages: null,
             };
-        </script><script>window.addEventListener("load",function(){var t=/\.(gif|jpg|jpeg|tiff|png)$/i,r=/^data:image\/[a-z]+;base64,/;Array.prototype.slice.call(document.querySelectorAll("img[data-original]")).forEach(function(a){var e=a.parentNode;"A"===e.tagName&&(e.href.match(t)||e.href.match(r))&&(e.href=a.dataset.original)})});</script><script>!function(n){n.imageLazyLoadSetting.processImages=o;var e=n.imageLazyLoadSetting.isSPA,i=n.imageLazyLoadSetting.preloadRatio||1,r=Array.prototype.slice.call(document.querySelectorAll("img[data-original]"));function o(){e&&(r=Array.prototype.slice.call(document.querySelectorAll("img[data-original]")));for(var t,a=0;a<r.length;a++)0<=(t=(t=r[a]).getBoundingClientRect()).bottom&&0<=t.left&&t.top<=(n.innerHeight*i||document.documentElement.clientHeight*i)&&function(){var t,e,n,i,o=r[a];t=o,e=function(){r=r.filter(function(t){return o!==t})},n=new Image,i=t.getAttribute("data-original"),n.onload=function(){t.src=i,e&&e()},t.src!==i&&(n.src=i)}()}o(),n.addEventListener("scroll",function(){var t,e;t=o,e=n,clearTimeout(t.tId),t.tId=setTimeout(function(){t.call(e)},500)})}(this);</script></body>
+        </script><script>window.addEventListener("load",function(){var t=/\.(gif|jpg|jpeg|tiff|png)$/i,r=/^data:image\/[a-z]+;base64,/;Array.prototype.slice.call(document.querySelectorAll("img[data-original]")).forEach(function(a){var e=a.parentNode;"A"===e.tagName&&(e.href.match(t)||e.href.match(r))&&(e.href=a.dataset.original)})});</script><script>!function(n){n.imageLazyLoadSetting.processImages=o;var e=n.imageLazyLoadSetting.isSPA,i=n.imageLazyLoadSetting.preloadRatio||1,r=Array.prototype.slice.call(document.querySelectorAll("img[data-original]"));function o(){e&&(r=Array.prototype.slice.call(document.querySelectorAll("img[data-original]")));for(var t,a=0;a<r.length;a++)0<=(t=(t=r[a]).getBoundingClientRect()).bottom&&0<=t.left&&t.top<=(n.innerHeight*i||document.documentElement.clientHeight*i)&&function(){var t,e,n,i,o=r[a];t=o,e=function(){r=r.filter(function(t){return o!==t})},n=new Image,i=t.getAttribute("data-original"),n.onload=function(){t.src=i,e&&e()},t.src!==i&&(n.src=i)}()}o(),n.addEventListener("scroll",function(){var t,e;t=o,e=n,clearTimeout(t.tId),t.tId=setTimeout(function(){t.call(e)},500)})}(this);</script><script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"model":{"jsonPath":"/live2dw/assets/hijiki.model.json"},"display":{"position":"right","width":280,"height":280},"mobile":{"show":false},"log":false,"pluginJsPath":"lib/","pluginModelPath":"assets/","pluginRootPath":"live2dw/","tagMode":false});</script></body>
 
 </html>
 
