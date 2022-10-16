@@ -6,7 +6,7 @@
   <link href="https://uprightokra.github.io/atom.xml" rel="self"/>
   
   <link href="https://uprightokra.github.io/"/>
-  <updated>2022-10-15T10:31:53.493Z</updated>
+  <updated>2022-10-16T14:42:24.333Z</updated>
   <id>https://uprightokra.github.io/</id>
   
   <author>
@@ -15,6 +15,38 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>如何防止内网私接路由器</title>
+    <link href="https://uprightokra.github.io/2022-10-16-ru-he-fang-zhi-nei-wang-si-jie-lu-you-qi.html"/>
+    <id>https://uprightokra.github.io/2022-10-16-ru-he-fang-zhi-nei-wang-si-jie-lu-you-qi.html</id>
+    <published>2022-10-16T13:24:29.000Z</published>
+    <updated>2022-10-16T14:42:24.333Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;p&gt;学习目标：&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;p&gt;什么是内网私接路由器？&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;私接会给内网来带怎样的安全隐患？ &lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;企业中如何预防违法私接？&lt;/p&gt;
+&lt;p&gt;内网 - 局域网 - 通过交换机连接的网络</summary>
+        
+      
+    
+    
+    
+    <category term="网络基础" scheme="https://uprightokra.github.io/categories/%E7%BD%91%E7%BB%9C%E5%9F%BA%E7%A1%80/"/>
+    
+    
+    <category term="Port-Security" scheme="https://uprightokra.github.io/tags/Port-Security/"/>
+    
+  </entry>
   
   <entry>
     <title>Centos7源码安装Apache(httpd-2.4.53)及问题解决</title>
@@ -507,31 +539,6 @@
     
     
     <category term="链路聚合" scheme="https://uprightokra.github.io/tags/%E9%93%BE%E8%B7%AF%E8%81%9A%E5%90%88/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>数通 10-VBST&amp;MSTP</title>
-    <link href="https://uprightokra.github.io/2022-10-03-shu-tong-10-vbst-mstp.html"/>
-    <id>https://uprightokra.github.io/2022-10-03-shu-tong-10-vbst-mstp.html</id>
-    <published>2022-10-03T14:31:35.000Z</published>
-    <updated>2022-10-03T15:15:55.383Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;h1 id=&quot;VBST-amp-MSTP&quot;&gt;&lt;a href=&quot;#VBST-amp-MSTP&quot; class=&quot;headerlink&quot; title=&quot;VBST&amp;amp;MSTP&quot;&gt;&lt;/a&gt;&lt;center&gt;VBST&amp;amp;MSTP&lt;/center&gt;&lt;/h1&gt;&lt;p&gt;&lt;font</summary>
-        
-      
-    
-    
-    
-    <category term="网络基础" scheme="https://uprightokra.github.io/categories/%E7%BD%91%E7%BB%9C%E5%9F%BA%E7%A1%80/"/>
-    
-    
-    <category term="VBST&amp;MSTP" scheme="https://uprightokra.github.io/tags/VBST-MSTP/"/>
     
   </entry>
   
