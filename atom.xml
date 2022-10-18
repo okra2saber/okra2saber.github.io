@@ -6,7 +6,7 @@
   <link href="https://uprightokra.github.io/atom.xml" rel="self"/>
   
   <link href="https://uprightokra.github.io/"/>
-  <updated>2022-10-16T14:42:24.333Z</updated>
+  <updated>2022-10-18T02:22:02.793Z</updated>
   <id>https://uprightokra.github.io/</id>
   
   <author>
@@ -17,11 +17,61 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>实验ensp 静态浮动路由与双线热备份</title>
+    <link href="https://uprightokra.github.io/2022-10-17-shi-yan-ensp-jing-tai-fu-dong-lu-you-yu-shuang-xian-re-bei-fen.html"/>
+    <id>https://uprightokra.github.io/2022-10-17-shi-yan-ensp-jing-tai-fu-dong-lu-you-yu-shuang-xian-re-bei-fen.html</id>
+    <published>2022-10-17T14:54:08.000Z</published>
+    <updated>2022-10-18T02:22:02.793Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h1 id=&quot;静态浮动路由与双线热备份&quot;&gt;&lt;a href=&quot;#静态浮动路由与双线热备份&quot; class=&quot;headerlink&quot;</summary>
+        
+      
+    
+    
+    
+    <category term="ensp实验" scheme="https://uprightokra.github.io/categories/ensp%E5%AE%9E%E9%AA%8C/"/>
+    
+    
+    <category term="bfd" scheme="https://uprightokra.github.io/tags/bfd/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>实验ensp NAT实现外网Telnet内网Server</title>
+    <link href="https://uprightokra.github.io/2022-10-17-shi-yan-ensp-nat-shi-xian-wai-wang-telnet-nei-wang-server.html"/>
+    <id>https://uprightokra.github.io/2022-10-17-shi-yan-ensp-nat-shi-xian-wai-wang-telnet-nei-wang-server.html</id>
+    <published>2022-10-17T11:21:03.000Z</published>
+    <updated>2022-10-17T12:09:52.226Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h1 id=&quot;NAT实现外网Telnat内网Server&quot;&gt;&lt;a href=&quot;#NAT实现外网Telnat内网Server&quot; class=&quot;headerlink&quot;</summary>
+        
+      
+    
+    
+    
+    <category term="ensp实验" scheme="https://uprightokra.github.io/categories/ensp%E5%AE%9E%E9%AA%8C/"/>
+    
+    
+    <category term="NAT" scheme="https://uprightokra.github.io/tags/NAT/"/>
+    
+  </entry>
+  
+  <entry>
     <title>如何防止内网私接路由器</title>
     <link href="https://uprightokra.github.io/2022-10-16-ru-he-fang-zhi-nei-wang-si-jie-lu-you-qi.html"/>
     <id>https://uprightokra.github.io/2022-10-16-ru-he-fang-zhi-nei-wang-si-jie-lu-you-qi.html</id>
     <published>2022-10-16T13:24:29.000Z</published>
-    <updated>2022-10-16T14:42:24.333Z</updated>
+    <updated>2022-10-16T14:42:49.868Z</updated>
     
     
       
@@ -129,7 +179,7 @@
     <link href="https://uprightokra.github.io/2022-10-14-centos-7-chang-yong-ming-ling.html"/>
     <id>https://uprightokra.github.io/2022-10-14-centos-7-chang-yong-ming-ling.html</id>
     <published>2022-10-14T02:19:51.000Z</published>
-    <updated>2022-10-16T13:06:11.418Z</updated>
+    <updated>2022-10-18T04:23:41.387Z</updated>
     
     
       
@@ -489,56 +539,6 @@
     
     
     <category term="ACL" scheme="https://uprightokra.github.io/tags/ACL/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>实验ensp-二层链路聚合配置</title>
-    <link href="https://uprightokra.github.io/2022-10-09-shi-yan-ensp-er-ceng-lian-lu-ju-he-pei-zhi.html"/>
-    <id>https://uprightokra.github.io/2022-10-09-shi-yan-ensp-er-ceng-lian-lu-ju-he-pei-zhi.html</id>
-    <published>2022-10-09T04:29:54.000Z</published>
-    <updated>2022-10-09T08:54:16.620Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;h1 id=&quot;二层链路聚合配置&quot;&gt;&lt;a href=&quot;#二层链路聚合配置&quot; class=&quot;headerlink&quot; title=&quot;二层链路聚合配置&quot;&gt;&lt;/a&gt;&lt;center&gt;二层链路聚合配置&lt;/center&gt;&lt;/h1&gt;&lt;h3 id=&quot;拓扑图&quot;&gt;&lt;a href=&quot;#拓扑图&quot;</summary>
-        
-      
-    
-    
-    
-    <category term="ensp实验" scheme="https://uprightokra.github.io/categories/ensp%E5%AE%9E%E9%AA%8C/"/>
-    
-    
-    <category term="二层链路聚合" scheme="https://uprightokra.github.io/tags/%E4%BA%8C%E5%B1%82%E9%93%BE%E8%B7%AF%E8%81%9A%E5%90%88/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>数通 11-链路聚合</title>
-    <link href="https://uprightokra.github.io/2022-10-03-shu-tong-11-lian-lu-ju-he.html"/>
-    <id>https://uprightokra.github.io/2022-10-03-shu-tong-11-lian-lu-ju-he.html</id>
-    <published>2022-10-03T14:50:43.000Z</published>
-    <updated>2022-10-09T04:12:41.838Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;h1 id=&quot;链路聚合&quot;&gt;&lt;a href=&quot;#链路聚合&quot; class=&quot;headerlink&quot; title=&quot;链路聚合&quot;&gt;&lt;/a&gt;&lt;center&gt;链路聚合&lt;/center&gt;&lt;/h1&gt;&lt;h3 id=&quot;简介&quot;&gt;&lt;a href=&quot;#简介&quot; class=&quot;headerlink&quot;</summary>
-        
-      
-    
-    
-    
-    <category term="网络基础" scheme="https://uprightokra.github.io/categories/%E7%BD%91%E7%BB%9C%E5%9F%BA%E7%A1%80/"/>
-    
-    
-    <category term="链路聚合" scheme="https://uprightokra.github.io/tags/%E9%93%BE%E8%B7%AF%E8%81%9A%E5%90%88/"/>
     
   </entry>
   

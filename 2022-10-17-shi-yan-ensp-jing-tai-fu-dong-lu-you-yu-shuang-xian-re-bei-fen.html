@@ -4,7 +4,7 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="网络安全入门基础教程04-eNSP基础操作, Okraの筆記">
+    <meta name="keywords" content="实验ensp 静态浮动路由与双线热备份, Okraの筆記">
     <meta name="description" content="">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -16,7 +16,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>网络安全入门基础教程04-eNSP基础操作 | Okraの筆記</title>
+    <title>实验ensp 静态浮动路由与双线热备份 | Okraの筆記</title>
     <link rel="icon" type="image/png" href="https://img-blog.csdnimg.cn/c085cffaa1ae4841b06ba367673ff753.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -398,12 +398,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('https://img-blog.csdnimg.cn/b74efa6e19df4012bb6d95259f3cd51f.jpeg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('https://img-blog.csdnimg.cn/4aa36e431ab84089a57b83c5b025d9ac.jpeg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">网络安全入门基础教程04-eNSP基础操作</h1>
+                    <h1 class="description center-align post-title">实验ensp 静态浮动路由与双线热备份</h1>
                 </div>
             </div>
         </div>
@@ -523,8 +523,8 @@
                     
                     <div class="article-tag">
                         
-                            <a href="/tags/%E7%BD%91%E7%BB%9C%E5%9F%BA%E7%A1%80/">
-                                <span class="chip bg-color">网络基础</span>
+                            <a href="/tags/bfd/">
+                                <span class="chip bg-color">bfd</span>
                             </a>
                         
                     </div>
@@ -535,8 +535,8 @@
                     <div class="post-cate">
                         <i class="fas fa-bookmark fa-fw icon-category"></i>
                         
-                            <a href="/categories/%E7%BD%91%E7%BB%9C%E5%9F%BA%E7%A1%80/" class="post-category">
-                                网络基础
+                            <a href="/categories/ensp%E5%AE%9E%E9%AA%8C/" class="post-category">
+                                ensp实验
                             </a>
                         
                     </div>
@@ -548,28 +548,28 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2022-03-21
+                    2022-10-17
                 </div>
                 
 
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2022-06-23
+                    2022-10-18
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    1.4k
+                    1.3k
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    5 分
+                    7 分
                 </div>
                 
 
@@ -597,69 +597,159 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h2 id="eNSP命令行使用"><a href="#eNSP命令行使用" class="headerlink" title="eNSP命令行使用"></a>eNSP命令行使用</h2><p><img src="https://img-blog.csdnimg.cn/cd7067b17dc74e46beea354fa2212bef.gif" data-original="https://img-blog.csdnimg.cn/64066547201545a595eadc756880e4bd.png?x-oss-process=image/watermark,type_d3F5LXplbmhlaQ,shadow_50,text_Q1NETiBA6IC_55u056eL6JG1,size_20,color_FFFFFF,t_70,g_se,x_16" alt="vrp分层视图"></p>
-<ul>
-<li>为了简化操作，系统提供了快捷键，使用户能够快速执行操作。以上表格中提供了系统定义的快捷键。其他的快捷镇如下：</li>
-<li>CTRL＋B 将光标向左移动一个字符。</li>
-<li>CTRL＋D 删除当前光标所在位置的字符。</li>
-<li>CTRL＋E 将光标移动到当前行的末尾。</li>
-<li>CTRL＋F将光标向右移动一个字符。</li>
-<li>CTRL＋H 删除光标左侧的一个字符。</li>
-<li>CTRL＋N 显示历史命令缓冲区中的后一条命令。</li>
-<li>CTRL＋P 显示历史命令缓冲区中的前一条命令。</li>
-<li>CTRL＋W删除光标左侧的一个字符串。</li>
-<li>CTRL＋X 删除光标左侧所有的字符。</li>
-<li>CTRL＋Y删除光标所在位置及其右侧所有的字符。</li>
-<li>ESC＋B 将光标向左移动一个字符串。</li>
-<li>ESC＋D 删除光标右侧的一个字符串。ESC＋F 将光标向右移动一个字符串。</li>
-</ul>
-<h2 id="设备名称更改"><a href="#设备名称更改" class="headerlink" title="设备名称更改"></a>设备名称更改</h2><pre class="line-numbers language-R" data-language="R"><code class="language-R">&lt;Huawei&gt;system-view 
-Enter system view, return user view with Ctrl+Z.
-[Huawei]sysname zj-router-001
-[zj-router-001]
-#命名规则一般为‘地名-设备-编号’<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+                <h1 id="静态浮动路由与双线热备份"><a href="#静态浮动路由与双线热备份" class="headerlink" title="静态浮动路由与双线热备份"></a><center>静态浮动路由与双线热备份</center></h1><p>知识点</p>
+<p>拓扑图</p>
+<img src="https://img-blog.csdnimg.cn/cd7067b17dc74e46beea354fa2212bef.gif" data-original="https://img-blog.csdnimg.cn/66b445a690fe4596920965f661de831a.png" style="zoom: 67%;">
 
-<h2 id="命令等级"><a href="#命令等级" class="headerlink" title="命令等级"></a>命令等级</h2><p><img src="https://img-blog.csdnimg.cn/cd7067b17dc74e46beea354fa2212bef.gif" data-original="https://img-blog.csdnimg.cn/4f5a818ff3ef4a26944f62f17c34cfba.png?x-oss-process=image/watermark,type_d3F5LXplbmhlaQ,shadow_50,text_Q1NETiBA6IC_55u056eL6JG1,size_20,color_FFFFFF,t_70,g_se,x_16" alt="命令等级"></p>
-<pre class="line-numbers language-r" data-language="r"><code class="language-r"><span class="token punctuation">[</span>Huawei<span class="token punctuation">]</span>command<span class="token operator">-</span>privilege level <span class="token number">3</span> view user save<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<p>实验步骤</p>
+<p>1.配置去往0.0.0.0的静态路由（两台优先级60和70）,查看路由表</p>
+<pre class="line-numbers language-none"><code class="language-none">[GW]ip route-static 0.0.0.0 0.0.0.0 10.1.1.1 
+[GW]ip route-static 0.0.0.0 0.0.0.0 20.1.1.1 preference 70
 
-<ol>
-<li>系统将命令进行分级管理，以增加设备的安全性。</li>
-<li>设备管理员可以设置用户级别，一定级别的用户可以使用对应级别的命令行。</li>
-<li>缺省情况下命令级别分为0～3级，用户级别分为0～15级。</li>
-<li>用户e级为访问级别，对应网络诊断工具命令（ping、tracert）、从本设备出发访问外部设备的命令（Telnet客户端）、部分display命令等。</li>
-<li>用户1级为监控级别，对应命令级e、1级，包括用于系统维护的命令以及display等命令。6．用户2级是配置级别，包括向用户提供直接网络服务，包括路由、各个网络层次的命令。</li>
-<li>用户3—15级是管理级别，对应命令3级，该级别主要是用于系统运行的命令，对业务提供支撑作用，包括文件系统、FTP、TFTP下载、文件交换配置、电源供应控制，备份板控制、用户管理、命令级别设置、系统内部参数设置以及用于业务故障诊断的debugging命令。本例展示了如何修改命令级别，在用户视图下执行save命令需要3级的权限。</li>
-<li>在具体使用中，如果我们有多个管理员账号，但只允许某一个管理员保存系统配置，则可以将save命令的级别提高到4级，并定义只有该管理员有4级权限。这样，在不影响其他用户的情况下，可以实现对命令的使用控制。</li>
-</ol>
-<h2 id="用户界面"><a href="#用户界面" class="headerlink" title="用户界面"></a>用户界面</h2><p><img src="https://img-blog.csdnimg.cn/cd7067b17dc74e46beea354fa2212bef.gif" data-original="https://img-blog.csdnimg.cn/516a982ce4e24aa28f15947a82ed1c52.png?x-oss-process=image/watermark,type_d3F5LXplbmhlaQ,shadow_50,text_Q1NETiBA6IC_55u056eL6JG1,size_20,color_FFFFFF,t_70,g_se,x_16" alt="用户界面"></p>
-<ol>
-<li>系统支持的用户界面包括Console用户界面和VTY用户界面。</li>
-<li>控制口（Console Port）是一种通信串行端口，由设备的主控板提供。</li>
-<li>虚拟类型终端（Virtual Type Terminal）是一种虚拟线路端口，用户通过终端与设备建立Telnet或SSH连接后，也就建立了一条VTY，即用户可以通过VTY方式登录设备。设备一般最多支持15个用户同时通过VTY方式访问。执行user—interface maximum—vty number 命令可以配置同时登录到设备的VTY类型用户界面的最大个数。如果将最大登录用户数设为0，则任何用户都不能通过Telnet或者SSH登录到路由器。display user—interface 命令用来查看用户界面信息。</li>
-<li>不同的设备，或使用不同版本的VRP软件系统，具体可以被使用的VTY接口的最大数量可能不同。VTY 接口最大可配范围为0-14。</li>
-</ol>
-<h2 id="console配置"><a href="#console配置" class="headerlink" title="console配置"></a>console配置</h2><pre class="line-numbers language-none"><code class="language-none">[RTA]user-interface console 0    进入console口管理控制界面
-[RTA]authentication-mode password	开启密码认证模式
-[RTA]set authentication password cipher forest	设置加密密码	forest是密码
-[RTA]idle-timeout 1 30	第一个数字代表分，第二个数字代表秒<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+[GW]dis ip routing-table
+Route Flags: R - relay, D - download to fib
+------------------------------------------------------------------------------
+Routing Tables: Public
+         Destinations : 11       Routes : 11       
 
-<p><img src="https://img-blog.csdnimg.cn/cd7067b17dc74e46beea354fa2212bef.gif" data-original="https://img-blog.csdnimg.cn/3170ce2215de42cf80e949c27cbdfd35.png?x-oss-process=image/watermark,type_d3F5LXplbmhlaQ,shadow_50,text_Q1NETiBA6IC_55u056eL6JG1,size_20,color_FFFFFF,t_70,g_se,x_16" alt="效果图"></p>
-<h2 id="配置用户界面命令"><a href="#配置用户界面命令" class="headerlink" title="配置用户界面命令"></a>配置用户界面命令</h2><p><img src="https://img-blog.csdnimg.cn/cd7067b17dc74e46beea354fa2212bef.gif" data-original="https://img-blog.csdnimg.cn/31d2d360f3204fb1af62f991c5a350a7.png?x-oss-process=image/watermark,type_d3F5LXplbmhlaQ,shadow_50,text_Q1NETiBA6IC_55u056eL6JG1,size_20,color_FFFFFF,t_70,g_se,x_16" alt="配置用户界面命令"></p>
-<p><img src="https://img-blog.csdnimg.cn/cd7067b17dc74e46beea354fa2212bef.gif" data-original="https://img-blog.csdnimg.cn/71a0c94c42d34a7bb0b7c630aa5bd1fc.png?x-oss-process=image/watermark,type_d3F5LXplbmhlaQ,shadow_50,text_Q1NETiBA6IC_55u056eL6JG1,size_20,color_FFFFFF,t_70,g_se,x_16"></p>
-<ol>
-<li>用户可以设置Console界面和VTY界面的属性，以提高系统安全性。如果一个连接上设备的用户一直处于空闲状态而不断开，可能会给系统带来很大风险，所以在等待一个超时时间后，系统会自动中断连接。这个闲置切断时间又称超时时间，默认为10分钟。</li>
-<li>当display命令输出的信息超过一页时，系统会对输出内容进行分页，使用空格键切换下一页。</li>
-<li>如果一页输出的信息过少或过多时，用户可以执行screen—1ength命令修改信息输出时一页的行数。默认行数为24，最大支持512行。不建议将行数设置为0，因为那样将不会显示任何输出内容了。</li>
-<li>每条命令执行过后，执行的记录都保存在历史命令缓存区。用户可以利用（↑），（↓），CTRL＋P，Ctr1＋N这些快捷键调用这些命令。历史命令缓存区中默认能存储10条命令，可以通过运行history—command max—size改变可存储的命令数，最多可存储256条。</li>
-</ol>
-<h2 id="恢复出厂设置"><a href="#恢复出厂设置" class="headerlink" title="恢复出厂设置"></a>恢复出厂设置</h2><pre class="line-numbers language-r" data-language="r"><code class="language-r"><span class="token punctuation">[</span>switch<span class="token punctuation">]</span> erase startuo<span class="token operator">-</span>configure
-<span class="token punctuation">[</span>switch<span class="token punctuation">]</span> reload<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+Destination/Mask    Proto   Pre  Cost      Flags NextHop         Interface
 
-<h2 id="手动关闭端口"><a href="#手动关闭端口" class="headerlink" title="手动关闭端口"></a>手动关闭端口</h2><pre class="line-numbers language-r" data-language="r"><code class="language-r"><span class="token punctuation">[</span>sw1<span class="token punctuation">]</span><span class="token punctuation">(</span>config<span class="token punctuation">)</span> int f0<span class="token operator">/</span><span class="token number">1</span>
-<span class="token punctuation">[</span>sw1<span class="token punctuation">]</span><span class="token punctuation">(</span>config<span class="token punctuation">)</span> shutdown<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+        0.0.0.0/0   Static  60   0          RD   10.1.1.1        GigabitEthernet
+0/0/0
+       10.1.1.0/24  Direct  0    0           D   10.1.1.2        GigabitEthernet
+0/0/0
+       10.1.1.2/32  Direct  0    0           D   127.0.0.1       GigabitEthernet
+0/0/0
+     10.1.1.255/32  Direct  0    0           D   127.0.0.1       GigabitEthernet
+0/0/0
+       20.1.1.0/24  Direct  0    0           D   20.1.1.2        GigabitEthernet
+0/0/1
+       20.1.1.2/32  Direct  0    0           D   127.0.0.1       GigabitEthernet
+0/0/1
+     20.1.1.255/32  Direct  0    0           D   127.0.0.1       GigabitEthernet
+0/0/1
+      127.0.0.0/8   Direct  0    0           D   127.0.0.1       InLoopBack0
+      127.0.0.1/32  Direct  0    0           D   127.0.0.1       InLoopBack0
+127.255.255.255/32  Direct  0    0           D   127.0.0.1       InLoopBack0
+255.255.255.255/32  Direct  0    0           D   127.0.0.1       InLoopBack0<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
-<h2 id="手动开启端口"><a href="#手动开启端口" class="headerlink" title="手动开启端口"></a>手动开启端口</h2><pre class="line-numbers language-r" data-language="r"><code class="language-r"><span class="token punctuation">[</span>sw1<span class="token punctuation">]</span><span class="token punctuation">(</span>config<span class="token punctuation">)</span> int f0<span class="token operator">/</span><span class="token number">1</span>
-<span class="token punctuation">[</span>sw1<span class="token punctuation">]</span><span class="token punctuation">(</span>config<span class="token punctuation">)</span> no shutdown<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+<p>2.配置loopback，ip 123.1.1.1</p>
+<pre class="line-numbers language-none"><code class="language-none">[DianXin]int loopback 0
+[DianXin-LoopBack0]ip address 123.1.1.1 255.255.255.0 
+
+[LianTong]int loopback 0
+[LianTong-LoopBack0]ip address 123.1.1.1 255.255.255.0 <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>3.网关ping123.1.1.1，通</p>
+<pre class="line-numbers language-none"><code class="language-none">[GW]ping 123.1.1.1
+  PING 123.1.1.1: 56  data bytes, press CTRL_C to break
+    Reply from 123.1.1.1: bytes=56 Sequence=1 ttl=255 time=20 ms
+    Reply from 123.1.1.1: bytes=56 Sequence=2 ttl=255 time=20 ms
+    Reply from 123.1.1.1: bytes=56 Sequence=3 ttl=255 time=40 ms
+    Reply from 123.1.1.1: bytes=56 Sequence=4 ttl=255 time=20 ms
+    Reply from 123.1.1.1: bytes=56 Sequence=5 ttl=255 time=10 ms
+
+  --- 123.1.1.1 ping statistics ---
+    5 packet(s) transmitted
+    5 packet(s) received
+    0.00% packet loss
+    round-trip min/avg/max = 10/22/40 ms<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>4.shutdown网关设备通往电信的出接口G0/0/0</p>
+<pre class="line-numbers language-none"><code class="language-none">[GW]int GigabitEthernet0/0/0
+[GW-GigabitEthernet0/0/0]shutdown<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+
+<p>5.ping123.1.1.1</p>
+<pre class="line-numbers language-none"><code class="language-none">[GW]ping 123.1.1.1
+  PING 123.1.1.1: 56  data bytes, press CTRL_C to break
+    Reply from 123.1.1.1: bytes=56 Sequence=1 ttl=255 time=20 ms
+    Reply from 123.1.1.1: bytes=56 Sequence=2 ttl=255 time=20 ms
+    Reply from 123.1.1.1: bytes=56 Sequence=3 ttl=255 time=40 ms
+    Reply from 123.1.1.1: bytes=56 Sequence=4 ttl=255 time=20 ms
+    Reply from 123.1.1.1: bytes=56 Sequence=5 ttl=255 time=10 ms
+
+  --- 123.1.1.1 ping statistics ---
+    5 packet(s) transmitted
+    5 packet(s) received
+    0.00% packet loss
+    round-trip min/avg/max = 10/22/40 ms<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>6.查看路由表，发现0.0.0.0路由表优先级由60变为70.</p>
+<p><strong>到这一步就实现了静态浮动路由双线热备份</strong></p>
+<pre class="line-numbers language-none"><code class="language-none">[GW]dis ip routing-table
+Route Flags: R - relay, D - download to fib
+------------------------------------------------------------------------------
+Routing Tables: Public
+         Destinations : 11       Routes : 11       
+
+Destination/Mask    Proto   Pre  Cost      Flags NextHop         Interface
+
+        0.0.0.0/0   Static  70   0          RD   20.1.1.1        GigabitEthernet
+0/0/1
+       10.1.1.0/24  Direct  0    0           D   10.1.1.2        GigabitEthernet
+0/0/0
+       10.1.1.2/32  Direct  0    0           D   127.0.0.1       GigabitEthernet
+0/0/0
+     10.1.1.255/32  Direct  0    0           D   127.0.0.1       GigabitEthernet
+0/0/0
+       20.1.1.0/24  Direct  0    0           D   20.1.1.2        GigabitEthernet
+0/0/1
+       20.1.1.2/32  Direct  0    0           D   127.0.0.1       GigabitEthernet
+0/0/1
+     20.1.1.255/32  Direct  0    0           D   127.0.0.1       GigabitEthernet
+0/0/1
+      127.0.0.0/8   Direct  0    0           D   127.0.0.1       InLoopBack0
+      127.0.0.1/32  Direct  0    0           D   127.0.0.1       InLoopBack0
+127.255.255.255/32  Direct  0    0           D   127.0.0.1       InLoopBack0
+255.255.255.255/32  Direct  0    0           D   127.0.0.1       InLoopBack0<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>接下来将通过BFD协议来实现单臂回声，检测链路的通信是否正常，实现网络实时连通。</p>
+<p>7.现将原本shutdown的G0/0/0口恢复</p>
+<pre class="line-numbers language-none"><code class="language-none">[GW]int g0/0/0	
+[GW-GigabitEthernet0/0/0]undo shutdown <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+
+<p>8.重新ping123.1.1.1，查看路由表，路由表的静态路由恢复成原来的电信60。</p>
+<p>9.shutdown电信的g0/0/0口，从网关ping123.1.1.1.显示连接超时。查看路由表信息发现去往0.0.0.0的静态路由还是60，没有变成70.</p>
+<pre class="line-numbers language-none"><code class="language-none">[DianXin]int g0/0/0	
+[DianXin-GigabitEthernet0/0/0]shutdown <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+
+<p>10.配置bfd协议</p>
+<pre class="line-numbers language-none"><code class="language-none">[GW]bfd
+[GW-bfd]q
+[GW]bfd huawei bind peer-ip 10.1.1.1 interface g0/0/0 one-arm-echo 
+[GW-bfd-session-huawei]discriminator local 111
+[GW-bfd-session-huawei]commit <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>11.将原本通往10.1.1.1的静态路由undo</p>
+<pre class="line-numbers language-none"><code class="language-none">[GW]undo ip route-static 0.0.0.0 0 10.1.1.1
+[GW]ip route-static 0.0.0.0 0 10.1.1.1 track bfd-session huawei<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+
+<p>12.查看bfd 可以看见去往10.1.1.1的线路显示down</p>
+<pre class="line-numbers language-none"><code class="language-none">[GW]dis bfd session all
+--------------------------------------------------------------------------------
+Local Remote     PeerIpAddr      State     Type        InterfaceName            
+--------------------------------------------------------------------------------
+
+111   -          10.1.1.1        Down      S_IP_IF     GigabitEthernet0/0/0     
+--------------------------------------------------------------------------------
+     Total UP/DOWN Session Number : 0/1<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>13.先恢复电信的g0/0/0口，这个时候一直ping123.1.1.1 -t，是通的。</p>
+<p>然后shutdown g0/0/0口，可以看见ping页面丢了两个包，后右恢复了连接</p>
+<pre class="line-numbers language-none"><code class="language-none">[GW]ping 123.1.1.1
+  PING 123.1.1.1: 56  data bytes, press CTRL_C to break
+    Reply from 123.1.1.1: bytes=56 Sequence=1 ttl=255 time=20 ms
+    Reply from 123.1.1.1: bytes=56 Sequence=2 ttl=255 time=30 ms
+    Reply from 123.1.1.1: bytes=56 Sequence=3 ttl=255 time=20 ms
+    Reply from 123.1.1.1: bytes=56 Sequence=4 ttl=255 time=20 ms
+    Reply from 123.1.1.1: bytes=56 Sequence=5 ttl=255 time=20 ms
+    Request timeout!
+    Request timeout!
+    Reply from 123.1.1.1: bytes=56 Sequence=3 ttl=255 time=20 ms
+    Reply from 123.1.1.1: bytes=56 Sequence=4 ttl=255 time=20 ms
+    Reply from 123.1.1.1: bytes=56 Sequence=5 ttl=255 time=20 ms<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+
 
 
                 
@@ -687,7 +777,7 @@ Enter system view, return user view with Ctrl+Z.
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="https://uprightokra.github.io/2022-03-21-wang-luo-an-quan-ru-men-ji-chu-jiao-cheng-04-ensp-ji-chu-cao-zuo.html">https://uprightokra.github.io/2022-03-21-wang-luo-an-quan-ru-men-ji-chu-jiao-cheng-04-ensp-ji-chu-cao-zuo.html</a>
+                    <a href="https://uprightokra.github.io/2022-10-17-shi-yan-ensp-jing-tai-fu-dong-lu-you-yu-shuang-xian-re-bei-fen.html">https://uprightokra.github.io/2022-10-17-shi-yan-ensp-jing-tai-fu-dong-lu-you-yu-shuang-xian-re-bei-fen.html</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -725,8 +815,8 @@ Enter system view, return user view with Ctrl+Z.
                     
                         <div class="article-tag">
                             
-                                <a href="/tags/%E7%BD%91%E7%BB%9C%E5%9F%BA%E7%A1%80/">
-                                    <span class="chip bg-color">网络基础</span>
+                                <a href="/tags/bfd/">
+                                    <span class="chip bg-color">bfd</span>
                                 </a>
                             
                         </div>
@@ -1226,16 +1316,17 @@ Enter system view, return user view with Ctrl+Z.
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
+                <i class="far fa-dot-circle"></i>&nbsp;本篇
+            </div>
             <div class="card">
-                <a href="/2022-04-18-js-cong-ru-men-dao-jing-tong-01-js-jian-jie.html">
+                <a href="/2022-10-17-shi-yan-ensp-jing-tai-fu-dong-lu-you-yu-shuang-xian-re-bei-fen.html">
                     <div class="card-image">
                         
-                        <img src="https://img-blog.csdnimg.cn/cd7067b17dc74e46beea354fa2212bef.gif" data-original="https://img-blog.csdnimg.cn/bdfe444df3884364945162e2c867a225.webp" class="responsive-img" alt="JS从入门到精通01-JS简介">
+                        <img src="https://img-blog.csdnimg.cn/cd7067b17dc74e46beea354fa2212bef.gif" data-original="https://img-blog.csdnimg.cn/4aa36e431ab84089a57b83c5b025d9ac.jpeg" class="responsive-img" alt="实验ensp 静态浮动路由与双线热备份">
                         
-                        <span class="card-title">JS从入门到精通01-JS简介</span>
+                        <span class="card-title">实验ensp 静态浮动路由与双线热备份</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -1245,26 +1336,27 @@ Enter system view, return user view with Ctrl+Z.
                         
                     </div>
                     <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2022-04-18
-                        </span>
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2022-10-17
+                            </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/JavaScript/" class="post-category">
-                                    JavaScript
+                            <a href="/categories/ensp%E5%AE%9E%E9%AA%8C/" class="post-category">
+                                    ensp实验
                                 </a>
                             
                             
                         </span>
                     </div>
                 </div>
+
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/JavaScript/">
-                        <span class="chip bg-color">JavaScript</span>
+                    <a href="/tags/bfd/">
+                        <span class="chip bg-color">bfd</span>
                     </a>
                     
                 </div>
@@ -1278,12 +1370,12 @@ Enter system view, return user view with Ctrl+Z.
                 下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2022-03-17-wang-luo-an-quan-ru-men-ji-chu-jiao-cheng-03-jiao-huan-ji-de-ji-ben-yuan-li.html">
+                <a href="/2022-10-17-shi-yan-ensp-nat-shi-xian-wai-wang-telnet-nei-wang-server.html">
                     <div class="card-image">
                         
-                        <img src="https://img-blog.csdnimg.cn/cd7067b17dc74e46beea354fa2212bef.gif" data-original="https://img-blog.csdnimg.cn/b74efa6e19df4012bb6d95259f3cd51f.jpeg" class="responsive-img" alt="网络安全入门基础教程03-交换机的基本原理">
+                        <img src="https://img-blog.csdnimg.cn/cd7067b17dc74e46beea354fa2212bef.gif" data-original="https://img-blog.csdnimg.cn/4aa36e431ab84089a57b83c5b025d9ac.jpeg" class="responsive-img" alt="实验ensp NAT实现外网Telnet内网Server">
                         
-                        <span class="card-title">网络安全入门基础教程03-交换机的基本原理</span>
+                        <span class="card-title">实验ensp NAT实现外网Telnet内网Server</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -1294,14 +1386,14 @@ Enter system view, return user view with Ctrl+Z.
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2022-03-17
+                                <i class="far fa-clock fa-fw icon-date"></i>2022-10-17
                             </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/%E7%BD%91%E7%BB%9C%E5%9F%BA%E7%A1%80/" class="post-category">
-                                    网络基础
+                            <a href="/categories/ensp%E5%AE%9E%E9%AA%8C/" class="post-category">
+                                    ensp实验
                                 </a>
                             
                             
@@ -1311,8 +1403,8 @@ Enter system view, return user view with Ctrl+Z.
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/%E7%BD%91%E7%BB%9C%E5%9F%BA%E7%A1%80/">
-                        <span class="chip bg-color">网络基础</span>
+                    <a href="/tags/NAT/">
+                        <span class="chip bg-color">NAT</span>
                     </a>
                     
                 </div>
