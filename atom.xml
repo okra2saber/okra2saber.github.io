@@ -6,7 +6,7 @@
   <link href="https://uprightokra.github.io/atom.xml" rel="self"/>
   
   <link href="https://uprightokra.github.io/"/>
-  <updated>2022-10-18T02:22:02.793Z</updated>
+  <updated>2022-10-19T14:45:44.929Z</updated>
   <id>https://uprightokra.github.io/</id>
   
   <author>
@@ -17,11 +17,36 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>实验ensp NQA</title>
+    <link href="https://uprightokra.github.io/2022-10-19-shi-yan-ensp-nqa.html"/>
+    <id>https://uprightokra.github.io/2022-10-19-shi-yan-ensp-nqa.html</id>
+    <published>2022-10-19T14:01:26.000Z</published>
+    <updated>2022-10-19T14:45:44.929Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h1 id=&quot;NQA&quot;&gt;&lt;a href=&quot;#NQA&quot; class=&quot;headerlink&quot; title=&quot;NQA&quot;&gt;&lt;/a&gt;&lt;center&gt;NQA&lt;/center&gt;&lt;/h1&gt;&lt;h2 id=&quot;拓扑图&quot;&gt;&lt;a href=&quot;#拓扑图&quot; class=&quot;headerlink&quot;</summary>
+        
+      
+    
+    
+    
+    <category term="ensp实验" scheme="https://uprightokra.github.io/categories/ensp%E5%AE%9E%E9%AA%8C/"/>
+    
+    
+    <category term="NQA" scheme="https://uprightokra.github.io/tags/NQA/"/>
+    
+  </entry>
+  
+  <entry>
     <title>实验ensp 静态浮动路由与双线热备份</title>
     <link href="https://uprightokra.github.io/2022-10-17-shi-yan-ensp-jing-tai-fu-dong-lu-you-yu-shuang-xian-re-bei-fen.html"/>
     <id>https://uprightokra.github.io/2022-10-17-shi-yan-ensp-jing-tai-fu-dong-lu-you-yu-shuang-xian-re-bei-fen.html</id>
     <published>2022-10-17T14:54:08.000Z</published>
-    <updated>2022-10-18T02:22:02.793Z</updated>
+    <updated>2022-10-18T06:20:45.213Z</updated>
     
     
       
@@ -46,7 +71,7 @@
     <link href="https://uprightokra.github.io/2022-10-17-shi-yan-ensp-nat-shi-xian-wai-wang-telnet-nei-wang-server.html"/>
     <id>https://uprightokra.github.io/2022-10-17-shi-yan-ensp-nat-shi-xian-wai-wang-telnet-nei-wang-server.html</id>
     <published>2022-10-17T11:21:03.000Z</published>
-    <updated>2022-10-17T12:09:52.226Z</updated>
+    <updated>2022-10-18T06:20:45.203Z</updated>
     
     
       
@@ -179,7 +204,7 @@
     <link href="https://uprightokra.github.io/2022-10-14-centos-7-chang-yong-ming-ling.html"/>
     <id>https://uprightokra.github.io/2022-10-14-centos-7-chang-yong-ming-ling.html</id>
     <published>2022-10-14T02:19:51.000Z</published>
-    <updated>2022-10-18T04:23:41.387Z</updated>
+    <updated>2022-10-19T12:50:32.498Z</updated>
     
     
       
@@ -513,32 +538,6 @@
     
     
     <category term="网络基础" scheme="https://uprightokra.github.io/tags/%E7%BD%91%E7%BB%9C%E5%9F%BA%E7%A1%80/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>实验ensp-ACL访问控制列表(二)</title>
-    <link href="https://uprightokra.github.io/2022-10-09-shi-yan-ensp-acl-fang-wen-kong-zhi-lie-biao-er.html"/>
-    <id>https://uprightokra.github.io/2022-10-09-shi-yan-ensp-acl-fang-wen-kong-zhi-lie-biao-er.html</id>
-    <published>2022-10-09T05:40:27.000Z</published>
-    <updated>2022-10-15T05:22:28.810Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;h3 id=&quot;实验要求&quot;&gt;&lt;a href=&quot;#实验要求&quot; class=&quot;headerlink&quot; title=&quot;实验要求&quot;&gt;&lt;/a&gt;实验要求&lt;/h3&gt;&lt;p&gt;1.PC1——&amp;gt;无法访问PC3和server 1&lt;/p&gt;
-&lt;p&gt;2.Client1——&amp;gt;无法访问Server</summary>
-        
-      
-    
-    
-    
-    <category term="ensp实验" scheme="https://uprightokra.github.io/categories/ensp%E5%AE%9E%E9%AA%8C/"/>
-    
-    
-    <category term="ACL" scheme="https://uprightokra.github.io/tags/ACL/"/>
     
   </entry>
   
