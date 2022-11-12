@@ -6,7 +6,7 @@
   <link href="https://uprightokra.github.io/atom.xml" rel="self"/>
   
   <link href="https://uprightokra.github.io/"/>
-  <updated>2022-10-19T14:45:44.929Z</updated>
+  <updated>2022-11-12T07:07:42.077Z</updated>
   <id>https://uprightokra.github.io/</id>
   
   <author>
@@ -17,11 +17,36 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>数通 16-OSPF的基本概念</title>
+    <link href="https://uprightokra.github.io/2022-10-24-shu-tong-16-ospf-de-ji-ben-gai-nian.html"/>
+    <id>https://uprightokra.github.io/2022-10-24-shu-tong-16-ospf-de-ji-ben-gai-nian.html</id>
+    <published>2022-10-24T12:16:48.000Z</published>
+    <updated>2022-11-12T07:07:42.077Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h1 id=&quot;OSPF的基本概念&quot;&gt;&lt;a href=&quot;#OSPF的基本概念&quot; class=&quot;headerlink&quot; title=&quot;OSPF的基本概念&quot;&gt;&lt;/a&gt;&lt;center&gt;OSPF的基本概念&lt;/center&gt;&lt;/h1&gt;&lt;h2 id=&quot;OSPF&quot;&gt;&lt;a</summary>
+        
+      
+    
+    
+    
+    <category term="网络基础" scheme="https://uprightokra.github.io/categories/%E7%BD%91%E7%BB%9C%E5%9F%BA%E7%A1%80/"/>
+    
+    
+    <category term="OSPF" scheme="https://uprightokra.github.io/tags/OSPF/"/>
+    
+  </entry>
+  
+  <entry>
     <title>实验ensp NQA</title>
     <link href="https://uprightokra.github.io/2022-10-19-shi-yan-ensp-nqa.html"/>
     <id>https://uprightokra.github.io/2022-10-19-shi-yan-ensp-nqa.html</id>
     <published>2022-10-19T14:01:26.000Z</published>
-    <updated>2022-10-19T14:45:44.929Z</updated>
+    <updated>2022-10-19T14:47:28.598Z</updated>
     
     
       
@@ -510,34 +535,6 @@
     
     
     <category term="ACL" scheme="https://uprightokra.github.io/tags/ACL/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>数通 00-小知识点</title>
-    <link href="https://uprightokra.github.io/2022-10-09-shu-tong-00-xiao-zhi-shi-dian.html"/>
-    <id>https://uprightokra.github.io/2022-10-09-shu-tong-00-xiao-zhi-shi-dian.html</id>
-    <published>2022-10-09T05:50:27.000Z</published>
-    <updated>2022-10-12T13:00:48.333Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;p&gt;作为网络工程师在组建网络初，需要购买公网IP和宽带&lt;/p&gt;
-&lt;p&gt;一般100人对应一个公网IP&lt;/p&gt;
-&lt;p&gt;经济化组网，以太网使用光纤    便宜&lt;/p&gt;
-&lt;h3 id=&quot;802-3和802-11&quot;&gt;&lt;a href=&quot;#802-3和802-11&quot;</summary>
-        
-      
-    
-    
-    
-    <category term="网络基础" scheme="https://uprightokra.github.io/categories/%E7%BD%91%E7%BB%9C%E5%9F%BA%E7%A1%80/"/>
-    
-    
-    <category term="网络基础" scheme="https://uprightokra.github.io/tags/%E7%BD%91%E7%BB%9C%E5%9F%BA%E7%A1%80/"/>
     
   </entry>
   

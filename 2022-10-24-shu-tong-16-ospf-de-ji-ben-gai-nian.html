@@ -4,7 +4,7 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="数通 03-TCP和UDP原理, Okraの筆記">
+    <meta name="keywords" content="数通 16-OSPF的基本概念, Okraの筆記">
     <meta name="description" content="">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -16,7 +16,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>数通 03-TCP和UDP原理 | Okraの筆記</title>
+    <title>数通 16-OSPF的基本概念 | Okraの筆記</title>
     <link rel="icon" type="image/png" href="https://img-blog.csdnimg.cn/c085cffaa1ae4841b06ba367673ff753.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -398,12 +398,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('https://img-blog.csdnimg.cn/3329ca491b794194a23d6b71671933c7.jpeg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('https://img-blog.csdnimg.cn/76b623508e8343c6b839b90f9432a83c.png')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">数通 03-TCP和UDP原理</h1>
+                    <h1 class="description center-align post-title">数通 16-OSPF的基本概念</h1>
                 </div>
             </div>
         </div>
@@ -523,8 +523,8 @@
                     
                     <div class="article-tag">
                         
-                            <a href="/tags/TCP-UDP/">
-                                <span class="chip bg-color">TCP&amp;UDP</span>
+                            <a href="/tags/OSPF/">
+                                <span class="chip bg-color">OSPF</span>
                             </a>
                         
                     </div>
@@ -548,28 +548,28 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2022-07-20
+                    2022-10-24
                 </div>
                 
 
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2022-10-02
+                    2022-11-12
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    1.5k
+                    2.4k
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    5 分
+                    8 分
                 </div>
                 
 
@@ -597,86 +597,187 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h1 id="TCP和UDP原理"><a href="#TCP和UDP原理" class="headerlink" title="TCP和UDP原理"></a><center>TCP和UDP原理</center></h1><h2 id="1-端口"><a href="#1-端口" class="headerlink" title="1.  端口"></a>1.  端口</h2><p>每个应用程序进出网络都需要经过一个唯一端口，通过端口号来识别数据交由哪个应用程序处理</p>
-<p>服务器：固定端口号（TCP 80）</p>
-<p>客户端：1024以上随机端口</p>
-<p>常见知名端口号：</p>
-<pre class="line-numbers language-none"><code class="language-none">TCP80  HTTP  超文本传输协议
-TCP20 21  FTP  文件传输协议
-TCP23  TELNET  远程登录
-TCP25  SMTP  简单邮件传输协议
-UDP53  DNS  域名解析协议
-TCP443  HTTPS  HTTP over SSL<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
-
-
-<p><img src="https://img-blog.csdnimg.cn/cd7067b17dc74e46beea354fa2212bef.gif" data-original="https://img-blog.csdnimg.cn/c42dd2caa99b416d82155f60a610bad3.png" alt="tcp"></p>
-<h2 id="2-TCP原理"><a href="#2-TCP原理" class="headerlink" title="2.TCP原理"></a>2.TCP原理</h2><h3 id="TCP的建立连接"><a href="#TCP的建立连接" class="headerlink" title="TCP的建立连接"></a>TCP的建立连接</h3><p>TCP运输连接有以下三个阶段：</p>
+                <h1 id="OSPF的基本概念"><a href="#OSPF的基本概念" class="headerlink" title="OSPF的基本概念"></a><center>OSPF的基本概念</center></h1><h2 id="OSPF"><a href="#OSPF" class="headerlink" title="OSPF"></a>OSPF</h2><p>OSPF(Open Shortest Path First,开放式最短路径优先)是IETF（Internet Engineering Task Force，互联网工程任务组）组织开发的一个基于链路状态的内部网关协议。目前针对IPv4协议使用的是OSPF Version 2。</p>
+<h2 id="OSPF的特点"><a href="#OSPF的特点" class="headerlink" title="OSPF的特点"></a>OSPF的特点</h2><p>OSPF具有如下特点：</p>
 <ul>
-<li><strong>建立TCP连接，也就是通过三报文握手来建立TCP连接。</strong></li>
-<li><strong>数据传送，也就是基于已建立的TCP连接进行可靠的数据传输。</strong></li>
-<li><strong>释放连接，也就是在数据传输结束后，还要通过四报文挥手来释放TCP连接。</strong></li>
+<li><strong>适应范围广</strong>：支持各种规模的网络，最多可支持几百台路由器。</li>
+<li><strong>快速收敛</strong>：在网络的拓扑结构发生变化后立即发送更新报文，使这一变化在自治系统中同步。</li>
+<li><strong>无自环</strong>：由于OSPF根据收集到的链路状态用最短路径树算法计算路由，从算法本身保证了不会生成自环路由。</li>
+<li><strong>区域划分</strong>：允许自治系统的网络被划分成区域来管理。路由器链路状态数据库的减小降低了内存的消耗和CPU的负担；区域间传送路由信息的减少降低了网络带宽的占用。</li>
+<li><strong>等价路由</strong>：支持到同一目的地址的多条等价路由。</li>
+<li><strong>路由分级</strong>：使用4类不同的路由，按优先顺序来说分别是：区域内路由、区域间路由、第一类外部路由、第二类外部路由。</li>
+<li><strong>支持验证</strong>：支持基于接口的报文验证，以保证报文交互和路由计算的安全性。</li>
+<li><strong>组播发送</strong>：在某些类型的链路上以组播地址发送协议报文，减少对其他设备的干扰。</li>
 </ul>
-<p>TCP的运输连接管理就是使运输连接的建立和释放都能正常的进行。</p>
-<p><img src="https://img-blog.csdnimg.cn/cd7067b17dc74e46beea354fa2212bef.gif" data-original="https://img-blog.csdnimg.cn/151effa7cc8b4f7ba2354d40ff950d53.png"></p>
-<h3 id="2-1-TCP头部封装格式"><a href="#2-1-TCP头部封装格式" class="headerlink" title="2.1 TCP头部封装格式"></a>2.1 TCP头部封装格式</h3><p><img src="https://img-blog.csdnimg.cn/cd7067b17dc74e46beea354fa2212bef.gif" data-original="https://img-blog.csdnimg.cn/c968845dd62847269f83cfd01ef5e08e.png"></p>
-<p><img src="https://img-blog.csdnimg.cn/cd7067b17dc74e46beea354fa2212bef.gif" data-original="https://img-blog.csdnimg.cn/351a6fd138af4226accc458a72adfa3c.png"></p>
-<p><strong>源端口:</strong> 占16比特，写入源端口号，用来 <strong>标识发送该TCP报文段的应用进程。</strong> <strong>目的端口：</strong> 占16比特，写入目的端口号，用来<strong>标识接收该TCP报文段的应用进程。</strong></p>
-<p><strong>序号:</strong> 占32比特，取值范围[0,2^32-1]，序号增加到最后一个后，下一个序号就又回到0。<strong>指出本TCP报文段数据载荷的第一个字节的序号。</strong></p>
-<p><strong>确认号：</strong> 占32比特，取值范围[0,2^32-1]，确认号增加到最后一个后，下一个确认号就又回到0。指出期望收到对方下一个TCP报文段的数据载荷的第一个字节的序号，同时也是对之前收到的所有数据的确认。若确认号=n，则表明到序号n-1为止的所有数据都已正确接收，期望接收序号为n的数据。</p>
-<p><strong>确认标志位ACK：</strong> 取值为1时确认号字段才有效；取值为0时确认号字段无效。<strong>TCP规定，在连接建立后所有传送的TCP报文段都必须把ACK置1。</strong></p>
-<p><strong>数据偏移:</strong> 占4比特，并以4字节为单位。用来指出TCP报文段的数据载荷部分的起始处距离TCP报文段的起始处有多远。这个字段实际上是指出了TCP报文段的首部长度。</p>
-<p><strong>窗口：</strong> 占16比特，以字节为单位。<strong>指出发送本报文段的一方的接收窗。</strong></p>
-<p><strong>同步标志位SYN：</strong> 在TCP连接建立时用来同步序号。<strong>终止标志位FIN：</strong> 用来释放TCP连接。<strong>复位标志位RST：</strong> 用来复位TCP连接。</p>
-<p><strong>推送标志位PSH：</strong> 接收方的TCP收到该标志位为1的报文段会尽快上交应用进程，而不必等到接收缓存都填满后再向上交付。</p>
-<p><strong>校验和：</strong> 占16比特，检查范围包括TCP报文段的首部和数据载荷两部分。在计算校验和时，要在TCP报文段的前面加上12字节的伪首部。</p>
-<p><strong>紧急指针：</strong> 占16比特，以字节为单位，用来指明紧急数据的长度。</p>
-<p><strong>填充：</strong> 由于选项的长度可变，因此使用填充来 <strong>确保报文段首部能被4整除</strong>，(因为数据偏移字段，也就是首部长度字段，是以4字节为单位的)。</p>
-<h3 id="2-2-TCP可靠性机制"><a href="#2-2-TCP可靠性机制" class="headerlink" title="2.2 TCP可靠性机制"></a>2.2 TCP可靠性机制</h3><h4 id="2-2-1-确认机制"><a href="#2-2-1-确认机制" class="headerlink" title="2.2.1 确认机制"></a>2.2.1 确认机制</h4><pre class="line-numbers language-none"><code class="language-none">Seq = 上一次Ack
-Ack = 上一次Seq+length
-如果没有接到，或接收到是不完整数据，会再次发送Ack请求对方重发<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+<h2 id="OSPF基础概念"><a href="#OSPF基础概念" class="headerlink" title="OSPF基础概念"></a>OSPF基础概念</h2><h4 id="Router-ID"><a href="#Router-ID" class="headerlink" title="Router ID"></a>Router ID</h4><p>如果要运行OSPF协议，必须存在Router ID。Router  ID是一个32比特无符号整数，用于在OSPF域（Domain）中唯一地标识一台OSPF路由器。OSPF要求路由器的Router-ID必须全域唯一，即在同一个域内不允许出现两台OSPF路由器拥有相同的Router-ID的情况。</p>
+<p>Router ID的设定有两种方式：</p>
+<ul>
+<li><p>通过命令行手动配置，在实际网络部署中，建议手工配置OSPF的Router ID，因为这关系到协议的稳定。</p>
+</li>
+<li><p>通过协议自动选取。</p>
+<p>如果没有手动配置Router ID，设备会从当前接口的IP地址中自动选取一个作为Router ID。其选取顺序是：</p>
+<ol>
+<li>优先从Loopback地址中选择最大的IP地址作为Router ID。</li>
+<li>如果没有配置Loopback接口，则在接口地址中选取最大的IP地址作为Router ID。</li>
+</ol>
+</li>
+</ul>
+<p>在路由器运行了OSPF并确定了Router ID后，如果该Router ID对应的接口Down或者接口消失（例如执行了<strong>undo interface loopback</strong> <em>loopback-number</em>）或者出现更大的IP地址，OSPF将仍然保持原Router ID。只有重新配置系统的Router  ID或者OSPF的Router ID，并且重新启动OSPF进程后（重启OSPF进程的命令  <strong><router>reset ospf process</router></strong>），才会进行Router ID的重新选取。</p>
+<h4 id="链路状态"><a href="#链路状态" class="headerlink" title="链路状态"></a>链路状态</h4><p>OSPF是一种链路状态协议。可以将链路视为路由器的接口。链路状态是对接口及接口与相邻路由器的关系的描述。例如接口的信息包括接口的IP地址、掩码、所连接的网络的类型、连接的邻居等。所有这些链路状态的集合形成链路状态数据库。</p>
+<h4 id="COST"><a href="#COST" class="headerlink" title="COST"></a>COST</h4><ul>
+<li><p>OSPF使用cost“开销”作为路由度量值。</p>
+</li>
+<li><p>每一个激活OSPF的接口都有一个cost值。OSPF接口cost=100M/接口带宽，其中100M为OSPF的参考带宽（reference-bandwidth）。</p>
+</li>
+<li><p>一条OSPF路由的cost由该路由从路由的起源一路到达本地的所有入接口cost值的总和。</p>
+<p><img src="https://img-blog.csdnimg.cn/cd7067b17dc74e46beea354fa2212bef.gif" data-original="https://download.huawei.com/mdl/image/download?uuid=4d039cad0996458293e1ef379d855fed" alt="img"> </p>
+<p>由于默认的参考带宽是100M，这意味着更高带宽的传输介质（高于100M）在OSPF协议中将会计算出一个小于1的分数，这在OSPF协议中是不允许的（会被四舍五入为1）。而现今网络设备很多都是大于100M带宽的接口，这时候路由cost的计算其实就不精确了。所以可以使用<strong>bandwidth-reference</strong>命令修改，但是这条命令要谨慎使用，一旦要配置，则建议全网OSPF路由器都配置。</p>
+</li>
+</ul>
+<h4 id="自治系统（Autonomous-System）"><a href="#自治系统（Autonomous-System）" class="headerlink" title="自治系统（Autonomous System）"></a>自治系统（Autonomous System）</h4><p>一组使用相同路由协议交换路由信息的路由器，缩写为AS。</p>
+<p>由统一的管理者构建的网络系统，叫做一个AS私有AS运行相同的IGP协议，策略比较单一。</p>
+<p>公有AS：网络系统 申请一个AS号</p>
+<p>私有AS：不需要申请的（家里的路由器就可以算一个私有AS）</p>
+<h4 id="IGP-EGP"><a href="#IGP-EGP" class="headerlink" title="IGP/EGP"></a>IGP/EGP</h4><p>动态路由协议：</p>
+<ul>
+<li><strong>IGP协议</strong>：内部网关协议   AS内  OSPF IS-IS（IS-IS主要在运营商之间使用） </li>
+<li><strong>EGP协议</strong>：外部网关协议  AS间  BGP </li>
+</ul>
+<h4 id="OSPF路由的计算过程"><a href="#OSPF路由的计算过程" class="headerlink" title="OSPF路由的计算过程"></a>OSPF路由的计算过程</h4><p>OSPF协议路由的计算过程可简单描述如下：</p>
+<ul>
+<li>每台OSPF路由器根据自己周围的网络拓扑结构生成LSA（Link State Advertisement，链路状态通告），并通过更新报文将LSA发送给网络中的其它OSPF路由器。</li>
+<li>每台OSPF路由器都会收集其它路由器通告的LSA，所有的LSA放在一起便组成了LSDB（Link State Database，链路状态数据库）。LSA是对路由器周围网络拓扑结构的描述，LSDB则是对整个自治系统的网络拓扑结构的描述。</li>
+<li>OSPF路由器将LSDB转换成一张带权的有向图，这张图便是对整个网络拓扑结构的真实反映。各个路由器得到的有向图是完全相同的。</li>
+<li>每台路由器根据有向图，使用SPF算法计算出一棵<strong>以自己为根的最短路径树</strong>，这棵树给出了到自治系统中各节点的路由。</li>
+</ul>
+<h4 id="OSPF的三张表"><a href="#OSPF的三张表" class="headerlink" title="OSPF的三张表"></a>OSPF的三张表</h4><p>OSPF使用三张表格以确保其正常运行</p>
+<ul>
+<li>邻居表（Peer Table 或 Neighbor Table）</li>
+</ul>
+<pre class="line-numbers language-none"><code class="language-none">display ospf peer<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 
-<p><img src="https://img-blog.csdnimg.cn/cd7067b17dc74e46beea354fa2212bef.gif" data-original="https://img-blog.csdnimg.cn/f873b11e3d7c489ca3ea77e3bced08ba.png"></p>
-<p><img src="https://img-blog.csdnimg.cn/cd7067b17dc74e46beea354fa2212bef.gif" data-original="https://img-blog.csdnimg.cn/9379e0e7efc64e8e9b249d88e45ff56e.png"></p>
-<p><img src="https://img-blog.csdnimg.cn/cd7067b17dc74e46beea354fa2212bef.gif" data-original="https://img-blog.csdnimg.cn/66e4abf2a09b426ba81600bb948f6b42.png"></p>
-<h4 id="2-2-2-三次握手"><a href="#2-2-2-三次握手" class="headerlink" title="2.2.2 三次握手"></a>2.2.2 三次握手</h4><p><img src="https://img-blog.csdnimg.cn/cd7067b17dc74e46beea354fa2212bef.gif" data-original="https://img-blog.csdnimg.cn/5442b0bc75314cfc9c681de53a335e86.png"></p>
-<p><img src="https://img-blog.csdnimg.cn/cd7067b17dc74e46beea354fa2212bef.gif" data-original="https://img-blog.csdnimg.cn/46c892eed45e46918fc160d1c4b386c0.png"></p>
-<h4 id="2-2-3-四次挥手"><a href="#2-2-3-四次挥手" class="headerlink" title="2.2.3 四次挥手"></a>2.2.3 四次挥手</h4><p><img src="https://img-blog.csdnimg.cn/cd7067b17dc74e46beea354fa2212bef.gif" data-original="https://img-blog.csdnimg.cn/172ea1a5659947628f990dc21fc8c89a.png"></p>
-<p> 由于TCP连接是全双工的,断开一个TCP连接,需要客户端与服务器发送四个包来确认连接的断开<br>简述四次挥手的过程:</p>
-<pre><code>1·因为TCP是全双工的,因此,每个方向都要单独关闭
-2·当一方完成数据发送任务后,发送一个FIN来终止这一方向的连接,收到一个FIN只是意味着
-3·一方向不会再收到数据了,但是这个TCP连接上仍然能够发送数据,直到这一方也发送了FIN.
-4·首先进行关闭的一方执行主动关闭,另一方执行被动关闭.第一个关闭的最后等待2MSL
-</code></pre>
-<p>第一次挥手:</p>
-<pre><code>1·Client将FIN置为1,序号seq=M,发送给Server,进入FIN_WAIT_1状态
-</code></pre>
-<p>第二次挥手</p>
-<pre><code>1·Server收到后,将ACK置为1,ack=M+1,响应给Client,进入CLOSE_WAIT状态
-2·Client收到响应后,进入FIN_WAIT_2状态
-</code></pre>
-<p>第三次挥手</p>
-<pre><code>1·Server在结束所有数据传输后,将Fin置为1,seq=N+1,发送给Client,进入
-2·LAST_ACK状态
-</code></pre>
-<p>第四次挥手</p>
-<pre><code>1·Client收到后,将ACK置为1,ack=N+1,响应给Server,进入TIME_WAIT状态,等待
-2·2MSL后,进入CLOSED状态
-3·Server收到后,进入CLOSED状态
-</code></pre>
-<h4 id="2-2-4-RST结束连接"><a href="#2-2-4-RST结束连接" class="headerlink" title="2.2.4 RST结束连接"></a>2.2.4 RST结束连接</h4><p>收到RST置位的包后，立即结束TCP连接。</p>
-<p>发出RST置位的包后，不必等待对方的确认，直接结束TCP连接。</p>
-<h4 id="2-2-5-窗口机制"><a href="#2-2-5-窗口机制" class="headerlink" title="2.2.5 窗口机制"></a>2.2.5 窗口机制</h4><p>滑动窗口 </p>
-<p>​    通过通告对方本机接收能力，来实现流量控制。</p>
-<p><img src="https://img-blog.csdnimg.cn/cd7067b17dc74e46beea354fa2212bef.gif" data-original="https://img-blog.csdnimg.cn/7750e03a85f845a299bf0682ff566020.png"></p>
-<h4 id="2-2-6-完整性校验"><a href="#2-2-6-完整性校验" class="headerlink" title="2.2.6 完整性校验"></a>2.2.6 完整性校验</h4><p>通过Checksum来检查数据完整性。</p>
-<h3 id="2-3-TCP特征"><a href="#2-3-TCP特征" class="headerlink" title="2.3 TCP特征"></a>2.3 TCP特征</h3><p>优点：传输可靠性高</p>
-<p>缺点：占用带宽高，传输延迟高</p>
-<h3 id="2-4-TCP的适用场景"><a href="#2-4-TCP的适用场景" class="headerlink" title="2.4 TCP的适用场景"></a>2.4 TCP的适用场景</h3><p>对数据完整性要求高，但对传输延迟要求低。</p>
-<h2 id="3-UDP的原理"><a href="#3-UDP的原理" class="headerlink" title="3. UDP的原理"></a>3. UDP的原理</h2><h3 id="3-1-UDP特征"><a href="#3-1-UDP特征" class="headerlink" title="3.1 UDP特征"></a>3.1 UDP特征</h3><p>优点：占用带宽低，传输延迟高</p>
-<p>缺点：没有任何可靠性机制</p>
-<h3 id="3-2-UDP的适用场景"><a href="#3-2-UDP的适用场景" class="headerlink" title="3.2 UDP的适用场景"></a>3.2 UDP的适用场景</h3><p>对传输延迟要求高，但数据完整性要求低</p>
-<p><img src="https://img-blog.csdnimg.cn/cd7067b17dc74e46beea354fa2212bef.gif" data-original="https://img-blog.csdnimg.cn/cc2ef2ca90174b119453359cfa688f9f.png"></p>
+<ul>
+<li>链路状态数据库（Link-State Database，LSDB）</li>
+</ul>
+<pre class="line-numbers language-none"><code class="language-none">display ospf lsdb<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<ul>
+<li>OSPF路由表（Routing Table）</li>
+</ul>
+<pre class="line-numbers language-none"><code class="language-none">display ospf routing<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<h4 id="报文类型及格式"><a href="#报文类型及格式" class="headerlink" title="报文类型及格式"></a>报文类型及格式</h4><table>
+<thead>
+<tr>
+<th>报文类型</th>
+<th>报文作用</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Hello报文</td>
+<td>周期性发送，用来发现和维护OSPF邻居关系。</td>
+</tr>
+<tr>
+<td>DD报文（Database Description packet）</td>
+<td>描述本地LSDB（Link State Database）中LSA的头部数据（非完整的LSA，仅仅是头部数据），用于两台设备进行数据库同步。</td>
+</tr>
+<tr>
+<td>LSR报文（Link State Request packet）</td>
+<td>用于向OSPF邻居请求LSA</td>
+</tr>
+<tr>
+<td>LSU报文（Link State Update packet）</td>
+<td>用于向对方发送其所需要的完整的LSA。LSA是承载在LSU中进行泛洪的</td>
+</tr>
+<tr>
+<td>LSAck报文（Link State Acknowledgment packet）</td>
+<td>用来对接收到的LSA进行确认。</td>
+</tr>
+</tbody></table>
+<p>所有OSPF报文都有统一的头部，这个头部的长度为24byte。</p>
+<pre class="line-numbers language-none"><code class="language-none">+---------------+---------------+--------------------------------------+
+| Version(8bit) |  Type(8bit)   |         Packet length(16bit)         |
++---------------+---------------+--------------------------------------+
+|                          Router ID(32bit)                            |
++----------------------------------------------------------------------+
+|                           Area ID(32bit)                             |
++-------------------------------+--------------------------------------+
+|        Checksum(16bit)        |             AuType(16bit)            |
++-------------------------------+--------------------------------------+
+|                       Authentication Type(32bit)                     |
++----------------------------------------------------------------------+
+|                       Authentication Data(32bit)                     |
++----------------------------------------------------------------------+
+
+version： ospf协议的版本号，版本2支持ipv4，版本3支持ipv6
+Message Type：报文类型，hello,dd,lsr,lsu,lsack 五种报文类型  分别对应数值1,2,3,4,5
+Packet Length：报文总长度，包括hello报文，单位字节
+Source OSPF Router: 发送该报文的路由器的RouterID
+Area ID：发送该报文的接口所在的ospf区域
+Checksum:校验和
+Auth Type：ospf的认证类型
+Auth Data：ospf的加密密钥<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h2 id="OSPF工作原理"><a href="#OSPF工作原理" class="headerlink" title="OSPF工作原理"></a>OSPF工作原理</h2><ol>
+<li>建立邻居/领接关系——————邻居表</li>
+<li>同步LSA（LSA泛洪），构建LSDB————LSDB</li>
+<li>SPF算法计算路由——————路由表</li>
+</ol>
+<img src="https://img-blog.csdnimg.cn/cd7067b17dc74e46beea354fa2212bef.gif" data-original="https://img-blog.csdnimg.cn/6c88ede2f700408e8b966e1c068bf75a.png" style="zoom:67%;">
+
+<p>运行OSPF协议的设备，会产生参数：</p>
+<p>1．LSA：link-state-advertisement：链路状态通告 </p>
+<p>2．LSDB：链路状态数据库／／存LSA的地点</p>
+<p>3．邻居／邻接：必须保证设备能够建立起该关系，才可以保证接下来的同步</p>
+<img src="https://img-blog.csdnimg.cn/cd7067b17dc74e46beea354fa2212bef.gif" data-original="https://img-blog.csdnimg.cn/fc8872c21c954d389380247be2b6c0a5.png" style="zoom: 67%;">
+
+<ol>
+<li>情况一：R1先开启OSPF，R2后开启OSPF<ul>
+<li>R1先发送hello报文，R2接收到该报文后从down——&gt;init状态，R2发送hello报文，里面包含了自己和已知的邻居。R1收到该报文后，从Down——&gt;2-Way状态。R1再发送hello报文，R2收到之后知道了R1已经有了自己的router id，从init——&gt;2—Way状态。</li>
+</ul>
+</li>
+</ol>
+<img src="https://img-blog.csdnimg.cn/cd7067b17dc74e46beea354fa2212bef.gif" data-original="https://img-blog.csdnimg.cn/fa6bdc500a4241c3bc4cc29c6b6955f3.png" style="zoom:67%;">
+
+<p>2.情况二：R1、R2同时开启OSPF</p>
+<ul>
+<li>同时进入Init和2-Way状态</li>
+</ul>
+<img src="https://img-blog.csdnimg.cn/cd7067b17dc74e46beea354fa2212bef.gif" data-original="https://img-blog.csdnimg.cn/a12c2c4c445646cca6f47e49b9b701ca.png" style="zoom:67%;">
+
+<h3 id="OSPF邻居建立的条件："><a href="#OSPF邻居建立的条件：" class="headerlink" title="OSPF邻居建立的条件："></a>OSPF邻居建立的条件：</h3><p>1、版本一致</p>
+<p>2、Router-ID不能冲突</p>
+<p>3、区域ID一致。</p>
+<p>4、认证类型和认证密码一致。</p>
+<p>5、两端接口IP要求在相同网段。</p>
+<p>6、两端接口掩码要求相同。</p>
+<p>7、Hello发送时间间隔一致。</p>
+<p>8、Dead时间一致。</p>
+<p>9、option 选项中 Nbit和Ebit需要一致。</p>
+<p>10、双方接口的MTU一致。</p>
+<pre class="line-numbers language-none"><code class="language-none">一个路由成能成为多个DR设备吗？可以
+一个链路上能够存在多个DR吗？一条链路只能存在一个DR。
+一个链路上能够存在多个BDR吗？一条链路只能存在一个BDR。
+一个链路上能存在多个DROther吗？可以
+一个链路上能不存在DROther吗？可以
+一个链路上能不存在BDR吗？可以<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<pre class="line-numbers language-none"><code class="language-none">1.当DR故障之后如何解决？
+	BDR成为新的DR，重新选举BDR。
+2.当BDR故障之后如何解决？
+	从DROther中重新选举BDR。
+3.当DROther故障如何解决？
+	其他连接到该链路的路由器，角色不会产生变化。
+4.故障的DR再次恢复，成为什么角色？
+	如果该链路中，已经有了DR和BDR那么只能成为DROther。
+5.如果故障的BDR再次恢复，成为什么角色？
+	如果改链路中，已经有了DR和BDR，那么只能成为DROther。
+	说白了，就是DR和BDR都不能被强占。<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+
+
+
+
 
                 
             </div>
@@ -703,7 +804,7 @@ Ack = 上一次Seq+length
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="https://uprightokra.github.io/2022-07-20-shu-tong-03-tcp-he-udp-yuan-li.html">https://uprightokra.github.io/2022-07-20-shu-tong-03-tcp-he-udp-yuan-li.html</a>
+                    <a href="https://uprightokra.github.io/2022-10-24-shu-tong-16-ospf-de-ji-ben-gai-nian.html">https://uprightokra.github.io/2022-10-24-shu-tong-16-ospf-de-ji-ben-gai-nian.html</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -741,8 +842,8 @@ Ack = 上一次Seq+length
                     
                         <div class="article-tag">
                             
-                                <a href="/tags/TCP-UDP/">
-                                    <span class="chip bg-color">TCP&amp;UDP</span>
+                                <a href="/tags/OSPF/">
+                                    <span class="chip bg-color">OSPF</span>
                                 </a>
                             
                         </div>
@@ -1242,16 +1343,17 @@ Ack = 上一次Seq+length
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
+                <i class="far fa-dot-circle"></i>&nbsp;本篇
+            </div>
             <div class="card">
-                <a href="/2022-07-22-shi-yan-ensp-ip-he-tcp-zhua-bao-fen-xi-shi-yan.html">
+                <a href="/2022-10-24-shu-tong-16-ospf-de-ji-ben-gai-nian.html">
                     <div class="card-image">
                         
-                        <img src="https://img-blog.csdnimg.cn/cd7067b17dc74e46beea354fa2212bef.gif" data-original="https://img-blog.csdnimg.cn/4aa36e431ab84089a57b83c5b025d9ac.jpeg" class="responsive-img" alt="实验ensp-IP和TCP抓包分析实验">
+                        <img src="https://img-blog.csdnimg.cn/cd7067b17dc74e46beea354fa2212bef.gif" data-original="https://img-blog.csdnimg.cn/76b623508e8343c6b839b90f9432a83c.png" class="responsive-img" alt="数通 16-OSPF的基本概念">
                         
-                        <span class="card-title">实验ensp-IP和TCP抓包分析实验</span>
+                        <span class="card-title">数通 16-OSPF的基本概念</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -1261,9 +1363,58 @@ Ack = 上一次Seq+length
                         
                     </div>
                     <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2022-07-22
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2022-10-24
+                            </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/%E7%BD%91%E7%BB%9C%E5%9F%BA%E7%A1%80/" class="post-category">
+                                    网络基础
+                                </a>
+                            
+                            
                         </span>
+                    </div>
+                </div>
+
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/OSPF/">
+                        <span class="chip bg-color">OSPF</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge right-badge text-color">
+                下一篇&nbsp;<i class="fas fa-chevron-right"></i>
+            </div>
+            <div class="card">
+                <a href="/2022-10-19-shi-yan-ensp-nqa.html">
+                    <div class="card-image">
+                        
+                        <img src="https://img-blog.csdnimg.cn/cd7067b17dc74e46beea354fa2212bef.gif" data-original="https://img-blog.csdnimg.cn/4aa36e431ab84089a57b83c5b025d9ac.jpeg" class="responsive-img" alt="实验ensp NQA">
+                        
+                        <span class="card-title">实验ensp NQA</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            
+                        
+                    </div>
+                    <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2022-10-19
+                            </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
@@ -1279,56 +1430,8 @@ Ack = 上一次Seq+length
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/TCP%E6%8A%93%E5%8C%85/">
-                        <span class="chip bg-color">TCP抓包</span>
-                    </a>
-                    
-                </div>
-                
-            </div>
-        </div>
-        
-        
-        <div class="article col s12 m6" data-aos="fade-up">
-            <div class="article-badge right-badge text-color">
-                下一篇&nbsp;<i class="fas fa-chevron-right"></i>
-            </div>
-            <div class="card">
-                <a href="/2022-07-17-shu-tong-02-ip-ji-ben-yuan-li.html">
-                    <div class="card-image">
-                        
-                        <img src="https://img-blog.csdnimg.cn/cd7067b17dc74e46beea354fa2212bef.gif" data-original="https://img-blog.csdnimg.cn/3329ca491b794194a23d6b71671933c7.jpeg" class="responsive-img" alt="数通 02-IP基本原理">
-                        
-                        <span class="card-title">数通 02-IP基本原理</span>
-                    </div>
-                </a>
-                <div class="card-content article-content">
-                    <div class="summary block-with-text">
-                        
-                            
-                        
-                    </div>
-                    <div class="publish-info">
-                            <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2022-07-17
-                            </span>
-                        <span class="publish-author">
-                            
-                            <i class="fas fa-bookmark fa-fw icon-category"></i>
-                            
-                            <a href="/categories/%E7%BD%91%E7%BB%9C%E5%9F%BA%E7%A1%80/" class="post-category">
-                                    网络基础
-                                </a>
-                            
-                            
-                        </span>
-                    </div>
-                </div>
-                
-                <div class="card-action article-tags">
-                    
-                    <a href="/tags/IP/">
-                        <span class="chip bg-color">IP</span>
+                    <a href="/tags/NQA/">
+                        <span class="chip bg-color">NQA</span>
                     </a>
                     
                 </div>
