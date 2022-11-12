@@ -398,7 +398,7 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('https://img-blog.csdnimg.cn/76b623508e8343c6b839b90f9432a83c.png')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('https://img-blog.csdnimg.cn/2a029a4a6cfc4fc8913a34dac7b1c466.jpeg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
@@ -535,8 +535,8 @@
                     <div class="post-cate">
                         <i class="fas fa-bookmark fa-fw icon-category"></i>
                         
-                            <a href="/categories/%E7%BD%91%E7%BB%9C%E5%9F%BA%E7%A1%80/" class="post-category">
-                                网络基础
+                            <a href="/categories/HCIP/" class="post-category">
+                                HCIP
                             </a>
                         
                     </div>
@@ -562,14 +562,14 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    1.4k
+                    1.8k
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    5 分
+                    6 分
                 </div>
                 
 
@@ -667,7 +667,18 @@ ospf timer hello 3
 <li><p>MS（Master/Slave）：当两台OSPF路由器交换DD报文时，首先需要确定双方的主（Master）从（Slave）关系，Router ID大的一方会成为Master。当值为1时表示发送方为Master。</p>
 </li>
 <li><p>DD Sequence Number：DD报文序列号，由Master方规定起始序列号，每发送一个DD报文序列号加1，Slave方使用Master的序列号作为确认。主从双方利用序列号来保证DD报文传输的可靠性和完整性。</p>
-<img src="https://img-blog.csdnimg.cn/cd7067b17dc74e46beea354fa2212bef.gif" data-original="https://img-blog.csdnimg.cn/165cef9a38124da9858bf493f809dd9e.png" alt="img" style="zoom:67%;"></li>
+<img src="https://img-blog.csdnimg.cn/cd7067b17dc74e46beea354fa2212bef.gif" data-original="https://img-blog.csdnimg.cn/165cef9a38124da9858bf493f809dd9e.png" alt="img" style="zoom:67%;">
+
+<p>为什么需要DD报文？</p>
+<ul>
+<li>主要的作用是为了实现按需同步。</li>
+</ul>
+<p>DD报文传输的可靠性机制如何确保？</p>
+<ul>
+<li>在Exstart互相发送空的DD报文，用于选举主从关系，从设备会跟随主设备的DD序列号，当主设备收到从设备的DD序列号之后，将会把SEQ＋1发送自己的DD给从设备，从设备收到Seq＋1的DD判断，先前自身发送的DD主设备已经收到。</li>
+</ul>
+<p>主从选举之后，由<strong>从设备</strong>将邻居角色转为exchange状态，先发送带有LSA摘要信息的DD报文。</p>
+</li>
 </ul>
 <h4 id="4-LSR报文（Link-State-Request-Packet）"><a href="#4-LSR报文（Link-State-Request-Packet）" class="headerlink" title="4. LSR报文（Link State Request Packet）"></a>4. LSR报文（Link State Request Packet）</h4><p>两台路由器互相交换过DD报文之后，知道对端的路由器有哪些LSA是本地的LSDB所缺少的，这时需要发送LSR报文向对方请求所需的LSA。内容包括所需要的LSA的摘要。LSR报文格式如图12所示。</p>
 <p><img src="https://img-blog.csdnimg.cn/cd7067b17dc74e46beea354fa2212bef.gif" data-original="https://res.h3c.com/cn/201212/11/20121211_1490345_image012_605874_30003_0.png" alt="img"></p>
@@ -700,6 +711,12 @@ ospf timer hello 3
 <li>LSA Headers：该报文包含的LSA头部</li>
 <li><img src="https://img-blog.csdnimg.cn/cd7067b17dc74e46beea354fa2212bef.gif" data-original="https://img-blog.csdnimg.cn/5a3ed9bc87ac464d95058f2b8dc68d8e.png" style="zoom:67%;"></li>
 </ul>
+<p>LSU和LSACK的发送地址根据路由器角色有所变化以下将一一列出：</p>
+<p><strong>DRother：DRother产生的LSU通过224.0.0.6发送给DR和BDR；DR通过224.0.0.5发送给其他的DRoher和BDR；DRother 收到DR的LSU之后通过224.0.0.6发送ACK确认，BDR收到DR的LSU之后通过组播地址224.0.0.5发送ACK向DR确认。</strong></p>
+<p><strong>DR：DR产生的LSU通过224.0.0.5发送给其他DRother和BDR；BDR收到之后通过224.0.0.5发送ACK向DR进行确认； DRother收到之后通过224.0.0.6发送ACK向DR确认。</strong></p>
+<p><strong>BDR：BDR产生的LSU通过224.0.0.5发送给其他的DRother和DR，DR收到之后通过224.0.0.5发送ACK向BDR确认， DRother收到之后通过224.0.0.6发送ACK向BDR确认。</strong></p>
+<p>DR和BDR同时监听224.0.0.5和224.0.0.6两个组播地址，drother只监听在224.0.0.5。需要注意一点在初次建立邻居的时候会产生LSR报文，而LSR是单播发送的报文，在广播网络类型中中无论是DR，BDR还是DRother只要收到了LSR之后，都会以单播的形式发送LSU更新。ACK则正常发送。</p>
+<p>DR与BDR的区别在于DR收到DRother的LSU则泛洪，BDR不做任何相应。 </p>
 
                 
             </div>
@@ -1265,17 +1282,16 @@ ospf timer hello 3
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="far fa-dot-circle"></i>&nbsp;本篇
-            </div>
+                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
-                <a href="/2022-11-12-shu-tong-17-ospf-de-bao-wen-ge-shi.html">
+                <a href="/2022-11-12-shu-tong-18-ospf-lsa-ji-te-shu-qu-yu.html">
                     <div class="card-image">
                         
-                        <img src="https://img-blog.csdnimg.cn/cd7067b17dc74e46beea354fa2212bef.gif" data-original="https://img-blog.csdnimg.cn/76b623508e8343c6b839b90f9432a83c.png" class="responsive-img" alt="数通 17-OSPF的报文格式">
+                        <img src="https://img-blog.csdnimg.cn/cd7067b17dc74e46beea354fa2212bef.gif" data-original="https://img-blog.csdnimg.cn/2a029a4a6cfc4fc8913a34dac7b1c466.jpeg" class="responsive-img" alt="数通 18-OSPF LSA及特殊区域">
                         
-                        <span class="card-title">数通 17-OSPF的报文格式</span>
+                        <span class="card-title">数通 18-OSPF LSA及特殊区域</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -1285,22 +1301,21 @@ ospf timer hello 3
                         
                     </div>
                     <div class="publish-info">
-                            <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2022-11-12
-                            </span>
+                        <span class="publish-date">
+                            <i class="far fa-clock fa-fw icon-date"></i>2022-11-12
+                        </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/%E7%BD%91%E7%BB%9C%E5%9F%BA%E7%A1%80/" class="post-category">
-                                    网络基础
+                            <a href="/categories/HCIP/" class="post-category">
+                                    HCIP
                                 </a>
                             
                             
                         </span>
                     </div>
                 </div>
-
                 
                 <div class="card-action article-tags">
                     
@@ -1322,7 +1337,7 @@ ospf timer hello 3
                 <a href="/2022-10-24-shu-tong-16-ospf-de-ji-ben-gai-nian.html">
                     <div class="card-image">
                         
-                        <img src="https://img-blog.csdnimg.cn/cd7067b17dc74e46beea354fa2212bef.gif" data-original="https://img-blog.csdnimg.cn/76b623508e8343c6b839b90f9432a83c.png" class="responsive-img" alt="数通 16-OSPF的基本概念">
+                        <img src="https://img-blog.csdnimg.cn/cd7067b17dc74e46beea354fa2212bef.gif" data-original="https://img-blog.csdnimg.cn/2a029a4a6cfc4fc8913a34dac7b1c466.jpeg" class="responsive-img" alt="数通 16-OSPF的基本概念">
                         
                         <span class="card-title">数通 16-OSPF的基本概念</span>
                     </div>
@@ -1341,8 +1356,8 @@ ospf timer hello 3
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/%E7%BD%91%E7%BB%9C%E5%9F%BA%E7%A1%80/" class="post-category">
-                                    网络基础
+                            <a href="/categories/HCIP/" class="post-category">
+                                    HCIP
                                 </a>
                             
                             
@@ -1593,7 +1608,7 @@ ospf timer hello 3
             <br>
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">181.2k</span>&nbsp;字&nbsp;|
+                class="white-color">190.6k</span>&nbsp;字&nbsp;|
             
             
             

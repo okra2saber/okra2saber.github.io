@@ -398,7 +398,7 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('https://img-blog.csdnimg.cn/76b623508e8343c6b839b90f9432a83c.png')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('https://img-blog.csdnimg.cn/2a029a4a6cfc4fc8913a34dac7b1c466.jpeg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
@@ -535,8 +535,8 @@
                     <div class="post-cate">
                         <i class="fas fa-bookmark fa-fw icon-category"></i>
                         
-                            <a href="/categories/%E7%BD%91%E7%BB%9C%E5%9F%BA%E7%A1%80/" class="post-category">
-                                网络基础
+                            <a href="/categories/HCIP/" class="post-category">
+                                HCIP
                             </a>
                         
                     </div>
@@ -767,7 +767,7 @@ Auth Data：ospf的加密密钥<span aria-hidden="true" class="line-numbers-rows
 9、option 选项中 Nbit和Ebit需要一致。
 10、双方接口的MTU一致。<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre></li>
 </ul>
-<h2 id="OSPF的网络类型"><a href="#OSPF的网络类型" class="headerlink" title="OSPF的网络类型"></a>OSPF的网络类型</h2><h4 id="1-OSPF的4种网络类型"><a href="#1-OSPF的4种网络类型" class="headerlink" title="1. OSPF的4种网络类型"></a>1. OSPF的4种网络类型</h4><p>OSPF根据链路层协议类型将网络分为下列四种类型：</p>
+<h2 id="OSPF的网络类型"><a href="#OSPF的网络类型" class="headerlink" title="OSPF的网络类型"></a>OSPF的网络类型</h2><h4 id="OSPF的4种网络类型"><a href="#OSPF的4种网络类型" class="headerlink" title="OSPF的4种网络类型"></a>OSPF的4种网络类型</h4><p>OSPF根据链路层协议类型将网络分为下列四种类型：</p>
 <table>
 <thead>
 <tr>
@@ -784,15 +784,15 @@ Auth Data：ospf的加密密钥<span aria-hidden="true" class="line-numbers-rows
 <td>当链路层协议是帧中继、X.25时，缺省情况下，OSPF认为网络类型是NBMA。 在该类型的网络中，以单播形式发送协议报文（Hello报文、DD报文、LSR报文、LSU报文、LSAck报文）。</td>
 </tr>
 <tr>
-<td>点到多点P2MP类型（Point-to-Multipoint）</td>
+<td>P2MP类型（Point-to-Multipoint）</td>
 <td>没有一种链路层协议会被缺省的认为是Point-to-Multipoint类型。点到多点必须是由其他的网络类型强制更改的。常用做法是将非全连通的NBMA改为点到多点的网络。 在该类型的网络中： 以组播形式（224.0.0.5）发送Hello报文。以单播形式发送其他协议报文（DD报文、LSR报文、LSU报文、LSAck报文）。</td>
 </tr>
 <tr>
-<td>点到点P2P类型（point-to-point）</td>
+<td>P2P类型（point-to-point）</td>
 <td>当链路层协议是PPP、HDLC和LAPB时，缺省情况下，OSPF认为网络类型是P2P。 在该类型的网络中，以组播形式（224.0.0.5）发送协议报文（Hello报文、DD报文、LSR报文、LSU报文、LSAck报文）。</td>
 </tr>
 </tbody></table>
-<h4 id="2-NBMA网络的配置原则"><a href="#2-NBMA网络的配置原则" class="headerlink" title="2. NBMA网络的配置原则"></a>2. NBMA网络的配置原则</h4><p>NBMA网络是指非广播、多点可达的网络，比较典型的有ATM和帧中继网络。</p>
+<h4 id="NBMA网络的配置原则"><a href="#NBMA网络的配置原则" class="headerlink" title="NBMA网络的配置原则"></a>NBMA网络的配置原则</h4><p>NBMA网络是指非广播、多点可达的网络，比较典型的有ATM和帧中继网络。</p>
 <p>对于接口的网络类型为NBMA的网络需要进行一些特殊的配置。由于无法通过广播Hello报文的形式发现相邻路由器，必须手工为该接口指定相邻路由器的IP地址，以及该相邻路由器是否有DR选举权等。</p>
 <p>NBMA网络必须是全连通的，即网络中任意两台路由器之间都必须有一条虚电路直接可达。如果部分路由器之间没有直接可达的链路时，应将接口配置成P2MP类型。如果路由器在NBMA网络中只有一个对端，也可将接口类型配置为P2P类型。</p>
 <p>NBMA与P2MP网络之间的区别如下：</p>
@@ -1579,7 +1579,7 @@ Auth Data：ospf的加密密钥<span aria-hidden="true" class="line-numbers-rows
                 <a href="/2022-11-12-shu-tong-17-ospf-de-bao-wen-ge-shi.html">
                     <div class="card-image">
                         
-                        <img src="https://img-blog.csdnimg.cn/cd7067b17dc74e46beea354fa2212bef.gif" data-original="https://img-blog.csdnimg.cn/76b623508e8343c6b839b90f9432a83c.png" class="responsive-img" alt="数通 17-OSPF的报文格式">
+                        <img src="https://img-blog.csdnimg.cn/cd7067b17dc74e46beea354fa2212bef.gif" data-original="https://img-blog.csdnimg.cn/2a029a4a6cfc4fc8913a34dac7b1c466.jpeg" class="responsive-img" alt="数通 17-OSPF的报文格式">
                         
                         <span class="card-title">数通 17-OSPF的报文格式</span>
                     </div>
@@ -1598,8 +1598,8 @@ Auth Data：ospf的加密密钥<span aria-hidden="true" class="line-numbers-rows
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/%E7%BD%91%E7%BB%9C%E5%9F%BA%E7%A1%80/" class="post-category">
-                                    网络基础
+                            <a href="/categories/HCIP/" class="post-category">
+                                    HCIP
                                 </a>
                             
                             
@@ -1898,7 +1898,7 @@ Auth Data：ospf的加密密钥<span aria-hidden="true" class="line-numbers-rows
             <br>
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">181.2k</span>&nbsp;字&nbsp;|
+                class="white-color">190.6k</span>&nbsp;字&nbsp;|
             
             
             

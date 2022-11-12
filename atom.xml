@@ -6,7 +6,7 @@
   <link href="https://uprightokra.github.io/atom.xml" rel="self"/>
   
   <link href="https://uprightokra.github.io/"/>
-  <updated>2022-11-12T08:47:23.704Z</updated>
+  <updated>2022-11-12T14:25:31.838Z</updated>
   <id>https://uprightokra.github.io/</id>
   
   <author>
@@ -17,11 +17,61 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>数通 19-OSPF协议特性</title>
+    <link href="https://uprightokra.github.io/2022-11-12-shu-tong-19-ospf-xie-yi-te-xing.html"/>
+    <id>https://uprightokra.github.io/2022-11-12-shu-tong-19-ospf-xie-yi-te-xing.html</id>
+    <published>2022-11-12T14:10:30.000Z</published>
+    <updated>2022-11-12T14:25:31.838Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h1 id=&quot;OSPF协议特性&quot;&gt;&lt;a href=&quot;#OSPF协议特性&quot; class=&quot;headerlink&quot; title=&quot;OSPF协议特性&quot;&gt;&lt;/a&gt;&lt;center&gt;OSPF协议特性&lt;/center&gt;&lt;/h1&gt;&lt;h2 id=&quot;1-路由汇总&quot;&gt;&lt;a</summary>
+        
+      
+    
+    
+    
+    <category term="HCIP" scheme="https://uprightokra.github.io/categories/HCIP/"/>
+    
+    
+    <category term="OSPF" scheme="https://uprightokra.github.io/tags/OSPF/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>数通 18-OSPF LSA及特殊区域</title>
+    <link href="https://uprightokra.github.io/2022-11-12-shu-tong-18-ospf-lsa-ji-te-shu-qu-yu.html"/>
+    <id>https://uprightokra.github.io/2022-11-12-shu-tong-18-ospf-lsa-ji-te-shu-qu-yu.html</id>
+    <published>2022-11-12T11:18:28.000Z</published>
+    <updated>2022-11-12T14:09:53.106Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h1 id=&quot;LSA及特殊区域&quot;&gt;&lt;a href=&quot;#LSA及特殊区域&quot; class=&quot;headerlink&quot; title=&quot;LSA及特殊区域&quot;&gt;&lt;/a&gt;&lt;center&gt;LSA及特殊区域&lt;/center&gt;&lt;/h1&gt;&lt;h2 id=&quot;LSA概述&quot;&gt;&lt;a href=&quot;#LSA概述&quot;</summary>
+        
+      
+    
+    
+    
+    <category term="HCIP" scheme="https://uprightokra.github.io/categories/HCIP/"/>
+    
+    
+    <category term="OSPF" scheme="https://uprightokra.github.io/tags/OSPF/"/>
+    
+  </entry>
+  
+  <entry>
     <title>数通 17-OSPF的报文格式</title>
     <link href="https://uprightokra.github.io/2022-11-12-shu-tong-17-ospf-de-bao-wen-ge-shi.html"/>
     <id>https://uprightokra.github.io/2022-11-12-shu-tong-17-ospf-de-bao-wen-ge-shi.html</id>
     <published>2022-11-12T07:39:41.000Z</published>
-    <updated>2022-11-12T08:47:23.704Z</updated>
+    <updated>2022-11-12T11:25:07.401Z</updated>
     
     
       
@@ -34,7 +84,7 @@
     
     
     
-    <category term="网络基础" scheme="https://uprightokra.github.io/categories/%E7%BD%91%E7%BB%9C%E5%9F%BA%E7%A1%80/"/>
+    <category term="HCIP" scheme="https://uprightokra.github.io/categories/HCIP/"/>
     
     
     <category term="OSPF" scheme="https://uprightokra.github.io/tags/OSPF/"/>
@@ -46,7 +96,7 @@
     <link href="https://uprightokra.github.io/2022-10-24-shu-tong-16-ospf-de-ji-ben-gai-nian.html"/>
     <id>https://uprightokra.github.io/2022-10-24-shu-tong-16-ospf-de-ji-ben-gai-nian.html</id>
     <published>2022-10-24T12:16:48.000Z</published>
-    <updated>2022-11-12T08:14:13.186Z</updated>
+    <updated>2022-11-12T11:25:15.496Z</updated>
     
     
       
@@ -59,7 +109,7 @@
     
     
     
-    <category term="网络基础" scheme="https://uprightokra.github.io/categories/%E7%BD%91%E7%BB%9C%E5%9F%BA%E7%A1%80/"/>
+    <category term="HCIP" scheme="https://uprightokra.github.io/categories/HCIP/"/>
     
     
     <category term="OSPF" scheme="https://uprightokra.github.io/tags/OSPF/"/>
@@ -146,7 +196,7 @@
     <link href="https://uprightokra.github.io/2022-10-16-ru-he-fang-zhi-nei-wang-si-jie-lu-you-qi.html"/>
     <id>https://uprightokra.github.io/2022-10-16-ru-he-fang-zhi-nei-wang-si-jie-lu-you-qi.html</id>
     <published>2022-10-16T13:24:29.000Z</published>
-    <updated>2022-10-16T14:42:49.868Z</updated>
+    <updated>2022-11-12T13:44:32.091Z</updated>
     
     
       
@@ -282,7 +332,7 @@
     <link href="https://uprightokra.github.io/2022-10-13-ensp-usg6000v-fang-huo-qiang-kai-ji-yi-zhi-tiao-de-jie-jue-fang-fa.html"/>
     <id>https://uprightokra.github.io/2022-10-13-ensp-usg6000v-fang-huo-qiang-kai-ji-yi-zhi-tiao-de-jie-jue-fang-fa.html</id>
     <published>2022-10-13T12:47:20.000Z</published>
-    <updated>2022-10-13T12:53:04.493Z</updated>
+    <updated>2022-11-12T13:45:18.719Z</updated>
     
     
       
@@ -335,7 +385,7 @@
     <link href="https://uprightokra.github.io/2022-10-12-wu-xian-fat-ap-yu-fit-ap-qu-bie.html"/>
     <id>https://uprightokra.github.io/2022-10-12-wu-xian-fat-ap-yu-fit-ap-qu-bie.html</id>
     <published>2022-10-12T12:23:37.000Z</published>
-    <updated>2022-10-12T13:20:53.271Z</updated>
+    <updated>2022-11-12T13:46:27.810Z</updated>
     
     
       
@@ -360,7 +410,7 @@
     <link href="https://uprightokra.github.io/2022-10-12-shu-tong-15-yuan-qu-dian-xing-zu-wang.html"/>
     <id>https://uprightokra.github.io/2022-10-12-shu-tong-15-yuan-qu-dian-xing-zu-wang.html</id>
     <published>2022-10-12T11:58:07.000Z</published>
-    <updated>2022-10-12T13:20:53.271Z</updated>
+    <updated>2022-11-12T13:40:05.983Z</updated>
     
     
       
@@ -385,7 +435,7 @@
     <link href="https://uprightokra.github.io/2022-10-12-shu-tong-14-sdn-yu-nfv-gai-shu.html"/>
     <id>https://uprightokra.github.io/2022-10-12-shu-tong-14-sdn-yu-nfv-gai-shu.html</id>
     <published>2022-10-12T10:09:34.000Z</published>
-    <updated>2022-10-12T13:20:53.281Z</updated>
+    <updated>2022-11-12T13:40:21.248Z</updated>
     
     
       
@@ -435,7 +485,7 @@
     <link href="https://uprightokra.github.io/2022-10-11-shu-tong-13-dhcp-dns-pppoe.html"/>
     <id>https://uprightokra.github.io/2022-10-11-shu-tong-13-dhcp-dns-pppoe.html</id>
     <published>2022-10-11T05:18:29.000Z</published>
-    <updated>2022-10-11T14:57:51.049Z</updated>
+    <updated>2022-11-12T13:40:29.316Z</updated>
     
     
       
@@ -460,7 +510,7 @@
     <link href="https://uprightokra.github.io/2022-10-10-aaa-pei-zhi.html"/>
     <id>https://uprightokra.github.io/2022-10-10-aaa-pei-zhi.html</id>
     <published>2022-10-10T08:12:12.000Z</published>
-    <updated>2022-10-12T12:44:36.846Z</updated>
+    <updated>2022-11-12T13:45:12.212Z</updated>
     
     
       
@@ -478,63 +528,6 @@
     
     
     <category term="AAA" scheme="https://uprightokra.github.io/tags/AAA/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>设备上架与调试步骤</title>
-    <link href="https://uprightokra.github.io/2022-10-10-she-bei-shang-jia-yu-diao-shi-bu-zou.html"/>
-    <id>https://uprightokra.github.io/2022-10-10-she-bei-shang-jia-yu-diao-shi-bu-zou.html</id>
-    <published>2022-10-10T07:50:22.000Z</published>
-    <updated>2022-10-10T08:12:54.144Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;p&gt;1．web界面 （网页调试）&lt;/p&gt;
-&lt;p&gt;显示的内容较少、有限；且一个功能默认参数不同&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;p&gt;适合：多台设备 同一个品牌 简单功能／小众品牌— 命令行不熟悉 方便—单机功能&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;不适合：功能性复杂 路由协议BGP</summary>
-        
-      
-    
-    
-    
-    <category term="网络基础" scheme="https://uprightokra.github.io/categories/%E7%BD%91%E7%BB%9C%E5%9F%BA%E7%A1%80/"/>
-    
-    
-    <category term="设备上架与调试" scheme="https://uprightokra.github.io/tags/%E8%AE%BE%E5%A4%87%E4%B8%8A%E6%9E%B6%E4%B8%8E%E8%B0%83%E8%AF%95/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>掩码、通配符掩码、反掩码</title>
-    <link href="https://uprightokra.github.io/2022-10-09-yan-ma-tong-pei-fu-yan-ma-fan-yan-ma.html"/>
-    <id>https://uprightokra.github.io/2022-10-09-yan-ma-tong-pei-fu-yan-ma-fan-yan-ma.html</id>
-    <published>2022-10-09T08:46:36.000Z</published>
-    <updated>2022-10-09T08:54:16.620Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;h3 id=&quot;掩码&quot;&gt;&lt;a href=&quot;#掩码&quot; class=&quot;headerlink&quot; title=&quot;掩码&quot;&gt;&lt;/a&gt;掩码&lt;/h3&gt;&lt;ul&gt;
-&lt;li&gt;采用&lt;strong&gt;按位与&lt;/strong&gt;运算，计算一个ip地址的网络号&lt;/li&gt;
-&lt;li&gt;0 &amp;amp; 0 = 0  1</summary>
-        
-      
-    
-    
-    
-    <category term="网络基础" scheme="https://uprightokra.github.io/categories/%E7%BD%91%E7%BB%9C%E5%9F%BA%E7%A1%80/"/>
-    
-    
-    <category term="掩码、通配符掩码、反掩码" scheme="https://uprightokra.github.io/tags/%E6%8E%A9%E7%A0%81%E3%80%81%E9%80%9A%E9%85%8D%E7%AC%A6%E6%8E%A9%E7%A0%81%E3%80%81%E5%8F%8D%E6%8E%A9%E7%A0%81/"/>
     
   </entry>
   

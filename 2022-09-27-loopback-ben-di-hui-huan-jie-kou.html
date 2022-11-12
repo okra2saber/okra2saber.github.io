@@ -398,7 +398,7 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('https://img-blog.csdnimg.cn/3329ca491b794194a23d6b71671933c7.jpeg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('https://img-blog.csdnimg.cn/cb83b0f9e2e84d66ba355b0b38b1d4c1.png')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
@@ -555,7 +555,7 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2022-09-27
+                    2022-11-12
                 </div>
                 
 
@@ -602,10 +602,9 @@
 <ol>
 <li><p>作为一台路由器的管理地址</p>
 <p> 系统管理员完成网络规划之后，为了方便管理，会为每一台路由器创建一个loopback 接口，并在该接口上单独指定一个IP 地址作为管理地址 ，管理员会使用该地址对路由器<a target="_blank" rel="noopener" href="https://so.csdn.net/so/search?q=%E8%BF%9C%E7%A8%8B%E7%99%BB%E5%BD%95&amp;spm=1001.2101.3001.7020">远程登录</a>（telnet ），该地址实际上起到了类似设备名称一类的功能。</p>
-<pre><code>    但是通常每台路由器上存在众多接口和地址，为何不从当中随便挑选一个呢 ？
-    
-    原因如下：由于telnet 命令使用TCP 报文，会存在如下情况：路由器的某一个接口由于故障down  掉了，但是其他的接口却仍旧可以telnet ， 也就是说，到达这台路由器的TCP 连接依旧存在。所以选择的telnet  地址必须是永远也不会down 掉的，而虚接口恰好满足此类要求。由于此类接口没有与对端互联互通的需求，所以为了节约地址资源，loopback  接口的地址通常指定为32 位掩码。
-    
+<pre><code>       但是通常每台路由器上存在众多接口和地址，为何不从当中随便挑选一个呢 ？
+       
+       原因如下：由于telnet 命令使用TCP 报文，会存在如下情况：路由器的某一个接口由于故障down  掉了，但是其他的接口却仍旧可以telnet ， 也就是说，到达这台路由器的TCP 连接依旧存在。所以选择的telnet  地址必须是永远也不会down 掉的，而虚接口恰好满足此类要求。由于此类接口没有与对端互联互通的需求，所以为了节约地址资源，loopback  接口的地址通常指定为32 位掩码。
 </code></pre>
 </li>
 <li><p>使用该接口地址作为动态路由协议OSPF 、BGP 的router id 动态路由协议OSPF  、BGP 在运行过程中需要为该协议指定一个Router id ，作为此路由器的唯一标识，并要求在整个自治系统内唯一。</p>
@@ -625,8 +624,7 @@
 <li><p>Router ID</p>
 <p>   使用该接口地址作为OSPF 、BGP 的Router-ID，作为此路由器的唯一标识，并要求在整个自治系统内唯一，在Ipv6中的BGP/O  SPF的Router-ID仍然是32位的IP地址。在OSPF中的路由器优先级是在接口下手动设置的，接着才是比较OSPF的Router-ID（Router-ID的选举在这里就不多说了，PS：一台路由器启动OSPF路由协议后，将选取物理接口的最大IP地址作为其RouterID，但是如果配置Loopback接口，则从Loopback中选取IP地址最大者为RouterID。另外一旦选取RouterID，OSPF为了保证稳定性，不会轻易更改，除非作为RouterID的IP地址被删除或者OSPF被重新启动），在OSPF和BGP中的Router-ID都是可以手动在路由配置模式下设置的。</p>
 <pre class="line-numbers language-none"><code class="language-none">OSPF: Router-ID …
-BGP:BGP Router-ID …<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
-</li>
+BGP:BGP Router-ID …<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre></li>
 <li><p>IP Unnumbered Interfaces<br> 无编号地址可以借用强壮的loopback口地址，来节约网络IP地址的分配。<br> 例子：</p>
  <pre class="line-numbers language-none"><code class="language-none">interface loopback 0
  ip address 215.17.3.1 255.255.255.255
@@ -1207,7 +1205,7 @@ BGP:BGP Router-ID …<span aria-hidden="true" class="line-numbers-rows"><span></
                 <a href="/2022-09-27-ospf-dr-yu-bdr-xiang-jie.html">
                     <div class="card-image">
                         
-                        <img src="https://img-blog.csdnimg.cn/cd7067b17dc74e46beea354fa2212bef.gif" data-original="https://img-blog.csdnimg.cn/3329ca491b794194a23d6b71671933c7.jpeg" class="responsive-img" alt="OSPF-DR与BDR详解">
+                        <img src="https://img-blog.csdnimg.cn/cd7067b17dc74e46beea354fa2212bef.gif" data-original="https://img-blog.csdnimg.cn/cb83b0f9e2e84d66ba355b0b38b1d4c1.png" class="responsive-img" alt="OSPF-DR与BDR详解">
                         
                         <span class="card-title">OSPF-DR与BDR详解</span>
                     </div>
@@ -1526,7 +1524,7 @@ BGP:BGP Router-ID …<span aria-hidden="true" class="line-numbers-rows"><span></
             <br>
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">181.2k</span>&nbsp;字&nbsp;|
+                class="white-color">190.6k</span>&nbsp;字&nbsp;|
             
             
             
