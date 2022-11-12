@@ -562,14 +562,14 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    2.4k
+                    5.9k
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    8 分
+                    21 分
                 </div>
                 
 
@@ -718,43 +718,103 @@ Checksum:校验和
 Auth Type：ospf的认证类型
 Auth Data：ospf的加密密钥<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
-<h2 id="OSPF工作原理"><a href="#OSPF工作原理" class="headerlink" title="OSPF工作原理"></a>OSPF工作原理</h2><ol>
-<li>建立邻居/领接关系——————邻居表</li>
-<li>同步LSA（LSA泛洪），构建LSDB————LSDB</li>
-<li>SPF算法计算路由——————路由表</li>
-</ol>
-<img src="https://img-blog.csdnimg.cn/cd7067b17dc74e46beea354fa2212bef.gif" data-original="https://img-blog.csdnimg.cn/6c88ede2f700408e8b966e1c068bf75a.png" style="zoom:67%;">
+<h4 id="协议栈结构"><a href="#协议栈结构" class="headerlink" title="协议栈结构"></a>协议栈结构</h4><pre class="line-numbers language-none"><code class="language-none">	+-------------------------------------+
+	|                  OSPF               |
++-------------------------------------+
+|             IPv4 Header             |
+	+-------------------------------------+
+	|                  L2                 |
+	+-------------------------------------+
+	|                  L1                 |
+	+-------------------------------------+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
-<p>运行OSPF协议的设备，会产生参数：</p>
-<p>1．LSA：link-state-advertisement：链路状态通告 </p>
-<p>2．LSDB：链路状态数据库／／存LSA的地点</p>
-<p>3．邻居／邻接：必须保证设备能够建立起该关系，才可以保证接下来的同步</p>
-<img src="https://img-blog.csdnimg.cn/cd7067b17dc74e46beea354fa2212bef.gif" data-original="https://img-blog.csdnimg.cn/fc8872c21c954d389380247be2b6c0a5.png" style="zoom: 67%;">
-
-<ol>
-<li>情况一：R1先开启OSPF，R2后开启OSPF<ul>
-<li>R1先发送hello报文，R2接收到该报文后从down——&gt;init状态，R2发送hello报文，里面包含了自己和已知的邻居。R1收到该报文后，从Down——&gt;2-Way状态。R1再发送hello报文，R2收到之后知道了R1已经有了自己的router id，从init——&gt;2—Way状态。</li>
-</ul>
-</li>
-</ol>
-<img src="https://img-blog.csdnimg.cn/cd7067b17dc74e46beea354fa2212bef.gif" data-original="https://img-blog.csdnimg.cn/fa6bdc500a4241c3bc4cc29c6b6955f3.png" style="zoom:67%;">
-
-<p>2.情况二：R1、R2同时开启OSPF</p>
+<h4 id="邻接关系"><a href="#邻接关系" class="headerlink" title="邻接关系"></a>邻接关系</h4><p>在OSPF网络中，为了交换路由信息，邻居设备之间首先要建立邻接关系，邻居（Neighbors）关系和邻接（Adjacencies）关系是两个不同的概念。</p>
 <ul>
-<li>同时进入Init和2-Way状态</li>
+<li>邻居关系：OSPF设备启动后，会通过OSPF接口向外发送Hello报文，收到Hello报文的OSPF设备会检查报文中所定义的参数，如果双方一致就会形成邻居关系，两端设备互为邻居。</li>
+<li>邻接关系：形成邻居关系后，如果两端设备成功交换DD报文和LSA，才建立邻接关系。</li>
 </ul>
-<img src="https://img-blog.csdnimg.cn/cd7067b17dc74e46beea354fa2212bef.gif" data-original="https://img-blog.csdnimg.cn/a12c2c4c445646cca6f47e49b9b701ca.png" style="zoom:67%;">
+<p>OSPF共有8种状态机，分别是：Down、Attempt、Init、2-way、Exstart、Exchange、Loading、Full。</p>
+<img src="https://img-blog.csdnimg.cn/cd7067b17dc74e46beea354fa2212bef.gif" data-original="https://img-blog.csdnimg.cn/5a78f91af1c042fe85362759d4e35ce9.png" style="zoom: 67%;">
 
-<h3 id="OSPF邻居建立的条件："><a href="#OSPF邻居建立的条件：" class="headerlink" title="OSPF邻居建立的条件："></a>OSPF邻居建立的条件：</h3><p>1、版本一致</p>
-<p>2、Router-ID不能冲突</p>
-<p>3、区域ID一致。</p>
-<p>4、认证类型和认证密码一致。</p>
-<p>5、两端接口IP要求在相同网段。</p>
-<p>6、两端接口掩码要求相同。</p>
-<p>7、Hello发送时间间隔一致。</p>
-<p>8、Dead时间一致。</p>
-<p>9、option 选项中 Nbit和Ebit需要一致。</p>
-<p>10、双方接口的MTU一致。</p>
+<p><strong>注意：DR和BDR的选举时间是在2-Way和Exstart之间，而在Exstart开始后发送的第一个空DD报文，用于协商两台路由器之间的主从(Master/Slave)，也称为DD的隐式确认。</strong></p>
+<p><img src="https://img-blog.csdnimg.cn/cd7067b17dc74e46beea354fa2212bef.gif" data-original="https://img-blog.csdnimg.cn/d75270e9dbd4446ab490bda56c649da0.png"></p>
+<ul>
+<li><p>Down(失效)：邻居会话的初始阶段，表明没有在邻居失效时间间隔内收到来自邻居路由器的Hello数据包。</p>
+</li>
+<li><p>Attempt(尝试)：该状态仅发生在NBMA网络中，表明对端在邻居失效时间间隔（dead interval）超时前仍然没有回复Hello报文。此时路由器依然每发送轮询Hello报文的时间间隔（poll interval）向对端发送Hello报文。</p>
+</li>
+<li><p>Init(初始)：收到Hello报文后状态为Init。</p>
+</li>
+<li><p>2-way(双向通信)：收到的Hello报文中包含有自己的Router ID，则状态为2-way；如果不需要形成邻接关系则邻居状态机就停留在此状态，否则进入Exstart状态。</p>
+</li>
+<li><p>Exstart(交换初始)：开始协商主从关系，并确定DD的序列号，此时状态为Exstart。</p>
+</li>
+<li><p>Exchange(交换)：主从关系协商完毕后开始交换DD报文，此时状态为Exchange。</p>
+</li>
+<li><p>Loading(加载)：DD报文交换完成即Exchange done，此时状态为Loading。</p>
+</li>
+<li><p>Full(全毗邻)：LSR重传列表为空，此时状态为Full。</p>
+</li>
+<li><p>OSPF邻居建立的条件：</p>
+<pre class="line-numbers language-none"><code class="language-none">1、版本一致
+2、Router-ID不能冲突
+3、区域ID一致。
+4、认证类型和认证密码一致。
+5、两端接口IP要求在相同网段。
+6、两端接口掩码要求相同。
+7、Hello发送时间间隔一致。
+8、Dead时间一致。
+9、option 选项中 Nbit和Ebit需要一致。
+10、双方接口的MTU一致。<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre></li>
+</ul>
+<h2 id="OSPF的网络类型"><a href="#OSPF的网络类型" class="headerlink" title="OSPF的网络类型"></a>OSPF的网络类型</h2><h4 id="1-OSPF的4种网络类型"><a href="#1-OSPF的4种网络类型" class="headerlink" title="1. OSPF的4种网络类型"></a>1. OSPF的4种网络类型</h4><p>OSPF根据链路层协议类型将网络分为下列四种类型：</p>
+<table>
+<thead>
+<tr>
+<th>网络类型</th>
+<th>含义</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>广播类型（Broadcast）</td>
+<td>当链路层协议是Ethernet、FDDI时，缺省情况下，OSPF认为网络类型是Broadcast。 在该类型的网络中： 通常以组播形式发送Hello报文、LSU报文和LSAck报文。其中，224.0.0.5的组播地址为OSPF设备的预留IP组播地址；224.0.0.6的组播地址为OSPF DR/BDR（ Backup Designated Router）的预留IP组播地址。以单播形式发送DD报文和LSR报文。</td>
+</tr>
+<tr>
+<td>NBMA类型（Non-Broadcast Multi-Access）</td>
+<td>当链路层协议是帧中继、X.25时，缺省情况下，OSPF认为网络类型是NBMA。 在该类型的网络中，以单播形式发送协议报文（Hello报文、DD报文、LSR报文、LSU报文、LSAck报文）。</td>
+</tr>
+<tr>
+<td>点到多点P2MP类型（Point-to-Multipoint）</td>
+<td>没有一种链路层协议会被缺省的认为是Point-to-Multipoint类型。点到多点必须是由其他的网络类型强制更改的。常用做法是将非全连通的NBMA改为点到多点的网络。 在该类型的网络中： 以组播形式（224.0.0.5）发送Hello报文。以单播形式发送其他协议报文（DD报文、LSR报文、LSU报文、LSAck报文）。</td>
+</tr>
+<tr>
+<td>点到点P2P类型（point-to-point）</td>
+<td>当链路层协议是PPP、HDLC和LAPB时，缺省情况下，OSPF认为网络类型是P2P。 在该类型的网络中，以组播形式（224.0.0.5）发送协议报文（Hello报文、DD报文、LSR报文、LSU报文、LSAck报文）。</td>
+</tr>
+</tbody></table>
+<h4 id="2-NBMA网络的配置原则"><a href="#2-NBMA网络的配置原则" class="headerlink" title="2. NBMA网络的配置原则"></a>2. NBMA网络的配置原则</h4><p>NBMA网络是指非广播、多点可达的网络，比较典型的有ATM和帧中继网络。</p>
+<p>对于接口的网络类型为NBMA的网络需要进行一些特殊的配置。由于无法通过广播Hello报文的形式发现相邻路由器，必须手工为该接口指定相邻路由器的IP地址，以及该相邻路由器是否有DR选举权等。</p>
+<p>NBMA网络必须是全连通的，即网络中任意两台路由器之间都必须有一条虚电路直接可达。如果部分路由器之间没有直接可达的链路时，应将接口配置成P2MP类型。如果路由器在NBMA网络中只有一个对端，也可将接口类型配置为P2P类型。</p>
+<p>NBMA与P2MP网络之间的区别如下：</p>
+<ul>
+<li>NBMA网络是指那些全连通的、非广播、多点可达网络。而P2MP网络，则并不需要一定是全连通的。</li>
+<li>在NBMA网络中需要选举DR与BDR，而在P2MP网络中没有DR与BDR。</li>
+<li>NBMA是一种缺省的网络类型，而P2MP网络必须是由其它的网络强制更改的。最常见的做法是将NBMA网络改为P2MP网络。</li>
+<li>NBMA网络采用单播发送报文，需要手工配置邻居。P2MP网络采用组播方式发送报文。</li>
+</ul>
+<h3 id="DR和BDR"><a href="#DR和BDR" class="headerlink" title="DR和BDR"></a>DR和BDR</h3><p>在广播网和NBMA网络中，任意两台路由器之间都要传递路由信息。如图所示，网络中有n台路由器，则需要建立n*(n-1)/2个邻接关系。这使得任何一台路由器的路由变化都会导致多次传递，浪费了带宽资源。为解决这一问题，OSPF定义了指定路由器DR和备份指定路由器BDR。通过选举产生DR（Designated Router）后，所有路由器都只将信息发送给DR，由DR将网络链路状态LSA广播出去。除DR和BDR之外的路由器（称为DR  Other）之间将不再建立邻接关系，也不再交换任何路由信息，这样就减少了广播网和NBMA网络上各路由器之间邻接关系的数量。</p>
+<p> 选举DR前后对比图<br><img src="https://img-blog.csdnimg.cn/cd7067b17dc74e46beea354fa2212bef.gif" data-original="https://download.huawei.com/mdl/image/download?uuid=cbb680e5ce9649548861b65001616f40" alt="img"></p>
+<p>如果DR由于某种故障而失效，则网络中的路由器必须重新选举DR，并与新的DR同步。这需要较长的时间，在这段时间内，路由的计算有可能是不正确的。为了能够缩短这个过程，OSPF提出了BDR（Backup Designated  Router）的概念。BDR是对DR的一个备份，在选举DR的同时也选举出BDR，BDR也和本网段内的所有路由器建立邻接关系并交换路由信息。当DR失效后，BDR会立即成为DR。由于不需要重新选举，并且邻接关系已建立，所以这个过程非常短暂，这时还需要再重新选举出一个新的BDR，虽然一样需要较长的时间，但并不会影响路由的计算。</p>
+<p>DR和BDR不是人为指定的，而是由本网段中所有的路由器共同选举出来的。路由器接口的DR优先级决定了该接口在选举DR、BDR时所具有的资格。本网段内DR优先级大于0的路由器都可作为“候选人”。选举中使用的“选票”就是Hello报文。每台路由器将自己选出的DR写入Hello报文中，发给网段上的其他路由器。当处于同一网段的两台路由器同时宣布自己是DR时，DR优先级高者胜出。如果优先级相等，则Router ID大者胜出。如果一台路由器的优先级为0，则它不会被选举为DR或BDR。</p>
+<h4 id="DR-BDR选举过程"><a href="#DR-BDR选举过程" class="headerlink" title="DR/BDR选举过程"></a>DR/BDR选举过程</h4><p>DR和BDR是由同一网段中所有的路由器根据路由器优先级、Router ID通过HELLO报文选举出来的，只有优先级大于0的路由器才具有选取资格。</p>
+<p>进行DR/BDR选举时每台路由器将自己选出的DR写入Hello报文中，发给网段上的每台运行OSPF协议的路由器。当处于同一网段的两台路由器同时宣布自己是DR时，路由器优先级高者胜出。如果优先级相等，则Router ID大者胜出。如果一台路由器的优先级为0，则它不会被选举为DR或BDR。</p>
+<p>需要注意的是：</p>
+<ul>
+<li>只有在广播或NBMA类型接口才会选举DR，在点到点或点到多点类型的接口上不需要选举DR。</li>
+<li>DR是某个网段中的概念，是针对路由器的接口而言的。某台路由器在一个接口上可能是DR，在另一个接口上有可能是BDR，或者是DR Other。</li>
+<li>路由器的优先级可以影响一个选取过程，但是当DR/BDR已经选取完毕，就算一台具有更高优先级的路由器变为有效，也不会替换该网段中已经选取的DR/BDR成为新的DR/BDR。</li>
+<li>DR并不一定就是路由器优先级更高的路由器接口；同理，BDR也并不一定就是路由器优先级次高的路由器接口。</li>
+</ul>
 <pre class="line-numbers language-none"><code class="language-none">一个路由成能成为多个DR设备吗？可以
 一个链路上能够存在多个DR吗？一条链路只能存在一个DR。
 一个链路上能够存在多个BDR吗？一条链路只能存在一个BDR。
@@ -774,10 +834,179 @@ Auth Data：ospf的加密密钥<span aria-hidden="true" class="line-numbers-rows
 	如果改链路中，已经有了DR和BDR，那么只能成为DROther。
 	说白了，就是DR和BDR都不能被强占。<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
-
-
-
-
+<h3 id="LSA类型"><a href="#LSA类型" class="headerlink" title="LSA类型"></a>LSA类型</h3><table>
+<thead>
+<tr>
+<th>LSA类型</th>
+<th>LSA作用</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Router-LSA（Type1）</td>
+<td>每个设备都会产生，描述了设备的链路状态和开销，在所属的区域内传播。</td>
+</tr>
+<tr>
+<td>Network-LSA（Type2）</td>
+<td>由DR（Designated Router）产生，描述本网段的链路状态，在所属的区域内传播。</td>
+</tr>
+<tr>
+<td>Network-summary-LSA（Type3）</td>
+<td>由ABR产生，描述区域内某个网段的路由，并通告给发布或接收此LSA的非Totally  STUB或NSSA区域。例如：ABR同时属于Area0和Area1，Area0内存在网段10.1.1.0，Area1内存在网段11.1.1.0，ABR为Area0生成到网段11.1.1.0的Type3 LSA；ABR为Area1生成到网段10.1.1.0的Type3 LSA，并通告给发布或接收此LSA的非Totally  Stub或NSSA区域。</td>
+</tr>
+<tr>
+<td>ASBR-summary-LSA（Type4）</td>
+<td>由ABR产生，描述到ASBR的路由，通告给除ASBR所在区域的其他相关区域。</td>
+</tr>
+<tr>
+<td>AS-external-LSA（Type5）</td>
+<td>由ASBR产生，描述到AS外部的路由，通告到所有的区域（除了STUB区域和NSSA区域）。</td>
+</tr>
+<tr>
+<td>NSSA LSA（Type7）</td>
+<td>由ASBR产生，描述到AS外部的路由，仅在NSSA区域内传播。</td>
+</tr>
+<tr>
+<td>Opaque LSA（Type9/Type10/Type11）</td>
+<td>Opaque LSA提供用于OSPF的扩展的通用机制。其中： Type9 LSA仅在接口所在网段范围内传播。用于支持GR的Grace LSA就是Type9 LSA的一种。Type10 LSA在区域内传播。用于支持TE的LSA就是Type10 LSA的一种。Type11 LSA在自治域内传播，目前还没有实际应用的例子。</td>
+</tr>
+</tbody></table>
+<h3 id="LSA在各区域中传播的支持情况"><a href="#LSA在各区域中传播的支持情况" class="headerlink" title="LSA在各区域中传播的支持情况"></a>LSA在各区域中传播的支持情况</h3><table>
+<thead>
+<tr>
+<th>区域类型</th>
+<th>Router-LSA（Type1）</th>
+<th>Network-LSA（Type2）</th>
+<th>Network-summary-LSA（Type3）</th>
+<th>ASBR-summary-LSA（Type4）</th>
+<th>AS-external-LSA（Type5）</th>
+<th>NSSA LSA（Type7）</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>普通区域（包括标准区域和骨干区域）</td>
+<td>是</td>
+<td>是</td>
+<td>是</td>
+<td>是</td>
+<td>是</td>
+<td>否</td>
+</tr>
+<tr>
+<td>Stub区域</td>
+<td>是</td>
+<td>是</td>
+<td>是</td>
+<td>否</td>
+<td>否</td>
+<td>否</td>
+</tr>
+<tr>
+<td>Totally Stub区域</td>
+<td>是</td>
+<td>是</td>
+<td>否</td>
+<td>否</td>
+<td>否</td>
+<td>否</td>
+</tr>
+<tr>
+<td>NSSA区域</td>
+<td>是</td>
+<td>是</td>
+<td>是</td>
+<td>否</td>
+<td>否</td>
+<td>是</td>
+</tr>
+<tr>
+<td>Totally NSSA区域</td>
+<td>是</td>
+<td>是</td>
+<td>否</td>
+<td>否</td>
+<td>否</td>
+<td>是</td>
+</tr>
+</tbody></table>
+<h3 id="路由器类型"><a href="#路由器类型" class="headerlink" title="路由器类型"></a>路由器类型</h3><p>OSPF协议中常用到的路由器类型如图所示。<br><img src="https://img-blog.csdnimg.cn/cd7067b17dc74e46beea354fa2212bef.gif" data-original="https://download.huawei.com/mdl/image/download?uuid=a1b351c20c5748b9b00f0b1d8277e33e" alt="img"></p>
+<table>
+<thead>
+<tr>
+<th>路由器类型</th>
+<th>含义</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>区域内路由器（Internal Router）</td>
+<td>该类设备的所有接口都属于同一个OSPF区域。</td>
+</tr>
+<tr>
+<td>区域边界路由器ABR（Area Border Router）</td>
+<td>该类设备可以同时属于两个以上的区域，但其中一个必须是骨干区域。 ABR用来连接骨干区域和非骨干区域，它与骨干区域之间既可以是物理连接，也可以是逻辑上的连接。</td>
+</tr>
+<tr>
+<td>骨干路由器（Backbone Router）</td>
+<td>该类设备至少有一个接口属于骨干区域。 所有的ABR和位于Area0的内部设备都是骨干路由器。</td>
+</tr>
+<tr>
+<td>自治系统边界路由器ASBR（AS Boundary Router）</td>
+<td>与其他AS交换路由信息的设备称为ASBR。 ASBR并不一定位于AS的边界，它可能是区域内设备，也可能是ABR。只要一台OSPF设备引入了外部路由的信息，它就成为ASBR。</td>
+</tr>
+</tbody></table>
+<h3 id="路由类型"><a href="#路由类型" class="headerlink" title="路由类型"></a>路由类型</h3><p>AS区域内和区域间路由描述的是AS内部的网络结构，AS外部路由则描述了应该如何选择到AS以外目的地址的路由。OSPF将引入的AS外部路由分为Type1和Type2两类。</p>
+<p>如下表中按优先级从高到低顺序列出了路由类型。</p>
+<table>
+<thead>
+<tr>
+<th>路由类型</th>
+<th>含义</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Intra Area</td>
+<td>区域内路由。</td>
+</tr>
+<tr>
+<td>Inter Area</td>
+<td>区域间路由。</td>
+</tr>
+<tr>
+<td>第一类外部路由（Type1 External）</td>
+<td>这类路由的可信程度高一些，所以计算出的外部路由的开销与自治系统内部的路由开销是相当的，并且和OSPF自身路由的开销具有可比性。 到第一类外部路由的开销=本设备到相应的ASBR的开销+ASBR到该路由目的地址的开销。</td>
+</tr>
+<tr>
+<td>第二类外部路由（Type2 External）</td>
+<td>这类路由的可信度比较低，所以OSPF协议认为从ASBR到自治系统之外的开销远远大于在自治系统之内到达ASBR的开销。 所以，OSPF计算路由开销时只考虑ASBR到自治系统之外的开销，即到第二类外部路由的开销=ASBR到该路由目的地址的开销。</td>
+</tr>
+</tbody></table>
+<h3 id="区域类型"><a href="#区域类型" class="headerlink" title="区域类型"></a>区域类型</h3><table>
+<thead>
+<tr>
+<th>区域类型</th>
+<th>作用</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>普通区域</td>
+<td>缺省情况下，OSPF区域被定义为普通区域。普通区域包括标准区域和骨干区域。 标准区域是最通用的区域，它传输区域内路由，区域间路由和外部路由。骨干区域是连接所有其他OSPF区域的中央区域。骨干区域通常用Area 0表示。</td>
+</tr>
+<tr>
+<td>STUB区域</td>
+<td>不允许发布自治系统外部路由，只允许发布区域内路由和区域间的路由。 在STUB区域中，路由器的路由表规模和路由信息传递的数量都会大大减少。 为了保证到自治系统外的路由可达，由该区域的ABR发布Type3缺省路由传播到区域内，所有到自治系统外部的路由都必须通过ABR才能发布。</td>
+</tr>
+<tr>
+<td>Totally STUB区域</td>
+<td>不允许发布自治系统外部路由和区域间的路由，只允许发布区域内路由。 在Totally STUB区域中，路由器的路由表规模和路由信息传递的数量都会大大减少。 为了保证到自治系统外和其他区域的路由可达，由该区域的ABR发布Type3缺省路由传播到区域内，所有到自治系统外部和其他区域的路由都必须通过ABR才能发布。</td>
+</tr>
+<tr>
+<td>NSSA区域</td>
+<td>NSSA区域允许引入自治系统外部路由，由ASBR发布Type7 LSA通告给本区域，这些Type7 LSA在ABR上转换成Type5 LSA，并且泛洪到整个OSPF域中。 NSSA区域同时保留自治系统内的STUB区域的特征。 该区域的ABR发布Type7缺省路由传播到区域内，所有域间路由都必须通过ABR才能发布。</td>
+</tr>
+<tr>
+<td>Totally NSSA区域</td>
+<td>Totally NSSA区域允许引入自治系统外部路由，由ASBR发布Type7 LSA通告给本区域，这些Type7 LSA在ABR上转换成Type5 LSA，并且泛洪到整个OSPF域中。 Totally NSSA区域同时保留自治系统内的Totally STUB Area区域的特征。 该区域的ABR发布Type3和Type7缺省路由传播到区域内，所有域间路由都必须通过ABR才能发布。</td>
+</tr>
+</tbody></table>
 
                 
             </div>
@@ -1343,17 +1572,16 @@ Auth Data：ospf的加密密钥<span aria-hidden="true" class="line-numbers-rows
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="far fa-dot-circle"></i>&nbsp;本篇
-            </div>
+                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
-                <a href="/2022-10-24-shu-tong-16-ospf-de-ji-ben-gai-nian.html">
+                <a href="/2022-11-12-shu-tong-17-ospf-de-bao-wen-ge-shi.html">
                     <div class="card-image">
                         
-                        <img src="https://img-blog.csdnimg.cn/cd7067b17dc74e46beea354fa2212bef.gif" data-original="https://img-blog.csdnimg.cn/76b623508e8343c6b839b90f9432a83c.png" class="responsive-img" alt="数通 16-OSPF的基本概念">
+                        <img src="https://img-blog.csdnimg.cn/cd7067b17dc74e46beea354fa2212bef.gif" data-original="https://img-blog.csdnimg.cn/76b623508e8343c6b839b90f9432a83c.png" class="responsive-img" alt="数通 17-OSPF的报文格式">
                         
-                        <span class="card-title">数通 16-OSPF的基本概念</span>
+                        <span class="card-title">数通 17-OSPF的报文格式</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -1363,9 +1591,9 @@ Auth Data：ospf的加密密钥<span aria-hidden="true" class="line-numbers-rows
                         
                     </div>
                     <div class="publish-info">
-                            <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2022-10-24
-                            </span>
+                        <span class="publish-date">
+                            <i class="far fa-clock fa-fw icon-date"></i>2022-11-12
+                        </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
@@ -1378,7 +1606,6 @@ Auth Data：ospf的加密密钥<span aria-hidden="true" class="line-numbers-rows
                         </span>
                     </div>
                 </div>
-
                 
                 <div class="card-action article-tags">
                     
@@ -1671,7 +1898,7 @@ Auth Data：ospf的加密密钥<span aria-hidden="true" class="line-numbers-rows
             <br>
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">176.3k</span>&nbsp;字&nbsp;|
+                class="white-color">181.2k</span>&nbsp;字&nbsp;|
             
             
             
@@ -2022,13 +2249,13 @@ $(function () {
 document.addEventListener("visibilitychange", function () { document.hidden ? (document.title = "Σ(っ °Д °;)っ喔哟，崩溃啦！", clearTimeout(st)) : (document.title = "φ(゜▽゜*)♪咦，又好了！", st = setTimeout(function () { document.title = OriginTitile }, 3e3)) }) </script>
 
 
-<script>
+<script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"model":{"jsonPath":"/live2dw/assets/hijiki.model.json"},"display":{"position":"right","width":280,"height":280},"mobile":{"show":false},"log":false,"pluginJsPath":"lib/","pluginModelPath":"assets/","pluginRootPath":"live2dw/","tagMode":false});</script><script>
             window.imageLazyLoadSetting = {
                 isSPA: false,
                 preloadRatio: 1,
                 processImages: null,
             };
-        </script><script>window.addEventListener("load",function(){var t=/\.(gif|jpg|jpeg|tiff|png)$/i,r=/^data:image\/[a-z]+;base64,/;Array.prototype.slice.call(document.querySelectorAll("img[data-original]")).forEach(function(a){var e=a.parentNode;"A"===e.tagName&&(e.href.match(t)||e.href.match(r))&&(e.href=a.dataset.original)})});</script><script>!function(n){n.imageLazyLoadSetting.processImages=o;var e=n.imageLazyLoadSetting.isSPA,i=n.imageLazyLoadSetting.preloadRatio||1,r=Array.prototype.slice.call(document.querySelectorAll("img[data-original]"));function o(){e&&(r=Array.prototype.slice.call(document.querySelectorAll("img[data-original]")));for(var t,a=0;a<r.length;a++)0<=(t=(t=r[a]).getBoundingClientRect()).bottom&&0<=t.left&&t.top<=(n.innerHeight*i||document.documentElement.clientHeight*i)&&function(){var t,e,n,i,o=r[a];t=o,e=function(){r=r.filter(function(t){return o!==t})},n=new Image,i=t.getAttribute("data-original"),n.onload=function(){t.src=i,e&&e()},t.src!==i&&(n.src=i)}()}o(),n.addEventListener("scroll",function(){var t,e;t=o,e=n,clearTimeout(t.tId),t.tId=setTimeout(function(){t.call(e)},500)})}(this);</script><script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"model":{"jsonPath":"/live2dw/assets/hijiki.model.json"},"display":{"position":"right","width":280,"height":280},"mobile":{"show":false},"log":false,"pluginJsPath":"lib/","pluginModelPath":"assets/","pluginRootPath":"live2dw/","tagMode":false});</script></body>
+        </script><script>window.addEventListener("load",function(){var t=/\.(gif|jpg|jpeg|tiff|png)$/i,r=/^data:image\/[a-z]+;base64,/;Array.prototype.slice.call(document.querySelectorAll("img[data-original]")).forEach(function(a){var e=a.parentNode;"A"===e.tagName&&(e.href.match(t)||e.href.match(r))&&(e.href=a.dataset.original)})});</script><script>!function(n){n.imageLazyLoadSetting.processImages=o;var e=n.imageLazyLoadSetting.isSPA,i=n.imageLazyLoadSetting.preloadRatio||1,r=Array.prototype.slice.call(document.querySelectorAll("img[data-original]"));function o(){e&&(r=Array.prototype.slice.call(document.querySelectorAll("img[data-original]")));for(var t,a=0;a<r.length;a++)0<=(t=(t=r[a]).getBoundingClientRect()).bottom&&0<=t.left&&t.top<=(n.innerHeight*i||document.documentElement.clientHeight*i)&&function(){var t,e,n,i,o=r[a];t=o,e=function(){r=r.filter(function(t){return o!==t})},n=new Image,i=t.getAttribute("data-original"),n.onload=function(){t.src=i,e&&e()},t.src!==i&&(n.src=i)}()}o(),n.addEventListener("scroll",function(){var t,e;t=o,e=n,clearTimeout(t.tId),t.tId=setTimeout(function(){t.call(e)},500)})}(this);</script></body>
 
 </html>
 

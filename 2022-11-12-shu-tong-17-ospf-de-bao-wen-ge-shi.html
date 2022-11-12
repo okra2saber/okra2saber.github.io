@@ -4,7 +4,7 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="数通 13-DHCP+DNS+PPPOE, Okraの筆記">
+    <meta name="keywords" content="数通 17-OSPF的报文格式, Okraの筆記">
     <meta name="description" content="">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -16,7 +16,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>数通 13-DHCP+DNS+PPPOE | Okraの筆記</title>
+    <title>数通 17-OSPF的报文格式 | Okraの筆記</title>
     <link rel="icon" type="image/png" href="https://img-blog.csdnimg.cn/c085cffaa1ae4841b06ba367673ff753.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -398,12 +398,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('https://img-blog.csdnimg.cn/3329ca491b794194a23d6b71671933c7.jpeg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('https://img-blog.csdnimg.cn/76b623508e8343c6b839b90f9432a83c.png')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">数通 13-DHCP+DNS+PPPOE</h1>
+                    <h1 class="description center-align post-title">数通 17-OSPF的报文格式</h1>
                 </div>
             </div>
         </div>
@@ -523,8 +523,8 @@
                     
                     <div class="article-tag">
                         
-                            <a href="/tags/DHCP-DNS-PPPOE/">
-                                <span class="chip bg-color">DHCP+DNS+PPPOE</span>
+                            <a href="/tags/OSPF/">
+                                <span class="chip bg-color">OSPF</span>
                             </a>
                         
                     </div>
@@ -548,28 +548,28 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2022-10-11
+                    2022-11-12
                 </div>
                 
 
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2022-10-11
+                    2022-11-12
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    2.1k
+                    1.4k
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    7 分
+                    5 分
                 </div>
                 
 
@@ -597,72 +597,109 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h1 id="DHCP-DNS-PPPOE"><a href="#DHCP-DNS-PPPOE" class="headerlink" title="DHCP+DNS+PPPOE"></a><center>DHCP+DNS+PPPOE</center></h1><p><a target="_blank" rel="noopener" href="https://so.csdn.net/so/search?q=DHCP&amp;spm=1001.2101.3001.7020">DHCP</a>(Dynamic Host Protocol),动态主机配置协议，是一个应用层协议。当我们将客户主机ip地址设置为动态获取方式时，DHCP服务器就会根据DHCP协议给客户端分配IP，使得客户机能够利用这个IP上网。</p>
-<h3 id="DHCP报文类型"><a href="#DHCP报文类型" class="headerlink" title="DHCP报文类型"></a>DHCP报文类型</h3><p><img src="https://img-blog.csdnimg.cn/cd7067b17dc74e46beea354fa2212bef.gif" data-original="https://img-blog.csdnimg.cn/164e4cae08354c4396895584783f1887.png"></p>
-<h3 id="DHCP工作原理"><a href="#DHCP工作原理" class="headerlink" title="DHCP工作原理"></a>DHCP工作原理</h3><p><img src="https://img-blog.csdnimg.cn/cd7067b17dc74e46beea354fa2212bef.gif" data-original="https://img-blog.csdnimg.cn/5606855b59ee428abc2b4ef51816c40d.png"></p>
-<p>DHCP的实现分为4步，分别是：<br>第一步：Client端在局域网内发起一个DHCP　Discover<strong>广播</strong>包，目的是想发现能够给它提供IP的DHCP Server。<font color="red">（<strong>源IP：0.0.0.0 目的IP： 255.255.255.255</strong>）</font><br>第二步：可用的DHCP Server接收到Discover包之后，通过发送DHCP Offer包给予Client端应答，意在告诉Client端它可以提供IP地址。<font color="red">（<strong>只有华为设备发送Offer包是使用单播的方式，基于二层的Mac地址进行报文发送，客户端的MAC地址是在发送Discove广播包时知道的</strong>）</font><br>第三步：Client端接收到Offer包之后，发送DHCP Request包对请求配置确认。<font color="red">（<strong>在一个网络环境中可能存在多个DHCP Server，发送Request包作用是告诉网络中的DHCP Server，我已经收到了来自DHCP Server（A）的IP地址，来自其他DHCP Server的IP就不需要了。&nbsp; &nbsp;就像A和B同时向C表白，C接受了来自A的告白，拒绝了B</strong>）</font><br>第四步：DHCP Server发送ACK数据包，确认信息。</p>
-<h3 id="DHCP租期更新"><a href="#DHCP租期更新" class="headerlink" title="DHCP租期更新"></a>DHCP租期更新</h3><p><img src="https://img-blog.csdnimg.cn/cd7067b17dc74e46beea354fa2212bef.gif" data-original="https://img-blog.csdnimg.cn/3ce34ecb92744b7aab165e2cfec311f5.png"></p>
-<p>IP租期到达50%时，DHCP客户端会请求更新ip地址租约。</p>
-<p><font color="red">（<strong>注意这里的DHCP Request和上面工作原理中的Request不是同一个，这是租期更新的Request，是单播</strong>）</font></p>
-<p><font color="red">（<strong>工作原理中的Request，是向网络环境中的多台DHCP服务器发送的广播报文，因为不知道目标IP</strong>）</font></p>
-<p><font color="red">（<strong>这里的Request，是客户端已经获取到了IP地址，向DHCP服务器发送的单播报文请求续约，是知道目标IP的</strong>）</font></p>
-<h3 id="DHCP重绑定"><a href="#DHCP重绑定" class="headerlink" title="DHCP重绑定"></a>DHCP重绑定</h3><p><img src="https://img-blog.csdnimg.cn/cd7067b17dc74e46beea354fa2212bef.gif" data-original="https://img-blog.csdnimg.cn/166755b73b084f449f82159d9984edb8.png"></p>
-<p>如果IP租期到达50%时，DHCP客户端请求更新ip地址租约时服务器没有响应。当DHCP客户端在租约期限到达87.5%时，还没收到服务器的响应，会申请重绑定（<strong>就是释放掉当前IP地址，之前DHCP的工作流程重新来一遍</strong>）。</p>
-<h3 id="IP地址释放"><a href="#IP地址释放" class="headerlink" title="IP地址释放"></a>IP地址释放</h3><p><img src="https://img-blog.csdnimg.cn/cd7067b17dc74e46beea354fa2212bef.gif" data-original="https://img-blog.csdnimg.cn/0d08a1a4f2e94ff3a28c55ee50da92ae.png"></p>
+                <h1 id="OSPF的报文格式"><a href="#OSPF的报文格式" class="headerlink" title="OSPF的报文格式"></a><center>OSPF的报文格式</center></h1><h2 id="OSPF的报文格式-1"><a href="#OSPF的报文格式-1" class="headerlink" title="OSPF的报文格式"></a>OSPF的报文格式</h2><p>OSPF报文直接封装为IP报文协议报文，协议号为89。一个比较完整的OSPF报文（以LSU报文为例）结构如图所示。</p>
+<p><img src="https://img-blog.csdnimg.cn/cd7067b17dc74e46beea354fa2212bef.gif" data-original="https://res.h3c.com/cn/201212/11/20121211_1490341_image008_605874_30003_0.png" alt="img"></p>
+<h4 id="1-OSPF报文头"><a href="#1-OSPF报文头" class="headerlink" title="1. OSPF报文头"></a>1. OSPF报文头</h4><p>OSPF有五种报文类型，它们有相同的报文头。</p>
+<p><img src="https://img-blog.csdnimg.cn/cd7067b17dc74e46beea354fa2212bef.gif" data-original="https://res.h3c.com/cn/201212/11/20121211_1490342_image009_605874_30003_0.png" alt="img"></p>
+<p>OSPF报文头格式</p>
+<p>主要字段的解释如下：</p>
 <ul>
-<li>如果IP租约到期前都没有收到服务器响应，客户端停止使用此IP地址。</li>
-<li>如果DHCP客户端不再使用分配的IP地址，也可以主动向DHCP服务器发送DHCPRELEASE报文，释放该IP地址。</li>
+<li><p>Version：OSPF的版本号。对于OSPFv2来说，其值为2。</p>
+</li>
+<li><p>Type：OSPF报文的类型。数值从1到5，分别对应Hello报文、DD报文、LSR报文、LSU报文和LSAck报文。</p>
+</li>
+<li><p>Packet length：OSPF报文的总长度，包括报文头在内，单位为字节。</p>
+</li>
+<li><p>Router ID：始发该LSA的路由器的ID。</p>
+</li>
+<li><p>Area ID：始发LSA的路由器所在的区域ID。</p>
+</li>
+<li><p>Checksum：对整个报文的校验和。</p>
+</li>
+<li><p>AuType：验证类型。可分为不验证、简单（明文）口令验证和MD5验证，其值分别为0、1、2。</p>
+</li>
+<li><p>Authentication：其数值根据验证类型而定。当验证类型为0时未作定义，为1时此字段为密码信息，类型为2时此字段包括Key ID、MD5验证数据长度和序列号的信息。</p>
+</li>
 </ul>
-<pre class="line-numbers language-none"><code class="language-none">更加详细的DHCP工作原理请访问下面的链接
-https://blog.csdn.net/weixin_34481217/article/details/123425141<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+<p>&amp; 说明：</p>
+<p>MD5验证数据添加在OSPF报文后面，不包含在Authenticaiton字段中。</p>
+<h4 id="2-Hello报文（Hello-Packet）"><a href="#2-Hello报文（Hello-Packet）" class="headerlink" title="2. Hello报文（Hello Packet）"></a>2. Hello报文（Hello Packet）</h4><p>最常用的一种报文，周期性的发送给邻居路由器用来维持邻居关系以及DR/BDR的选举，内容包括一些定时器的数值、DR、BDR以及自己已知的邻居。</p>
+<p><img src="https://img-blog.csdnimg.cn/cd7067b17dc74e46beea354fa2212bef.gif" data-original="https://res.h3c.com/cn/201212/11/20121211_1490343_image010_605874_30003_0.png" alt="img"></p>
+<p>Hello报文格式</p>
+<p>主要字段解释如下：</p>
+<ul>
+<li><p>Network Mask：发送Hello报文的接口所在网络的掩码，如果相邻两台路由器的网络掩码不同，则不能建立邻居关系。</p>
+</li>
+<li><p>HelloInterval：发送Hello报文的时间间隔。如果相邻两台路由器的Hello间隔时间不同，则不能建立邻居关系。</p>
+</li>
+<li><p>Rtr Pri：路由器优先级。如果设置为0，则该路由器接口不能成为DR/BDR。</p>
+</li>
+<li><p>RouterDeadInterval：失效时间。如果在此时间内未收到邻居发来的Hello报文，则认为邻居失效。如果相邻两台路由器的失效时间不同，则不能建立邻居关系。</p>
+</li>
+<li><p>Designated Router：指定路由器的接口的IP地址。</p>
+</li>
+<li><p>Backup Designated Router：备份指定路由器的接口的IP地址。</p>
+</li>
+<li><p>Neighbor：邻居路由器的Router ID。</p>
+<img src="https://img-blog.csdnimg.cn/cd7067b17dc74e46beea354fa2212bef.gif" data-original="https://img-blog.csdnimg.cn/ed241cdeacd14902abdfb30fb69619c0.png" alt="img" style="zoom:67%;">
 
-
-
-
-
-<center>=====================================================================================</center>
-
-<p>网络地址转换技术NAT （<strong>Network Address Translation</strong>）主要用于实现位于内部 网络的主机访问外部网络的功能。当局域网内的主机需要访问外部网络时，通过NAT技术可以将其私网地址转换为公网地址，并且多个私网用户可以共用一个公网地址，这样既可保证网络互通，又节省了公网地址。</p>
-<h3 id="静态NAT"><a href="#静态NAT" class="headerlink" title="静态NAT"></a>静态NAT</h3><p><img src="https://img-blog.csdnimg.cn/cd7067b17dc74e46beea354fa2212bef.gif" data-original="https://img-blog.csdnimg.cn/c608a17e98364279b4e91b6843b36560.png"></p>
-<h3 id="动态NAT"><a href="#动态NAT" class="headerlink" title="动态NAT"></a>动态NAT</h3><p><img src="https://img-blog.csdnimg.cn/cd7067b17dc74e46beea354fa2212bef.gif" data-original="https://img-blog.csdnimg.cn/bb103022f18f43d098c2762ec4b91d15.png"></p>
-<p><img src="https://img-blog.csdnimg.cn/cd7067b17dc74e46beea354fa2212bef.gif" data-original="https://img-blog.csdnimg.cn/abd7c699a5c540d3b27d7a733c1f1d33.png"></p>
-<p><img src="https://img-blog.csdnimg.cn/cd7067b17dc74e46beea354fa2212bef.gif" data-original="https://img-blog.csdnimg.cn/b28b2789d9d144ee9d78fd47ba19b58d.png"></p>
-<h3 id="NAPT"><a href="#NAPT" class="headerlink" title="NAPT"></a>NAPT</h3><p>前面的静态NAT和动态NAT在实际上是无法解决现实中的上网问题的，公网的ip地址是不够的。</p>
-<p> <strong>网络地址端口转换——NAPT</strong></p>
-<p>网络地址端口转换NAPT（Network Address Port Translation）是人们比较熟悉的一种转换方式。NAPT普遍应用于 <a target="_blank" rel="noopener" href="http://baike.baidu.com/view/3401765.htm">接入设备</a>中，它可以将中小型的网络隐藏在一个合法的IP地址后面。NAPT与 <a target="_blank" rel="noopener" href="http://baike.baidu.com/view/1449967.htm">动态地址</a>NAT不同，它将内部连接映射到外部网络中的一个单独的IP地址上，同时在该地址上加上一个由NAT设备选定的TCP <a target="_blank" rel="noopener" href="http://baike.baidu.com/view/642103.htm">端口号</a>。</p>
-<p>NAPT是一种较流行的NAT的变体通过转换TCP或UDP协议 <a target="_blank" rel="noopener" href="http://baike.baidu.com/view/642103.htm">端口号</a>以及地址来提供并发性。除了一对源和目的IP地址以外，这个表还包括一对源和目的协议 <a target="_blank" rel="noopener" href="http://baike.baidu.com/view/642103.htm">端口号</a>，以及NAT盒使用的一个协议端口号。<font color="red">注意：在NAPT中不是一台PC对应一个协议端口，而是一台PC中的一个进程（会话）对应一个协议端口。一共有65535个端口，且同一协议端口在被占用时，不会被其他进程同时占用。只有这个端口绑定的进程被网关释放掉才会重新回到池子里</font></p>
-<p>NAPT的主要优势在于，能够使用一个全球有效IP地址获得通用性。主要缺点在于其通信仅限于TCP或UDP。只要所有通信都采用TCP或UDP，NAPT就允许一台内部计算机访问多台外部计算机，并允许多台内部 <a target="_blank" rel="noopener" href="http://baike.baidu.com/view/23880.htm">主机</a>访问同一台外部计算机，相互之间不会发生冲突。</p>
-<p><font color="red"><strong>NAPT与NAT的区别在于，NAPT不仅转换IP包中的IP地址，还对IP包中TCP和UDP的Port进行转换。这使得多台私有网主机利用1个NAT公共IP就可以同时和公共网进行通信。（NAPT多了对TCP和UDP的端口号的转换）</strong></font></p>
-<p><img src="https://img-blog.csdnimg.cn/cd7067b17dc74e46beea354fa2212bef.gif" data-original="https://img-blog.csdnimg.cn/448e18989a424749ae4601475aa6ab06.png"></p>
-<h3 id="Easy-IP"><a href="#Easy-IP" class="headerlink" title="Easy IP"></a>Easy IP</h3><p><img src="https://img-blog.csdnimg.cn/cd7067b17dc74e46beea354fa2212bef.gif" data-original="https://img-blog.csdnimg.cn/33b8de246dfc47259b09c62681d9baf2.png"></p>
-<p><img src="https://img-blog.csdnimg.cn/cd7067b17dc74e46beea354fa2212bef.gif" data-original="https://img-blog.csdnimg.cn/ebbe33d9f27f44fbbd503f8ab849a8be.png"></p>
-<h3 id="NAT服务器"><a href="#NAT服务器" class="headerlink" title="NAT服务器"></a>NAT服务器</h3><p><img src="https://img-blog.csdnimg.cn/cd7067b17dc74e46beea354fa2212bef.gif" data-original="https://img-blog.csdnimg.cn/a3c6723e2e6e4ee3a1734e009a1fff78.png"></p>
-<center>=====================================================================================</center>
-
-<h3 id="PPPoE"><a href="#PPPoE" class="headerlink" title="PPPoE"></a>PPPoE</h3><p>1.定义</p>
-<p>PPPoE（PPP over Ethernet）协议是一种把PPP帧封装到以太网帧中的链路层协议。PPPoE可以使以太网网络中的多台主机连接到远端的宽带接入服务器。</p>
-<p>2.目的</p>
-<p>运营商希望把一个站点上的多台主机连接到同一台远程接入设备，同时接入设备能够提供与拨号上网类似的访问控制和计费功能。在众多的接入技术中，把多个主机连接到接入设备的最经济的方法就是以太网，而PPP协议可以提供良好的访问控制和计费功能，于是产生了在以太网上传输PPP报文的技术，即PPPoE。</p>
-<p>PPPoE利用以太网将大量主机组成网络，通过一个远端接入设备连入因特网，并运用PPP协议对接入的每个主机进行控制，具有适用范围广、安全性高、计费方便的特点。</p>
-<p>3.PPPoE拨号的过程</p>
-<p><img src="https://img-blog.csdnimg.cn/cd7067b17dc74e46beea354fa2212bef.gif" data-original="https://img-blog.csdnimg.cn/7cb115fc3f1b4d85a269ce898998f928.png"></p>
-<p>3.1.Discovery阶段</p>
-<p>1)PPPoE Client广播发送一个PADI（PPPoE Active Discovery Initial）报文，在此报文中包含PPPoE Client想要得到的服务类型信息。</p>
-<p>2)所有的PPPoE Server收到PADI报文之后，将其中请求的服务与自己能够提供的服务进行比较，如果可以提供，则单播回复一个PADO（PPPoE Active Discovery Offer）报文。</p>
-<p>3)根据网络的拓扑结构，PPPoE Client可能收到多个PPPoE Server发送的PADO报文，PPPoE Client选择最先收到的PADO报文对应的PPPoE  Server做为自己的PPPoE Server，并单播发送一个PADR（PPPoE Active Discovery Request）报文。</p>
-<p>4)PPPoE Server产生一个唯一的会话ID（Session ID），标识和PPPoE Client的这个会话，通过发送一个PADS（PPPoE  Active Discovery Session-confirmation）报文把会话ID发送给PPPoE  Client，会话建立成功后便进入PPPoE Session阶段。</p>
-<p>完成之后通信双方都会知道PPPoE的Session_ID以及对方的以太网地址，它们共同确定了唯一的PPPoE Session。</p>
-<p>3.2.Session阶段</p>
-<p>PPPoE Session上的PPP协商和普通的PPP协商方式一致，分为LCP、认证、NCP三个阶段。</p>
-<p>1)LCP阶段主要完成建立、配置和检测数据链路连接。</p>
-<p>2)LCP协商成功后，开始进行认证，认证协议类型由LCP协商结果（CHAP或者PAP）决定。</p>
-<p>3)认证成功后，PPP进入NCP阶段。NCP是一个协议族，用于配置不同的网络层协议，常用的是IP控制协议（IPCP），它主要负责协商用户的IP地址和DNS服务器地址。</p>
-<p>PPPoE Session的PPP协商成功后，就可以承载PPP数据报文。</p>
-<p>在PPPoE Session阶段所有的以太网数据包都是单播发送的。</p>
-<p>3.3.Terminate阶段</p>
-<p>PPP通信双方可以使用PPP协议自身来结束PPPoE会话，当无法使用PPP协议结束会话时可以使用PADT（PPPoE Active Discovery Terminate）报文。</p>
-<p>进入PPPoE Session阶段后，PPPoE Client和PPPoE  Server都可以通过发送PADT报文的方式来结束PPPoE连接。PADT数据包可以在会话建立以后的任意时刻单播发送。在发送或接收到PADT后，就不允许再使用该会话发送PPP流量了。</p>
-<p><img src="https://img-blog.csdnimg.cn/cd7067b17dc74e46beea354fa2212bef.gif" data-original="https://img-blog.csdnimg.cn/7873fb913c714b6cb593dec57b7a287a.png"></p>
+<p>在广播和NBMA的网络中如果router priority 的数值为0 ，表示不参与DR和BDR的选举。</p>
+<p> <strong>默认下  广播网和p2p—– hello 10秒，dead interval  40秒</strong>      </p>
+<p>​               <strong>NBMA和p2mp—–  hello 30秒，dead interval  120秒</strong></p>
+<p>默认情况下，ospf的接口下hello的死亡时间为hello时间的4倍。默认的hello的时间为10秒钟，Dead Intervel 为40秒。</p>
+<p>修改hello的时间值。</p>
+<pre class="line-numbers language-none"><code class="language-none">进入到接口模式下
+int g0/0/0
+ospf timer hello 3 
+修改之后，如果两边的Hello时间不一致了，邻居就会down掉的哦。<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre></li>
+</ul>
+<h4 id="3-DD报文（Database-Description-Packet）"><a href="#3-DD报文（Database-Description-Packet）" class="headerlink" title="3. DD报文（Database Description Packet）"></a>3. DD报文（Database Description Packet）</h4><p>两台路由器进行数据库同步时，用DD报文来描述自己的LSDB，内容包括LSDB中每一条LSA的Header（LSA的Header可以唯一标识一条LSA）。LSA Header只占一条LSA的整个数据量的一小部分，这样可以减少路由器之间的协议报文流量，对端路由器根据LSA Header就可以判断出是否已有这条LSA。</p>
+<p><img src="https://img-blog.csdnimg.cn/cd7067b17dc74e46beea354fa2212bef.gif" data-original="https://res.h3c.com/cn/201212/11/20121211_1490344_image011_605874_30003_0.png" alt="img"></p>
+<p>DD报文格式</p>
+<p>主要字段的解释如下：</p>
+<ul>
+<li><p>Interface MTU：在不分片的情况下，此接口最大可发出的IP报文长度。</p>
+</li>
+<li><p>I（Initial）：当发送连续多个DD报文时，如果这是第一个DD报文，则置为1，否则置为0。</p>
+</li>
+<li><p>M（More）：当连续发送多个DD报文时，如果这是最后一个DD报文，则置为0。否则置为1，表示后面还有其他的DD报文。</p>
+</li>
+<li><p>MS（Master/Slave）：当两台OSPF路由器交换DD报文时，首先需要确定双方的主（Master）从（Slave）关系，Router ID大的一方会成为Master。当值为1时表示发送方为Master。</p>
+</li>
+<li><p>DD Sequence Number：DD报文序列号，由Master方规定起始序列号，每发送一个DD报文序列号加1，Slave方使用Master的序列号作为确认。主从双方利用序列号来保证DD报文传输的可靠性和完整性。</p>
+<img src="https://img-blog.csdnimg.cn/cd7067b17dc74e46beea354fa2212bef.gif" data-original="https://img-blog.csdnimg.cn/165cef9a38124da9858bf493f809dd9e.png" alt="img" style="zoom:67%;"></li>
+</ul>
+<h4 id="4-LSR报文（Link-State-Request-Packet）"><a href="#4-LSR报文（Link-State-Request-Packet）" class="headerlink" title="4. LSR报文（Link State Request Packet）"></a>4. LSR报文（Link State Request Packet）</h4><p>两台路由器互相交换过DD报文之后，知道对端的路由器有哪些LSA是本地的LSDB所缺少的，这时需要发送LSR报文向对方请求所需的LSA。内容包括所需要的LSA的摘要。LSR报文格式如图12所示。</p>
+<p><img src="https://img-blog.csdnimg.cn/cd7067b17dc74e46beea354fa2212bef.gif" data-original="https://res.h3c.com/cn/201212/11/20121211_1490345_image012_605874_30003_0.png" alt="img"></p>
+<p>LSR报文格式</p>
+<p>主要字段解释如下：</p>
+<ul>
+<li><p>LS type：链路状态类型。例如Type1表示Router LSA。</p>
+</li>
+<li><p>Link State ID：链路状态标识，根据LSA的类型而定。</p>
+</li>
+<li><p>Advertising Router：产生此LSA的路由器的Router ID。</p>
+</li>
+<li><img src="https://img-blog.csdnimg.cn/cd7067b17dc74e46beea354fa2212bef.gif" data-original="https://img-blog.csdnimg.cn/1a2877900bfa4cc8be176ca231c98bc9.png" style="zoom:67%;"></li>
+</ul>
+<h4 id="5-LSU报文（Link-State-Update-Packet）"><a href="#5-LSU报文（Link-State-Update-Packet）" class="headerlink" title="5. LSU报文（Link State Update Packet）"></a>5. LSU报文（Link State Update Packet）</h4><p>LSU报文用来向对端路由器发送所需要的LSA，内容是多条LSA（全部内容）的集合。LSU报文格式如图13所示。</p>
+<p><img src="https://img-blog.csdnimg.cn/cd7067b17dc74e46beea354fa2212bef.gif" data-original="https://res.h3c.com/cn/201212/11/20121211_1490346_image013_605874_30003_0.png" alt="img"></p>
+<p>LSU报文格式</p>
+<p>主要字段解释如下：</p>
+<ul>
+<li><p>Number of LSAs：该报文包含的LSA的数量。</p>
+</li>
+<li><p>LSAs：该报文包含的所有LSA。</p>
+<img src="https://img-blog.csdnimg.cn/cd7067b17dc74e46beea354fa2212bef.gif" data-original="https://img-blog.csdnimg.cn/e3f26a7f24dc42a8bbedb03fc8afa924.png" style="zoom:67%;"></li>
+</ul>
+<h4 id="6-LSAck报文（Link-State-Acknowledgment-Packet）"><a href="#6-LSAck报文（Link-State-Acknowledgment-Packet）" class="headerlink" title="6. LSAck报文（Link State Acknowledgment Packet）"></a>6. LSAck报文（Link State Acknowledgment Packet）</h4><p>LSAck报文用来对接收到的LSU报文进行确认，内容是需要确认的LSA的Header。一个LSAck报文可对多个LSA进行确认。报文格式如图14所示。</p>
+<p><img src="https://img-blog.csdnimg.cn/cd7067b17dc74e46beea354fa2212bef.gif" data-original="https://res.h3c.com/cn/201212/11/20121211_1490347_image014_605874_30003_0.png" alt="img"></p>
+<p>LSAck报文格式</p>
+<p>主要字段解释如下：</p>
+<ul>
+<li>LSA Headers：该报文包含的LSA头部</li>
+<li><img src="https://img-blog.csdnimg.cn/cd7067b17dc74e46beea354fa2212bef.gif" data-original="https://img-blog.csdnimg.cn/5a3ed9bc87ac464d95058f2b8dc68d8e.png" style="zoom:67%;"></li>
+</ul>
 
                 
             </div>
@@ -689,7 +726,7 @@ https://blog.csdn.net/weixin_34481217/article/details/123425141<span aria-hidden
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="https://uprightokra.github.io/2022-10-11-shu-tong-13-dhcp-dns-pppoe.html">https://uprightokra.github.io/2022-10-11-shu-tong-13-dhcp-dns-pppoe.html</a>
+                    <a href="https://uprightokra.github.io/2022-11-12-shu-tong-17-ospf-de-bao-wen-ge-shi.html">https://uprightokra.github.io/2022-11-12-shu-tong-17-ospf-de-bao-wen-ge-shi.html</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -727,8 +764,8 @@ https://blog.csdn.net/weixin_34481217/article/details/123425141<span aria-hidden
                     
                         <div class="article-tag">
                             
-                                <a href="/tags/DHCP-DNS-PPPOE/">
-                                    <span class="chip bg-color">DHCP+DNS+PPPOE</span>
+                                <a href="/tags/OSPF/">
+                                    <span class="chip bg-color">OSPF</span>
                                 </a>
                             
                         </div>
@@ -1228,16 +1265,17 @@ https://blog.csdn.net/weixin_34481217/article/details/123425141<span aria-hidden
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
+                <i class="far fa-dot-circle"></i>&nbsp;本篇
+            </div>
             <div class="card">
-                <a href="/2022-10-11-shi-yan-ensp-dhcp-quan-ju-di-zhi-chi-he-jie-kou-di-zhi-chi-de-pei-zhi.html">
+                <a href="/2022-11-12-shu-tong-17-ospf-de-bao-wen-ge-shi.html">
                     <div class="card-image">
                         
-                        <img src="https://img-blog.csdnimg.cn/cd7067b17dc74e46beea354fa2212bef.gif" data-original="https://img-blog.csdnimg.cn/4aa36e431ab84089a57b83c5b025d9ac.jpeg" class="responsive-img" alt="实验ensp-DHCP全局地址池和接口地址池的配置">
+                        <img src="https://img-blog.csdnimg.cn/cd7067b17dc74e46beea354fa2212bef.gif" data-original="https://img-blog.csdnimg.cn/76b623508e8343c6b839b90f9432a83c.png" class="responsive-img" alt="数通 17-OSPF的报文格式">
                         
-                        <span class="card-title">实验ensp-DHCP全局地址池和接口地址池的配置</span>
+                        <span class="card-title">数通 17-OSPF的报文格式</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -1247,26 +1285,27 @@ https://blog.csdn.net/weixin_34481217/article/details/123425141<span aria-hidden
                         
                     </div>
                     <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2022-10-11
-                        </span>
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2022-11-12
+                            </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/ensp%E5%AE%9E%E9%AA%8C/" class="post-category">
-                                    ensp实验
+                            <a href="/categories/%E7%BD%91%E7%BB%9C%E5%9F%BA%E7%A1%80/" class="post-category">
+                                    网络基础
                                 </a>
                             
                             
                         </span>
                     </div>
                 </div>
+
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/%E5%85%A8%E5%B1%80%E3%80%81%E6%8E%A5%E5%8F%A3%E5%9C%B0%E5%9D%80%E6%B1%A0/">
-                        <span class="chip bg-color">全局、接口地址池</span>
+                    <a href="/tags/OSPF/">
+                        <span class="chip bg-color">OSPF</span>
                     </a>
                     
                 </div>
@@ -1280,12 +1319,12 @@ https://blog.csdn.net/weixin_34481217/article/details/123425141<span aria-hidden
                 下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2022-10-10-aaa-pei-zhi.html">
+                <a href="/2022-10-24-shu-tong-16-ospf-de-ji-ben-gai-nian.html">
                     <div class="card-image">
                         
-                        <img src="https://img-blog.csdnimg.cn/cd7067b17dc74e46beea354fa2212bef.gif" data-original="https://img-blog.csdnimg.cn/3329ca491b794194a23d6b71671933c7.jpeg" class="responsive-img" alt="AAA配置">
+                        <img src="https://img-blog.csdnimg.cn/cd7067b17dc74e46beea354fa2212bef.gif" data-original="https://img-blog.csdnimg.cn/76b623508e8343c6b839b90f9432a83c.png" class="responsive-img" alt="数通 16-OSPF的基本概念">
                         
-                        <span class="card-title">AAA配置</span>
+                        <span class="card-title">数通 16-OSPF的基本概念</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -1296,7 +1335,7 @@ https://blog.csdn.net/weixin_34481217/article/details/123425141<span aria-hidden
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2022-10-10
+                                <i class="far fa-clock fa-fw icon-date"></i>2022-10-24
                             </span>
                         <span class="publish-author">
                             
@@ -1313,8 +1352,8 @@ https://blog.csdn.net/weixin_34481217/article/details/123425141<span aria-hidden
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/AAA/">
-                        <span class="chip bg-color">AAA</span>
+                    <a href="/tags/OSPF/">
+                        <span class="chip bg-color">OSPF</span>
                     </a>
                     
                 </div>
