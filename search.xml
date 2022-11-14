@@ -4,6 +4,81 @@
   
     
     <entry>
+      <title>实验ensp OSPF报文认证</title>
+      <link href="/2022-11-14-shi-yan-ensp-ospf-bao-wen-ren-zheng.html"/>
+      <url>/2022-11-14-shi-yan-ensp-ospf-bao-wen-ren-zheng.html</url>
+      
+        <content type="html"><![CDATA[<h1 id="OSPF报文认证"><a href="#OSPF报文认证" class="headerlink" title="OSPF报文认证"></a><center>OSPF报文认证</center></h1><h2 id="拓扑图"><a href="#拓扑图" class="headerlink" title="拓扑图"></a>拓扑图</h2><p><img src="https://img-blog.csdnimg.cn/a0d8cd29a21f4e1ca1017b5ddcb8a5e3.png"></p><p>实验目的：为保证Area0的安全性，需要在Area0开启区域认证，使用MD5的验证方式，密码为Huawei123.R3和R4之间开启接口认证，使用明文的认证方式，密码为HWArea1。</p><h2 id="实验步骤"><a href="#实验步骤" class="headerlink" title="实验步骤"></a>实验步骤</h2><p>在Area0配置视图下使用<strong>authentication-mode md5 1 cipher Huawei123</strong>命令，将区域内设备激活OSPF的MD5认证。在该命令中，数值1为Key-ID，Huawei123为口令。</p><p>R1:</p><pre class="line-numbers language-none"><code class="language-none">[R1]ospf 1[R1-ospf-1]area 0[R1-ospf-1-area-0.0.0.0]authentication-mode md5 1 cipher Huawei123#MD5认证方式#1Key-ID#cipher密文<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre><p>R2:</p><pre class="line-numbers language-none"><code class="language-none">[R2]ospf 1[R2-ospf-1]area 0[R2-ospf-1-area-0.0.0.0]authentication-mode md5 1 cipher Huawei123<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre><p>R3:</p><pre class="line-numbers language-none"><code class="language-none">[R3]ospf 1[R3-ospf-1]area 0[R3-ospf-1-area-0.0.0.0]authentication-mode md5 1 cipher Huawei123<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre><p>Wireshark抓包</p><p><img src="https://img-blog.csdnimg.cn/5963400511094ef797c2dd7325ae4474.png"></p><p>接下来配置R3和R4之间的接口认证，接口认证方式用于在直连的设备之间实现OSPF报文认证，它的优先级高于区域认证方式。</p><p>R3：</p><pre class="line-numbers language-none"><code class="language-none">[R3]interface GigabitEthernet 0/0/1[R3-GigabitEthernet0/0/1]ospf authentication-mode simple cipher HWArea1<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre><p>R4:</p><pre class="line-numbers language-none"><code class="language-none">[R4]interface GigabitEthernet 0/0/1[R4-GigabitEthernet0/0/1]ospf authentication-mode simple cipher HWArea1<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre><p>Wireshark抓包</p><p><img src="https://img-blog.csdnimg.cn/d8a314fad6fa49a0b8d40a6ee0446c90.png"></p>]]></content>
+      
+      
+      <categories>
+          
+          <category> ensp实验 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 报文认证 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>实验ensp Virtual Link的配置(二)</title>
+      <link href="/2022-11-14-shi-yan-ensp-virtual-link-de-pei-zhi-er.html"/>
+      <url>/2022-11-14-shi-yan-ensp-virtual-link-de-pei-zhi-er.html</url>
+      
+        <content type="html"><![CDATA[<h1 id="Virtual-Link的配置-二"><a href="#Virtual-Link的配置-二" class="headerlink" title="Virtual Link的配置(二)"></a><center>Virtual Link的配置(二)</center></h1><h2 id="拓扑图"><a href="#拓扑图" class="headerlink" title="拓扑图"></a>拓扑图</h2><p><img src="https://img-blog.csdnimg.cn/9b0366e4490d453e8e1876be0143a398.png" alt="img"></p><p>在这个网络中，R4并没有与Area0直接相连，<font color="red">因此R3并非实际意义上的ABR</font>,所以它无法向Area1中注入用来描述区域间路由的Type-3 LSA，同时R3也无法向Area2内注入到达Area0及Area1的内网段路由Type-3 LSA。Area相对于整个OSPF域来说就是一个孤岛。</p><h2 id="实验步骤"><a href="#实验步骤" class="headerlink" title="实验步骤"></a>实验步骤</h2><p>1.实现OSPF基础配置，使用display ospf routing查看R4的OSPF路由表，可以看见R4的OSPF路由表是空的。而位于Area0和Area1的路由器的OSPF表是可以看到路由信息的。</p><p><img src="https://img-blog.csdnimg.cn/474444a5f9f6423e99c663813af3cb83.png"></p><img src="https://img-blog.csdnimg.cn/7721471929e84188ba7aa93f8ed5f963.png" style="zoom:80%;"><p>因为R3无法向Area1中注入用来描述区域间路由的Type-3 LSA，同时R3也无法向Area2内注入到达Area0及Area1的内网段路由Type-3 LSA。位于其他区域的路由器当然就不知道去往Area2的路由了。</p><p>2.解决方法就是在R2和R3之间创建一条Vritual Link，实现Area2与Area0之间的连接。</p><blockquote><p>Virtual Link将作为Area0的一段延伸，R2和R3相当于建立了一条隐形的通道，在链路两端建立邻接关系，且会保持Hello包周期性的发送，已确定链路双方的存活情况。</p><p>当Virtual Link创建完毕后，R3就变成了具有实际意义的ABR，这个时候R3就可以完成Type-3 LSA向其他区域的注入，以及向Area2注入用于描述到达Area0和Area1的Type-3 LSA。</p></blockquote><p>R2:</p><pre class="line-numbers language-none"><code class="language-none">[R2]ospf 1[R2-ospf-1]area 1[R2-ospf-1-area-0.0.0.1]vlink-peer 3.3.3.3<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre><p>R3:</p><pre class="line-numbers language-none"><code class="language-none">[R3]ospf 1[R3-ospf-1]area 1[R3-ospf-1-area-0.0.0.1]vlink-peer 2.2.2.2<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre><p>3.使用display ospf vlink，查看Virtual link连接状态</p><p><img src="https://img-blog.csdnimg.cn/f6e716f6904140b3aa4cbe9aa1b0f608.png"></p><p>4.测试R4与R1之间的连通性</p><p>正常来说应该是可以ping通 的，这里不知道为什么这里不行</p><p><img src="https://img-blog.csdnimg.cn/9e4ef03a95d94bf281a5d23c04d6a0cf.png"></p><p>5.查看R3和R2上的OSPF路由表，可以看见R2上去往192.168.34.0网段的路由类型为Inter-area。</p><p><img src="https://img-blog.csdnimg.cn/7a4cb32438124206b1cb0d658817e813.png"></p><p><img src="https://img-blog.csdnimg.cn/761325d5ca174a20a22c0b056ac194b6.png"></p><p>6.查看R4上的路由表，发现并没有前往R1的路由。不知道原因，应该是哪里命令错误了。</p><p><img src="https://img-blog.csdnimg.cn/49645bcaa3534d37b3140a1cb13d515a.png"></p><p>7.重新创建一个新的拓扑</p><p><img src="https://img-blog.csdnimg.cn/f77849835f5040c2b58a96614924612b.png"></p><p>R11：</p><pre class="line-numbers language-none"><code class="language-none">&lt;Huawei&gt;sys[Huawei]un in en[Huawei]int g0/0/0[Huawei-GigabitEthernet0/0/0]ip add 192.168.12.1 24[Huawei-GigabitEthernet0/0/0]q[Huawei]ospf 1 router-id 1.1.1.1[Huawei-ospf-1]area 0[Huawei-ospf-1-area-0.0.0.0]net 192.168.12.1 0.0.0.0<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre><p>R12:</p><pre class="line-numbers language-none"><code class="language-none">&lt;Huawei&gt;sys[Huawei]un in en[Huawei]int g0/0/0[Huawei-GigabitEthernet0/0/0]ip add 192.168.12.2 24[Huawei-GigabitEthernet0/0/0]int g0/0/1[Huawei-GigabitEthernet0/0/1]ip add 192.168.23.2 24[Huawei-GigabitEthernet0/0/1]q[Huawei]ospf 1 router-id 2.2.2.2[Huawei-ospf-1]area 0[Huawei-ospf-1-area-0.0.0.0]net 192.168.12.2 0.0.0.0[Huawei-ospf-1-area-0.0.0.0]area 1[Huawei-ospf-1-area-0.0.0.1]net 192.168.23.2 0.0.0.0[Huawei-ospf-1-area-0.0.0.1]vlink-peer 3.3.3.3<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre><p>R13：</p><pre class="line-numbers language-none"><code class="language-none">&lt;Huawei&gt;sys[Huawei]un in en[Huawei]int g0/0/0[Huawei-GigabitEthernet0/0/0]ip add 192.168.23.3 24[Huawei-GigabitEthernet0/0/0]int g0/0/1[Huawei-GigabitEthernet0/0/1]ip add 192.168.34.3 24[Huawei-GigabitEthernet0/0/1]q[Huawei]ospf 1 router-id 3.3.3.3[Huawei-ospf-1]area 1[Huawei-ospf-1-area-0.0.0.1]net 192.168.23.3 0.0.0.0[Huawei-ospf-1-area-0.0.0.1]area 2[Huawei-ospf-1-area-0.0.0.2]net 192.168.34.3 0.0.0.0[Huawei-ospf-1-area-0.0.0.2]area 1[Huawei-ospf-1-area-0.0.0.1]vlink-peer 2.2.2.2<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre><p>R14:</p><pre class="line-numbers language-none"><code class="language-none">&lt;Huawei&gt;sys[Huawei]un in en[Huawei]int g0/0/0[Huawei-GigabitEthernet0/0/0]ip add 192.168.34.4 24[Huawei-GigabitEthernet0/0/0]q[Huawei]ospf 1 router-id 4.4.4.4[Huawei-ospf-1]area 2[Huawei-ospf-1-area-0.0.0.2]net 192.168.34.4 0.0.0.0<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre><p>8.再次ping成功，查看R2上的OSPF路由表</p><p><img src="https://img-blog.csdnimg.cn/8b19fb316bb44d9d9c9b02584e60b311.png"></p><p><img src="https://img-blog.csdnimg.cn/93a72206da5544a2b12456361e5f3f37.png"></p>]]></content>
+      
+      
+      <categories>
+          
+          <category> ensp实验 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> Virtual Link </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>实验ensp Virtual Link的配置(一)</title>
+      <link href="/2022-11-14-shi-yan-ensp-virtual-link-de-pei-zhi-yi.html"/>
+      <url>/2022-11-14-shi-yan-ensp-virtual-link-de-pei-zhi-yi.html</url>
+      
+        <content type="html"><![CDATA[<h1 id="Virtual-Link的配置-一"><a href="#Virtual-Link的配置-一" class="headerlink" title="Virtual Link的配置(一)"></a><center>Virtual Link的配置(一)</center></h1><h2 id="拓扑图"><a href="#拓扑图" class="headerlink" title="拓扑图"></a>拓扑图</h2><img src="https://img-blog.csdnimg.cn/41f5d37971e84e61a919c2141686ba96.png" alt="img" style="zoom:67%;"><p>在图中，R1、R2及R3三台路由器运行了OSPF，网络中规划了两个区域，其中R2及R3在Area23中建立了邻接关系。现在R2将直连接口 GE0/0/0在Area0 中激活OSPF，这样R2在Area0中泛洪Type-1 LSA将包含描述其直连接口GE0/0/0的信息。R3可以通过Area0内泛洪的Type-1、Type-2 LSA计算出到达192.168.2.0/24的区域内路由。另一方面，R2作为ABR，也会描述区域间路由192.168.2.0/24的Type-3 LSA注入Area23。那么R3就会通过该Type-3 LSA计算出到达192.168.2.0/24的区域间路由，且该路由比R3在Area0中计算出到达192.168.2.0/24的路由Cost要更优。</p><p>此时R3的OSPF路由表</p><p><img src="https://img-blog.csdnimg.cn/2b6b229e2b794984ab9564a1ad4d31a2.png" alt="img"></p><p>但是，R3同样是一台ABR，他不能够使用自己在非0区域中收到的Type-3 LSA来计算区域间路由，因此无论路径的Cost如何，R3都会选择从R1到达192.168.2.0/24.</p><p>实验目的：通过配置V-Link解决OSPF的次优路径选择问题，在R2和R3之间跨越Area23建立一条Virtual Link，使得R2能借助这一条Virtual link直接将Type-1 LSA发送给R3，而不是Area0中经过R1的Type-1 LSA。</p><h2 id="实验步骤"><a href="#实验步骤" class="headerlink" title="实验步骤"></a>实验步骤</h2><p>1.建立Virtual-Link邻居</p><p>R2：</p><pre class="line-numbers language-none"><code class="language-none">[R2]ospf 1[R2-ospf-1]area 23[R2-ospf-1-area-0.0.0.23]vlink-peer 3.3.3.3<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre><p>R3:</p><pre class="line-numbers language-none"><code class="language-none">[R3]ospf 1[R3-ospf-1]area 23[R3-ospf-1-area-0.0.0.23]vlink-peer 2.2.2.2<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre><p>2.使用display ospf vlink 命令查看关于Virtual Link的相关信息。</p><p><img src="https://img-blog.csdnimg.cn/d26846c36e0b4378bce0fa49648a4966.png" alt="img"></p><p>从图片可以看出，R2与R3之间已经建立了一条Virtual Link线路，状态为Full，而且Cost为1.</p><p>3.使用display ospf routing命令，查看ospf路由表</p><img src="C:\Users\Okra\AppData\Roaming\Typora\typora-user-images\image-20221114102622900.png" alt="image-20221114102622900" style="zoom: 80%;"><p>现在我们可以发现，R3到达192.168.2.0/24的路由下一条已经变成了R2的192.168.23.2/24接口，即使用高带宽链路转发去往目标网段的流量。</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> ensp实验 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> Virtual Link </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>数通 19-OSPF协议特性</title>
       <link href="/2022-11-12-shu-tong-19-ospf-xie-yi-te-xing.html"/>
       <url>/2022-11-12-shu-tong-19-ospf-xie-yi-te-xing.html</url>

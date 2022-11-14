@@ -6,7 +6,7 @@
   <link href="https://uprightokra.github.io/atom.xml" rel="self"/>
   
   <link href="https://uprightokra.github.io/"/>
-  <updated>2022-11-12T14:25:31.838Z</updated>
+  <updated>2022-11-14T08:01:44.939Z</updated>
   <id>https://uprightokra.github.io/</id>
   
   <author>
@@ -17,11 +17,86 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>实验ensp OSPF报文认证</title>
+    <link href="https://uprightokra.github.io/2022-11-14-shi-yan-ensp-ospf-bao-wen-ren-zheng.html"/>
+    <id>https://uprightokra.github.io/2022-11-14-shi-yan-ensp-ospf-bao-wen-ren-zheng.html</id>
+    <published>2022-11-14T07:20:35.000Z</published>
+    <updated>2022-11-14T08:01:44.939Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h1 id=&quot;OSPF报文认证&quot;&gt;&lt;a href=&quot;#OSPF报文认证&quot; class=&quot;headerlink&quot; title=&quot;OSPF报文认证&quot;&gt;&lt;/a&gt;&lt;center&gt;OSPF报文认证&lt;/center&gt;&lt;/h1&gt;&lt;h2 id=&quot;拓扑图&quot;&gt;&lt;a href=&quot;#拓扑图&quot;</summary>
+        
+      
+    
+    
+    
+    <category term="ensp实验" scheme="https://uprightokra.github.io/categories/ensp%E5%AE%9E%E9%AA%8C/"/>
+    
+    
+    <category term="报文认证" scheme="https://uprightokra.github.io/tags/%E6%8A%A5%E6%96%87%E8%AE%A4%E8%AF%81/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>实验ensp Virtual Link的配置(二)</title>
+    <link href="https://uprightokra.github.io/2022-11-14-shi-yan-ensp-virtual-link-de-pei-zhi-er.html"/>
+    <id>https://uprightokra.github.io/2022-11-14-shi-yan-ensp-virtual-link-de-pei-zhi-er.html</id>
+    <published>2022-11-14T02:58:00.000Z</published>
+    <updated>2022-11-14T07:16:42.318Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h1 id=&quot;Virtual-Link的配置-二&quot;&gt;&lt;a href=&quot;#Virtual-Link的配置-二&quot; class=&quot;headerlink&quot; title=&quot;Virtual Link的配置(二)&quot;&gt;&lt;/a&gt;&lt;center&gt;Virtual</summary>
+        
+      
+    
+    
+    
+    <category term="ensp实验" scheme="https://uprightokra.github.io/categories/ensp%E5%AE%9E%E9%AA%8C/"/>
+    
+    
+    <category term="Virtual Link" scheme="https://uprightokra.github.io/tags/Virtual-Link/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>实验ensp Virtual Link的配置(一)</title>
+    <link href="https://uprightokra.github.io/2022-11-14-shi-yan-ensp-virtual-link-de-pei-zhi-yi.html"/>
+    <id>https://uprightokra.github.io/2022-11-14-shi-yan-ensp-virtual-link-de-pei-zhi-yi.html</id>
+    <published>2022-11-14T01:29:01.000Z</published>
+    <updated>2022-11-14T02:57:38.542Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h1 id=&quot;Virtual-Link的配置-一&quot;&gt;&lt;a href=&quot;#Virtual-Link的配置-一&quot; class=&quot;headerlink&quot; title=&quot;Virtual Link的配置(一)&quot;&gt;&lt;/a&gt;&lt;center&gt;Virtual</summary>
+        
+      
+    
+    
+    
+    <category term="ensp实验" scheme="https://uprightokra.github.io/categories/ensp%E5%AE%9E%E9%AA%8C/"/>
+    
+    
+    <category term="Virtual Link" scheme="https://uprightokra.github.io/tags/Virtual-Link/"/>
+    
+  </entry>
+  
+  <entry>
     <title>数通 19-OSPF协议特性</title>
     <link href="https://uprightokra.github.io/2022-11-12-shu-tong-19-ospf-xie-yi-te-xing.html"/>
     <id>https://uprightokra.github.io/2022-11-12-shu-tong-19-ospf-xie-yi-te-xing.html</id>
     <published>2022-11-12T14:10:30.000Z</published>
-    <updated>2022-11-12T14:25:31.838Z</updated>
+    <updated>2022-11-12T14:26:56.551Z</updated>
     
     
       
@@ -452,82 +527,6 @@
     
     
     <category term="SDN、NFV" scheme="https://uprightokra.github.io/tags/SDN%E3%80%81NFV/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>实验ensp-DHCP全局地址池和接口地址池的配置</title>
-    <link href="https://uprightokra.github.io/2022-10-11-shi-yan-ensp-dhcp-quan-ju-di-zhi-chi-he-jie-kou-di-zhi-chi-de-pei-zhi.html"/>
-    <id>https://uprightokra.github.io/2022-10-11-shi-yan-ensp-dhcp-quan-ju-di-zhi-chi-he-jie-kou-di-zhi-chi-de-pei-zhi.html</id>
-    <published>2022-10-11T07:46:21.000Z</published>
-    <updated>2022-10-11T14:57:51.039Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;h1 id=&quot;DHCP全局地址池和接口地址池的配置&quot;&gt;&lt;a href=&quot;#DHCP全局地址池和接口地址池的配置&quot; class=&quot;headerlink&quot;</summary>
-        
-      
-    
-    
-    
-    <category term="ensp实验" scheme="https://uprightokra.github.io/categories/ensp%E5%AE%9E%E9%AA%8C/"/>
-    
-    
-    <category term="全局、接口地址池" scheme="https://uprightokra.github.io/tags/%E5%85%A8%E5%B1%80%E3%80%81%E6%8E%A5%E5%8F%A3%E5%9C%B0%E5%9D%80%E6%B1%A0/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>数通 13-DHCP+DNS+PPPOE</title>
-    <link href="https://uprightokra.github.io/2022-10-11-shu-tong-13-dhcp-dns-pppoe.html"/>
-    <id>https://uprightokra.github.io/2022-10-11-shu-tong-13-dhcp-dns-pppoe.html</id>
-    <published>2022-10-11T05:18:29.000Z</published>
-    <updated>2022-11-12T13:40:29.316Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;h1 id=&quot;DHCP-DNS-PPPOE&quot;&gt;&lt;a href=&quot;#DHCP-DNS-PPPOE&quot; class=&quot;headerlink&quot; title=&quot;DHCP+DNS+PPPOE&quot;&gt;&lt;/a&gt;&lt;center&gt;DHCP+DNS+PPPOE&lt;/center&gt;&lt;/h1&gt;&lt;p&gt;&lt;a</summary>
-        
-      
-    
-    
-    
-    <category term="网络基础" scheme="https://uprightokra.github.io/categories/%E7%BD%91%E7%BB%9C%E5%9F%BA%E7%A1%80/"/>
-    
-    
-    <category term="DHCP+DNS+PPPOE" scheme="https://uprightokra.github.io/tags/DHCP-DNS-PPPOE/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>AAA配置</title>
-    <link href="https://uprightokra.github.io/2022-10-10-aaa-pei-zhi.html"/>
-    <id>https://uprightokra.github.io/2022-10-10-aaa-pei-zhi.html</id>
-    <published>2022-10-10T08:12:12.000Z</published>
-    <updated>2022-11-12T13:45:12.212Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;p&gt;&lt;em&gt;AAA&lt;/em&gt;是认证（Authentication）、授权（Authorization）和计费（Accounting）的简称，是网络安全中进行访问控制的一种安全管理机制，提供认证、授权和计费三种安全服务。&lt;/p&gt;
-&lt;p&gt;&lt;img</summary>
-        
-      
-    
-    
-    
-    <category term="网络基础" scheme="https://uprightokra.github.io/categories/%E7%BD%91%E7%BB%9C%E5%9F%BA%E7%A1%80/"/>
-    
-    
-    <category term="AAA" scheme="https://uprightokra.github.io/tags/AAA/"/>
     
   </entry>
   
