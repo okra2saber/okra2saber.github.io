@@ -6,7 +6,7 @@
   <link href="https://uprightokra.github.io/atom.xml" rel="self"/>
   
   <link href="https://uprightokra.github.io/"/>
-  <updated>2022-11-14T08:01:44.939Z</updated>
+  <updated>2022-11-15T14:28:37.807Z</updated>
   <id>https://uprightokra.github.io/</id>
   
   <author>
@@ -17,11 +17,36 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>实验ensp OSPF多进程</title>
+    <link href="https://uprightokra.github.io/2022-11-15-shi-yan-ensp-ospf-duo-jin-cheng.html"/>
+    <id>https://uprightokra.github.io/2022-11-15-shi-yan-ensp-ospf-duo-jin-cheng.html</id>
+    <published>2022-11-15T06:52:50.000Z</published>
+    <updated>2022-11-15T14:28:37.807Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h1 id=&quot;OSPF-多进程&quot;&gt;&lt;a href=&quot;#OSPF-多进程&quot; class=&quot;headerlink&quot; title=&quot;OSPF 多进程&quot;&gt;&lt;/a&gt;&lt;center&gt;OSPF 多进程&lt;/center&gt;&lt;/h1&gt;&lt;h2 id=&quot;拓扑图&quot;&gt;&lt;a href=&quot;#拓扑图&quot;</summary>
+        
+      
+    
+    
+    
+    <category term="ensp实验" scheme="https://uprightokra.github.io/categories/ensp%E5%AE%9E%E9%AA%8C/"/>
+    
+    
+    <category term="OSPF" scheme="https://uprightokra.github.io/tags/OSPF/"/>
+    
+  </entry>
+  
+  <entry>
     <title>实验ensp OSPF报文认证</title>
     <link href="https://uprightokra.github.io/2022-11-14-shi-yan-ensp-ospf-bao-wen-ren-zheng.html"/>
     <id>https://uprightokra.github.io/2022-11-14-shi-yan-ensp-ospf-bao-wen-ren-zheng.html</id>
     <published>2022-11-14T07:20:35.000Z</published>
-    <updated>2022-11-14T08:01:44.939Z</updated>
+    <updated>2022-11-14T08:41:31.965Z</updated>
     
     
       
@@ -46,7 +71,7 @@
     <link href="https://uprightokra.github.io/2022-11-14-shi-yan-ensp-virtual-link-de-pei-zhi-er.html"/>
     <id>https://uprightokra.github.io/2022-11-14-shi-yan-ensp-virtual-link-de-pei-zhi-er.html</id>
     <published>2022-11-14T02:58:00.000Z</published>
-    <updated>2022-11-14T07:16:42.318Z</updated>
+    <updated>2022-11-14T08:41:31.970Z</updated>
     
     
       
@@ -71,7 +96,7 @@
     <link href="https://uprightokra.github.io/2022-11-14-shi-yan-ensp-virtual-link-de-pei-zhi-yi.html"/>
     <id>https://uprightokra.github.io/2022-11-14-shi-yan-ensp-virtual-link-de-pei-zhi-yi.html</id>
     <published>2022-11-14T01:29:01.000Z</published>
-    <updated>2022-11-14T02:57:38.542Z</updated>
+    <updated>2022-11-14T08:41:31.968Z</updated>
     
     
       
@@ -171,7 +196,7 @@
     <link href="https://uprightokra.github.io/2022-10-24-shu-tong-16-ospf-de-ji-ben-gai-nian.html"/>
     <id>https://uprightokra.github.io/2022-10-24-shu-tong-16-ospf-de-ji-ben-gai-nian.html</id>
     <published>2022-10-24T12:16:48.000Z</published>
-    <updated>2022-11-12T11:25:15.496Z</updated>
+    <updated>2022-11-15T06:26:23.859Z</updated>
     
     
       
@@ -502,31 +527,6 @@
     
     
     <category term="园区网" scheme="https://uprightokra.github.io/tags/%E5%9B%AD%E5%8C%BA%E7%BD%91/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>数通 14-SDN与NFV概述</title>
-    <link href="https://uprightokra.github.io/2022-10-12-shu-tong-14-sdn-yu-nfv-gai-shu.html"/>
-    <id>https://uprightokra.github.io/2022-10-12-shu-tong-14-sdn-yu-nfv-gai-shu.html</id>
-    <published>2022-10-12T10:09:34.000Z</published>
-    <updated>2022-11-12T13:40:21.248Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;h1 id=&quot;SDN与NFV概述&quot;&gt;&lt;a href=&quot;#SDN与NFV概述&quot; class=&quot;headerlink&quot; title=&quot;SDN与NFV概述&quot;&gt;&lt;/a&gt;&lt;center&gt;SDN与NFV概述&lt;/center&gt;&lt;/h1&gt;&lt;p&gt;​        </summary>
-        
-      
-    
-    
-    
-    <category term="网络基础" scheme="https://uprightokra.github.io/categories/%E7%BD%91%E7%BB%9C%E5%9F%BA%E7%A1%80/"/>
-    
-    
-    <category term="SDN、NFV" scheme="https://uprightokra.github.io/tags/SDN%E3%80%81NFV/"/>
     
   </entry>
   
