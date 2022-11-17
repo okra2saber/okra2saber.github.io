@@ -555,21 +555,21 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2022-11-16
+                    2022-11-17
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    4k
+                    4.6k
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    14 分
+                    16 分
                 </div>
                 
 
@@ -604,7 +604,46 @@
 <h3 id="1-2-在ASBR上部署路由汇总"><a href="#1-2-在ASBR上部署路由汇总" class="headerlink" title="1.2 在ASBR上部署路由汇总"></a>1.2 在ASBR上部署路由汇总</h3><img src="https://img-blog.csdnimg.cn/cd7067b17dc74e46beea354fa2212bef.gif" data-original="https://img-blog.csdnimg.cn/20210110155907791.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80NTc5Mzc4Mg==,size_16,color_FFFFFF,t_70" style="zoom:67%;">
 
 <p>原理和ABR汇总一样，不同的是如果被汇总的明细路由的度量值类型为Metric-Type-2,那么汇总路由的Cost等于明细路由的Cost 中的最大值加1.</p>
-<h2 id="2-Virtual-Link"><a href="#2-Virtual-Link" class="headerlink" title="2.Virtual Link"></a>2.Virtual Link</h2><p>OSPF Virtual Link（虚链路）是一种虚拟的、逻辑的链路,被部署在两台OSPF路由器之间,它穿越某个非骨干区域,用于实现另一个非骨干区域与Areao的连接。Virtual Link被视为Areao的一段延伸,当我们在两台路由器上穿越一个非骨干区域建立虚链路后,这两·台路由器即开始在这条Virtual Link上尝试建立邻接关系,当基于Virtual Link的邻接关系建立起来后, Virtual Link两端的路由器会在其产生的Type-1 LSA中描述这条Virtual Link,在Type-1 LSA中, Virtual Link采用类型4的Link来描述。需要强调的是, VirtualLink不能被部署在Stub区域内。</p>
+<h2 id="2-Virtual-Link"><a href="#2-Virtual-Link" class="headerlink" title="2.Virtual Link"></a>2.Virtual Link</h2><p>OSPF Virtual Link（虚链路）是一种虚拟的、逻辑的链路,被部署在两台OSPF路由器之间,它穿越某个非骨干区域,用于实现另一个非骨干区域与Areao的连接。Virtual Link被视为Area0的一段延伸,当我们在两台路由器上穿越一个非骨干区域建立虚链路后,这两·台路由器即开始在这条Virtual Link上尝试建立邻接关系,当基于Virtual Link的邻接关系建立起来后, Virtual Link两端的路由器会在其产生的Type-1 LSA中描述这条Virtual Link,在Type-1 LSA中, Virtual Link采用类型4的Link来描述。需要强调的是, VirtualLink不能被部署在Stub区域内。</p>
+<blockquote>
+<p>问题：</p>
+<ol>
+<li>虚链路中报文的目的IP地址如何判断呢？</li>
+</ol>
+<p>  ​    以虚链路邻居为根节点，构建出SPF树，在SPF树中到达自身最短路径的出接口IP地址，即自身向虚链路邻居发送报文的目的IP。</p>
+<ol start="2">
+<li>虚链路中报文源IP地址如何判断？</li>
+</ol>
+<p>  ​    自身去往目的IP的出接口地址，即为虚链路中报文源IP地址。</p>
+<ol start="3">
+<li>使用Router-ID建立虚链路邻居的优势在哪里？</li>
+</ol>
+<p>  ​    更加稳定，当区域内存在多条冗余路径的时候，当某条路径出现故障，只要区域内SPF树不会断开，那么虚链路邻居也不会断开。</p>
+<ol start="4">
+<li><p>虚链路的建立，只能跨越一个常规的非骨干区域。</p>
+</li>
+<li><p>虚链路的邻居是如何进行维护？</p>
+</li>
+</ol>
+<ul>
+<li><p>​    华为设备中，虚链路邻居之间，会周期性的发送Hello报文，默认10s一次，dead time 40s。</p>
+</li>
+<li><p>​    当和虚链路邻居之间的SPF树断开之后，虚链路邻居将会立刻断开。</p>
+</li>
+</ul>
+</blockquote>
+<h3 id="2-1虚链路环路的产生"><a href="#2-1虚链路环路的产生" class="headerlink" title="2.1虚链路环路的产生"></a>2.1虚链路环路的产生</h3><img src="https://img-blog.csdnimg.cn/cd7067b17dc74e46beea354fa2212bef.gif" data-original="https://img-blog.csdnimg.cn/d5d0fc388855475597967cad7ac18eb2.png" style="zoom: 80%;">
+
+<blockquote>
+<p>在上图的网络中，Area1的AR2和AR4之间建立了虚链路。此时AR4就是一台ABR，它会将AR5上的loopback 5.5.5.5以Type-1 LSA转换为Type-3 LSA注入到Area0中。AR2在收到这条LSA后会将其传递给AR1，对于AR3来说，它就通过Area0学到了到达5.5.5.5的区域间路由。同时AR4会将这一条LSA告诉Area1中的AR3，AR3也知道了到达5.5.5.5的LSA，但是AR3不会使用来自非骨干区域的区域间LSA计算去往5.5.5.5的路由，而是使用来自Area0的LSA。所以AR3去往5.5.5.5的下一条是AR1，而AR1上去往5.5.5.5的下一条是AR2。而AR2到达AR4的虚连接实际上还是使用了AR2——AR3——AR4的真实链路，故而，在AR2上去往5.5.5.5的下一条是AR3.这样就形成了一个环路。</p>
+<p>如下图所示。</p>
+</blockquote>
+<img src="https://img-blog.csdnimg.cn/cd7067b17dc74e46beea354fa2212bef.gif" data-original="https://img-blog.csdnimg.cn/689b2ea3542d4ff6846de0368a188d4c.png" style="zoom:67%;">
+
+<blockquote>
+<p>在实际工作中很少使用虚链路，原因就是非常容易产生环路。</p>
+<p>上面产生环路的原因就是，虚链路的选择出现问题，在AR3和AR4之间建立虚链路就可以避免产生环路。</p>
+</blockquote>
 <h2 id="3-默认路由"><a href="#3-默认路由" class="headerlink" title="3.默认路由"></a>3.默认路由</h2><p>默认路由( Default Route),也被称为缺省路由,指的是目的网络地址及网络掩码都为0的路由,通常是作为路由器的“最后求助对象”,当去往某个目的网络找不到匹配的具体路由时,如果设备的路由表中存在默认路由,那么该设备将使用默认路由来转发数据。</p>
 <h3 id="3-1-在常规区域中发布默认路由"><a href="#3-1-在常规区域中发布默认路由" class="headerlink" title="3.1 在常规区域中发布默认路由"></a>3.1 在常规区域中发布默认路由</h3><p>缺省情况下,常规区域中的路由器是不会发布OSPF默认路由的,即使它的路由表·中存在一条默认路由(该默认路由可能是路由器通过其他协议发现的,例如RIP等),也需要通过相应的配置才能使得路由器将默认路由发布到OSPF网络中。<br><img src="https://img-blog.csdnimg.cn/cd7067b17dc74e46beea354fa2212bef.gif" data-original="https://img-blog.csdnimg.cn/20210110161857313.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80NTc5Mzc4Mg==,size_16,color_FFFFFF,t_70" style="zoom:67%;"></p>
 <p>OSPF定义了专门的命令用于引入默认路由,譬如现在要在OR上,将默认路由引入OSPF,则OR的配置如下:Default-route-advertise cost 10 type 2</p>
@@ -1578,7 +1617,7 @@
             <br>
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">185.7k</span>&nbsp;字&nbsp;|
+                class="white-color">89.9k</span>&nbsp;字&nbsp;|
             
             
             
@@ -1929,13 +1968,13 @@ $(function () {
 document.addEventListener("visibilitychange", function () { document.hidden ? (document.title = "Σ(っ °Д °;)っ喔哟，崩溃啦！", clearTimeout(st)) : (document.title = "φ(゜▽゜*)♪咦，又好了！", st = setTimeout(function () { document.title = OriginTitile }, 3e3)) }) </script>
 
 
-<script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"model":{"jsonPath":"/live2dw/assets/hijiki.model.json"},"display":{"position":"right","width":280,"height":280},"mobile":{"show":false},"log":false,"pluginJsPath":"lib/","pluginModelPath":"assets/","pluginRootPath":"live2dw/","tagMode":false});</script><script>
+<script>
             window.imageLazyLoadSetting = {
                 isSPA: false,
                 preloadRatio: 1,
                 processImages: null,
             };
-        </script><script>window.addEventListener("load",function(){var t=/\.(gif|jpg|jpeg|tiff|png)$/i,r=/^data:image\/[a-z]+;base64,/;Array.prototype.slice.call(document.querySelectorAll("img[data-original]")).forEach(function(a){var e=a.parentNode;"A"===e.tagName&&(e.href.match(t)||e.href.match(r))&&(e.href=a.dataset.original)})});</script><script>!function(n){n.imageLazyLoadSetting.processImages=o;var e=n.imageLazyLoadSetting.isSPA,i=n.imageLazyLoadSetting.preloadRatio||1,r=Array.prototype.slice.call(document.querySelectorAll("img[data-original]"));function o(){e&&(r=Array.prototype.slice.call(document.querySelectorAll("img[data-original]")));for(var t,a=0;a<r.length;a++)0<=(t=(t=r[a]).getBoundingClientRect()).bottom&&0<=t.left&&t.top<=(n.innerHeight*i||document.documentElement.clientHeight*i)&&function(){var t,e,n,i,o=r[a];t=o,e=function(){r=r.filter(function(t){return o!==t})},n=new Image,i=t.getAttribute("data-original"),n.onload=function(){t.src=i,e&&e()},t.src!==i&&(n.src=i)}()}o(),n.addEventListener("scroll",function(){var t,e;t=o,e=n,clearTimeout(t.tId),t.tId=setTimeout(function(){t.call(e)},500)})}(this);</script></body>
+        </script><script>window.addEventListener("load",function(){var t=/\.(gif|jpg|jpeg|tiff|png)$/i,r=/^data:image\/[a-z]+;base64,/;Array.prototype.slice.call(document.querySelectorAll("img[data-original]")).forEach(function(a){var e=a.parentNode;"A"===e.tagName&&(e.href.match(t)||e.href.match(r))&&(e.href=a.dataset.original)})});</script><script>!function(n){n.imageLazyLoadSetting.processImages=o;var e=n.imageLazyLoadSetting.isSPA,i=n.imageLazyLoadSetting.preloadRatio||1,r=Array.prototype.slice.call(document.querySelectorAll("img[data-original]"));function o(){e&&(r=Array.prototype.slice.call(document.querySelectorAll("img[data-original]")));for(var t,a=0;a<r.length;a++)0<=(t=(t=r[a]).getBoundingClientRect()).bottom&&0<=t.left&&t.top<=(n.innerHeight*i||document.documentElement.clientHeight*i)&&function(){var t,e,n,i,o=r[a];t=o,e=function(){r=r.filter(function(t){return o!==t})},n=new Image,i=t.getAttribute("data-original"),n.onload=function(){t.src=i,e&&e()},t.src!==i&&(n.src=i)}()}o(),n.addEventListener("scroll",function(){var t,e;t=o,e=n,clearTimeout(t.tId),t.tId=setTimeout(function(){t.call(e)},500)})}(this);</script><script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"model":{"jsonPath":"/live2dw/assets/hijiki.model.json"},"display":{"position":"right","width":280,"height":280},"mobile":{"show":false},"log":false,"pluginJsPath":"lib/","pluginModelPath":"assets/","pluginRootPath":"live2dw/","tagMode":false});</script></body>
 
 </html>
 
