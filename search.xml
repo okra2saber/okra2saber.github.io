@@ -1179,31 +1179,6 @@
     
     
     <entry>
-      <title>Hexo报错解决</title>
-      <link href="/2022-09-16-hexo-bao-cuo-jie-jue.html"/>
-      <url>/2022-09-16-hexo-bao-cuo-jie-jue.html</url>
-      
-        <content type="html"><![CDATA[<p>Hexo-hexo deploy 输入Username、Password提示<strong>fatal: Authentication failed for<br>  ‘<a href="https://github.com/xxx.git/%E2%80%98">https://github.com/xxx.git/‘</a></strong></p><p>2022.09.15晚上时隔一个月重新开始往github仓库提交笔记，hexo g -d后弹出窗口提示输入Username以及Password。在正确输入用户名密码后却提示</p><pre class="line-numbers language-none"><code class="language-none">remote: Support for password authentication was removed on August 13, 2021. Please use a personal access token instead.remote: Please see https://github.blog/2020-12-15-token-authentication-requirements-for-git-operations/ for more information.fatal: Authentication failed for 'https://github.com/UprightOkra/UprightOkra.git hub.io.git/' FATAL {   err: Error: Spawn failed       at ChildProcess.&lt;anonymous&gt; (E:\blog\myblog\node_modules\hexo-util\lib\spa wn.js:51:21)       at ChildProcess.emit.... <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre><p>意思是使用密码登录这种方式已经在2021年8月13日失效了需要在 <a href="https://so.csdn.net/so/search?q=github&amp;spm=1001.2101.3001.7020">github</a> 上生成<font color="red"><strong>token</strong></font>登录令牌替换掉密码来进行登录.</p><p>搜索的答案无非就是这样:</p><p>解决方案，重新执行git config命令配置用户名和邮箱即可：</p><pre class="line-numbers language-none"><code class="language-none">git config --global user.name "xxx"   git config --global user.email "xxx@xxx.com"  <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre><p>但是有时候没用啊,这里面有一点小坑的地方就是这个 –符号最好自己手动输入不要直接 copy<br>然后又一个坑点来了,如果设置完成之后再一次去clone代码会让你输入username 和 password 这里的 password 不要真的去使用你的登陆的密码要使用刚刚你保存下来的 token 才可以不然还是报错,不仅报错而且还会让你发懵怀疑人生</p><p>如何生成token和ssh秘钥请参考：<a href="https://blog.csdn.net/weixin_41010198/article/details/119698015">(26条消息) github开发人员在七夕搞事情：remote: Support for password authentication was removed on August 13, 2021._点亮～黑夜的博客-CSDN博客_github开发人员在七夕搞事情</a></p><p>在生成token后，再次刷新网页的时候，你已经没有办法看到它了，所以一定要及时保存自己的token。</p><p>我的token</p><pre class="line-numbers language-none"><code class="language-none">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<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>]]></content>
-      
-      
-      <categories>
-          
-          <category> Hexo </category>
-          
-      </categories>
-      
-      
-        <tags>
-            
-            <tag> Hexo </tag>
-            
-        </tags>
-      
-    </entry>
-    
-    
-    
-    <entry>
       <title>实验ensp-三层交换机&amp;单臂路由实验</title>
       <link href="/2022-09-15-shi-yan-ensp-san-ceng-jiao-huan-ji-dan-bi-lu-you-shi-yan.html"/>
       <url>/2022-09-15-shi-yan-ensp-san-ceng-jiao-huan-ji-dan-bi-lu-you-shi-yan.html</url>
@@ -1579,61 +1554,11 @@
     
     
     <entry>
-      <title>Hexo优化之jsdeliver+Github加速图片访问</title>
-      <link href="/2022-04-19-hexo-you-hua-zhi-jsdeliver-github-jia-su-tu-pian-fang-wen.html"/>
-      <url>/2022-04-19-hexo-you-hua-zhi-jsdeliver-github-jia-su-tu-pian-fang-wen.html</url>
-      
-        <content type="html"><![CDATA[<h2 id="一-CDN解释"><a href="#一-CDN解释" class="headerlink" title="一 CDN解释"></a>一 <a href="https://so.csdn.net/so/search?q=CDN&amp;spm=1001.2101.3001.7020">CDN</a>解释</h2><ul><li><strong>内容分发网络</strong>(Content Delivery Network，缩写：CDN)是指一种透过互联网互相连接的电脑网络系统</li><li>利用最靠近每位用户的服务器，更快、更可靠地将音乐、图片、影片、应用程序及其他文件发送给用户</li><li>来提高性能、可扩展性及低成本的网络内容传递给用户。</li></ul><span id="more"></span><h2 id="二-为何使用jsDeliver"><a href="#二-为何使用jsDeliver" class="headerlink" title="二 为何使用jsDeliver"></a>二 为何使用jsDeliver</h2><ul><li><a href="https://so.csdn.net/so/search?q=GitHub&amp;spm=1001.2101.3001.7020">GitHub</a>上存储的图片、视频资源，由于某种因素会出现访问受限的情况，导致图片、视频显示异常；</li><li>为了图片、视频显示正常可以使用CDN进行加速，从而使资源得以正确加载并显示的目的</li><li>jsDelivr 是一个免费开源的 CDN 解决方案，用于帮助开发者和站长。包含 JavaScript 库、jQuery 插件、CSS 框架、字体等等 Web 上常用的静态资源</li></ul><h2 id="三-如何使用"><a href="#三-如何使用" class="headerlink" title="三 如何使用"></a>三 如何使用</h2><h3 id="3-1-项目地址"><a href="#3-1-项目地址" class="headerlink" title="3.1 项目地址"></a>3.1 <a href="https://blog.csdn.net/Calvin_zhou/article/details/108733518#">项目地址</a></h3><p>jsDeliver:<a href="https://www.jsdelivr.com/">https://www.jsdelivr.com/</a></p><p><img src="https://img-blog.csdnimg.cn/2020092215344988.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L0NhbHZpbl96aG91,size_16,color_FFFFFF,t_70" alt="img"></p><h3 id="3-2-jsDeliver适用平台"><a href="#3-2-jsDeliver适用平台" class="headerlink" title="3.2 jsDeliver适用平台"></a>3.2 jsDeliver适用平台</h3><p>jsDeliver可以给npm、GitHub、WordPress平台资源加速，本文以GitHub为例进行说明</p><h3 id="3-3-使用说明"><a href="#3-3-使用说明" class="headerlink" title="3.3 使用说明"></a>3.3 使用说明</h3><pre class="line-numbers language-none"><code class="language-none">// load any GitHub release, commit, or branch// note: we recommend using npm for projects that support ithttps://cdn.jsdelivr.net/gh/user/repo@version/file<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre><ul><li><a href="https://cdn.jsdelivr.net/">https://cdn.jsdelivr.net</a>：jsdelivr的URL</li><li>gh：GitHub的缩写(表示加速GitHub资源)</li><li>user：GitHub上注册的用户名比如(<a href="https://github.com/JakeWharton">JakeWharton</a>)</li><li>repo@version：GitHub上仓库名及其版本(可以是GitHub上新建的仓库或者是release仓库@release版本)</li><li>file：存储的文件名+文件后缀</li></ul><h2 id="四-创建GitHub仓库"><a href="#四-创建GitHub仓库" class="headerlink" title="四 创建GitHub仓库"></a>四 创建GitHub仓库</h2><h3 id="4-1-登录GitHub后创建仓库-如：CDN"><a href="#4-1-登录GitHub后创建仓库-如：CDN" class="headerlink" title="4.1 登录GitHub后创建仓库(如：CDN)"></a>4.1 登录GitHub后创建仓库(如：CDN)</h3><p><img src="https://img-blog.csdnimg.cn/2020092215352410.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L0NhbHZpbl96aG91,size_16,color_FFFFFF,t_70" alt="img"></p><h3 id="4-2-下载GitHub-客户端，将仓库clone到本地"><a href="#4-2-下载GitHub-客户端，将仓库clone到本地" class="headerlink" title="4.2 下载GitHub 客户端，将仓库clone到本地"></a>4.2 下载<a href="https://blog.csdn.net/Calvin_zhou/article/details/108733518#">GitHub 客户端</a>，将仓库clone到本地</h3><p><img src="https://img-blog.csdnimg.cn/20200922153542879.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L0NhbHZpbl96aG91,size_16,color_FFFFFF,t_70" alt="img"></p><h3 id="4-3-将本地资源push到origin"><a href="#4-3-将本地资源push到origin" class="headerlink" title="4.3 将本地资源push到origin"></a>4.3 将本地资源push到origin</h3><p><img src="https://img-blog.csdnimg.cn/20200922153603148.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L0NhbHZpbl96aG91,size_16,color_FFFFFF,t_70" alt="img"></p><h3 id="4-4-GitHub更新后的内容"><a href="#4-4-GitHub更新后的内容" class="headerlink" title="4.4 GitHub更新后的内容"></a>4.4 GitHub更新后的内容</h3><p><img src="https://img-blog.csdnimg.cn/20200922153618656.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L0NhbHZpbl96aG91,size_16,color_FFFFFF,t_70" alt="img"></p><h2 id="五-创建GitHub-Release版本"><a href="#五-创建GitHub-Release版本" class="headerlink" title="五 创建GitHub Release版本"></a>五 创建GitHub Release版本</h2><h3 id="5-1-点击仓库右侧的Releases，创建Release仓库"><a href="#5-1-点击仓库右侧的Releases，创建Release仓库" class="headerlink" title="5.1 点击仓库右侧的Releases，创建Release仓库"></a>5.1 点击仓库右侧的Releases，创建Release仓库</h3><p><img src="https://img-blog.csdnimg.cn/20200922153635775.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L0NhbHZpbl96aG91,size_16,color_FFFFFF,t_70" alt="img"></p><h3 id="5-2-创建Release版本、Title和描述"><a href="#5-2-创建Release版本、Title和描述" class="headerlink" title="5.2 创建Release版本、Title和描述"></a>5.2 创建Release版本、Title和描述</h3><p><img src="https://img-blog.csdnimg.cn/20200922153650152.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L0NhbHZpbl96aG91,size_16,color_FFFFFF,t_70" alt="img"></p><h3 id="5-3-Release创建完成后，如下图"><a href="#5-3-Release创建完成后，如下图" class="headerlink" title="5.3 Release创建完成后，如下图"></a>5.3 Release创建完成后，如下图</h3><p><img src="https://img-blog.csdnimg.cn/20200922153707674.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L0NhbHZpbl96aG91,size_16,color_FFFFFF,t_70" alt="img"></p><h2 id="六-hexo使用实例"><a href="#六-hexo使用实例" class="headerlink" title="六 hexo使用实例"></a>六 <a href="https://so.csdn.net/so/search?q=hexo&amp;spm=1001.2101.3001.7020">hexo</a>使用实例</h2><h3 id="6-1-commit-版本"><a href="#6-1-commit-版本" class="headerlink" title="6.1 commit 版本"></a>6.1 commit 版本</h3><pre class="line-numbers language-none"><code class="language-none">https://cdn.jsdelivr.net/gh/pgzxc/CDN/blog-image/dog.png<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre><h3 id="6-2-release-版本"><a href="#6-2-release-版本" class="headerlink" title="6.2 release 版本"></a>6.2 release 版本</h3><pre class="line-numbers language-none"><code class="language-none">https://cdn.jsdelivr.net/gh/pgzxc/CDN@1.0/blog-image/dog.png<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre><h3 id="6-3-Markdown文档中"><a href="#6-3-Markdown文档中" class="headerlink" title="6.3 Markdown文档中"></a>6.3 Markdown文档中</h3><pre class="line-numbers language-none"><code class="language-none">## jsdelivr图片的使用### 一 直接使用仓库的图片![][1]### 二 使用发布版本的图片![][2][1]:https://cdn.jsdelivr.net/gh/pgzxc/CDN/blog-image/dog.png[2]:https://cdn.jsdelivr.net/gh/pgzxc/CDN@1.0/blog-image/dog.png<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre><h3 id="6-4-效果"><a href="#6-4-效果" class="headerlink" title="6.4 效果"></a>6.4 效果</h3><p><img src="https://img-blog.csdnimg.cn/20200922153723868.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L0NhbHZpbl96aG91,size_16,color_FFFFFF,t_70" alt="img"></p>]]></content>
-      
-      
-      <categories>
-          
-          <category> Hexo </category>
-          
-      </categories>
-      
-      
-        <tags>
-            
-            <tag> Hexo </tag>
-            
-        </tags>
-      
-    </entry>
-    
-    
-    
-    <entry>
       <title>Hexo优化日志</title>
       <link href="/2022-04-19-hexo-you-hua-ri-zhi.html"/>
       <url>/2022-04-19-hexo-you-hua-ri-zhi.html</url>
       
-        <content type="html"><![CDATA[<h1 id="Hexo优化日志"><a href="#Hexo优化日志" class="headerlink" title="Hexo优化日志"></a>Hexo优化日志</h1><h2 id="Hexo优化——gulp（2022-04-19）"><a href="#Hexo优化——gulp（2022-04-19）" class="headerlink" title="Hexo优化——gulp（2022.04.19）"></a>Hexo优化——gulp（2022.04.19）</h2><p>gulp通过对站点使用的静态资源进行压缩，来优化网站的访问速度。</p><p>参考地址：</p><p><a href="https://www.jianshu.com/p/1123c89c491a">Hexo博客使用gulp压缩静态资源 - 简书 (jianshu.com)</a></p><p>使用命令：</p><pre class="line-numbers language-none"><code class="language-none">hexo cleanhexo ggulphexo d<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre><h2 id="Hexo优化——jsdeliver（2022-04-19）"><a href="#Hexo优化——jsdeliver（2022-04-19）" class="headerlink" title="Hexo优化——jsdeliver（2022.04.19）"></a>Hexo优化——jsdeliver（2022.04.19）</h2><p>在网站搭建完后，发现图片加载和网页切换都十分缓慢，在网上找了教程将网站的静态js、css等全部使用jsdeliver+github进行加速。</p><p>将Banner图和其他blog卡片上的图片全部放进了阿里云OSS存储的backet中。</p><p>参考地址：</p><p><a href="https://blog.csdn.net/Calvin_zhou/article/details/108733518">Hexo博客开发之——jsDeliver+Github加速图片访问_PGzxc的博客-CSDN博客</a></p><p>CDN本地推送方法：</p><pre class="line-numbers language-none"><code class="language-none">git add .git commit -m '第一次上传'  #注意如果不敲 -m ，git会默认进入编辑器。 git push<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre><p>Markdown文档中使用方法：</p><pre class="line-numbers language-none"><code class="language-none">## jsdelivr图片的使用### 一 直接使用仓库的图片![][1]### 二 使用发布版本的图片![][2][1]:https://cdn.jsdelivr.net/gh/uprightokra/CDN/img/IS-IS/01.PNG[2]:https://cdn.jsdelivr.net/gh/uprightokra/CDN@1.0/img/IS-IS/01.PNG<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre><h2 id="Hexo优化——lazyload图片懒加载（2022-04-19）"><a href="#Hexo优化——lazyload图片懒加载（2022-04-19）" class="headerlink" title="Hexo优化——lazyload图片懒加载（2022.04.19）"></a>Hexo优化——lazyload图片懒加载（2022.04.19）</h2><p>参考地址：</p><p><a href="https://blog.csdn.net/tingqinxiyin/article/details/93494680">hexo图片懒加载方案_tingqinxiyin的博客-CSDN博客</a></p><h2 id="Hexo优化——域名解析（2022-11-14）"><a href="#Hexo优化——域名解析（2022-11-14）" class="headerlink" title="Hexo优化——域名解析（2022.11.14）"></a>Hexo优化——域名解析（2022.11.14）</h2><p>在阿里云里购买了属于自己的域名<a href="http://www.okra2saber.top,考虑到价格的性价比,所以直接买了10年的使用权./">www.okra2saber.top，考虑到价格的性价比，所以直接买了10年的使用权。</a></p><p>参考地址：</p><p><a href="https://blog.csdn.net/miss_bear/article/details/106164293">(34条消息) hexo博客设置域名_missbearC的博客-CSDN博客</a></p><p>原来二级域名转变成现在的域名后，Valine的评论功能出现了如下错误：</p><p><img src="https://img-blog.csdnimg.cn/b2ed6693f271447d995e1c83d23cccc9.png"></p><p>解决方法：在leancloud的评论应用-&gt;设置-&gt;安全中心-&gt;Web安全域名中修改新的域名</p>]]></content>
-      
-      
-      <categories>
-          
-          <category> Hexo </category>
-          
-      </categories>
-      
-      
-        <tags>
-            
-            <tag> Hexo </tag>
-            
-        </tags>
-      
-    </entry>
-    
-    
-    
-    <entry>
-      <title>Hexo优化之lazyload图片懒加载</title>
-      <link href="/2022-04-19-hexo-you-hua-zhi-lazyload-tu-pian-lan-jia-zai.html"/>
-      <url>/2022-04-19-hexo-you-hua-zhi-lazyload-tu-pian-lan-jia-zai.html</url>
-      
-        <content type="html"><![CDATA[<h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>Hexo 博客虽然功能很强大，但也越来越繁重了，访问速度上有了一些问题，这里我也考虑了许多，例如加 cdn，将国外的资源引用改为国内镜像等方式。今天又想到如果一个页面的图片很多，那么如何来提高博客的访问速度呢？</p><p>经过一番寻找之后，找到一个方案，就是懒加载，通俗点讲就是当你翻到图片的时候再加载那张图片，而不是以下将本页面的所有图片都加载完。</p><h2 id="配置"><a href="#配置" class="headerlink" title="配置"></a>配置</h2><p>在你的 Hexo 目录下，执行以下命令：</p><pre class="line-numbers language-none"><code class="language-none">npm install hexo-lazyload-image --save<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre><p>然后在你的 Hexo 目录的配置文件 <code>_config.yml</code> 中添加配置:</p><pre class="line-numbers language-none"><code class="language-none">lazyload:  enable: true  onlypost: false  loadingImg: /images/loading.gif<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre><h2 id="注意"><a href="#注意" class="headerlink" title="注意"></a>注意</h2><ol><li>onlypost：是否仅文章中的图片做懒加载，如果为 false，则主题中的其他图片，也会做懒加载，如头像，logo 等任何图片。</li><li>loadingImg：图片未加载时的代替图，不填写使用默认加载图片，如果需要自定义，添填入 loading 图片地址，如果是本地图片，不要忘记把图片添加到你的主题目录下。 Next 主题需将图片放到 <code>\themes\next\source\images</code> 目录下，然后引用时：<code>loadingImg: /images/图片文件名</code></li></ol>]]></content>
+        <content type="html"><![CDATA[<h1 id="Hexo优化日志"><a href="#Hexo优化日志" class="headerlink" title="Hexo优化日志"></a>Hexo优化日志</h1><h2 id="Hexo优化——gulp（2022-04-19）"><a href="#Hexo优化——gulp（2022-04-19）" class="headerlink" title="Hexo优化——gulp（2022.04.19）"></a>Hexo优化——gulp（2022.04.19）</h2><p>gulp通过对站点使用的静态资源进行压缩，来优化网站的访问速度。</p><p>参考地址：</p><p><a href="https://www.jianshu.com/p/1123c89c491a">Hexo博客使用gulp压缩静态资源 - 简书 (jianshu.com)</a></p><p>使用命令：</p><pre class="line-numbers language-none"><code class="language-none">hexo cleanhexo ggulphexo d<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre><h2 id="Hexo优化——jsdeliver（2022-04-19）"><a href="#Hexo优化——jsdeliver（2022-04-19）" class="headerlink" title="Hexo优化——jsdeliver（2022.04.19）"></a>Hexo优化——jsdeliver（2022.04.19）</h2><p>在网站搭建完后，发现图片加载和网页切换都十分缓慢，在网上找了教程将网站的静态js、css等全部使用jsdeliver+github进行加速。</p><p>将Banner图和其他blog卡片上的图片全部放进了阿里云OSS存储的backet中。</p><p>参考地址：</p><p><a href="https://blog.csdn.net/Calvin_zhou/article/details/108733518">Hexo博客开发之——jsDeliver+Github加速图片访问_PGzxc的博客-CSDN博客</a></p><p>CDN本地推送方法：</p><pre class="line-numbers language-none"><code class="language-none">git add .git commit -m '第一次上传'  #注意如果不敲 -m ，git会默认进入编辑器。 git push<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre><p>Markdown文档中使用方法：</p><pre class="line-numbers language-none"><code class="language-none">## jsdelivr图片的使用### 一 直接使用仓库的图片![][1]### 二 使用发布版本的图片![][2][1]:https://cdn.jsdelivr.net/gh/uprightokra/CDN/img/IS-IS/01.PNG[2]:https://cdn.jsdelivr.net/gh/uprightokra/CDN@1.0/img/IS-IS/01.PNG<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre><h2 id="Hexo优化——lazyload图片懒加载（2022-04-19）"><a href="#Hexo优化——lazyload图片懒加载（2022-04-19）" class="headerlink" title="Hexo优化——lazyload图片懒加载（2022.04.19）"></a>Hexo优化——lazyload图片懒加载（2022.04.19）</h2><p>参考地址：</p><p><a href="https://blog.csdn.net/tingqinxiyin/article/details/93494680">hexo图片懒加载方案_tingqinxiyin的博客-CSDN博客</a></p><h2 id="Hexo报错解决——token和ssh秘钥（2022-09-15）"><a href="#Hexo报错解决——token和ssh秘钥（2022-09-15）" class="headerlink" title="Hexo报错解决——token和ssh秘钥（2022.09.15）"></a>Hexo报错解决——token和ssh秘钥（2022.09.15）</h2><p>2022.09.15晚上时隔一个月重新开始往github仓库提交笔记，hexo g -d后弹出窗口提示输入Username以及Password。在正确输入用户名密码后却提示fatal: Authentication failed for  ‘<a href="https://github.com/xxx.git/%E2%80%98">https://github.com/xxx.git/‘</a></p><p>如何生成token和ssh秘钥请参考：<a href="https://blog.csdn.net/weixin_41010198/article/details/119698015">github开发人员在七夕搞事情：remote: Support for password authentication was removed on August 13, 2021._点亮～黑夜的博客-CSDN博客_github开发人员在七夕搞事情</a></p><h2 id="Hexo优化——域名解析（2022-11-14）"><a href="#Hexo优化——域名解析（2022-11-14）" class="headerlink" title="Hexo优化——域名解析（2022.11.14）"></a>Hexo优化——域名解析（2022.11.14）</h2><p>在阿里云里购买了属于自己的域名<a href="http://www.okra2saber.top,考虑到价格的性价比,所以直接买了10年的使用权./">www.okra2saber.top，考虑到价格的性价比，所以直接买了10年的使用权。</a></p><p>参考地址：</p><p><a href="https://blog.csdn.net/miss_bear/article/details/106164293">(34条消息) hexo博客设置域名_missbearC的博客-CSDN博客</a></p><p>原来二级域名转变成现在的域名后，Valine的评论功能出现了如下错误：</p><p><img src="https://img-blog.csdnimg.cn/b2ed6693f271447d995e1c83d23cccc9.png"></p><p>解决方法：在leancloud的评论应用-&gt;设置-&gt;安全中心-&gt;Web安全域名中修改新的域名</p>]]></content>
       
       
       <categories>
