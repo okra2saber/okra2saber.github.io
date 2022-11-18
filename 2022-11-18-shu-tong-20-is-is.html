@@ -4,7 +4,7 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="Hexo优化之gulp优化, Okraの筆記">
+    <meta name="keywords" content="数通 20-IS-IS, Okraの筆記">
     <meta name="description" content="">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -16,7 +16,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>Hexo优化之gulp优化 | Okraの筆記</title>
+    <title>数通 20-IS-IS | Okraの筆記</title>
     <link rel="icon" type="image/png" href="https://aimer666.oss-cn-hangzhou.aliyuncs.com/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/uprightokra/uprightokra.github.io/libs/awesome/css/all.css">
@@ -398,12 +398,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('https://aimer666.oss-cn-hangzhou.aliyuncs.com/26.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('https://aimer666.oss-cn-hangzhou.aliyuncs.com/28.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">Hexo优化之gulp优化</h1>
+                    <h1 class="description center-align post-title">数通 20-IS-IS</h1>
                 </div>
             </div>
         </div>
@@ -523,8 +523,8 @@
                     
                     <div class="article-tag">
                         
-                            <a href="/tags/Hexo/">
-                                <span class="chip bg-color">Hexo</span>
+                            <a href="/tags/IS-IS/">
+                                <span class="chip bg-color">IS-IS</span>
                             </a>
                         
                     </div>
@@ -535,8 +535,8 @@
                     <div class="post-cate">
                         <i class="fas fa-bookmark fa-fw icon-category"></i>
                         
-                            <a href="/categories/Hexo/" class="post-category">
-                                Hexo
+                            <a href="/categories/Datacom/" class="post-category">
+                                Datacom
                             </a>
                         
                     </div>
@@ -548,28 +548,28 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2022-04-19
+                    2022-11-18
                 </div>
                 
 
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2022-11-16
+                    2022-11-18
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    233
+                    6.5k
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    1 分
+                    24 分
                 </div>
                 
 
@@ -597,54 +597,302 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h1 id="gulp优化hexo方法"><a href="#gulp优化hexo方法" class="headerlink" title="gulp优化hexo方法"></a>gulp优化hexo方法</h1><p>gulp通过对站点使用的静态资源进行压缩，来优化网站的访问速度。</p>
-<p>首先安装gulp以及所需要的模块：</p>
-<p>复制代码</p>
-<pre class="line-numbers language-none"><code class="language-none">npm install gulp -g<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-
-<p>复制代码</p>
-<pre class="line-numbers language-none"><code class="language-none">npm install gulp-htmlclean gulp-htmlmin gulp-minify-css gulp-uglify gulp-imagemin --save<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-
-<p>然后在博客的根目录下创建**<code>gulpfile.js</code>**文件写入代码：</p>
-<p>复制代码</p>
-<pre class="line-numbers language-none"><code class="language-none">var gulp = require('gulp');
-var minifycss = require('gulp-minify-css');
-var uglify = require('gulp-uglify');
-var imagemin = require('gulp-imagemin');
-
-// 压缩css
-gulp.task('minify-css', function() {
-    return gulp.src('./public/**/*.css')
-        .pipe(minifycss({
-            compatibility: 'ie8'
-        }))
-        .pipe(gulp.dest('./public'));
-});
-// 压缩js
-gulp.task('minify-js', function() {
-    return gulp.src('./public/js/**/*.js')
-        .pipe(uglify())
-        .pipe(gulp.dest('./public'));
-});
-// 压缩图片
-gulp.task('minify-images', function() {
-    return gulp.src('./public/images/**/*.*')
-        .pipe(imagemin(
-        [imagemin.gifsicle({'optimizationLevel': 3}),
-        imagemin.jpegtran({'progressive': true}),
-        imagemin.optipng({'optimizationLevel': 7}),
-        imagemin.svgo()],
-        {'verbose': true}))
-        .pipe(gulp.dest('./public/images'))
-});
-// 默认任务
-gulp.task('default', gulp.parallel(
-    'minify-css','minify-js','minify-images'
-));<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
-<p>最后执行命令，上传GitHub</p>
-<p>复制代码</p>
-<pre class="line-numbers language-none"><code class="language-none">hexo clean&amp;&amp;hexo g&amp;&amp;gulp&amp;&amp;hexo d<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+                <h1 id="IS-IS"><a href="#IS-IS" class="headerlink" title="IS-IS"></a><center>IS-IS</center></h1><h2 id="IS-IS基本概念"><a href="#IS-IS基本概念" class="headerlink" title="IS-IS基本概念"></a>IS-IS基本概念</h2><h3 id="IS-IS概述"><a href="#IS-IS概述" class="headerlink" title="IS-IS概述"></a>IS-IS概述</h3><p>IS-IS最初是由ISO为它的无连接网络协议设计的一种动态路由协议。IETF对IS-IS进行了扩充和修改，使它能够同时应用在TCP/IP和OSI环境中，称为集成化IS-IS。IS-IS属于IGP，是一种链路状态型路由协议，使用SPF算法进行路由计算。</p>
+<p>IS-IS协议可支持大中型网络，路由收敛速度快，可以作为除了OSPF协议外的另一选择。网络运营商一般会采用IS-IS作为其网络的IGP路由协议，主要因为集成IS-IS能够同时支持CLNP和IP，易于从早期的OSI网络平滑过渡到IP网络。</p>
+<h3 id="OSI和TCP-IP"><a href="#OSI和TCP-IP" class="headerlink" title="OSI和TCP/IP"></a>OSI和TCP/IP</h3><p><img src="https://img-blog.csdnimg.cn/cd7067b17dc74e46beea354fa2212bef.gif" data-original="https://cdn.jsdelivr.net/gh/uprightokra/CDN/img/IS-IS/01.PNG" alt="OSI和TCP/IP参考模型"></p>
+<blockquote>
+<ul>
+<li>CLNP（Connectionless Network Protocol，无连接网络协议）：OSI中的网络层协议， 类似于TCP／IP协议的IP协议。</li>
+<li>CLNS（Connectionless Network Service，无连接网络服务）：类似于IP所提供的“尽 力而为”的服务，OSI就是通过CLNP来完成CLNS的。</li>
+<li>NPDU（Network Protocol Data Unit，网络协议数据单元）：是OSI中的网络层协议 报文，相当于TCP／IP中的IP报文。</li>
+<li>NSAP（Network Service Access Point，网络服务接入点）：即OSI中网络层的地址， 用来标识一个抽象的网络服务访问点，描述OSI模型的网络地址结构。</li>
+</ul>
+</blockquote>
+<h3 id="IS-IS基本术语"><a href="#IS-IS基本术语" class="headerlink" title="IS-IS基本术语"></a>IS-IS基本术语</h3><p><img src="https://img-blog.csdnimg.cn/cd7067b17dc74e46beea354fa2212bef.gif" data-original="https://cdn.jsdelivr.net/gh/uprightokra/CDN/img/IS-IS/02.PNG"></p>
+<blockquote>
+<ul>
+<li>IS（Intermediate System，中间系统）：相当于TCP／IP中的路由器，是IS-IS协议中 生成路由和传播路由信息的基本单元。</li>
+<li>ES（End System，终端系统）：相当于TCP／IP中的主机系统。ES不参与IS-IS路由 协议的处理，ISO使用专门的ES—IS协议定义终端系统与中间系统间的通信。</li>
+<li>RD（Routing Domain，路由域）：在一个路由域中多个IS通过相同的路由协议来交换路由信息。</li>
+<li>Area（区域）：路由域的细分单元，类似于OSPF，IS—IS允许将整个路由域划分为多个区域</li>
+<li>ES-IS （End System to Intermediate System Routing Exchange Protocol，终端系统 到中间系统路由选择交换协议）：负责ES与IS之间的通信。</li>
+</ul>
+</blockquote>
+<p>在路由域中，路由器与终端系统间使用ES—IS协议来进行主机和网关发现；而路由器之间使用IS—IS来进行邻居关系建立及路由信息交换。</p>
+<p>在ES-IS中，ES通过发送ESH（End System Hello）来告诉IS自己的存在，同时IS通过监听ESH来确定本网段是否存在ES；IS通过发送ISH （Intermediate System Hello）来通知ES自己的存在。ES通过监听ISH确定网络中存在的IS，并选择其中一个IS作为自己的网关。如果ES要发送报文到另外一个ES，需要先把报文发送给网关IS，IS再负责报文转发。</p>
+<p>在IS-IS中，路由器间通过IIH（IS-to-IS Hello PDUs）来建立邻居关系。每一个IS都会生成LSPDU（Link State Protocol Data Unit，链路状态协议数据单元，简称LSP），此LSP包含了本IS的所有链路状态信息。通过在IS—IS邻居间交换LSP，网络中的每一个IS都生成LSDB（Link State DataBase，链路状态数据库），且所有IS的LSDB中所包含的链路状态 信息都是相同的。</p>
+<h3 id="IS-IS分层网络"><a href="#IS-IS分层网络" class="headerlink" title="IS-IS分层网络"></a>IS-IS分层网络</h3><h4 id="OSI路由分级"><a href="#OSI路由分级" class="headerlink" title="OSI路由分级"></a>OSI路由分级</h4><p><img src="https://img-blog.csdnimg.cn/cd7067b17dc74e46beea354fa2212bef.gif" data-original="https://cdn.jsdelivr.net/gh/uprightokra/CDN/img/IS-IS/03.PNG"></p>
+<p>OSI给路由定义了4个路由级别，分别从Level—0到Level—3。</p>
+<ul>
+<li>Level-0路由</li>
+</ul>
+<blockquote>
+<p>Level-0路由存在于ES和IS之间，由ES-IS来完成。在ES发现最近的IS后，主要完成的任务有，确定相连的区域地址、在ES和IS之间建立邻居以及完成网络地址到数据链路层地址的转换。</p>
+</blockquote>
+<ul>
+<li>Level-1路由</li>
+</ul>
+<blockquote>
+<p>Level-1路由存在于同一区域内的不同IS间，所以又称为区域内路由。当IS要发送报文到另外一个IS时，查看报文中的目的地址，发现其位于区域内的不同子网，则IS会选择最优的路径进行转发；如果目的地址不在同一区域，则IS把数据转发到本区域内最近的Level-1-2路由器上，然后由Level-1-2路由器负责数据转发。</p>
+</blockquote>
+<ul>
+<li>Level-2路由</li>
+</ul>
+<blockquote>
+<p>Level-2路由存在于同一路由域内的区域间，所以又称为区域间路由。当目的地位于不同区域时，IS发送报文到最近的一个Level-2 IS，由Level-2 IS负责将其转发到另一个区域。</p>
+</blockquote>
+<ul>
+<li>Level-3路由</li>
+</ul>
+<blockquote>
+<p>Level-3路由存在于路由域间。每个路由域就相当于一个自治系统，彼此间通过IDRP（Interdomain Routing Protocol，域间路由协议）相连接。</p>
+</blockquote>
+<h4 id="IS-IS路由器角色"><a href="#IS-IS路由器角色" class="headerlink" title="IS-IS路由器角色"></a>IS-IS路由器角色</h4><p><img src="https://img-blog.csdnimg.cn/cd7067b17dc74e46beea354fa2212bef.gif" data-original="https://cdn.jsdelivr.net/gh/uprightokra/CDN/img/IS-IS/04.PNG"></p>
+<p>IS-IS协议涉及到Level-1和Level-2路由。为了支持大规模网络的路由，IS-IS在路由域内采用两级的分层结构，一个大的路由域通常被分成多个区域，区域内的路由通过Level-1路由器管理，区域间的路由通过Level-2路由器管理。</p>
+<ul>
+<li>Level-1路由器</li>
+</ul>
+<blockquote>
+<p>Level-1路由器负责区域内的路由，它只维护一个Level-1的LSDB，该LSDB包含本区域的路由信息，到区域外的报文转发给最近的Level-1-2路由器。</p>
+</blockquote>
+<ul>
+<li>Level-2路由器</li>
+</ul>
+<blockquote>
+<p>Level-2路由器负责区域间的路由，它维护一个Level-2的LSDB，该LSDB包含区域间的路由信息。所有Level-2路由器和Level-1-2路由器组成路由域的骨干网，负责在不同区域间通信，骨干网必须是物理连续的。</p>
+</blockquote>
+<ul>
+<li>Level-1-2路由器</li>
+</ul>
+<blockquote>
+<p>同时属于Level-1和Level-2的路由器称为Level-1-2路由器，Level-1-2路由器维护两个LSDB，Level-1的LSDB用于区域内路由，Level-2的LSDB用于区域间路由。</p>
+</blockquote>
+<h4 id="集成化IS-IS分层网络"><a href="#集成化IS-IS分层网络" class="headerlink" title="集成化IS-IS分层网络"></a>集成化IS-IS分层网络</h4><p><img src="https://img-blog.csdnimg.cn/cd7067b17dc74e46beea354fa2212bef.gif" data-original="https://cdn.jsdelivr.net/gh/uprightokra/CDN/img/IS-IS/05.PNG"></p>
+<p>集成化IS—IS可以支持以下3种形式的路由域：</p>
+<ul>
+<li><p>纯OSI </p>
+</li>
+<li><p>纯IP</p>
+</li>
+<li><p>IP和OSI的混合</p>
+</li>
+</ul>
+<blockquote>
+<p>在IP网络中，集成化IS—IS仍然使用CLNS的方式构造报文，建立IS-IS邻居关系，进行IP可达信息的传递等等。</p>
+<p>在IP网络中，主机与路由器之间不运行ES-IS，取而代之以ICMP、ARP、DHCP等。Level-0路由的作用由ARP等协议取代，主机和路由器之间通过ARP地址解析协议完成网络地址到链路层地址的转换。Level-3路由的作用由BGP路由协议取代，不同自治系统之间的路由学习由BGP路由协议完成。</p>
+</blockquote>
+<p>由于目前的主流网络都运行了TCP／IP协议，所以通常在这些网络中运行的是集成化IS-IS。</p>
+<h3 id="IS-IS与OSPF的比较"><a href="#IS-IS与OSPF的比较" class="headerlink" title="IS-IS与OSPF的比较"></a>IS-IS与OSPF的比较</h3><h4 id="区域设计比较"><a href="#区域设计比较" class="headerlink" title="区域设计比较"></a>区域设计比较</h4><p><img src="https://img-blog.csdnimg.cn/cd7067b17dc74e46beea354fa2212bef.gif" data-original="https://cdn.jsdelivr.net/gh/uprightokra/CDN/img/IS-IS/06.PNG"></p>
+<p>IS-IS与OSPF都采用两级的分层结构，将自治系统划分出不同的区域，但它们之间还是有区别的。</p>
+<ul>
+<li>区域边界不同</li>
+</ul>
+<blockquote>
+<p>在OSPF中，区域的分界点在路由器上，一个路由器的不同接口可属于不同区域；用来连接骨干区域和非骨干区域的路由器称为ABR（Area Border Router，区域边界路由器）。<br>而在集成化IS-IS中，区域的分界点在链路上，一个路由器只能属于一个区域；没有ABR的概念。</p>
+</blockquote>
+<ul>
+<li>骨干区域不同</li>
+</ul>
+<blockquote>
+<p>在OSPF中，只有Area0是骨干区域，其它区域均为非骨干区域，所有非骨干区域必须直接连接到骨干区域；骨干区域必须是连续的。<br>而在集成化IS-IS中，并没有规定哪个区域是骨干区域。所有Level-2路由器和Level-1-2路由器构成了IS-IS的骨干网，他们可以属于不同的区域，但必须是物理连续的。</p>
+</blockquote>
+<h4 id="协议应用比较"><a href="#协议应用比较" class="headerlink" title="协议应用比较"></a>协议应用比较</h4><blockquote>
+<p>集成IS-IS和OSPF有很多相似点，比如它们都是基于链路状态的动态路由协议，它们的工作机制相似（LSA的通告、同步LSDB、老化等等），它们的收敛速度都较快，它们都有区域分层的概念，它们都是应用较成功的路由协议等等。</p>
+<p>但它们之间也有一些细微区别。集成化IS-IS可同时支持IP和OSI，这样在多协议网络中有优势；而OSPF是专为IP而设计的协议。集成化IS-IS的协议报文采用了TLV格式，易于扩展而支持新的特性如IPv6等；而OSPF与IP结合非常紧密，扩展性要差一些。当然，OSPF应用非常广泛，技术文档与经验积累较多，也为广大网络管理员所熟知，这是OSPF最大的优势。</p>
+</blockquote>
+<h2 id="IS-IS协议原理"><a href="#IS-IS协议原理" class="headerlink" title="IS-IS协议原理"></a>IS-IS协议原理</h2><h3 id="OSI地址"><a href="#OSI地址" class="headerlink" title="OSI地址"></a>OSI地址</h3><p><img src="https://img-blog.csdnimg.cn/cd7067b17dc74e46beea354fa2212bef.gif" data-original="https://cdn.jsdelivr.net/gh/uprightokra/CDN/img/IS-IS/07.PNG"></p>
+<p>在OSI体系结构中，使用OSI地址标识网络设备，建立拓扑信息。</p>
+<p>OSI地址采用NSAP地址格式，它的作用相当于IP网络中的IP地址和上层协议号的组合，用于标识设备和设备所启用的服务。</p>
+<h3 id="NSAP地址格式"><a href="#NSAP地址格式" class="headerlink" title="NSAP地址格式"></a>NSAP地址格式</h3><p><img src="https://img-blog.csdnimg.cn/cd7067b17dc74e46beea354fa2212bef.gif" data-original="https://cdn.jsdelivr.net/gh/uprightokra/CDN/img/IS-IS/08.PNG"></p>
+<p>NSAP(Network Service Access Point，网络服务接入点)：即OSI中网络层的地址，用来标识一个抽象的网络服务访问点，描述OSI模型的网络地址结构。NSAP的主要作用是提供网络层和上层应用之间的接口。相当于IP网络中的IP地址和协议号。</p>
+<p>如上图所示，NSAP由IDP(Inital Domain Part)和DSP(Domain Specific Part)组成。IDP相当于IP地址中的主网络号，DSP相当于IP地址中的子网号和主机地址。</p>
+<p>IDP部分是ISO规定的，它由AFI(Authority and Format Identifier)与IDI(Initial Domain Identifier)组成，AFI表示地址分配机构和地址格式，IDI用来标识域。常见的一些AFI值及相关地址域如下表所示：</p>
+<table>
+<thead>
+<tr>
+<th align="center">AFI值</th>
+<th align="center">地址域</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">39</td>
+<td align="center">ISO Data Country Code（DCC）</td>
+</tr>
+<tr>
+<td align="center">45</td>
+<td align="center">E.164</td>
+</tr>
+<tr>
+<td align="center">47</td>
+<td align="center">ISO 6523 International Code Designator（ICD）</td>
+</tr>
+<tr>
+<td align="center">49</td>
+<td align="center">Locally administered（private）</td>
+</tr>
+</tbody></table>
+<p>DSP 由 HO-DSP（High Order Part of DSP）、System ID和SEL三个部分组成。HO- DSP用来分割区域，System ID用来区分主机，SEL指示服务类型。</p>
+<p>IDP和DSP的长度都是可变的，NSAP总长最多是20个字节，最少8个字节。</p>
+<p><img src="https://img-blog.csdnimg.cn/cd7067b17dc74e46beea354fa2212bef.gif" data-original="https://cdn.jsdelivr.net/gh/uprightokra/CDN/img/IS-IS/09.PNG"></p>
+<blockquote>
+<p>IS-IS中的NSAP地址由下列三部分组成：</p>
+<ul>
+<li>区域地址：长度可变，为1～13个字节。</li>
+<li>System ID：系统ID，用来唯一标识区域内的IS，长度固定为6个字节。一般System ID由Router ID或者MAC地址转换而成。</li>
+<li>NSEL：服务类型选择符，长度为1个字节。作用类似IP中的“协议标识符”，不同的传输协议对应不同的NSEL。<strong>在IP中，NSEL均为00</strong>。</li>
+</ul>
+</blockquote>
+<h3 id="NET地址"><a href="#NET地址" class="headerlink" title="NET地址"></a>NET地址</h3><p>NET（Network Entity Title，网络实体名称）指示的是IS本身的网络层信息，不包括传输层信息，可以看作是一类特殊的NSAP，即SEL为0的NSAP地址。因此，NET的长度与NSAP的相同，最多为20个字节，最少为8个字节。</p>
+<p>通常情况下，一台路由器配置一个NET即可，当区域需要重新划分时，例如将多个区域合并，或者将一个区域划分为多个区域，这种情况下配置多个NET可以在重新配置时仍然能够保证路由的正确性。由于一台路由器最多可配置3个区域地址，所以最多也只能配置3个NET。在配置多个NET时，必须保证它们的 System ID都相同。</p>
+<p><strong>例如，若NET为ab．cdef．1234.5678.9abc．00，则其中Area为ab．cdef，System ID为 1234.5678.9abc，NSEL为00。</strong></p>
+<h4 id="NET地址生成方法"><a href="#NET地址生成方法" class="headerlink" title="NET地址生成方法"></a>NET地址生成方法</h4><p><img src="https://img-blog.csdnimg.cn/cd7067b17dc74e46beea354fa2212bef.gif" data-original="https://cdn.jsdelivr.net/gh/uprightokra/CDN/img/IS-IS/10.PNG"></p>
+<p>NET地址除了由 Router ID生成外，还可以根据MAC地址生成，比如一台设备某个接口的MAC地址为00e0-fc00-3100，可以将其直接映射为System ID：00e0．fe00.3100。假设其 所在的区域为0100，那么它所对应的NET地址为0100.00e0．fe00.3100.00。</p>
+<p>这样看起来，由MAC地址生成NET 比使用 Router ID更方便，因为MAC地址的长度与System—ID的长度相同都是六个字节。但是MAC地址不像IP地址一样可以随意改变且具有全局性，管理不方便，所以一般还是使用Router ID来进行 System ID的映射。</p>
+<p>通过 Router ID或MAC地址生成System ID的最大的好处是易于维护和管理，并且可以保证网络中System ID的唯一性。如果在分配System ID没有统一规划，可能会造成网络中System ID冲突，并且不易被发现。</p>
+<h4 id="NET规划注意事项"><a href="#NET规划注意事项" class="headerlink" title="NET规划注意事项"></a>NET规划注意事项</h4><p><img src="https://img-blog.csdnimg.cn/cd7067b17dc74e46beea354fa2212bef.gif" data-original="https://cdn.jsdelivr.net/gh/uprightokra/CDN/img/IS-IS/11.PNG"></p>
+<p>因为在同一区域内，IS使用System ID标识不同的设备，构造拓扑数据库，因此其<br>System ID必须唯一；而IS使用区域地址来进行路由转发的判断，所以同一区域中IS的区域地址需要相同。</p>
+<p>因为所有Level-2路由器和Level-1-2路由器组成路由域的骨干网，所以它们的SystemID也不能相同。</p>
+<p>另外，还有一点需要注意，因为IS-IS路由域中可能存在区域合并和区域迁移的情况，因此在不同的区域中，System ID也尽量不要相同。否则可能会给将来的区域重新划分造成困难。</p>
+<h3 id="IS-IS协议报文"><a href="#IS-IS协议报文" class="headerlink" title="IS-IS协议报文"></a>IS-IS协议报文</h3><p><img src="https://img-blog.csdnimg.cn/cd7067b17dc74e46beea354fa2212bef.gif" data-original="https://cdn.jsdelivr.net/gh/uprightokra/CDN/img/IS-IS/12.PNG"></p>
+<p>在IS-IS协议中定义了IS—IS所使用的协议报文，这些报文直接封装在数据链路层的帧中，称为PDU（Protocol Data Unit，协议数据单元）。</p>
+<p>PDU可以分为两个部分，报文头和变长字段部分。其中报文头又可分为通用报头和专用报头。对于所有PDU来说，通用报头都是相同的，但专用报头根据PDU类型不同而有所差别。</p>
+<p>在链路层头部中定义了所使用的MAC地址为0180-c200-0014（Level-1报文）和0180-c200-0015（Level-2报文），在链路层上IS-IS报文的协议号为0x83。</p>
+<h4 id="IS-IS协议报文类型"><a href="#IS-IS协议报文类型" class="headerlink" title="IS-IS协议报文类型"></a>IS-IS协议报文类型</h4><p><img src="https://img-blog.csdnimg.cn/cd7067b17dc74e46beea354fa2212bef.gif" data-original="https://cdn.jsdelivr.net/gh/uprightokra/CDN/img/IS-IS/13.PNG"></p>
+<blockquote>
+<ul>
+<li>Hello报文:</li>
+</ul>
+<blockquote>
+<p>用于建立和维持邻居关系，也称为IIH（IS-to-IS Hello PDUs）。其中，广播网 中的Level-1路由器使用Level-1 LAN IIH，广播网中的Level-2路由器使用Level-2 LAN IIH，点到点网络中的路由器则使用P2P IIH。</p>
+</blockquote>
+<ul>
+<li>LSP:</li>
+</ul>
+<blockquote>
+<p>用于交换链路状态信息。LSP分为两种：Level-1 LSP和Level-2 LSP。Level-1路 由器传送Level-1 LSP，Level-2路由器传送Level-2LSP，Level-1-2路由器则可传送以上两 种LSP。</p>
+</blockquote>
+<ul>
+<li>时序报文 SNP（Sequence Number PDUs）:</li>
+</ul>
+<blockquote>
+<p>用于确认邻居之间最新接收的LSP，作用类 似于确认（Acknowledge）报文，但更有效。</p>
+</blockquote>
+<ul>
+<li>SNP:</li>
+</ul>
+<blockquote>
+<p>包括CSNP（Complete SNP，全时序报文）和PSNP（Partial SNP，部分时序报 文），进一步又可分为Level-1 CSNP、Level-2 CSNP、Level-1 PSNP和Level-2 PSNP。</p>
+</blockquote>
+</blockquote>
+<h4 id="IS-IS协议报文中的CLV"><a href="#IS-IS协议报文中的CLV" class="headerlink" title="IS-IS协议报文中的CLV"></a>IS-IS协议报文中的CLV</h4><p><img src="https://img-blog.csdnimg.cn/cd7067b17dc74e46beea354fa2212bef.gif" data-original="https://cdn.jsdelivr.net/gh/uprightokra/CDN/img/IS-IS/14.PNG"></p>
+<p>PDU中的变长字段部分是多个CLV（Code-Length-Value）三元组。CLV的作用主要是 传递协议报文中所包含的各种属性，包括网络中的链路信息，拓扑信息和前缀信息等。</p>
+<table>
+<thead>
+<tr>
+<th align="center">CLV Code</th>
+<th align="center">名称</th>
+<th align="center">PDU类型</th>
+<th align="center">CLV的作用</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">1</td>
+<td align="center">Area Addresses</td>
+<td align="center">IIH、LSP</td>
+<td align="center">区域地址CLV在IIH报文中主要作用是判断同网段的IS是否在相同的区域，如果区域相同建立L1或L2邻居，否则只能建立L2邻居。</td>
+</tr>
+<tr>
+<td align="center">2</td>
+<td align="center">IS Neighbors(LSP)</td>
+<td align="center">LSP</td>
+<td align="center">IS邻居CLV主要应用在LSP报文中描述网络拓扑，value字段中填写的是邻居的System ID＋00或者DIS ID。</td>
+</tr>
+<tr>
+<td align="center">6</td>
+<td align="center">IS Neighbors(MAC Address)</td>
+<td align="center">LAN IIH</td>
+<td align="center">该CLV主要用在广播网上邻居建立过程中，通过它确认邻居之间的双向关系，Value字段中填写的是对端邻居接口的MAC地址。</td>
+</tr>
+<tr>
+<td align="center">128</td>
+<td align="center">IP Internal Reachability Information</td>
+<td align="center">LSP</td>
+<td align="center">该CLV主要用于在LSP报文中携带IP前缀信息，包括使能了IS-IS的所有接口的IP地址。</td>
+</tr>
+<tr>
+<td align="center">132</td>
+<td align="center">IP Interface Address</td>
+<td align="center">IIH、LSP</td>
+<td align="center">该CLV的主要作用是在邻居建立过程中，检查对端地址是否在同一网段：还可以通过该字段获得路由下一跳的地址。</td>
+</tr>
+</tbody></table>
+<h3 id="IS-IS网络类型"><a href="#IS-IS网络类型" class="headerlink" title="IS-IS网络类型"></a>IS-IS网络类型</h3><p><img src="https://img-blog.csdnimg.cn/cd7067b17dc74e46beea354fa2212bef.gif" data-original="https://cdn.jsdelivr.net/gh/uprightokra/CDN/img/IS-IS/15.PNG"></p>
+<p>与OSPF不同，IS—IS只支持两种类型的网络，可分为：</p>
+<ul>
+<li><p>广播型网络</p>
+</li>
+<li><p>点到点网络</p>
+</li>
+</ul>
+<p>缺省情况下，路由器接口网络类型根据物理链路决定。在广播型的链路如 Ethernet、Token-Ring上，接口缺省网络类型为广播网络；而在点对点链路如PPP、HDLC上，接口缺省网络类型为点对点。对于NBMA（Non-Broadcast Multi-Access）网络，如ATM，需对其配 置子接口，并将子接口类型配置为点到点网络或广播网络。IS—IS不能在点到多点（Point to MultiPoint，P2MP）链路上运行。</p>
+<p>接口网络类型不同，其工作机制也略微不同。例如当网络类型为广播网时，需要选举DIS、通过泛洪CSNP报文来实现LSDB同步；当网络类型为P2P时，不需要选举DIS，LSDB同步机制也不同。</p>
+<p>当只有两台路由器接入到同一个广播网时，通过将接口网络类型配置为P2P可以使IS-IS按照P2P而不是广播网的工作机制运行，避免DIS选举以及CSNP的泛洪，既可以节省网络带宽，又可以加快网络的收敛速度。</p>
+<h3 id="IS-IS邻居的建立"><a href="#IS-IS邻居的建立" class="headerlink" title="IS-IS邻居的建立"></a>IS-IS邻居的建立</h3><p><img src="https://img-blog.csdnimg.cn/cd7067b17dc74e46beea354fa2212bef.gif" data-original="https://cdn.jsdelivr.net/gh/uprightokra/CDN/img/IS-IS/16.PNG"></p>
+<p>在IS-IS中，路由器类型有Level-1、Level-2和Level-1-2等3种，所能够建立的邻居关系有Level-1和Level-2两种。属于不同区域的Level-1路由器不能形成邻居关系，而Level-2路由器是否形成邻居关系则与区域无关。</p>
+<p>在点对点网络上，当IS的端口物理层UP后，邻居的初始状态为init。当收到对端发出的P2P IIH报文后，IS检查报文中的相关参数，如果参数一致，则邻居状态会转化为UP。</p>
+<p>在广播网络上，邻居关系建立需要三方握手过程。具体过程如上图所示：</p>
+<blockquote>
+<ul>
+<li>RTA的物理端口UP后，发送LAN IIH报文，报文中的Neighbor字段为空；</li>
+<li>RTB收到RTA的Hello 报文后，将RTA的MAC地址放在邻居字段中，发送出去，邻居状态变为Init；</li>
+<li>RTA收到RTB的Hello 报文后发现自己的MAC地址在邻居列表中，双向关系确认，邻居状态变为UP，并将RTB的接口MAC地址放在邻居列表中发送出去：RTB收到该Hello报文后，发现自己的MAC地址在邻居列表中，双向关系确认，邻居状态变为UP。</li>
+</ul>
+</blockquote>
+<p>在IS-IS中，只要邻居关系建立，则意味着邻接关系同时建立了，邻居之间可以进行LSP的交换，达到LSDB的同步。</p>
+<h4 id="点对点网络中的邻接关系"><a href="#点对点网络中的邻接关系" class="headerlink" title="点对点网络中的邻接关系"></a>点对点网络中的邻接关系</h4><p><img src="https://img-blog.csdnimg.cn/cd7067b17dc74e46beea354fa2212bef.gif" data-original="https://cdn.jsdelivr.net/gh/uprightokra/CDN/img/IS-IS/17.PNG"></p>
+<p>Level-1路由器负责区域内的路由，它只与属于同一区域的Level-1和Level-1-2路由器形成邻接关系。分属不同区域间的Level-1路由器之间不会形成邻接关系，而同一区域中的Level-1和Level-2路由器间也不会形成邻接关系。</p>
+<p>Level-2路由器负责区域间的路由，可以与同一区域或者其它区域的Level-2和Level-1-2路由器形成邻接关系。</p>
+<p>Level-1-2路由器可以与同一区域的Level-1和Level-1-2路由器形成Level-1 邻接关系，也可以与同一区域或者其他区域的Level-2和Level-1-2路由器形成 Level-2的邻接关系。</p>
+<h4 id="广播网络上的邻接关系"><a href="#广播网络上的邻接关系" class="headerlink" title="广播网络上的邻接关系"></a>广播网络上的邻接关系</h4><p><img src="https://img-blog.csdnimg.cn/cd7067b17dc74e46beea354fa2212bef.gif" data-original="https://cdn.jsdelivr.net/gh/uprightokra/CDN/img/IS-IS/18.PNG"></p>
+<p>在广播网络中，如果所有IS之间均交换路由信息将导致路由信息的重复传播。因此，在广播网络中，IS-IS需要在所有的路由器中选举一个路由器作为DIS（Designated IS，指定中间系统），它负责来创建和更新伪节点（Pseudo nodes），并负责生成伪节点的LSP，用来描述这个网络上有哪些路由器。所有其它路由器都只与此路由器进行路由信息交换。</p>
+<p><strong>与OSPF不同的是，IS-IS只要求选举一台DIS，不需要备份，而且允许抢占。</strong></p>
+<p>伪节点是用来模拟广播网络的一个虚拟节点，并非真实的路由器。在IS-IS中，伪节点用DIS的System ID和一个字节的Circuit ID（非0值）标识。使用伪节点可以简化网络拓扑，减少SPF的资源消耗。</p>
+<p>Level-1和Level-2的DIS是分别选举的，用户可以为不同级别的DIS选举设置不同的优先级。DIS优先级数值越高，被选中的可能性就越大。如果优先级最高的路由器有多台，则其中SNPA（Subnetwork Point of Attachment，子网连接点）地址（广播网络中的SNPA地址 是MAC地址）最大的路由器会被选中。不同级别的DIS可以是同一台路由器，也可以是不同的路由器。</p>
+<p>在IS-IS广播网中，同一链路上的同一级别的路由器之间都会形成邻接关系，包括所有的非DIS路由器之间也会形成邻接关系。</p>
+<h4 id="两种网络上邻居建立过程比较"><a href="#两种网络上邻居建立过程比较" class="headerlink" title="两种网络上邻居建立过程比较"></a>两种网络上邻居建立过程比较</h4><p><img src="https://img-blog.csdnimg.cn/cd7067b17dc74e46beea354fa2212bef.gif" data-original="https://cdn.jsdelivr.net/gh/uprightokra/CDN/img/IS-IS/19.PNG"></p>
+<p>上图总结了在点到点网络上与在广播网络上建立邻居关系过程中的异同。</p>
+<blockquote>
+<ul>
+<li>广播网络中的Level-1路由器使用Level-1 LAN IIH来建立邻居关系，广播网络中的Level-2路由器使用Level-2 LAN IIH，而点到点网络中的路由器则使用P2PIIH。</li>
+<li>在广播网络上，Hello 报文以组播形式发送。Level-1 LAN IIH 报文的组播地址是0180．C200.0014，Level-2LAN IIH报文的组播地址是0180．C200.0015。而在点到点网络上，IIH报文是以单播形式发送的。</li>
+<li>Hello Timer定时器都是一样的，默认为10s，与网络类型无关。但在广播网络中，DIS的Hello Timer只有其它IS的1／3，这样可以更快的探测到DIS失效，加快网络收敛。在广播网络上，使用DIS来创建和更新伪节点，以简化网络拓扑，减少SPF的资源消耗。而在点到点网络上没有DIS机制。</li>
+<li>在广播网络上，所有同一级别的IS之间都形成邻接关系，总的邻接关系数量为n（n-1）／2。而在点到点网络上，相邻的同一级别IS间只建立一个邻接关系。</li>
+</ul>
+</blockquote>
+<h3 id="LSDB的同步"><a href="#LSDB的同步" class="headerlink" title="LSDB的同步"></a>LSDB的同步</h3><h4 id="LSDB的同步-LSP与SNP报文"><a href="#LSDB的同步-LSP与SNP报文" class="headerlink" title="LSDB的同步-LSP与SNP报文"></a>LSDB的同步-LSP与SNP报文</h4><p>邻接关系建立后，邻居IS间进行LSDB的同步。同步过程主要由邻居间交互LSP和SNP协议报文完成的。</p>
+<p>LSP用于描述链路状态信息。每一个IS产生一个（或多个）LSP来描述它与周围邻居IS的连接； LSP报文中包含了发送者的System ID和序列号。如果LSP中包含的链路信息量太多，报文太大，则可以进行分片。Level-1路由器产生Level-1 LSP，仅在区域内传播： Level-2路由器产生Level-2 LSP，在骨干网内传播。</p>
+<p>SNP用于描述LSDB中LSP的摘要信息，并对邻居之间最新接收的LSP进行确认。<br>SNP包括CSNP （Complete SNP，全时序报文）和PSNP （Partial SNP，部分时序报文），进一步又可分为Level-1 CSNP， Level-2 CSNP， Level-1 PSNP和 Level-2 PSNP。</p>
+<p>CSNP包括LSDB中所有LSP的摘要信息，从而可以在相邻路由器间保持LSDB的同步。在广播网络上， CSNP由DIS定期发送（缺省的发送周期为10秒）；在点到点链路上，CSNP只在第一次建立邻接关系时发送。</p>
+<p>PSNP只列举最近收到的一个或多个LSP的序号，它能够一次对多个LSP进行确认。</p>
+<h4 id="LSDB的同步-广播网络"><a href="#LSDB的同步-广播网络" class="headerlink" title="LSDB的同步-广播网络"></a>LSDB的同步-广播网络</h4><p><img src="https://img-blog.csdnimg.cn/cd7067b17dc74e46beea354fa2212bef.gif" data-original="https://cdn.jsdelivr.net/gh/uprightokra/CDN/img/IS-IS/20.PNG"></p>
+<h4 id="LSDB的同步-P2P网络"><a href="#LSDB的同步-P2P网络" class="headerlink" title="LSDB的同步-P2P网络"></a>LSDB的同步-P2P网络</h4><p><img src="https://img-blog.csdnimg.cn/cd7067b17dc74e46beea354fa2212bef.gif" data-original="https://cdn.jsdelivr.net/gh/uprightokra/CDN/img/IS-IS/21.PNG"></p>
+<h3 id="拓扑计算与IP路由的生成"><a href="#拓扑计算与IP路由的生成" class="headerlink" title="拓扑计算与IP路由的生成"></a>拓扑计算与IP路由的生成</h3><p><img src="https://img-blog.csdnimg.cn/cd7067b17dc74e46beea354fa2212bef.gif" data-original="https://cdn.jsdelivr.net/gh/uprightokra/CDN/img/IS-IS/22.PNG"></p>
+<p>在集成化IS-IS中，最终IP路由的生成需要经过两个步骤：</p>
+<p>第1步：根据LSDB中的LSP信息，通过SPF 算法计算出到达拓扑中所有节点的路径和开销；</p>
+<p>第2步：根据LSP中携带的IP可达性信息，通过执行PRC（Partial Route Computing），得出IP路由转发信息表。</p>
+<p>在计算拓扑信息时，IS-IS与OSPF的区别有以下几点：</p>
+<blockquote>
+<ul>
+<li>Level-1和Level-2路由器分别构建了自己的LSDB，所以在Level-1-2路由器上，SPF 算法要针对不同的LSDB而执行两次；</li>
+<li>IS-IS 使用NET 来标识路由器，所以拓扑数据库中的目的地址是NET地址，而非像OSPF中的IP；</li>
+<li>对于广播网络，DIS到所有IS邻居的开销值为0。</li>
+</ul>
+</blockquote>
+<p>在上图中，RTA和RTB是Level-1路由器，属于Area1；RTC和RTD是Level-1-2路由 器。RTC经过SPF 计算后，得出到达RTB的最小开销是20，到达RTC的最小开销是20＋10＝30，到达RTD的最小开销是10。</p>
+<h3 id="IP路由的形成"><a href="#IP路由的形成" class="headerlink" title="IP路由的形成"></a>IP路由的形成</h3><p><img src="https://img-blog.csdnimg.cn/cd7067b17dc74e46beea354fa2212bef.gif" data-original="https://cdn.jsdelivr.net/gh/uprightokra/CDN/img/IS-IS/23.PNG"></p>
+<p>IS-IS路由器接口启动IP协议后，相关的IP路由信息作为CLV附在LSP中，以叶节点的形式传递。IP信息的变化不会影响到网络拓扑。</p>
+<p>如果链路新增加了IP地址，相关的LSP传播到区域中后，所有路由器只需要执行RPC，将计算出的路由插入到路由表中，不需要重新执行SPF运算。这可以降低网络变化对设备CPU的影响，是IS—IS 相比 OSPF的优点。但是如果拓扑信息发生变化，则需要重新计算到达特定网段的路径和开销。</p>
+<p>IS-IS会分别生成 Level-1和Level-2路由，放于IS-IS协议路由表中。对于Level-1-2链路来说，链路上的IP路由会同时生成Level-1和Level-2路由， Level-1路由优先。如果路由器上同时运行了多路由协议，则经过路由优先级比较后，IS-IS协议路由表中的路由才会进入IP路由表中，作为有效路由指导IP报文转发。</p>
 
                 
             </div>
@@ -671,7 +919,7 @@ gulp.task('default', gulp.parallel(
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="https://uprightokra.github.io/2022-04-19-hexo-you-hua-zhi-gulp-you-hua.html">https://uprightokra.github.io/2022-04-19-hexo-you-hua-zhi-gulp-you-hua.html</a>
+                    <a href="https://uprightokra.github.io/2022-11-18-shu-tong-20-is-is.html">https://uprightokra.github.io/2022-11-18-shu-tong-20-is-is.html</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -709,8 +957,8 @@ gulp.task('default', gulp.parallel(
                     
                         <div class="article-tag">
                             
-                                <a href="/tags/Hexo/">
-                                    <span class="chip bg-color">Hexo</span>
+                                <a href="/tags/IS-IS/">
+                                    <span class="chip bg-color">IS-IS</span>
                                 </a>
                             
                         </div>
@@ -1210,49 +1458,48 @@ gulp.task('default', gulp.parallel(
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
+                <i class="far fa-dot-circle"></i>&nbsp;本篇
+            </div>
             <div class="card">
-                <a href="/2022-04-19-hexo-you-hua-zhi-jsdeliver-github-jia-su-tu-pian-fang-wen.html">
+                <a href="/2022-11-18-shu-tong-20-is-is.html">
                     <div class="card-image">
                         
                         
-                        <img src="https://img-blog.csdnimg.cn/cd7067b17dc74e46beea354fa2212bef.gif" data-original="https://aimer666.oss-cn-hangzhou.aliyuncs.com/35.jpg" class="responsive-img" alt="Hexo优化之jsdeliver+Github加速图片访问">
+                        <img src="https://img-blog.csdnimg.cn/cd7067b17dc74e46beea354fa2212bef.gif" data-original="https://aimer666.oss-cn-hangzhou.aliyuncs.com/28.jpg" class="responsive-img" alt="数通 20-IS-IS">
                         
-                        <span class="card-title">Hexo优化之jsdeliver+Github加速图片访问</span>
+                        <span class="card-title">数通 20-IS-IS</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            一 CDN解释
-内容分发网络(Content Delivery Network，缩写：CDN)是指一种透过互联网互相连接的电脑网络系统
-利用最靠近每位用户的服务器，更快、更可靠地将音乐、图片、影片、应用程序及其他文件发送给用户
-来提高性能、
+                            
                         
                     </div>
                     <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2022-04-19
-                        </span>
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2022-11-18
+                            </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/Hexo/" class="post-category">
-                                    Hexo
+                            <a href="/categories/Datacom/" class="post-category">
+                                    Datacom
                                 </a>
                             
                             
                         </span>
                     </div>
                 </div>
+
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/Hexo/">
-                        <span class="chip bg-color">Hexo</span>
+                    <a href="/tags/IS-IS/">
+                        <span class="chip bg-color">IS-IS</span>
                     </a>
                     
                 </div>
@@ -1266,13 +1513,12 @@ gulp.task('default', gulp.parallel(
                 下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2022-04-19-hexo-you-hua-zhi-lazyload-tu-pian-lan-jia-zai.html">
+                <a href="/2022-11-15-shi-yan-ensp-ospf-duo-jin-cheng.html">
                     <div class="card-image">
                         
+                        <img src="https://img-blog.csdnimg.cn/cd7067b17dc74e46beea354fa2212bef.gif" data-original="https://img-blog.csdnimg.cn/4aa36e431ab84089a57b83c5b025d9ac.jpeg" class="responsive-img" alt="实验ensp OSPF多进程">
                         
-                        <img src="https://img-blog.csdnimg.cn/cd7067b17dc74e46beea354fa2212bef.gif" data-original="https://aimer666.oss-cn-hangzhou.aliyuncs.com/36.jpg" class="responsive-img" alt="Hexo优化之lazyload图片懒加载">
-                        
-                        <span class="card-title">Hexo优化之lazyload图片懒加载</span>
+                        <span class="card-title">实验ensp OSPF多进程</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -1283,14 +1529,14 @@ gulp.task('default', gulp.parallel(
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2022-04-19
+                                <i class="far fa-clock fa-fw icon-date"></i>2022-11-15
                             </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/Hexo/" class="post-category">
-                                    Hexo
+                            <a href="/categories/ensp%E5%AE%9E%E9%AA%8C/" class="post-category">
+                                    ensp实验
                                 </a>
                             
                             
@@ -1300,8 +1546,8 @@ gulp.task('default', gulp.parallel(
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/Hexo/">
-                        <span class="chip bg-color">Hexo</span>
+                    <a href="/tags/OSPF/">
+                        <span class="chip bg-color">OSPF</span>
                     </a>
                     
                 </div>
@@ -1541,7 +1787,7 @@ gulp.task('default', gulp.parallel(
             <br>
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">90.3k</span>&nbsp;字&nbsp;|
+                class="white-color">98k</span>&nbsp;字&nbsp;|
             
             
             

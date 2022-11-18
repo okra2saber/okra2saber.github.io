@@ -6,7 +6,7 @@
   <link href="https://uprightokra.github.io/atom.xml" rel="self"/>
   
   <link href="https://uprightokra.github.io/"/>
-  <updated>2022-11-15T15:23:39.022Z</updated>
+  <updated>2022-11-18T15:11:51.919Z</updated>
   <id>https://uprightokra.github.io/</id>
   
   <author>
@@ -15,6 +15,31 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>数通 20-IS-IS</title>
+    <link href="https://uprightokra.github.io/2022-11-18-shu-tong-20-is-is.html"/>
+    <id>https://uprightokra.github.io/2022-11-18-shu-tong-20-is-is.html</id>
+    <published>2022-11-18T07:07:02.000Z</published>
+    <updated>2022-11-18T15:11:51.919Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h1 id=&quot;IS-IS&quot;&gt;&lt;a href=&quot;#IS-IS&quot; class=&quot;headerlink&quot; title=&quot;IS-IS&quot;&gt;&lt;/a&gt;&lt;center&gt;IS-IS&lt;/center&gt;&lt;/h1&gt;&lt;h2 id=&quot;IS-IS基本概念&quot;&gt;&lt;a href=&quot;#IS-IS基本概念&quot;</summary>
+        
+      
+    
+    
+    
+    <category term="Datacom" scheme="https://uprightokra.github.io/categories/Datacom/"/>
+    
+    
+    <category term="IS-IS" scheme="https://uprightokra.github.io/tags/IS-IS/"/>
+    
+  </entry>
   
   <entry>
     <title>实验ensp OSPF多进程</title>
@@ -196,7 +221,7 @@
     <link href="https://uprightokra.github.io/2022-10-24-shu-tong-16-ospf-de-ji-ben-gai-nian.html"/>
     <id>https://uprightokra.github.io/2022-10-24-shu-tong-16-ospf-de-ji-ben-gai-nian.html</id>
     <published>2022-10-24T12:16:48.000Z</published>
-    <updated>2022-11-16T07:35:05.535Z</updated>
+    <updated>2022-11-17T14:52:00.362Z</updated>
     
     
       
@@ -502,31 +527,6 @@
     
     
     <category term="Fat AP&amp;Fit AP" scheme="https://uprightokra.github.io/tags/Fat-AP-Fit-AP/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>数通 15-园区典型组网</title>
-    <link href="https://uprightokra.github.io/2022-10-12-shu-tong-15-yuan-qu-dian-xing-zu-wang.html"/>
-    <id>https://uprightokra.github.io/2022-10-12-shu-tong-15-yuan-qu-dian-xing-zu-wang.html</id>
-    <published>2022-10-12T11:58:07.000Z</published>
-    <updated>2022-11-16T07:34:59.653Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;h1 id=&quot;园区网典型组网&quot;&gt;&lt;a href=&quot;#园区网典型组网&quot; class=&quot;headerlink&quot; title=&quot;园区网典型组网&quot;&gt;&lt;/a&gt;&lt;center&gt;园区网典型组网&lt;/center&gt;&lt;/h1&gt;&lt;h3 id=&quot;什么是园区网&quot;&gt;&lt;a href=&quot;#什么是园区网&quot;</summary>
-        
-      
-    
-    
-    
-    <category term="Datacom" scheme="https://uprightokra.github.io/categories/Datacom/"/>
-    
-    
-    <category term="园区网" scheme="https://uprightokra.github.io/tags/%E5%9B%AD%E5%8C%BA%E7%BD%91/"/>
     
   </entry>
   

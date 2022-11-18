@@ -555,21 +555,21 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2022-11-16
+                    2022-11-17
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    6k
+                    7.1k
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    22 分
+                    25 分
                 </div>
                 
 
@@ -1007,6 +1007,59 @@ Auth Data：ospf的加密密钥<span aria-hidden="true" class="line-numbers-rows
 <td>Totally NSSA区域允许引入自治系统外部路由，由ASBR发布Type7 LSA通告给本区域，这些Type7 LSA在ABR上转换成Type5 LSA，并且泛洪到整个OSPF域中。 Totally NSSA区域同时保留自治系统内的Totally STUB Area区域的特征。 该区域的ABR发布Type3和Type7缺省路由传播到区域内，所有域间路由都必须通过ABR才能发布。</td>
 </tr>
 </tbody></table>
+<p><img src="https://img-blog.csdnimg.cn/cd7067b17dc74e46beea354fa2212bef.gif" data-original="https://img-blog.csdnimg.cn/61e4f55618a94d3e80544ef26100501d.png"></p>
+<pre class="line-numbers language-none"><code class="language-none">1、stub
+[AR2—ospf—1—area—0. 0.0. 1]stub //配置该区域为stub区域。
+	1)在该区域下所有的接口发送的OSPF Hello报文E bit等于0.
+	2)OSPF路由器不会将， 4、5类LSA传递给特殊区域下的OSPF邻居。
+	3)ABR将会产生一条缺省的3类LSA，帮助Stub区域内的设备访问外部网络。
+	4)stub区域内的设备不能引入外部路由。
+	5)Stub区域内缺少了5类LSA，所以stub区域内的设备，将没有办法根据5类LSA选择出去往外部路由的最优路径，当Stub存在多个ABR的时候，将会产生次优路径的风险。
+	解决方式： 
+		①在ABR上手动调整，自身产生缺省路由的cost值。（使用最多）
+  		②手动调整区域内设备的路径cost，使其优选最优的ABR作为出口。
+ 		③在区域内的设备上针对下一跳地址，手动设置权重值。
+	6)缺省路由的环路防止： ABR不计算非骨干区域的3类LSA.
+
+2、完全Stub
+[AR2—ospf—1—area—0. 0. 0. 1]stub no—summary //配置OSPF区域为完全Stub区域。
+	1)在Stub基础上，在3类LSA也进行过滤。
+	2)完全stub区域内，缺失了3类4类和5类LSA，导致stub区域内路由器，访问区域间和域外路由的时候可能出现次优路径。
+	
+3、nssa
+特征：即可以实现LSDB的优化作用，NSSA区域内的设备也可以引入外部路由。
+[AR2-ospf-1-area-0.0.0.1]nssa     ／／配置该区域为nssa区域。
+	1)当把一个区域配置为nssa区域之后，该区域下所有OSPF接口发送的报文N比特置1． 
+	2)ABR不会将5类LSA，传递到NSSA区域内部。
+	3)NSSA区域内部引入的外部路由，将会以7类LSA进行呈现。
+	4)NSSA区域内ABR会将7类LSA，转换成5类LSA传递到其他区域。
+	5)NSSA区域内ABR将会自动产生一条7类缺省LSA，帮助nssa区域内的设备访问其他区域引入的外部路由信息。 
+	6)当NSSA区域内存在多个ABR的时候：
+		防环：当ABR在一个区域产生一条7类LSA之后，将不会计算其他设备产生的相同7类LSA。
+		选路：NSSA区域由于缺少5类LSA，当存在多个ABR的时候，访问外部路由将有可能出现次优路径。 		 7转5：当NSSA区域存在多个ABR的时候，Router—id大的路由器，执行7转5．
+
+4、完全nssa
+［AR2-ospf-1-area-0.0.0.1］nssa no-summary ／／配置OSPF区域为完全NSSA区域
+1)在NSSA区域的基础上，将3类LSA也进行过滤。
+2完全NSSA区域内的设备由于缺失3类和5类LSA，可能导致访问区域间路由和域外路由出现次优路径<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<blockquote>
+<h5 id="5类LSA-FA如何产生："><a href="#5类LSA-FA如何产生：" class="headerlink" title="5类LSA FA如何产生："></a>5类LSA FA如何产生：</h5><p>1、ASBR去往外部路由的出接口加入到了OSPF进程中。</p>
+<p>2、ASBR去往外部路由的出接口不是静默接口。</p>
+<p>3、ASBR去往外部路由的出接口不是P2P或者P2MP类型。</p>
+<h5 id="7类LSA-FA如何产生："><a href="#7类LSA-FA如何产生：" class="headerlink" title="7类LSA FA如何产生："></a>7类LSA FA如何产生：</h5><p>1、与5类相同的场景下，FA地址的取值，为自身去往外部路由的下一跳。</p>
+<p>2、与5类不相同的场景下，FA地址的取值，使用一下原则：</p>
+<p>①如果ASBR在NSSA区域内存在活动的loopback接口，则FA的值选取loopback接口地址。 </p>
+<p>②如果ASBR在NSSA区域没有1oopback接口，FA的值选取NSSA区域内第一个UP的物理接口。</p>
+<p>③如果不符合上述两个条件，则FA的值为0。</p>
+<h5 id="IE考题：在NSSA区域是否会存在没有FA的7类LSA？"><a href="#IE考题：在NSSA区域是否会存在没有FA的7类LSA？" class="headerlink" title="IE考题：在NSSA区域是否会存在没有FA的7类LSA？"></a>IE考题：在NSSA区域是否会存在没有FA的7类LSA？</h5><p>会存在，FA的取值条件不符合上述情况时，就不会有FA。</p>
+</blockquote>
+<blockquote>
+<h5 id="N／P-标志位"><a href="#N／P-标志位" class="headerlink" title="N／P 标志位"></a>N／P 标志位</h5><p>1、在hello报文中，标识自身是否具备7类LSA的处理能力。</p>
+<p>2、在LSA中，标识这条LSA是否需要执行7转5．</p>
+<p>7转5的时候：FA地址继承，外部路由类型继承，Cost继承，tag继承。</p>
+<h5 id="E标志位"><a href="#E标志位" class="headerlink" title="E标志位"></a>E标志位</h5><p>标识自身是否具备5类LSA的处理能力。</p>
+</blockquote>
 <h4 id="伪节点"><a href="#伪节点" class="headerlink" title="伪节点"></a>伪节点</h4><p>在广播型链路中进行OSPF计算时，<strong>将广播型链路在算法上抽象为一台路由器</strong>（即将这个二层交换机或者链路抽象为一台路由器），抽象出来的这台虚拟路由器（实际中是不存在的）就称为伪节点。</p>
 <p>伪节点本身是无法产生LSA的，实际上是DR产生的Type-2 LSA。</p>
 
@@ -1900,7 +1953,7 @@ Auth Data：ospf的加密密钥<span aria-hidden="true" class="line-numbers-rows
             <br>
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">90.3k</span>&nbsp;字&nbsp;|
+                class="white-color">98k</span>&nbsp;字&nbsp;|
             
             
             

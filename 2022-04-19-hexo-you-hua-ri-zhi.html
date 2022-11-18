@@ -4,7 +4,7 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="SecureCRT的使用教程（ 过程非常详细！！值得查看）, Okraの筆記">
+    <meta name="keywords" content="Hexo优化日志, Okraの筆記">
     <meta name="description" content="">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -16,7 +16,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>SecureCRT的使用教程（ 过程非常详细！！值得查看） | Okraの筆記</title>
+    <title>Hexo优化日志 | Okraの筆記</title>
     <link rel="icon" type="image/png" href="https://aimer666.oss-cn-hangzhou.aliyuncs.com/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/uprightokra/uprightokra.github.io/libs/awesome/css/all.css">
@@ -398,12 +398,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('https://aimer666.oss-cn-hangzhou.aliyuncs.com/18.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('https://aimer666.oss-cn-hangzhou.aliyuncs.com/13.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">SecureCRT的使用教程（ 过程非常详细！！值得查看）</h1>
+                    <h1 class="description center-align post-title">Hexo优化日志</h1>
                 </div>
             </div>
         </div>
@@ -523,8 +523,8 @@
                     
                     <div class="article-tag">
                         
-                            <a href="/tags/SecureCRT/">
-                                <span class="chip bg-color">SecureCRT</span>
+                            <a href="/tags/Hexo/">
+                                <span class="chip bg-color">Hexo</span>
                             </a>
                         
                     </div>
@@ -535,8 +535,8 @@
                     <div class="post-cate">
                         <i class="fas fa-bookmark fa-fw icon-category"></i>
                         
-                            <a href="/categories/%E8%BD%AF%E4%BB%B6%E6%95%99%E7%A8%8B/" class="post-category">
-                                软件教程
+                            <a href="/categories/Hexo/" class="post-category">
+                                Hexo
                             </a>
                         
                     </div>
@@ -548,21 +548,21 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2022-08-12
+                    2022-04-19
                 </div>
                 
 
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2022-11-16
+                    2022-11-18
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    30
+                    430
                 </div>
                 
 
@@ -597,7 +597,42 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <p><a target="_blank" rel="noopener" href="https://blog.csdn.net/qq_39052513/article/details/104692026">(23条消息) SecureCRT的使用教程（ 过程非常详细！！值得查看）_超Ren专属的博客-CSDN博客_securecrt</a></p>
+                <h1 id="Hexo优化日志"><a href="#Hexo优化日志" class="headerlink" title="Hexo优化日志"></a>Hexo优化日志</h1><h2 id="Hexo优化——gulp（2022-04-19）"><a href="#Hexo优化——gulp（2022-04-19）" class="headerlink" title="Hexo优化——gulp（2022.04.19）"></a>Hexo优化——gulp（2022.04.19）</h2><p>gulp通过对站点使用的静态资源进行压缩，来优化网站的访问速度。</p>
+<p>参考地址：</p>
+<p><a target="_blank" rel="noopener" href="https://www.jianshu.com/p/1123c89c491a">Hexo博客使用gulp压缩静态资源 - 简书 (jianshu.com)</a></p>
+<p>使用命令：</p>
+<pre class="line-numbers language-none"><code class="language-none">hexo clean
+hexo g
+gulp
+hexo d<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h2 id="Hexo优化——jsdeliver（2022-04-19）"><a href="#Hexo优化——jsdeliver（2022-04-19）" class="headerlink" title="Hexo优化——jsdeliver（2022.04.19）"></a>Hexo优化——jsdeliver（2022.04.19）</h2><p>在网站搭建完后，发现图片加载和网页切换都十分缓慢，在网上找了教程将网站的静态js、css等全部使用jsdeliver+github进行加速。</p>
+<p>将Banner图和其他blog卡片上的图片全部放进了阿里云OSS存储的backet中。</p>
+<p>参考地址：</p>
+<p><a target="_blank" rel="noopener" href="https://blog.csdn.net/Calvin_zhou/article/details/108733518">Hexo博客开发之——jsDeliver+Github加速图片访问_PGzxc的博客-CSDN博客</a></p>
+<p>CDN本地推送方法：</p>
+<pre class="line-numbers language-none"><code class="language-none">git add .
+git commit -m '第一次上传'  		#注意如果不敲 -m ，git会默认进入编辑器。 
+git push<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+
+<p>Markdown文档中使用方法：</p>
+<pre class="line-numbers language-none"><code class="language-none">## jsdelivr图片的使用
+### 一 直接使用仓库的图片
+![][1]
+### 二 使用发布版本的图片
+![][2]
+
+[1]:https://cdn.jsdelivr.net/gh/uprightokra/CDN/img/IS-IS/01.PNG
+[2]:https://cdn.jsdelivr.net/gh/uprightokra/CDN@1.0/img/IS-IS/01.PNG<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h2 id="Hexo优化——lazyload图片懒加载（2022-04-19）"><a href="#Hexo优化——lazyload图片懒加载（2022-04-19）" class="headerlink" title="Hexo优化——lazyload图片懒加载（2022.04.19）"></a>Hexo优化——lazyload图片懒加载（2022.04.19）</h2><p>参考地址：</p>
+<p><a target="_blank" rel="noopener" href="https://blog.csdn.net/tingqinxiyin/article/details/93494680">hexo图片懒加载方案_tingqinxiyin的博客-CSDN博客</a></p>
+<h2 id="Hexo优化——域名解析（2022-11-14）"><a href="#Hexo优化——域名解析（2022-11-14）" class="headerlink" title="Hexo优化——域名解析（2022.11.14）"></a>Hexo优化——域名解析（2022.11.14）</h2><p>在阿里云里购买了属于自己的域名<a target="_blank" rel="noopener" href="http://www.okra2saber.top,考虑到价格的性价比,所以直接买了10年的使用权./">www.okra2saber.top，考虑到价格的性价比，所以直接买了10年的使用权。</a></p>
+<p>参考地址：</p>
+<p><a target="_blank" rel="noopener" href="https://blog.csdn.net/miss_bear/article/details/106164293">(34条消息) hexo博客设置域名_missbearC的博客-CSDN博客</a></p>
+<p>原来二级域名转变成现在的域名后，Valine的评论功能出现了如下错误：</p>
+<p><img src="https://img-blog.csdnimg.cn/cd7067b17dc74e46beea354fa2212bef.gif" data-original="https://img-blog.csdnimg.cn/b2ed6693f271447d995e1c83d23cccc9.png"></p>
+<p>解决方法：在leancloud的评论应用-&gt;设置-&gt;安全中心-&gt;Web安全域名中修改新的域名</p>
 
                 
             </div>
@@ -624,7 +659,7 @@
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="https://uprightokra.github.io/2022-08-12-securecrt-de-shi-yong-jiao-cheng-guo-cheng-fei-chang-xiang-xi-zhi-de-cha-kan.html">https://uprightokra.github.io/2022-08-12-securecrt-de-shi-yong-jiao-cheng-guo-cheng-fei-chang-xiang-xi-zhi-de-cha-kan.html</a>
+                    <a href="https://uprightokra.github.io/2022-04-19-hexo-you-hua-ri-zhi.html">https://uprightokra.github.io/2022-04-19-hexo-you-hua-ri-zhi.html</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -662,8 +697,8 @@
                     
                         <div class="article-tag">
                             
-                                <a href="/tags/SecureCRT/">
-                                    <span class="chip bg-color">SecureCRT</span>
+                                <a href="/tags/Hexo/">
+                                    <span class="chip bg-color">Hexo</span>
                                 </a>
                             
                         </div>
@@ -1167,30 +1202,34 @@
             <div class="article-badge left-badge text-color">
                 <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
-                <a href="/2022-08-13-shi-yan-hcl-telnet-yuan-cheng-deng-lu.html">
+                <a href="/2022-04-19-hexo-you-hua-zhi-jsdeliver-github-jia-su-tu-pian-fang-wen.html">
                     <div class="card-image">
                         
-                        <img src="https://img-blog.csdnimg.cn/cd7067b17dc74e46beea354fa2212bef.gif" data-original="https://img-blog.csdnimg.cn/b3e51b3b8e4d4b618e97bb3a30163591.jpeg" class="responsive-img" alt="实验HCL Telnet远程登录">
                         
-                        <span class="card-title">实验HCL Telnet远程登录</span>
+                        <img src="https://img-blog.csdnimg.cn/cd7067b17dc74e46beea354fa2212bef.gif" data-original="https://aimer666.oss-cn-hangzhou.aliyuncs.com/35.jpg" class="responsive-img" alt="Hexo优化之jsdeliver+Github加速图片访问">
+                        
+                        <span class="card-title">Hexo优化之jsdeliver+Github加速图片访问</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            
+                            一 CDN解释
+内容分发网络(Content Delivery Network，缩写：CDN)是指一种透过互联网互相连接的电脑网络系统
+利用最靠近每位用户的服务器，更快、更可靠地将音乐、图片、影片、应用程序及其他文件发送给用户
+来提高性能、
                         
                     </div>
                     <div class="publish-info">
                         <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2022-08-13
+                            <i class="far fa-clock fa-fw icon-date"></i>2022-04-19
                         </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/H3CNE%E5%AE%9E%E9%AA%8C/" class="post-category">
-                                    H3CNE实验
+                            <a href="/categories/Hexo/" class="post-category">
+                                    Hexo
                                 </a>
                             
                             
@@ -1200,8 +1239,8 @@
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/Telnet/">
-                        <span class="chip bg-color">Telnet</span>
+                    <a href="/tags/Hexo/">
+                        <span class="chip bg-color">Hexo</span>
                     </a>
                     
                 </div>
@@ -1215,12 +1254,13 @@
                 下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2022-08-12-shu-tong-04-ming-ling-xing-pei-zhi-ji-chu.html">
+                <a href="/2022-04-19-hexo-you-hua-zhi-lazyload-tu-pian-lan-jia-zai.html">
                     <div class="card-image">
                         
-                        <img src="https://img-blog.csdnimg.cn/cd7067b17dc74e46beea354fa2212bef.gif" data-original="https://img-blog.csdnimg.cn/cb83b0f9e2e84d66ba355b0b38b1d4c1.png" class="responsive-img" alt="数通 04-命令行配置基础">
                         
-                        <span class="card-title">数通 04-命令行配置基础</span>
+                        <img src="https://img-blog.csdnimg.cn/cd7067b17dc74e46beea354fa2212bef.gif" data-original="https://aimer666.oss-cn-hangzhou.aliyuncs.com/36.jpg" class="responsive-img" alt="Hexo优化之lazyload图片懒加载">
+                        
+                        <span class="card-title">Hexo优化之lazyload图片懒加载</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -1231,14 +1271,14 @@
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2022-08-12
+                                <i class="far fa-clock fa-fw icon-date"></i>2022-04-19
                             </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/Datacom/" class="post-category">
-                                    Datacom
+                            <a href="/categories/Hexo/" class="post-category">
+                                    Hexo
                                 </a>
                             
                             
@@ -1248,8 +1288,8 @@
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/%E7%BD%91%E7%BB%9C%E5%9F%BA%E7%A1%80/">
-                        <span class="chip bg-color">网络基础</span>
+                    <a href="/tags/Hexo/">
+                        <span class="chip bg-color">Hexo</span>
                     </a>
                     
                 </div>
