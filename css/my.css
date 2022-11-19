@@ -1,1 +1,18 @@
 /* Here is your custom css styles. */
+@font-face{
+    font-family: 'YeXingCao';
+    src: url('../font/YeXingCao.ttf');
+}
+
+body{
+    font-family: 'YeXingCao';
+}
+
+@font-face{
+	font-family: 'HaiPaiYuan';
+    src: url('../font/HaiPaiYuan.ttf');
+}
+
+.diy-font{
+    font-family: 'HaiPaiYuan';
+}
