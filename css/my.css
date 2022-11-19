@@ -7,3 +7,12 @@
 body{
     font-family: 'YeXingCao';
 }
+
+@font-face{
+	font-family: 'HaiPaiYuan';
+    src: url('../font/HaiPaiYuan.ttf');
+}
+
+.diy-font{
+    font-family: 'HaiPaiYuan';
+}
