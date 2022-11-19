@@ -19,13 +19,13 @@
     <title>关于 | Okraの筆記</title>
     <link rel="icon" type="image/png" href="https://aimer666.oss-cn-hangzhou.aliyuncs.com/favicon.png">
 
-    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/uprightokra/uprightokra.github.io/libs/awesome/css/all.css">
-    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/uprightokra/uprightokra.github.io/libs/materialize/materialize.min.css">
-    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/uprightokra/uprightokra.github.io/libs/aos/aos.css">
-    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/uprightokra/uprightokra.github.io/libs/animate/animate.min.css">
-    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/uprightokra/uprightokra.github.io/libs/lightGallery/css/lightgallery.min.css">
-    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/uprightokra/uprightokra.github.io/css/matery.css">
-    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/uprightokra/uprightokra.github.io/css/my.css">
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/uprightokra/CDN/libs/awesome/css/all.css">
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/uprightokra/CDN/libs/materialize/materialize.min.css">
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/uprightokra/CDN/libs/aos/aos.css">
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/uprightokra/CDN/libs/animate/animate.min.css">
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/uprightokra/CDN/libs/lightGallery/css/lightgallery.min.css">
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/uprightokra/CDN/css/matery.css">
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/uprightokra/CDN/css/my.css">
 	<link rel="stylesheet" type="text/css" href="/css/loading.css">
     <script src="https://cdn.jsdelivr.net/gh/jquery/jquery@3.2.1/dist/jquery.min.js"></script>
 
@@ -719,7 +719,7 @@
     </div>
 </div>
 
-<script type="text/javascript" src="https://cdn.jsdelivr.net/gh/uprightokra/uprightokra.github.io/libs/echarts/echarts.min.js"></script>
+<script type="text/javascript" src="https://cdn.jsdelivr.net/gh/uprightokra/CDN/libs/echarts/echarts.min.js"></script>
 <script>
     let postsChart = echarts.init(document.getElementById('posts-chart'));
     let categoriesChart = echarts.init(document.getElementById('categories-chart'));
@@ -790,7 +790,7 @@
                 type: 'pie',
                 radius: '50%',
                 color: ['#6772e5', '#ff9e0f', '#fa755a', '#3ecf8e', '#82d3f4', '#ab47bc', '#525f7f', '#f51c47', '#26A69A'],
-                data: [{"name":"Linux","value":2},{"name":"Hexo","value":1},{"name":"mysql","value":6},{"name":"软件教程","value":2},{"name":"H3CNE实验","value":2},{"name":"ensp实验","value":26},{"name":"Datacom","value":33}],
+                data: [{"name":"Datacom","value":33},{"name":"Linux","value":2},{"name":"Hexo","value":1},{"name":"mysql","value":6},{"name":"软件教程","value":2},{"name":"H3CNE实验","value":2},{"name":"ensp实验","value":26}],
                 itemStyle: {
                     emphasis: {
                         shadowBlur: 10,
@@ -814,7 +814,7 @@
         xAxis: [
             {
                 type: 'category',
-                data: ["OSPF","网络基础","mysql","ACL","CentOS 7","Telnet","NAT","Virtual Link","AAA","Hexo"]
+                data: ["网络基础","OSPF","mysql","ACL","CentOS 7","Telnet","NAT","Virtual Link","AAA","Hexo"]
             }
         ],
         yAxis: [
@@ -963,6 +963,12 @@
             
             
             
+            <a href="/tags/ICMP/">
+                <span class="chip center-align waves-effect waves-light chip-default">ICMP</span>
+            </a>
+            
+            
+            
             <a href="/tags/mysql/">
                 <span class="chip center-align waves-effect waves-light chip-default">mysql</span>
             </a>
@@ -975,20 +981,32 @@
             
             
             
+            <a href="/tags/SecureCRT/">
+                <span class="chip center-align waves-effect waves-light chip-default">SecureCRT</span>
+            </a>
+            
+            
+            
             <a href="/tags/Typora/">
                 <span class="chip center-align waves-effect waves-light chip-default">Typora</span>
             </a>
             
             
             
-            <a href="/tags/%E9%97%AE%E9%A2%98%E8%A7%A3%E5%86%B3/">
-                <span class="chip center-align waves-effect waves-light chip-default">问题解决</span>
+            <a href="/tags/%E7%BD%91%E7%BB%9C%E5%9F%BA%E7%A1%80/">
+                <span class="chip center-align waves-effect waves-light chip-default">网络基础</span>
             </a>
             
             
             
             <a href="/tags/loopback/">
                 <span class="chip center-align waves-effect waves-light chip-default">loopback</span>
+            </a>
+            
+            
+            
+            <a href="/tags/%E9%97%AE%E9%A2%98%E8%A7%A3%E5%86%B3/">
+                <span class="chip center-align waves-effect waves-light chip-default">问题解决</span>
             </a>
             
             
@@ -1083,12 +1101,6 @@
             
             
             
-            <a href="/tags/%E4%B8%89%E5%B1%82%E9%80%9A%E4%BF%A1%E8%BF%87%E7%A8%8B/">
-                <span class="chip center-align waves-effect waves-light chip-default">三层通信过程</span>
-            </a>
-            
-            
-            
             <a href="/tags/%E5%8D%95%E8%87%82%E8%B7%AF%E7%94%B1/">
                 <span class="chip center-align waves-effect waves-light chip-default">单臂路由</span>
             </a>
@@ -1097,6 +1109,12 @@
             
             <a href="/tags/ensp%E5%AE%9E%E9%AA%8C/">
                 <span class="chip center-align waves-effect waves-light chip-default">ensp实验</span>
+            </a>
+            
+            
+            
+            <a href="/tags/%E4%B8%89%E5%B1%82%E9%80%9A%E4%BF%A1%E8%BF%87%E7%A8%8B/">
+                <span class="chip center-align waves-effect waves-light chip-default">三层通信过程</span>
             </a>
             
             
@@ -1113,14 +1131,14 @@
             
             
             
-            <a href="/tags/%E5%A4%9A%E5%8C%BA%E5%9F%9FOSPF/">
-                <span class="chip center-align waves-effect waves-light chip-default">多区域OSPF</span>
+            <a href="/tags/FTP/">
+                <span class="chip center-align waves-effect waves-light chip-default">FTP</span>
             </a>
             
             
             
-            <a href="/tags/FTP/">
-                <span class="chip center-align waves-effect waves-light chip-default">FTP</span>
+            <a href="/tags/%E5%A4%9A%E5%8C%BA%E5%9F%9FOSPF/">
+                <span class="chip center-align waves-effect waves-light chip-default">多区域OSPF</span>
             </a>
             
             
@@ -1137,14 +1155,8 @@
             
             
             
-            <a href="/tags/%E7%BD%91%E7%BB%9C%E5%9F%BA%E7%A1%80/">
-                <span class="chip center-align waves-effect waves-light chip-default">网络基础</span>
-            </a>
-            
-            
-            
-            <a href="/tags/TCP-UDP/">
-                <span class="chip center-align waves-effect waves-light chip-default">TCP&UDP</span>
+            <a href="/tags/%E6%8E%A9%E7%A0%81/">
+                <span class="chip center-align waves-effect waves-light chip-default">掩码</span>
             </a>
             
             
@@ -1155,20 +1167,26 @@
             
             
             
+            <a href="/tags/TCP-UDP/">
+                <span class="chip center-align waves-effect waves-light chip-default">TCP&UDP</span>
+            </a>
+            
+            
+            
             <a href="/tags/%E8%B7%AF%E7%94%B1/">
                 <span class="chip center-align waves-effect waves-light chip-default">路由</span>
             </a>
             
             
             
-            <a href="/tags/STP/">
-                <span class="chip center-align waves-effect waves-light chip-default">STP</span>
+            <a href="/tags/RSTP/">
+                <span class="chip center-align waves-effect waves-light chip-default">RSTP</span>
             </a>
             
             
             
-            <a href="/tags/RSTP/">
-                <span class="chip center-align waves-effect waves-light chip-default">RSTP</span>
+            <a href="/tags/STP/">
+                <span class="chip center-align waves-effect waves-light chip-default">STP</span>
             </a>
             
             
@@ -1203,6 +1221,12 @@
             
             
             
+            <a href="/tags/IS-IS/">
+                <span class="chip center-align waves-effect waves-light chip-default">IS-IS</span>
+            </a>
+            
+            
+            
             <a href="/tags/Fat-AP-Fit-AP/">
                 <span class="chip center-align waves-effect waves-light chip-default">Fat AP&Fit AP</span>
             </a>
@@ -1211,30 +1235,6 @@
             
             <a href="/tags/%E8%AE%BE%E5%A4%87%E4%B8%8A%E6%9E%B6%E4%B8%8E%E8%B0%83%E8%AF%95/">
                 <span class="chip center-align waves-effect waves-light chip-default">设备上架与调试</span>
-            </a>
-            
-            
-            
-            <a href="/tags/ICMP/">
-                <span class="chip center-align waves-effect waves-light chip-default">ICMP</span>
-            </a>
-            
-            
-            
-            <a href="/tags/SecureCRT/">
-                <span class="chip center-align waves-effect waves-light chip-default">SecureCRT</span>
-            </a>
-            
-            
-            
-            <a href="/tags/%E6%8E%A9%E7%A0%81/">
-                <span class="chip center-align waves-effect waves-light chip-default">掩码</span>
-            </a>
-            
-            
-            
-            <a href="/tags/IS-IS/">
-                <span class="chip center-align waves-effect waves-light chip-default">IS-IS</span>
             </a>
             
             
@@ -1271,7 +1271,7 @@
 
     <footer class="page-footer bg-color">
     
-        <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/uprightokra/uprightokra.github.io/libs/aplayer/APlayer.min.css">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/uprightokra/CDN/libs/aplayer/APlayer.min.css">
 <style>
     .aplayer .aplayer-lrc p {
         
@@ -1321,7 +1321,7 @@
     </div>
 </div>
 
-<script src="https://cdn.jsdelivr.net/gh/uprightokra/uprightokra.github.io/libs/aplayer/APlayer.min.js"></script>
+<script src="https://cdn.jsdelivr.net/gh/uprightokra/CDN/libs/aplayer/APlayer.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/meting@2/dist/Meting.min.js"></script>
 
     
@@ -1617,12 +1617,12 @@ $(function () {
 </div>
 
 
-    <script src="https://cdn.jsdelivr.net/gh/uprightokra/uprightokra.github.io/libs/materialize/materialize.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/gh/uprightokra/uprightokra.github.io/libs/masonry/masonry.pkgd.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/gh/uprightokra/uprightokra.github.io/libs/aos/aos.js"></script>
-    <script src="https://cdn.jsdelivr.net/gh/uprightokra/uprightokra.github.io/libs/scrollprogress/scrollProgress.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/gh/uprightokra/uprightokra.github.io/libs/lightGallery/js/lightgallery-all.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/gh/uprightokra/uprightokra.github.io/js/matery.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/uprightokra/CDN/libs/materialize/materialize.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/uprightokra/CDN/libs/masonry/masonry.pkgd.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/uprightokra/CDN/libs/aos/aos.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/uprightokra/CDN/libs/scrollprogress/scrollProgress.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/uprightokra/CDN/libs/lightGallery/js/lightgallery-all.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/uprightokra/CDN/js/matery.js"></script>
 
     <!-- Baidu Analytics -->
 
@@ -1653,10 +1653,10 @@ $(function () {
 </script>
 
     
-    <script src="https://cdn.jsdelivr.net/gh/uprightokra/uprightokra.github.io/libs/others/clicklove.js" async="async"></script>
+    <script src="https://cdn.jsdelivr.net/gh/uprightokra/CDN/libs/others/clicklove.js" async="async"></script>
     
     
-    <script async src="https://cdn.jsdelivr.net/gh/uprightokra/uprightokra.github.io/libs/others/busuanzi.pure.mini.js"></script>
+    <script async src="https://cdn.jsdelivr.net/gh/uprightokra/CDN/libs/others/busuanzi.pure.mini.js"></script>
     
 
     
@@ -1668,7 +1668,7 @@ $(function () {
     <script type="text/javascript" color="0,0,255"
         pointColor="0,0,255" opacity='0.7'
         zIndex="-1" count="99"
-        src="https://cdn.jsdelivr.net/gh/uprightokra/uprightokra.github.io/libs/background/canvas-nest.js"></script>
+        src="https://cdn.jsdelivr.net/gh/uprightokra/CDN/libs/background/canvas-nest.js"></script>
     
 
     
@@ -1676,7 +1676,7 @@ $(function () {
     
 
     
-    <script src="https://cdn.jsdelivr.net/gh/uprightokra/uprightokra.github.io/libs/instantpage/instantpage.js" type="module"></script>
+    <script src="https://cdn.jsdelivr.net/gh/uprightokra/CDN/libs/instantpage/instantpage.js" type="module"></script>
     
 	<script type="text/javascript"> var OriginTitile = document.title, st; 
 document.addEventListener("visibilitychange", function () { document.hidden ? (document.title = "Σ(っ °Д °;)っ喔哟，崩溃啦！", clearTimeout(st)) : (document.title = "φ(゜▽゜*)♪咦，又好了！", st = setTimeout(function () { document.title = OriginTitile }, 3e3)) }) </script>
