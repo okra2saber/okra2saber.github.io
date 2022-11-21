@@ -6,7 +6,7 @@
   <link href="https://uprightokra.github.io/atom.xml" rel="self"/>
   
   <link href="https://uprightokra.github.io/"/>
-  <updated>2022-11-18T15:11:51.919Z</updated>
+  <updated>2022-11-21T14:29:44.874Z</updated>
   <id>https://uprightokra.github.io/</id>
   
   <author>
@@ -15,6 +15,31 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>实验ensp IS-IS基础配置</title>
+    <link href="https://uprightokra.github.io/2022-11-21-shi-yan-ensp-is-is-ji-chu-pei-zhi.html"/>
+    <id>https://uprightokra.github.io/2022-11-21-shi-yan-ensp-is-is-ji-chu-pei-zhi.html</id>
+    <published>2022-11-21T12:36:22.000Z</published>
+    <updated>2022-11-21T14:29:44.874Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h1 id=&quot;IS-IS基础配置&quot;&gt;&lt;a href=&quot;#IS-IS基础配置&quot; class=&quot;headerlink&quot; title=&quot;IS-IS基础配置&quot;&gt;&lt;/a&gt;&lt;center&gt;IS-IS基础配置&lt;/center&gt;&lt;/h1&gt;&lt;h2 id=&quot;拓扑图&quot;&gt;&lt;a href=&quot;#拓扑图&quot;</summary>
+        
+      
+    
+    
+    
+    <category term="ensp实验" scheme="https://uprightokra.github.io/categories/ensp%E5%AE%9E%E9%AA%8C/"/>
+    
+    
+    <category term="IS-IS" scheme="https://uprightokra.github.io/tags/IS-IS/"/>
+    
+  </entry>
   
   <entry>
     <title>数通 20-IS-IS</title>
@@ -502,31 +527,6 @@
     
     
     <category term="企业网" scheme="https://uprightokra.github.io/tags/%E4%BC%81%E4%B8%9A%E7%BD%91/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>无线Fat AP与Fit AP区别</title>
-    <link href="https://uprightokra.github.io/2022-10-12-wu-xian-fat-ap-yu-fit-ap-qu-bie.html"/>
-    <id>https://uprightokra.github.io/2022-10-12-wu-xian-fat-ap-yu-fit-ap-qu-bie.html</id>
-    <published>2022-10-12T12:23:37.000Z</published>
-    <updated>2022-11-16T07:58:43.996Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;h1 id=&quot;无线Fat-AP和Fit-AP如何区分&quot;&gt;&lt;a href=&quot;#无线Fat-AP和Fit-AP如何区分&quot; class=&quot;headerlink&quot; title=&quot;无线Fat AP和Fit AP如何区分&quot;&gt;&lt;/a&gt;&lt;center&gt;无线Fat AP和Fit</summary>
-        
-      
-    
-    
-    
-    <category term="Datacom" scheme="https://uprightokra.github.io/categories/Datacom/"/>
-    
-    
-    <category term="Fat AP&amp;Fit AP" scheme="https://uprightokra.github.io/tags/Fat-AP-Fit-AP/"/>
     
   </entry>
   
