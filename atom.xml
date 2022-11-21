@@ -6,7 +6,7 @@
   <link href="https://uprightokra.github.io/atom.xml" rel="self"/>
   
   <link href="https://uprightokra.github.io/"/>
-  <updated>2022-11-21T14:29:44.874Z</updated>
+  <updated>2022-11-21T14:57:05.215Z</updated>
   <id>https://uprightokra.github.io/</id>
   
   <author>
@@ -15,6 +15,31 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>ISIS为啥支持DIS的抢占？</title>
+    <link href="https://uprightokra.github.io/2022-11-21-isis-wei-sha-zhi-chi-dis-de-qiang-zhan.html"/>
+    <id>https://uprightokra.github.io/2022-11-21-isis-wei-sha-zhi-chi-dis-de-qiang-zhan.html</id>
+    <published>2022-11-21T14:55:16.000Z</published>
+    <updated>2022-11-21T14:57:05.215Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h1 id=&quot;ISIS里面DIs为什么支持抢占？DR不支持？&quot;&gt;&lt;a href=&quot;#ISIS里面DIs为什么支持抢占？DR不支持？&quot; class=&quot;headerlink&quot;</summary>
+        
+      
+    
+    
+    
+    <category term="Datacom" scheme="https://uprightokra.github.io/categories/Datacom/"/>
+    
+    
+    <category term="ISIS" scheme="https://uprightokra.github.io/tags/ISIS/"/>
+    
+  </entry>
   
   <entry>
     <title>实验ensp IS-IS基础配置</title>
@@ -502,31 +527,6 @@
     
     
     <category term="问题解决" scheme="https://uprightokra.github.io/tags/%E9%97%AE%E9%A2%98%E8%A7%A3%E5%86%B3/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>实验ensp 典型企业网组建</title>
-    <link href="https://uprightokra.github.io/2022-10-13-shi-yan-ensp-dian-xing-qi-ye-wang-zu-jian.html"/>
-    <id>https://uprightokra.github.io/2022-10-13-shi-yan-ensp-dian-xing-qi-ye-wang-zu-jian.html</id>
-    <published>2022-10-13T06:30:17.000Z</published>
-    <updated>2022-10-15T04:29:12.072Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;h1 id=&quot;典型企业网组建&quot;&gt;&lt;a href=&quot;#典型企业网组建&quot; class=&quot;headerlink&quot;</summary>
-        
-      
-    
-    
-    
-    <category term="ensp实验" scheme="https://uprightokra.github.io/categories/ensp%E5%AE%9E%E9%AA%8C/"/>
-    
-    
-    <category term="企业网" scheme="https://uprightokra.github.io/tags/%E4%BC%81%E4%B8%9A%E7%BD%91/"/>
     
   </entry>
   

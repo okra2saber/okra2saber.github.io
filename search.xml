@@ -4,6 +4,31 @@
   
     
     <entry>
+      <title>ISIS为啥支持DIS的抢占？</title>
+      <link href="/2022-11-21-isis-wei-sha-zhi-chi-dis-de-qiang-zhan.html"/>
+      <url>/2022-11-21-isis-wei-sha-zhi-chi-dis-de-qiang-zhan.html</url>
+      
+        <content type="html"><![CDATA[<h1 id="ISIS里面DIs为什么支持抢占？DR不支持？"><a href="#ISIS里面DIs为什么支持抢占？DR不支持？" class="headerlink" title="ISIS里面DIs为什么支持抢占？DR不支持？"></a>ISIS里面DIs为什么支持抢占？DR不支持？</h1><p>邻居状态角度：</p><p>1、 OSPF Drother之间只有2—way的邻居关系，一旦DR支持被强占，邻居状态将发生大幅度震荡。</p><p>2、ISIS DIS和所有的路由器都是UP的邻居关系，DIS一旦被强占，不会发生邻居关系的震荡。</p><p>算法角度：</p><p>1、OSPF DR产生2类LSA描述MA网络的拓扑和路由信息，如果DR支持被强占，将为算法带来不稳定的现象。</p><p>2、ISIS DIS产生伪节点描述MA网络的拓扑，如果DIS支持被强占，将为算法带来不稳定的现象。</p><p>路由交互角度：</p><p>1、ISIS相对于OSPF在路由交互方面没有这么复杂。</p><p>2、ISIS运行在数据链路层，不受上层协议影响。而OSPF直接运行在IP协议上，有IPv4和V6等较多不稳定因素。同样在设备割接方面没有ISIS那么平滑，这也是网络运营商在骨干网运行ISIS的原因之一。</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> Datacom </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> ISIS </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>实验ensp IS-IS基础配置</title>
       <link href="/2022-11-21-shi-yan-ensp-is-is-ji-chu-pei-zhi.html"/>
       <url>/2022-11-21-shi-yan-ensp-is-is-ji-chu-pei-zhi.html</url>
