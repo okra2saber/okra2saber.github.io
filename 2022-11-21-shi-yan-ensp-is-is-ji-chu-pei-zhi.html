@@ -38,7 +38,7 @@
 
    <style>
     body{
-       background-image: url(https://aimer666.oss-cn-hangzhou.aliyuncs.com/39.jpg);
+       background-image: url(https://img-blog.csdnimg.cn/037c9770f141489aa27e18162f873c68.jpeg);
        background-repeat:no-repeat;
        background-size:cover;
        background-attachment:fixed;
@@ -649,21 +649,21 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2022-11-21
+                    2022-11-22
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    1.4k
+                    1.6k
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    5 分
+                    6 分
                 </div>
                 
 
@@ -757,6 +757,10 @@
 </blockquote>
 <p>R4:</p>
 <p><img src="https://img-blog.csdnimg.cn/cd7067b17dc74e46beea354fa2212bef.gif" data-original="https://img-blog.csdnimg.cn/af8870aa6b494e008378217b053fcc3b.png"></p>
+<blockquote>
+<p>上图对伪节点比特位的解释是有问题的，这里进行修改。01、02、03只是广播网不同伪节点的编号。伪节点标识是为了将自己在不同链路上的伪节点进行区分。</p>
+<p>在一个广播链路下只能有一个DIS。</p>
+</blockquote>
 <h4 id="笔记写到这里，为了防止以后回顾时忘记DIS是什么，这里先复习一下ISIS的DIS选举规则。"><a href="#笔记写到这里，为了防止以后回顾时忘记DIS是什么，这里先复习一下ISIS的DIS选举规则。" class="headerlink" title="笔记写到这里，为了防止以后回顾时忘记DIS是什么，这里先复习一下ISIS的DIS选举规则。"></a><font color="red"><strong>笔记写到这里，为了防止以后回顾时忘记DIS是什么，这里先复习一下ISIS的DIS选举规则。</strong></font></h4><p>ISIS  DIS选举规则：</p>
 <blockquote>
 <ol>
@@ -775,6 +779,8 @@
 <p><img src="https://img-blog.csdnimg.cn/cd7067b17dc74e46beea354fa2212bef.gif" data-original="https://img-blog.csdnimg.cn/a77add1a4bae422c8eedd456def86c7e.png"></p>
 <h6 id="ISIS协议会将广播网络本身抽象成伪节点，伪节点不实际存在，是一个逻辑概念，广播型网络中路由器都认为自己和伪节点存在邻接关系，并通过产生相应的LSP来描述自己和这个伪节点之间的链路状态。广播型网络中的DIS充当了伪节点角色并代伪节点的职责；DIS会代替抽象的伪节点产生PSN-LSP（伪节点LSP），用来描述那些路由器与伪节点相连。PSN-LSP和OSPF的Type-2-LSA很相似。"><a href="#ISIS协议会将广播网络本身抽象成伪节点，伪节点不实际存在，是一个逻辑概念，广播型网络中路由器都认为自己和伪节点存在邻接关系，并通过产生相应的LSP来描述自己和这个伪节点之间的链路状态。广播型网络中的DIS充当了伪节点角色并代伪节点的职责；DIS会代替抽象的伪节点产生PSN-LSP（伪节点LSP），用来描述那些路由器与伪节点相连。PSN-LSP和OSPF的Type-2-LSA很相似。" class="headerlink" title="ISIS协议会将广播网络本身抽象成伪节点，伪节点不实际存在，是一个逻辑概念，广播型网络中路由器都认为自己和伪节点存在邻接关系，并通过产生相应的LSP来描述自己和这个伪节点之间的链路状态。广播型网络中的DIS充当了伪节点角色并代伪节点的职责；DIS会代替抽象的伪节点产生PSN LSP（伪节点LSP），用来描述那些路由器与伪节点相连。PSN LSP和OSPF的Type-2 LSA很相似。"></a>ISIS协议会将广播网络本身抽象成伪节点，伪节点不实际存在，是一个逻辑概念，广播型网络中路由器都认为自己和伪节点存在邻接关系，并通过产生相应的LSP来描述自己和这个伪节点之间的链路状态。广播型网络中的DIS充当了伪节点角色并代伪节点的职责；DIS会代替抽象的伪节点产生PSN LSP（伪节点LSP），用来描述那些路由器与伪节点相连。PSN LSP和OSPF的Type-2 LSA很相似。</h6><p>使用<code>display isis lsdb is-name R4 verbose</code>，查看R4生成的LSP详细信息。</p>
 <p><img src="https://img-blog.csdnimg.cn/cd7067b17dc74e46beea354fa2212bef.gif" data-original="https://img-blog.csdnimg.cn/ea79cc909bfe478483e09aa906c6ebbc.png"></p>
+<h6 id="上面图中描述的是广播网络的lsdb详细信息，下图是P2p网络的LSDB详细信息。可以看出P2P网络设备的伪节点标识符一定是00，因为P2P网络没有DIS。"><a href="#上面图中描述的是广播网络的lsdb详细信息，下图是P2p网络的LSDB详细信息。可以看出P2P网络设备的伪节点标识符一定是00，因为P2P网络没有DIS。" class="headerlink" title="上面图中描述的是广播网络的lsdb详细信息，下图是P2p网络的LSDB详细信息。可以看出P2P网络设备的伪节点标识符一定是00，因为P2P网络没有DIS。"></a>上面图中描述的是广播网络的lsdb详细信息，下图是P2p网络的LSDB详细信息。可以看出P2P网络设备的伪节点标识符一定是00，因为P2P网络没有DIS。</h6><p>伪节点LSDB只描述拓扑信息，实节点LSDB中有路由信息（网络号和掩码）</p>
+<p><img src="https://img-blog.csdnimg.cn/cd7067b17dc74e46beea354fa2212bef.gif" data-original="https://img-blog.csdnimg.cn/18ef25d5f8eb4790a742a8ab99edad06.png"></p>
 <p>在本网络中R5既不是L1的DIS，也不是L2的DIS，查看R5的详细LSP信息。</p>
 <p>可以看见，在R5上只描述了自己以及与伪节点R4.03的关系。</p>
 <p><img src="https://img-blog.csdnimg.cn/cd7067b17dc74e46beea354fa2212bef.gif" data-original="C:\Users\Okra\AppData\Roaming\Typora\typora-user-images\image-20221121215905653.png" alt="image-20221121215905653"></p>
@@ -1365,8 +1371,7 @@
                 <a href="/2022-11-21-isis-wei-sha-zhi-chi-dis-de-qiang-zhan.html">
                     <div class="card-image">
                         
-                        
-                        <img src="https://img-blog.csdnimg.cn/cd7067b17dc74e46beea354fa2212bef.gif" data-original="https://aimer666.oss-cn-hangzhou.aliyuncs.com/9.jpg" class="responsive-img" alt="ISIS为啥支持DIS的抢占？">
+                        <img src="https://img-blog.csdnimg.cn/cd7067b17dc74e46beea354fa2212bef.gif" data-original="https://img-blog.csdnimg.cn/2a029a4a6cfc4fc8913a34dac7b1c466.jpeg" class="responsive-img" alt="ISIS为啥支持DIS的抢占？">
                         
                         <span class="card-title">ISIS为啥支持DIS的抢占？</span>
                     </div>
@@ -1414,8 +1419,7 @@
                 <a href="/2022-11-18-shu-tong-20-is-is.html">
                     <div class="card-image">
                         
-                        
-                        <img src="https://img-blog.csdnimg.cn/cd7067b17dc74e46beea354fa2212bef.gif" data-original="https://aimer666.oss-cn-hangzhou.aliyuncs.com/28.jpg" class="responsive-img" alt="数通 20-IS-IS">
+                        <img src="https://img-blog.csdnimg.cn/cd7067b17dc74e46beea354fa2212bef.gif" data-original="https://img-blog.csdnimg.cn/2a029a4a6cfc4fc8913a34dac7b1c466.jpeg" class="responsive-img" alt="数通 20-IS-IS">
                         
                         <span class="card-title">数通 20-IS-IS</span>
                     </div>
@@ -1513,6 +1517,8 @@
 
 
 <!-- 代码块收缩 -->
+
+<script type="text/javascript" src="/libs/codeBlock/codeShrink.js"></script>
 
 
     </div>
@@ -1686,7 +1692,7 @@
             <br>
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">98.4k</span>&nbsp;字&nbsp;|
+                class="white-color">102.8k</span>&nbsp;字&nbsp;|
             
             
             
@@ -2029,13 +2035,13 @@ $(function () {
 document.addEventListener("visibilitychange", function () { document.hidden ? (document.title = "Σ(っ °Д °;)っ喔哟，崩溃啦！", clearTimeout(st)) : (document.title = "φ(゜▽゜*)♪咦，又好了！", st = setTimeout(function () { document.title = OriginTitile }, 3e3)) }) </script>
 
 
-<script>
+<script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"model":{"jsonPath":"/live2dw/assets/hijiki.model.json"},"display":{"position":"right","width":280,"height":280},"mobile":{"show":false},"log":false,"pluginJsPath":"lib/","pluginModelPath":"assets/","pluginRootPath":"live2dw/","tagMode":false});</script><script>
             window.imageLazyLoadSetting = {
                 isSPA: false,
                 preloadRatio: 1,
                 processImages: null,
             };
-        </script><script>window.addEventListener("load",function(){var t=/\.(gif|jpg|jpeg|tiff|png)$/i,r=/^data:image\/[a-z]+;base64,/;Array.prototype.slice.call(document.querySelectorAll("img[data-original]")).forEach(function(a){var e=a.parentNode;"A"===e.tagName&&(e.href.match(t)||e.href.match(r))&&(e.href=a.dataset.original)})});</script><script>!function(n){n.imageLazyLoadSetting.processImages=o;var e=n.imageLazyLoadSetting.isSPA,i=n.imageLazyLoadSetting.preloadRatio||1,r=Array.prototype.slice.call(document.querySelectorAll("img[data-original]"));function o(){e&&(r=Array.prototype.slice.call(document.querySelectorAll("img[data-original]")));for(var t,a=0;a<r.length;a++)0<=(t=(t=r[a]).getBoundingClientRect()).bottom&&0<=t.left&&t.top<=(n.innerHeight*i||document.documentElement.clientHeight*i)&&function(){var t,e,n,i,o=r[a];t=o,e=function(){r=r.filter(function(t){return o!==t})},n=new Image,i=t.getAttribute("data-original"),n.onload=function(){t.src=i,e&&e()},t.src!==i&&(n.src=i)}()}o(),n.addEventListener("scroll",function(){var t,e;t=o,e=n,clearTimeout(t.tId),t.tId=setTimeout(function(){t.call(e)},500)})}(this);</script><script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"model":{"jsonPath":"/live2dw/assets/hijiki.model.json"},"display":{"position":"right","width":280,"height":280},"mobile":{"show":false},"log":false,"pluginJsPath":"lib/","pluginModelPath":"assets/","pluginRootPath":"live2dw/","tagMode":false});</script></body>
+        </script><script>window.addEventListener("load",function(){var t=/\.(gif|jpg|jpeg|tiff|png)$/i,r=/^data:image\/[a-z]+;base64,/;Array.prototype.slice.call(document.querySelectorAll("img[data-original]")).forEach(function(a){var e=a.parentNode;"A"===e.tagName&&(e.href.match(t)||e.href.match(r))&&(e.href=a.dataset.original)})});</script><script>!function(n){n.imageLazyLoadSetting.processImages=o;var e=n.imageLazyLoadSetting.isSPA,i=n.imageLazyLoadSetting.preloadRatio||1,r=Array.prototype.slice.call(document.querySelectorAll("img[data-original]"));function o(){e&&(r=Array.prototype.slice.call(document.querySelectorAll("img[data-original]")));for(var t,a=0;a<r.length;a++)0<=(t=(t=r[a]).getBoundingClientRect()).bottom&&0<=t.left&&t.top<=(n.innerHeight*i||document.documentElement.clientHeight*i)&&function(){var t,e,n,i,o=r[a];t=o,e=function(){r=r.filter(function(t){return o!==t})},n=new Image,i=t.getAttribute("data-original"),n.onload=function(){t.src=i,e&&e()},t.src!==i&&(n.src=i)}()}o(),n.addEventListener("scroll",function(){var t,e;t=o,e=n,clearTimeout(t.tId),t.tId=setTimeout(function(){t.call(e)},500)})}(this);</script></body>
 
 </html>
 
