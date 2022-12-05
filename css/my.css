@@ -1,7 +1,7 @@
 /* Here is your custom css styles. */
 @font-face{
     font-family: 'YeXingCao';
-    src: url('../font/YeXingCao.ttf');
+	src: url('../font/YeXingCao.ttf');
 }
 
 body{
