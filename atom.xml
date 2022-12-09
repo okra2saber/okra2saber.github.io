@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
   <title>Okraの筆記</title>
   
-  <subtitle>落尽红樱君不见，轻绘梨花泪沾衣。</subtitle>
+  <subtitle>落尽红樱君不见&lt;br&gt;轻绘梨花泪沾衣</subtitle>
   <link href="https://uprightokra.github.io/atom.xml" rel="self"/>
   
   <link href="https://uprightokra.github.io/"/>
