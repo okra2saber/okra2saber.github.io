@@ -6,7 +6,7 @@
   <link href="https://uprightokra.github.io/atom.xml" rel="self"/>
   
   <link href="https://uprightokra.github.io/"/>
-  <updated>2022-12-04T14:35:36.317Z</updated>
+  <updated>2022-12-12T12:28:42.196Z</updated>
   <id>https://uprightokra.github.io/</id>
   
   <author>
@@ -15,6 +15,29 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title></title>
+    <link href="https://uprightokra.github.io/2022-12-12-a-zhuan-ye-neng-li-kao-shi.html"/>
+    <id>https://uprightokra.github.io/2022-12-12-a-zhuan-ye-neng-li-kao-shi.html</id>
+    <published>2022-12-12T12:28:27.458Z</published>
+    <updated>2022-12-12T12:28:42.196Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;p&gt;专业能力考试&lt;/p&gt;
+&lt;p&gt;拓扑&lt;/p&gt;
+&lt;p&gt;&lt;img</summary>
+        
+      
+    
+    
+    
+    
+  </entry>
   
   <entry>
     <title>实验ensp 路由引入导致的环路问题</title>
@@ -496,31 +519,6 @@
     
     
     <category term="CentOS 7" scheme="https://uprightokra.github.io/tags/CentOS-7/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Typora快捷键使用</title>
-    <link href="https://uprightokra.github.io/2022-10-15-typora-kuai-jie-jian-shi-yong.html"/>
-    <id>https://uprightokra.github.io/2022-10-15-typora-kuai-jie-jian-shi-yong.html</id>
-    <published>2022-10-15T05:40:43.000Z</published>
-    <updated>2022-11-16T07:51:50.031Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;h1 id=&quot;一级标题&quot;&gt;&lt;a href=&quot;#一级标题&quot; class=&quot;headerlink&quot; title=&quot;一级标题&quot;&gt;&lt;/a&gt;一级标题&lt;/h1&gt;&lt;h2 id=&quot;二级标题&quot;&gt;&lt;a href=&quot;#二级标题&quot; class=&quot;headerlink&quot;</summary>
-        
-      
-    
-    
-    
-    <category term="软件教程" scheme="https://uprightokra.github.io/categories/%E8%BD%AF%E4%BB%B6%E6%95%99%E7%A8%8B/"/>
-    
-    
-    <category term="Typora" scheme="https://uprightokra.github.io/tags/Typora/"/>
     
   </entry>
   
