@@ -6,7 +6,7 @@
   <link href="https://uprightokra.github.io/atom.xml" rel="self"/>
   
   <link href="https://uprightokra.github.io/"/>
-  <updated>2022-12-12T12:28:42.196Z</updated>
+  <updated>2023-02-10T11:45:12.366Z</updated>
   <id>https://uprightokra.github.io/</id>
   
   <author>
@@ -17,11 +17,125 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
-    <title></title>
-    <link href="https://uprightokra.github.io/2022-12-12-a-zhuan-ye-neng-li-kao-shi.html"/>
-    <id>https://uprightokra.github.io/2022-12-12-a-zhuan-ye-neng-li-kao-shi.html</id>
-    <published>2022-12-12T12:28:27.458Z</published>
-    <updated>2022-12-12T12:28:42.196Z</updated>
+    <title>实验ensp BGP(一)</title>
+    <link href="https://uprightokra.github.io/2023-02-10-shi-yan-ensp-bgp-yi.html"/>
+    <id>https://uprightokra.github.io/2023-02-10-shi-yan-ensp-bgp-yi.html</id>
+    <published>2023-02-10T11:45:12.000Z</published>
+    <updated>2023-02-10T11:45:12.366Z</updated>
+    
+    
+    
+    
+    
+  </entry>
+  
+  <entry>
+    <title>数通 22-BGP</title>
+    <link href="https://uprightokra.github.io/2023-02-09-shu-tong-22-bgp.html"/>
+    <id>https://uprightokra.github.io/2023-02-09-shu-tong-22-bgp.html</id>
+    <published>2023-02-09T13:17:45.000Z</published>
+    <updated>2023-02-09T14:42:15.456Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h1 id=&quot;BGP&quot;&gt;&lt;a href=&quot;#BGP&quot; class=&quot;headerlink&quot; title=&quot;BGP&quot;&gt;&lt;/a&gt;&lt;center&gt;BGP&lt;/center&gt;&lt;/h1&gt;&lt;p&gt;established——建立&lt;/p&gt;
+&lt;h2 id=&quot;一、BGP基础&quot;&gt;&lt;a</summary>
+        
+      
+    
+    
+    
+    <category term="Datacom" scheme="https://uprightokra.github.io/categories/Datacom/"/>
+    
+    
+    <category term="BGP" scheme="https://uprightokra.github.io/tags/BGP/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>实验ensp 双点双向路由引入导致的次优路径和环路问题</title>
+    <link href="https://uprightokra.github.io/2023-02-05-shi-yan-ensp-shuang-dian-shuang-xiang-lu-you-yin-ru-dao-zhi-de-ci-you-lu-jing-he-huan-lu-wen-ti.html"/>
+    <id>https://uprightokra.github.io/2023-02-05-shi-yan-ensp-shuang-dian-shuang-xiang-lu-you-yin-ru-dao-zhi-de-ci-you-lu-jing-he-huan-lu-wen-ti.html</id>
+    <published>2023-02-05T09:33:25.000Z</published>
+    <updated>2023-02-08T12:05:05.014Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h1 id=&quot;双点双向路由引入导致的次优路径和环路问题&quot;&gt;&lt;a href=&quot;#双点双向路由引入导致的次优路径和环路问题&quot; class=&quot;headerlink&quot;</summary>
+        
+      
+    
+    
+    
+    <category term="ensp实验" scheme="https://uprightokra.github.io/categories/ensp%E5%AE%9E%E9%AA%8C/"/>
+    
+    
+    <category term="双点双向" scheme="https://uprightokra.github.io/tags/%E5%8F%8C%E7%82%B9%E5%8F%8C%E5%90%91/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>实验ensp route-policy路由加表和路由引入</title>
+    <link href="https://uprightokra.github.io/2023-02-05-shi-yan-ensp-route-policy-lu-you-jia-biao-he-lu-you-yin-ru.html"/>
+    <id>https://uprightokra.github.io/2023-02-05-shi-yan-ensp-route-policy-lu-you-jia-biao-he-lu-you-yin-ru.html</id>
+    <published>2023-02-05T03:27:43.000Z</published>
+    <updated>2023-02-05T13:08:45.251Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h1 id=&quot;route-policy路由加表和路由引入&quot;&gt;&lt;a href=&quot;#route-policy路由加表和路由引入&quot; class=&quot;headerlink&quot;</summary>
+        
+      
+    
+    
+    
+    <category term="ensp实验" scheme="https://uprightokra.github.io/categories/ensp%E5%AE%9E%E9%AA%8C/"/>
+    
+    
+    <category term="route-policy" scheme="https://uprightokra.github.io/tags/route-policy/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>WireShark抓包实操</title>
+    <link href="https://uprightokra.github.io/2023-01-31-wireshark-zhua-bao-shi-cao.html"/>
+    <id>https://uprightokra.github.io/2023-01-31-wireshark-zhua-bao-shi-cao.html</id>
+    <published>2023-01-31T07:20:49.000Z</published>
+    <updated>2023-01-31T08:17:38.999Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h1 id=&quot;wireshark&quot;&gt;&lt;a href=&quot;#wireshark&quot; class=&quot;headerlink&quot; title=&quot;wireshark&quot;&gt;&lt;/a&gt;wireshark&lt;/h1&gt;&lt;p&gt;选择菜单栏上Capture -&amp;gt;</summary>
+        
+      
+    
+    
+    
+    <category term="软件教程" scheme="https://uprightokra.github.io/categories/%E8%BD%AF%E4%BB%B6%E6%95%99%E7%A8%8B/"/>
+    
+    
+    <category term="WiraShark" scheme="https://uprightokra.github.io/tags/WiraShark/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>专业能力考试</title>
+    <link href="https://uprightokra.github.io/2022-12-13-a-zhuan-ye-neng-li-kao-shi.html"/>
+    <id>https://uprightokra.github.io/2022-12-13-a-zhuan-ye-neng-li-kao-shi.html</id>
+    <published>2022-12-13T10:48:01.000Z</published>
+    <updated>2023-01-31T08:17:38.997Z</updated>
     
     
       
@@ -36,6 +150,38 @@
     
     
     
+    <category term="期末" scheme="https://uprightokra.github.io/categories/%E6%9C%9F%E6%9C%AB/"/>
+    
+    
+    <category term="Datacom" scheme="https://uprightokra.github.io/tags/Datacom/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>网络安全产品配置期末试题</title>
+    <link href="https://uprightokra.github.io/2022-12-13-wang-luo-an-quan-chan-pin-pei-zhi-qi-mo-shi-ti.html"/>
+    <id>https://uprightokra.github.io/2022-12-13-wang-luo-an-quan-chan-pin-pei-zhi-qi-mo-shi-ti.html</id>
+    <published>2022-12-13T10:48:01.000Z</published>
+    <updated>2023-01-31T08:17:39.001Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;p&gt;拓扑图&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://img-blog.csdnimg.cn/41878619176a4971aa8e8110458d297f.png&quot;&gt;&lt;/p&gt;
+&lt;p&gt;实验要求&lt;/p&gt;
+&lt;p&gt;&lt;img</summary>
+        
+      
+    
+    
+    
+    <category term="期末" scheme="https://uprightokra.github.io/categories/%E6%9C%9F%E6%9C%AB/"/>
+    
+    
+    <category term="Datacom" scheme="https://uprightokra.github.io/tags/Datacom/"/>
     
   </entry>
   
@@ -361,164 +507,6 @@
     
     
     <category term="OSPF" scheme="https://uprightokra.github.io/tags/OSPF/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>数通 16-OSPF的基本概念</title>
-    <link href="https://uprightokra.github.io/2022-10-24-shu-tong-16-ospf-de-ji-ben-gai-nian.html"/>
-    <id>https://uprightokra.github.io/2022-10-24-shu-tong-16-ospf-de-ji-ben-gai-nian.html</id>
-    <published>2022-10-24T12:16:48.000Z</published>
-    <updated>2022-11-17T14:52:00.362Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;h1 id=&quot;OSPF的基本概念&quot;&gt;&lt;a href=&quot;#OSPF的基本概念&quot; class=&quot;headerlink&quot; title=&quot;OSPF的基本概念&quot;&gt;&lt;/a&gt;&lt;center&gt;OSPF的基本概念&lt;/center&gt;&lt;/h1&gt;&lt;h2 id=&quot;OSPF&quot;&gt;&lt;a</summary>
-        
-      
-    
-    
-    
-    <category term="Datacom" scheme="https://uprightokra.github.io/categories/Datacom/"/>
-    
-    
-    <category term="OSPF" scheme="https://uprightokra.github.io/tags/OSPF/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>实验ensp NQA</title>
-    <link href="https://uprightokra.github.io/2022-10-19-shi-yan-ensp-nqa.html"/>
-    <id>https://uprightokra.github.io/2022-10-19-shi-yan-ensp-nqa.html</id>
-    <published>2022-10-19T14:01:26.000Z</published>
-    <updated>2022-10-19T14:47:28.598Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;h1 id=&quot;NQA&quot;&gt;&lt;a href=&quot;#NQA&quot; class=&quot;headerlink&quot; title=&quot;NQA&quot;&gt;&lt;/a&gt;&lt;center&gt;NQA&lt;/center&gt;&lt;/h1&gt;&lt;h2 id=&quot;拓扑图&quot;&gt;&lt;a href=&quot;#拓扑图&quot; class=&quot;headerlink&quot;</summary>
-        
-      
-    
-    
-    
-    <category term="ensp实验" scheme="https://uprightokra.github.io/categories/ensp%E5%AE%9E%E9%AA%8C/"/>
-    
-    
-    <category term="NQA" scheme="https://uprightokra.github.io/tags/NQA/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>实验ensp 静态浮动路由与双线热备份</title>
-    <link href="https://uprightokra.github.io/2022-10-17-shi-yan-ensp-jing-tai-fu-dong-lu-you-yu-shuang-xian-re-bei-fen.html"/>
-    <id>https://uprightokra.github.io/2022-10-17-shi-yan-ensp-jing-tai-fu-dong-lu-you-yu-shuang-xian-re-bei-fen.html</id>
-    <published>2022-10-17T14:54:08.000Z</published>
-    <updated>2022-10-18T06:20:45.213Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;h1 id=&quot;静态浮动路由与双线热备份&quot;&gt;&lt;a href=&quot;#静态浮动路由与双线热备份&quot; class=&quot;headerlink&quot;</summary>
-        
-      
-    
-    
-    
-    <category term="ensp实验" scheme="https://uprightokra.github.io/categories/ensp%E5%AE%9E%E9%AA%8C/"/>
-    
-    
-    <category term="bfd" scheme="https://uprightokra.github.io/tags/bfd/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>实验ensp NAT实现外网Telnet内网Server</title>
-    <link href="https://uprightokra.github.io/2022-10-17-shi-yan-ensp-nat-shi-xian-wai-wang-telnet-nei-wang-server.html"/>
-    <id>https://uprightokra.github.io/2022-10-17-shi-yan-ensp-nat-shi-xian-wai-wang-telnet-nei-wang-server.html</id>
-    <published>2022-10-17T11:21:03.000Z</published>
-    <updated>2022-10-18T06:20:45.203Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;h1 id=&quot;NAT实现外网Telnat内网Server&quot;&gt;&lt;a href=&quot;#NAT实现外网Telnat内网Server&quot; class=&quot;headerlink&quot;</summary>
-        
-      
-    
-    
-    
-    <category term="ensp实验" scheme="https://uprightokra.github.io/categories/ensp%E5%AE%9E%E9%AA%8C/"/>
-    
-    
-    <category term="NAT" scheme="https://uprightokra.github.io/tags/NAT/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>如何防止内网私接路由器</title>
-    <link href="https://uprightokra.github.io/2022-10-16-ru-he-fang-zhi-nei-wang-si-jie-lu-you-qi.html"/>
-    <id>https://uprightokra.github.io/2022-10-16-ru-he-fang-zhi-nei-wang-si-jie-lu-you-qi.html</id>
-    <published>2022-10-16T13:24:29.000Z</published>
-    <updated>2022-11-16T07:47:15.950Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;p&gt;学习目标：&lt;/p&gt;
-&lt;ol&gt;
-&lt;li&gt;&lt;p&gt;什么是内网私接路由器？&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;私接会给内网来带怎样的安全隐患？ &lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;企业中如何预防违法私接？&lt;/p&gt;
-&lt;p&gt;内网 - 局域网 - 通过交换机连接的网络</summary>
-        
-      
-    
-    
-    
-    <category term="Datacom" scheme="https://uprightokra.github.io/categories/Datacom/"/>
-    
-    
-    <category term="Port-Security" scheme="https://uprightokra.github.io/tags/Port-Security/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Centos7源码安装Apache(httpd-2.4.53)及问题解决</title>
-    <link href="https://uprightokra.github.io/2022-10-15-centos7-yuan-ma-an-zhuang-apache-httpd-2-4-53-ji-wen-ti-jie-jue.html"/>
-    <id>https://uprightokra.github.io/2022-10-15-centos7-yuan-ma-an-zhuang-apache-httpd-2-4-53-ji-wen-ti-jie-jue.html</id>
-    <published>2022-10-15T06:29:29.000Z</published>
-    <updated>2022-10-15T10:31:53.493Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;p&gt;&lt;a href=&quot;https://blog.csdn.net/qq_45478359/article/details/123940257&quot;&gt;Centos7源码安装Apache(httpd-2.4.53)及问题解决&lt;/a&gt;&lt;/p&gt;
-&lt;pre</summary>
-        
-      
-    
-    
-    
-    <category term="Linux" scheme="https://uprightokra.github.io/categories/Linux/"/>
-    
-    
-    <category term="CentOS 7" scheme="https://uprightokra.github.io/tags/CentOS-7/"/>
     
   </entry>
   

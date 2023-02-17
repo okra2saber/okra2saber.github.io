@@ -4,7 +4,7 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="Okraの筆記">
+    <meta name="keywords" content="实验ensp 双点双向路由引入导致的次优路径和环路问题, Okraの筆記">
     <meta name="description" content="">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -16,7 +16,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>Okraの筆記</title>
+    <title>实验ensp 双点双向路由引入导致的次优路径和环路问题 | Okraの筆記</title>
     <link rel="icon" type="image/png" href="https://aimer666.oss-cn-hangzhou.aliyuncs.com/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/uprightokra/CDN/libs/awesome/css/all.css">
@@ -492,12 +492,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('https://aimer666.oss-cn-hangzhou.aliyuncs.com/0.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('https://img-blog.csdnimg.cn/4aa36e431ab84089a57b83c5b025d9ac.jpeg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title"></h1>
+                    <h1 class="description center-align post-title">实验ensp 双点双向路由引入导致的次优路径和环路问题</h1>
                 </div>
             </div>
         </div>
@@ -615,12 +615,25 @@
             <div class="row tag-cate">
                 <div class="col s7">
                     
-                          <div class="article-tag">
-                            <span class="chip bg-color">无标签</span>
-                          </div>
+                    <div class="article-tag">
+                        
+                            <a href="/tags/%E5%8F%8C%E7%82%B9%E5%8F%8C%E5%90%91/">
+                                <span class="chip bg-color">双点双向</span>
+                            </a>
+                        
+                    </div>
                     
                 </div>
                 <div class="col s5 right-align">
+                    
+                    <div class="post-cate">
+                        <i class="fas fa-bookmark fa-fw icon-category"></i>
+                        
+                            <a href="/categories/ensp%E5%AE%9E%E9%AA%8C/" class="post-category">
+                                ensp实验
+                            </a>
+                        
+                    </div>
                     
                 </div>
             </div>
@@ -629,28 +642,28 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2022-12-12
+                    2023-02-05
                 </div>
                 
 
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2022-12-12
+                    2023-02-08
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    910
+                    2.8k
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    5 分
+                    12 分
                 </div>
                 
 
@@ -678,174 +691,328 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <p>专业能力考试</p>
-<p>拓扑</p>
-<p><img src="https://img-blog.csdnimg.cn/cd7067b17dc74e46beea354fa2212bef.gif" data-original="https://img-blog.csdnimg.cn/75947632fc044b0cb25e03e51c5fe372.png"></p>
-<p>1.划分vlan10和vlan20，使用单臂路由实现vlan间互通</p>
-<p>S1：</p>
-<pre class="line-numbers language-none"><code class="language-none">&lt;Huawei&gt;sys
-Enter system view, return user view with Ctrl+Z.
-[Huawei]sys S1
-[S1]un in en
-Info: Information center is disabled.
-[S1]vlan batch 10 20
-Info: This operation may take a few seconds. Please wait for a moment...done.
-[S1]int g0/0/02
-[S1-GigabitEthernet0/0/2]port link-type access 	
-[S1-GigabitEthernet0/0/2]port default vlan 10
-[S1-GigabitEthernet0/0/2]int g0/0/03
-[S1-GigabitEthernet0/0/3]port link-type access
-[S1-GigabitEthernet0/0/3]port default vlan 20
-[S1-GigabitEthernet0/0/3]int g0/0/4
-[S1-GigabitEthernet0/0/4]p l a
-[S1-GigabitEthernet0/0/4]p d v 20
-[S1-GigabitEthernet0/0/4]int g0/0/01
-[S1-GigabitEthernet0/0/1]p l t
-[S1-GigabitEthernet0/0/1]port trunk allow-pass vlan all
-[S1-GigabitEthernet0/0/1]q<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
-<p>R1:</p>
-<pre class="line-numbers language-none"><code class="language-none">&lt;Huawei&gt;sys
-Enter system view, return user view with Ctrl+Z.
-[Huawei]sys R1
-[R1]int g0/0/0.1
-[R1-GigabitEthernet0/0/0.1]ip address 192.168.10.1 24
-[R1-GigabitEthernet0/0/0.1]dot1q termination vid 10 
-[R1-GigabitEthernet0/0/0.1]arp broadcast enable 
-[R1-GigabitEthernet0/0/0.1]int g0/0/0.2
-[R1-GigabitEthernet0/0/0.2]ip add 192.168.20.1 24
-[R1-GigabitEthernet0/0/0.2]dot1q termination vid 20
-[R1-GigabitEthernet0/0/0.2]arp broadcast enable <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
-<p>测试设备间连通性，可以看见PC1、PC2和Server1都可以互相通信。</p>
-<p><img src="https://img-blog.csdnimg.cn/cd7067b17dc74e46beea354fa2212bef.gif" data-original="https://img-blog.csdnimg.cn/4033bc0de3fe47be89b29acf394fad74.png"></p>
-<p>2.实现4台路由器之间互通</p>
-<p>PPP配置：华为设备串口的链路类型缺省为PPP（Cisco设备缺省为HDLC）</p>
-<p>R1：</p>
-<pre class="line-numbers language-none"><code class="language-none">[R1]interface Serial 4/0/0
-[R1-Serial4/0/0]ip add 200.1.1.1 24
-[R1-Serial4/0/0]q
-[R1]ip route-static 0.0.0.0 0.0.0.0 200.1.1.2<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
-
-<p>R2:</p>
-<pre class="line-numbers language-none"><code class="language-none">&lt;Huawei&gt;sys
-Enter system view, return user view with Ctrl+Z.
-[Huawei]sys R2
-[R2]int S4/0/0
-[R2-Serial4/0/0]ip add 200.1.1.2 24
-[R2-Serial4/0/0]q
-[R2]ip route-static 192.168.10.0 24 200.1.1.1
-[R2]ip route-static 192.168.20.0 24 200.1.1.1<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
-<p>FR配置:</p>
-<p>R2的S4/0/1接口需要修改为FR帧中继类型</p>
-<p>R2：</p>
+                <h1 id="双点双向路由引入导致的次优路径和环路问题"><a href="#双点双向路由引入导致的次优路径和环路问题" class="headerlink" title="双点双向路由引入导致的次优路径和环路问题"></a><center>双点双向路由引入导致的次优路径和环路问题</center></h1><h2 id="拓扑图"><a href="#拓扑图" class="headerlink" title="拓扑图"></a>拓扑图</h2><p><img src="https://img-blog.csdnimg.cn/cd7067b17dc74e46beea354fa2212bef.gif" data-original="https://img-blog.csdnimg.cn/1e6d5d4976364cae91475289b3f407c4.png"></p>
+<h2 id="实验目的"><a href="#实验目的" class="headerlink" title="实验目的"></a>实验目的</h2><p>R1和R3上均存在一个loopback地址100.1.1.1/32和200.1.1.1/32，使用路由引入使两侧路由互通，同时R5上存在两个loopback地址，要求只引入loopback 1的地址。</p>
+<p>对于OSPF引入外部路由后，出现的==次优路径和环路问题==进行解决。</p>
+<blockquote>
+<p>OSPF的外部路由引入到ISIS后，==由于OSPF的外部路由优先级大于ISIS外部路由优先级==，导致在设计了路由冗余的另一点存在路由回馈现象。</p>
+<p>在双点双向环境中，主要解决的主要问题就是</p>
+<p>1、路由回馈问题（导致路由环路）</p>
+<p>2、次优路径问题</p>
+</blockquote>
+<p><strong>解决问题的思路</strong></p>
+<blockquote>
+<p>1.修改ospf的优先级（存在问题，不能使用）——（如果将ospf的外部优先级修改的比isis的低，将会导致isis端的路由回馈现象）</p>
+<p>2.路由过滤办法（不是最优解，但每添加一条外部路由，就需要重新配置。对于运维的成本增加）</p>
+<p>3.路由打上tag，使用route-policy来变换路由的优先级。从而避免次优路径和环路问题。</p>
+</blockquote>
+<h2 id="必须知道的知识点"><a href="#必须知道的知识点" class="headerlink" title="必须知道的知识点"></a>必须知道的知识点</h2><blockquote>
+<p>1、OSPF和ISIS路由协议优先级分别是什么</p>
+<p>OSPF:   10    150 </p>
+<p>ISIS:      15    15 </p>
+<p>2、加表原则</p>
+<p>当一台路由器通过不同路由协议学到了相同目的网段时，比较优先级，优先级数值小的会被优选加表</p>
+<p>3、路由引入</p>
+<p>import-route static：将路由表中的静态路由引入进OSPF </p>
+<p>4、常用的路由策略</p>
+<p>filter-policy </p>
+<p>import-route </p>
+<p>route-policy </p>
+</blockquote>
+<h2 id="实验步骤"><a href="#实验步骤" class="headerlink" title="实验步骤"></a>实验步骤</h2><p>1.实现AR1和AR3之间互通 </p>
+<p>R1</p>
 <pre class="line-numbers language-none"><code class="language-none">#
-interface Serial4/0/1
- link-protocol fr
- fr interface-type dce
- fr inarp
- fr dlci 20
- ip address 201.1.1.2 255.255.255.0 
-#<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+ sysname R1
+#
+interface GigabitEthernet0/0/0
+ ip address 12.1.1.1 255.255.255.0 
+#
+interface GigabitEthernet0/0/1
+ ip address 14.1.1.1 255.255.255.0 
+#
+interface GigabitEthernet0/0/2
+ ip address 15.1.1.1 255.255.255.0 
+#
+interface LoopBack0
+ ip address 100.1.1.1 255.255.255.255 
+#
+ospf 1 router-id 1.1.1.1 
+ area 0.0.0.0 
+  network 12.1.1.1 0.0.0.0 
+  network 14.1.1.1 0.0.0.0 
+  network 100.1.1.1 0.0.0.0 
+#<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
-<p>R3:</p>
+<p>R2</p>
 <pre class="line-numbers language-none"><code class="language-none">#
-interface Serial4/0/1
- link-protocol fr
- fr interface-type dte
- fr inarp
- ip address 201.1.1.3 255.255.255.0 
-#<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+ sysname R2
+#
+isis 1
+ is-level level-2
+ network-entity 49.0001.0000.0000.0002.00
+ import-route ospf 1 
+#
+interface GigabitEthernet0/0/0
+ ip address 12.1.1.2 255.255.255.0 
+#
+interface GigabitEthernet0/0/1
+ ip address 23.1.1.2 255.255.255.0 
+ isis enable 1
+#
+ospf 1 router-id 2.2.2.2 
+ import-route isis 1
+ area 0.0.0.0 
+  network 12.1.1.2 0.0.0.0 
+#<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
-<p>RIP配置：在R2、R3上配置RIP</p>
-<p>R2：</p>
-<pre class="line-numbers language-none"><code class="language-none">[R2]rip
-[R2-rip-1]version 2
-[R2-rip-1]net 201.1.1.0<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+<p>R3</p>
+<pre class="line-numbers language-none"><code class="language-none">#
+ sysname R3
+#
+isis 1
+ is-level level-2
+ network-entity 49.0001.0000.0000.0003.00
+#
+interface GigabitEthernet0/0/0
+ ip address 23.1.1.3 255.255.255.0 
+ isis enable 1
+#
+interface GigabitEthernet0/0/1
+ ip address 34.1.1.3 255.255.255.0 
+ isis enable 1
+#
+interface LoopBack0
+ ip address 200.1.1.1 255.255.255.255 
+ isis enable 1
+#<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
-<p>R3：</p>
-<pre class="line-numbers language-none"><code class="language-none">[R3]rip 
-[R3-rip-1]version 2
-[R3-rip-1]net 201.1.1.0<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+<p>R4</p>
+<pre class="line-numbers language-none"><code class="language-none">#
+ sysname R4
+#
+isis 1
+ is-level level-2
+ network-entity 49.0001.0000.0000.0004.00
+ import-route ospf 1 
+#
+interface GigabitEthernet0/0/0
+ ip address 14.1.1.4 255.255.255.0 
+#
+interface GigabitEthernet0/0/1
+ ip address 34.1.1.4 255.255.255.0 
+ isis enable 1
+#
+ospf 1 router-id 4.4.4.4 
+ import-route isis 1
+ area 0.0.0.0 
+  network 14.1.1.4 0.0.0.0 
+#<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
-<p>HDLC配置：</p>
-<p>R3：</p>
-<pre class="line-numbers language-none"><code class="language-none">[R3]int S4/0/0
-[R3-Serial4/0/0]link-protocol HDLC
-Warning: The encapsulation protocol of the link will be changed. Continue? [Y/N]
-:y
-[R3-Serial4/0/0]ip add 202.1.1.3 24<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>从100.1.1.1   ping  200.1.1.1，检查连通性。</p>
+<pre class="line-numbers language-none"><code class="language-none">[R1]ping -a 100.1.1.1 200.1.1.1
+  PING 200.1.1.1: 56  data bytes, press CTRL_C to break
+    Reply from 200.1.1.1: bytes=56 Sequence=1 ttl=254 time=30 ms
+    Reply from 200.1.1.1: bytes=56 Sequence=2 ttl=254 time=20 ms
+    Reply from 200.1.1.1: bytes=56 Sequence=3 ttl=254 time=20 ms
+    Reply from 200.1.1.1: bytes=56 Sequence=4 ttl=254 time=40 ms
+    Reply from 200.1.1.1: bytes=56 Sequence=5 ttl=254 time=40 ms
 
-<p>R4:</p>
+  --- 200.1.1.1 ping statistics ---
+    5 packet(s) transmitted
+    5 packet(s) received
+    0.00% packet loss
+    round-trip min/avg/max = 20/30/40 ms<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>2.到了这一步双点双向的路由引入就完成了，我们可以在R1上查看路由表。可以看到R1去往200.1.1.1有两条路由。</p>
+<pre class="line-numbers language-none"><code class="language-none">[R1]dis ip routing-table 200.1.1.1
+Route Flags: R - relay, D - download to fib
+------------------------------------------------------------------------------
+Routing Table : Public
+Summary Count : 2
+Destination/Mask    Proto   Pre  Cost      Flags NextHop         Interface
+
+      200.1.1.1/32  O_ASE   150  1           D   14.1.1.4        GigabitEthernet
+0/0/1
+                    O_ASE   150  1           D   12.1.1.2        GigabitEthernet
+0/0/0<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>3.现阶段的双点双向的路由引入没有任何问题，但是当在ospf端再添加一个R5的路由，且R5上的loopback0被引入ospf域内，而loopback1不被引入ospf。</p>
+<p>R5</p>
 <pre class="line-numbers language-none"><code class="language-none">&lt;Huawei&gt;sys
 Enter system view, return user view with Ctrl+Z.
-[Huawei]sys R4
-[R4]un in en
-Info: Information center is disabled.
-[R4]int S4/0/0
-[R4-Serial4/0/0]link-protocol HDLC
-Warning: The encapsulation protocol of the link will be changed. Continue? [Y/N]
-:y
-[R4-Serial4/0/0]ip add 202.1.1.4 24
-[R4-Serial4/0/0]int G0/0/0
-[R4-GigabitEthernet0/0/0]ip add 203.1.1.1 24<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+[Huawei]sys R5
+[R5]int g0/0/0
+[R5-GigabitEthernet0/0/0]ip add 15.1.1.5 24
+[R5-GigabitEthernet0/0/0]q
+[R5]un in en
+[R5]ospf 1 router-id 5.5.5.5
+[R5-ospf-1]area 0
+[R5-ospf-1-area-0.0.0.0]net 15.1.1.5 0.0.0.0
+[R5-ospf-1-area-0.0.0.0]q
+[R5-ospf-1]q
+[R5]int loopback 0
+[R5-LoopBack0]ip add 192.168.1.1 32
+[R5-LoopBack0]int loopback 1
+[R5-LoopBack1]ip add 192.168.2.2 32
+[R5-LoopBack1]q
+[R5]ip ip-prefix lp0 permit 192.168.1.1 32 less-equal 32			#配置前缀列表匹配loopback 0
+[R5]route-policy lp0 permit node 10						#route-policy过滤lp0
+[R5-route-policy]if-match ip-prefix lp0
+[R5-route-policy]q
+[R5]ospf 
+[R5-ospf-1]import-route direct route-policy lp0 				#在ospf域内引入/这里会产生后续需解决的问题，这里只是先引入。<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
-<p>OSPF配置：</p>
-<p>R3：</p>
-<pre class="line-numbers language-none"><code class="language-none">[R3]ospf 1 router-id 3.3.3.3
-[R3-ospf-1]area 0
-[R3-ospf-1-area-0.0.0.0]net 202.1.1.0 0.0.0.255<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+<p>4.在R1上使用dis ospf lsdb查看，只有192.168.1.1，没有192.168.2.2。但是可以看见有两条去往192.168.1.1的路由</p>
+<p><img src="https://img-blog.csdnimg.cn/cd7067b17dc74e46beea354fa2212bef.gif" data-original="https://img-blog.csdnimg.cn/cd1ef2cbdffd4737991bd2950b0ffa0c.png"></p>
+<p>明明只从R5引入了192.168.1.1，可为什么会存在一条由2.2.2.2产生的路由呢？<font color="red"><strong>出现这样的情况又是由什么造成的呢？</strong></font></p>
+<blockquote>
+<p>究其原因，其实是因为在R1接收到来自R5的LSA后，将带有192.168.1.1这一路由信息的LSA泛洪给了R2、R4，R4比R2计算可能快了那么0.0001秒，导致==R4率先加表==了192.168.1.1的路由。同时R4又将ospf引入到isis内。这样ISIS内的路由器也学到了192.168.1.1的路由，最后又传递到R2。</p>
+<p>而R2在从OSPF和ISIS中都学到了去往192.168.1.1的路由，但是isis的优先级15远小于ospf的外部优先级150，优先级更高（优先级越小越优）。故在R2上又将isis中的192.168.1.1的路由引入到了ospf中。这样在R1上就存在了两个去往192.168.1.1的路由。这一问题叫做路由回馈，将会导致环路或次优路径问题。</p>
+</blockquote>
+<h3 id="解决办法"><a href="#解决办法" class="headerlink" title="解决办法"></a>解决办法</h3><h4 id="方法一（路由过滤）"><a href="#方法一（路由过滤）" class="headerlink" title="方法一（路由过滤）"></a>方法一（路由过滤）</h4><p>产生上述问题的根本原因是isis的外部路由优先级高于ospf，从而加表成功。</p>
+<p>在ISIS上配置路由过滤，阻止从ISIS来的192.168.1.1的路由加表。只要无法加表，那么就不会被引入到ospf。</p>
+<p>R2</p>
+<pre class="line-numbers language-none"><code class="language-none">[R2]ip ip-prefix 192.168.1.1 deny 192.168.1.1 32
+[R2]ip ip-prefix 192.168.1.1 permit 0.0.0.0 0 le 32
+[R2]isis 1
+[R2-isis-1]filter-policy ip-prefix 192.168.1.1 import 		#在isis上使用filter-policy，拒绝192.168.1.1的路由加表。<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
 
-<p>R4:</p>
-<pre class="line-numbers language-none"><code class="language-none">[R4]ospf 1 router-id 4.4.4.4
-[R4-ospf-1]area 0
-[R4-ospf-1-area-0.0.0.0]net 202.1.1.0 0.0.0.255<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+<p>R4</p>
+<pre class="line-numbers language-none"><code class="language-none">[R4]ip ip-prefix 192.168.1.1 deny 192.168.1.1 32
+[R4]ip ip-prefix 192.168.1.1 permit 0.0.0.0 0 le 32
+[R4]isis 1
+[R4-isis-1]filter-policy ip-prefix 192.168.1.1 import <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
 
-<p>3.路由引入</p>
-<p>R2:</p>
-<pre class="line-numbers language-none"><code class="language-none">[R2-rip-1]import-route direct 	
-[R2-rip-1]import-route static <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+<p>这样就解决了问题。但是这种解决办法不是最优解，如果存在n条外部路由时，运维难度增大。同时对于R2和R4上的路由没有冗余。</p>
+<p>当R1和R2的线路断了时，连接在R2的其他设备将无法访问192.168.1.1.因为isis无法加表，从而引入ospf，R2上没有去往192.168.1.1的路由。</p>
+<h4 id="方法二（打上TAG，再过滤）——最优解"><a href="#方法二（打上TAG，再过滤）——最优解" class="headerlink" title="方法二（打上TAG，再过滤）——最优解"></a>方法二（打上TAG，再过滤）——<font color="red">最优解</font></h4><p>在R2上如果出现回馈现象，分哪几个步骤<br>1、R2在ISIS方向学习到了外部路由，并且加表了<br>2、R2在OSPF进程中引入了ISIS路由</p>
+<p>在方法一中我们是采用了拒绝R2加表192.168.1.1的路由，从而路由无法引入ospf。但这样就会存在上面讲到的线路故障导致R2上没有去往192.168.1.1的路由问题。</p>
+<p>而现在的解决方法就是要让R2在isis上的外部路由可以加表，又不可以让其引入ospf。</p>
+<blockquote>
+<p>==问题（修改优先级）==</p>
+<p>到这里有人可能会想为什么不将ospf的外部优先级修改为14，这样传递到isis的外部路由就无法回馈到ospf了。但是修改优先级的这一方法实际上是有问题的，因为他将会发生如下的情况：</p>
+<p><img src="https://img-blog.csdnimg.cn/cd7067b17dc74e46beea354fa2212bef.gif" data-original="https://img-blog.csdnimg.cn/820c2389aa26444a9425549027b7d848.png"></p>
+<blockquote>
+<p>当我们使用修改优先级的方法（进入OSPF 1，pre    ase    14），将OSPF的外部路由优先级修改为14时。R3在ISIS中发送200.1.1.1/32的路由信息，R2将其引入到OSPF中，然后这条路由会在OSPF中以5类LSA开始泛洪，随着上图的箭头方向传达R4。R4可以同时从OSPF和ISIS中学到200.1.1.1/32的路由，而因为我们将OSPF的外部路由改为了14，这样就导致了R4在转发目的地在为200.1.1.1的数据包时会优先选择R1而不是实际上的最优路径R3.反之亦然。</p>
+</blockquote>
+</blockquote>
+<p><strong>解决办法</strong>：<br>1、在R2上，允许ISIS加表，但是对于加了表的路由条目，在引入OSPF时进行过滤，考虑使用import-route isis route-policy过滤<br>2、在R2上针对外部路由修改优先级</p>
+<p>3.在R5上引入lp0的ip时，配置ip-prefix将其打上tag500的标签，在使用import-route ospf route-policy来引入isis。</p>
+<p>R5：</p>
+<pre class="line-numbers language-none"><code class="language-none">ip ip-prefix lo0 index 10 permit 192.168.1.1 32
+route-policy import permit node 10
+if-match ip-prefix lo0
+apply tag 500
 
-<p>R3:</p>
-<pre class="line-numbers language-none"><code class="language-none">[R3-ospf-1]import-route rip 1
+ospf 1
+import-route driect route-policy import<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
-[R3-rip-1]import-route ospf 1 cost 2<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
-
-<p>R4:</p>
-<pre class="line-numbers language-none"><code class="language-none">[R4-ospf-1]import-route direct <span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-
-<p>到这一步外网所有设备均互通。</p>
-<p>4.配置NAT</p>
-<p>R1：</p>
-<pre class="line-numbers language-none"><code class="language-none">[R1]acl 2000	
-[R1-acl-basic-2000]rule 5 permit source 192.168.10.0 0.0.0.255
-[R1-acl-basic-2000]rule 10 permit source 192.168.20.10 0.0.0.0 
-[R1-acl-basic-2000]q
-[R1]int S4/0/0	
-[R1-Serial4/0/0]nat outbound 2000<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
-<p>Server1:</p>
-<p><img src="https://img-blog.csdnimg.cn/cd7067b17dc74e46beea354fa2212bef.gif" data-original="https://img-blog.csdnimg.cn/1092a60505a345aeb7e93948d3e83c25.png"></p>
-<p>Server2:</p>
-<p><img src="https://img-blog.csdnimg.cn/cd7067b17dc74e46beea354fa2212bef.gif" data-original="https://img-blog.csdnimg.cn/d04194fe680e4992867f1742f8f52266.png"></p>
-<p>PC1访问Server2，成功</p>
-<p><img src="https://img-blog.csdnimg.cn/cd7067b17dc74e46beea354fa2212bef.gif" data-original="https://img-blog.csdnimg.cn/c9ad1302b47c4a44bb3301b482ba6638.png"></p>
-<p>PC3访问Server1，成功</p>
-<p><img src="https://img-blog.csdnimg.cn/cd7067b17dc74e46beea354fa2212bef.gif" data-original="https://img-blog.csdnimg.cn/a8b888086dd74c2e943f964fb1624a05.png"></p>
-<p>PC2访问公网</p>
-<p>配置高级ACL，阻止其访问Server2</p>
-<p>S1:</p>
-<pre class="line-numbers language-none"><code class="language-none">[S1]acl 3000
-[S1-acl-adv-3000]rule 5 deny ip source 192.168.20.20 0.0.0.0 destination 203.1.1
-.0 0.0.0.255
-[S1-acl-adv-3000]q
-[S1]int g0/0/1
-[S1-GigabitEthernet0/0/1]traffic-filter outbound acl 3000<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p> 现在使用display ospf lsdb ase 192.168.1.1的时候就可以看见如下图所示，路由器5在产生这一条5类LSA的时候，其tag已经变成了500.</p>
+<p><img src="https://img-blog.csdnimg.cn/cd7067b17dc74e46beea354fa2212bef.gif" data-original="https://img-blog.csdnimg.cn/b1833c2255d8436f83e5ea0a5ce772c7.png"></p>
+<p>同时在R2和R4上查看该条路由其tag同样为500.</p>
+<p>4.现在在R2上创建一个名字为PRE的route-policy，使用prefix去匹配tag 500的路由</p>
+<p>R2|R4</p>
+<pre class="line-numbers language-none"><code class="language-none">route-policy PRE permit node 10
+if-match tag 500				
+apply preference 10
 
 
+ospf 1 
+preference ase route-policy PRE 150   <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
-<p><img src="https://img-blog.csdnimg.cn/cd7067b17dc74e46beea354fa2212bef.gif" data-original="https://img-blog.csdnimg.cn/ab7ec80f7bde4954aeda8a0092cdbe32.png"></p>
+<blockquote>
+<p>==preference ase route-policy PRE 150==</p>
+<p>这句的意思是在R2和R4上的ospf外部路由在修改优先级时会先匹配PRE的route-policy，如果匹配上了就会将优先级改为10，如果匹配不上就还是ospf默认的150外部优先级。（就是从192.168.1.1在R2上优先级会变成10，其他路由优先级还是150）。</p>
+<p>这样就解决了上面的次优路劲的问题（==问题——修改优先级==），接下来只要处理路由回馈问题就可以。</p>
+</blockquote>
+<p>5.在R2和R4上配置route-policy，具体情况请参照下表</p>
+<table>
+<thead>
+<tr>
+<th>顺时针方向</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>R2：</td>
+</tr>
+<tr>
+<td>ospf——&gt;isis             deny   tag  200</td>
+</tr>
+<tr>
+<td>ospf——&gt;isis             permit   tag  100</td>
+</tr>
+<tr>
+<td>R4:</td>
+</tr>
+<tr>
+<td>isis——&gt;ospf             deny   tag   100</td>
+</tr>
+<tr>
+<td>isis——&gt;ospf             permit   tag   200</td>
+</tr>
+</tbody></table>
+<table>
+<thead>
+<tr>
+<th>逆时针方向</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>R2：</td>
+</tr>
+<tr>
+<td>isis——&gt;ospf             deny    tag    400</td>
+</tr>
+<tr>
+<td>isis——&gt;ospf             permit    tag    300</td>
+</tr>
+<tr>
+<td>R4:</td>
+</tr>
+<tr>
+<td>ospf——&gt;isis              deny   tag   300</td>
+</tr>
+<tr>
+<td>ospf——&gt;isis              permit   tag   400</td>
+</tr>
+</tbody></table>
+<p><img src="https://img-blog.csdnimg.cn/cd7067b17dc74e46beea354fa2212bef.gif" data-original="https://img-blog.csdnimg.cn/1c1f3502fb0b4454ab451afec18ca0e3.png"></p>
+<p>R2（顺时针）：</p>
+<pre class="line-numbers language-none"><code class="language-none">route-pilicy oti deny node 10
+  if-match tag 200
+route-policy oti permit node 20
+  apply tag 100
+  
+isis 1
+  import-route ospf 1 route-policy oti<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>R4(顺时针)：</p>
+<pre class="line-numbers language-none"><code class="language-none">route-policy ito deny node 10
+  if-match tag 100
+route-policy ito permit node 20
+  apply tag 200
+  
+ospf 1 
+  import-route isis 1 route-policy ito<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>R2(逆时针)：</p>
+<pre class="line-numbers language-none"><code class="language-none">route-pilicy ito deny node 10
+  if-match tag 400
+route-policy ito permit node 20
+  apply tag 300
+  
+ospf 1
+  import-route isis 1 route-policy ito<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>R4(逆时针):</p>
+<pre class="line-numbers language-none"><code class="language-none">route-pilicy oti deny node 10
+  if-match tag 300
+route-policy oti permit node 20
+  apply tag 400
+  
+isis 1
+  import-route ospf 1 route-policy oti<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
 
                 
             </div>
@@ -872,7 +1039,7 @@ Warning: The encapsulation protocol of the link will be changed. Continue? [Y/N]
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="https://uprightokra.github.io/2022-12-12-a-zhuan-ye-neng-li-kao-shi.html">https://uprightokra.github.io/2022-12-12-a-zhuan-ye-neng-li-kao-shi.html</a>
+                    <a href="https://uprightokra.github.io/2023-02-05-shi-yan-ensp-shuang-dian-shuang-xiang-lu-you-yin-ru-dao-zhi-de-ci-you-lu-jing-he-huan-lu-wen-ti.html">https://uprightokra.github.io/2023-02-05-shi-yan-ensp-shuang-dian-shuang-xiang-lu-you-yin-ru-dao-zhi-de-ci-you-lu-jing-he-huan-lu-wen-ti.html</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -909,7 +1076,11 @@ Warning: The encapsulation protocol of the link will be changed. Continue? [Y/N]
                 <div class="post-meta__tag-list" style="display: inline-block;">
                     
                         <div class="article-tag">
-                            <span class="chip bg-color">无标签</span>
+                            
+                                <a href="/tags/%E5%8F%8C%E7%82%B9%E5%8F%8C%E5%90%91/">
+                                    <span class="chip bg-color">双点双向</span>
+                                </a>
+                            
                         </div>
                     
                 </div>
@@ -1407,18 +1578,16 @@ Warning: The encapsulation protocol of the link will be changed. Continue? [Y/N]
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="far fa-dot-circle"></i>&nbsp;本篇
-            </div>
+                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
-                <a href="/2022-12-12-a-zhuan-ye-neng-li-kao-shi.html">
+                <a href="/2023-02-09-shu-tong-22-bgp.html">
                     <div class="card-image">
                         
+                        <img src="https://img-blog.csdnimg.cn/cd7067b17dc74e46beea354fa2212bef.gif" data-original="https://img-blog.csdnimg.cn/2a029a4a6cfc4fc8913a34dac7b1c466.jpeg" class="responsive-img" alt="数通 22-BGP">
                         
-                        <img src="https://img-blog.csdnimg.cn/cd7067b17dc74e46beea354fa2212bef.gif" data-original="https://aimer666.oss-cn-hangzhou.aliyuncs.com/0.jpg" class="responsive-img" alt="">
-                        
-                        <span class="card-title"></span>
+                        <span class="card-title">数通 22-BGP</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -1428,18 +1597,29 @@ Warning: The encapsulation protocol of the link will be changed. Continue? [Y/N]
                         
                     </div>
                     <div class="publish-info">
-                            <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2022-12-12
-                            </span>
+                        <span class="publish-date">
+                            <i class="far fa-clock fa-fw icon-date"></i>2023-02-09
+                        </span>
                         <span class="publish-author">
                             
-                            <i class="fas fa-user fa-fw"></i>
-                            UprightOkra
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/Datacom/" class="post-category">
+                                    Datacom
+                                </a>
+                            
                             
                         </span>
                     </div>
                 </div>
-
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/BGP/">
+                        <span class="chip bg-color">BGP</span>
+                    </a>
+                    
+                </div>
                 
             </div>
         </div>
@@ -1450,12 +1630,12 @@ Warning: The encapsulation protocol of the link will be changed. Continue? [Y/N]
                 下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2022-12-03-shi-yan-ensp-lu-you-yin-ru-dao-zhi-de-huan-lu-wen-ti.html">
+                <a href="/2023-02-05-shi-yan-ensp-route-policy-lu-you-jia-biao-he-lu-you-yin-ru.html">
                     <div class="card-image">
                         
-                        <img src="https://img-blog.csdnimg.cn/cd7067b17dc74e46beea354fa2212bef.gif" data-original="https://img-blog.csdnimg.cn/4aa36e431ab84089a57b83c5b025d9ac.jpeg" class="responsive-img" alt="实验ensp 路由引入导致的环路问题">
+                        <img src="https://img-blog.csdnimg.cn/cd7067b17dc74e46beea354fa2212bef.gif" data-original="https://img-blog.csdnimg.cn/4aa36e431ab84089a57b83c5b025d9ac.jpeg" class="responsive-img" alt="实验ensp route-policy路由加表和路由引入">
                         
-                        <span class="card-title">实验ensp 路由引入导致的环路问题</span>
+                        <span class="card-title">实验ensp route-policy路由加表和路由引入</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -1466,7 +1646,7 @@ Warning: The encapsulation protocol of the link will be changed. Continue? [Y/N]
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2022-12-03
+                                <i class="far fa-clock fa-fw icon-date"></i>2023-02-05
                             </span>
                         <span class="publish-author">
                             
@@ -1483,8 +1663,8 @@ Warning: The encapsulation protocol of the link will be changed. Continue? [Y/N]
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/%E8%B7%AF%E7%94%B1%E5%BC%95%E5%85%A5/">
-                        <span class="chip bg-color">路由引入</span>
+                    <a href="/tags/route-policy/">
+                        <span class="chip bg-color">route-policy</span>
                     </a>
                     
                 </div>
@@ -1717,7 +1897,7 @@ Warning: The encapsulation protocol of the link will be changed. Continue? [Y/N]
             Copyright&nbsp;&copy;
 
             
-                <span id="year">2021-2022</span>
+                <span id="year">2021-2023</span>
             
             <span id="year">2021</span>
             <a href="/about" target="_blank">UprightOkra</a>
@@ -1726,7 +1906,7 @@ Warning: The encapsulation protocol of the link will be changed. Continue? [Y/N]
             <br>
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">103.8k</span>&nbsp;字&nbsp;|
+                class="white-color">110.6k</span>&nbsp;字&nbsp;|
             
             
             
@@ -2069,13 +2249,13 @@ $(function () {
 document.addEventListener("visibilitychange", function () { document.hidden ? (document.title = "Σ(っ °Д °;)っ喔哟，崩溃啦！", clearTimeout(st)) : (document.title = "φ(゜▽゜*)♪咦，又好了！", st = setTimeout(function () { document.title = OriginTitile }, 3e3)) }) </script>
 
 
-<script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"model":{"jsonPath":"/live2dw/assets/hijiki.model.json"},"display":{"position":"right","width":280,"height":280},"mobile":{"show":false},"log":false,"pluginJsPath":"lib/","pluginModelPath":"assets/","pluginRootPath":"live2dw/","tagMode":false});</script><script>
+<script>
             window.imageLazyLoadSetting = {
                 isSPA: false,
                 preloadRatio: 1,
                 processImages: null,
             };
-        </script><script>window.addEventListener("load",function(){var t=/\.(gif|jpg|jpeg|tiff|png)$/i,r=/^data:image\/[a-z]+;base64,/;Array.prototype.slice.call(document.querySelectorAll("img[data-original]")).forEach(function(a){var e=a.parentNode;"A"===e.tagName&&(e.href.match(t)||e.href.match(r))&&(e.href=a.dataset.original)})});</script><script>!function(n){n.imageLazyLoadSetting.processImages=o;var e=n.imageLazyLoadSetting.isSPA,i=n.imageLazyLoadSetting.preloadRatio||1,r=Array.prototype.slice.call(document.querySelectorAll("img[data-original]"));function o(){e&&(r=Array.prototype.slice.call(document.querySelectorAll("img[data-original]")));for(var t,a=0;a<r.length;a++)0<=(t=(t=r[a]).getBoundingClientRect()).bottom&&0<=t.left&&t.top<=(n.innerHeight*i||document.documentElement.clientHeight*i)&&function(){var t,e,n,i,o=r[a];t=o,e=function(){r=r.filter(function(t){return o!==t})},n=new Image,i=t.getAttribute("data-original"),n.onload=function(){t.src=i,e&&e()},t.src!==i&&(n.src=i)}()}o(),n.addEventListener("scroll",function(){var t,e;t=o,e=n,clearTimeout(t.tId),t.tId=setTimeout(function(){t.call(e)},500)})}(this);</script></body>
+        </script><script>window.addEventListener("load",function(){var t=/\.(gif|jpg|jpeg|tiff|png)$/i,r=/^data:image\/[a-z]+;base64,/;Array.prototype.slice.call(document.querySelectorAll("img[data-original]")).forEach(function(a){var e=a.parentNode;"A"===e.tagName&&(e.href.match(t)||e.href.match(r))&&(e.href=a.dataset.original)})});</script><script>!function(n){n.imageLazyLoadSetting.processImages=o;var e=n.imageLazyLoadSetting.isSPA,i=n.imageLazyLoadSetting.preloadRatio||1,r=Array.prototype.slice.call(document.querySelectorAll("img[data-original]"));function o(){e&&(r=Array.prototype.slice.call(document.querySelectorAll("img[data-original]")));for(var t,a=0;a<r.length;a++)0<=(t=(t=r[a]).getBoundingClientRect()).bottom&&0<=t.left&&t.top<=(n.innerHeight*i||document.documentElement.clientHeight*i)&&function(){var t,e,n,i,o=r[a];t=o,e=function(){r=r.filter(function(t){return o!==t})},n=new Image,i=t.getAttribute("data-original"),n.onload=function(){t.src=i,e&&e()},t.src!==i&&(n.src=i)}()}o(),n.addEventListener("scroll",function(){var t,e;t=o,e=n,clearTimeout(t.tId),t.tId=setTimeout(function(){t.call(e)},500)})}(this);</script><script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"model":{"jsonPath":"/live2dw/assets/hijiki.model.json"},"display":{"position":"right","width":280,"height":280},"mobile":{"show":false},"log":false,"pluginJsPath":"lib/","pluginModelPath":"assets/","pluginRootPath":"live2dw/","tagMode":false});</script></body>
 
 </html>
 
