@@ -3,14 +3,14 @@
   <title>Okraの筆記</title>
   
   <subtitle>心若钢铁,心似琉璃</subtitle>
-  <link href="https://uprightokra.github.io/atom.xml" rel="self"/>
+  <link href="https://okra2saber.github.io/atom.xml" rel="self"/>
   
-  <link href="https://uprightokra.github.io/"/>
+  <link href="https://okra2saber.github.io/"/>
   <updated>2023-06-02T03:36:46.362Z</updated>
-  <id>https://uprightokra.github.io/</id>
+  <id>https://okra2saber.github.io/</id>
   
   <author>
-    <name>UprightOkra</name>
+    <name>okra2saber</name>
     
   </author>
   
@@ -18,25 +18,25 @@
   
   <entry>
     <title>实验ensp BGP(一)</title>
-    <link href="https://uprightokra.github.io/2023-02-10-shi-yan-ensp-bgp-yi.html"/>
-    <id>https://uprightokra.github.io/2023-02-10-shi-yan-ensp-bgp-yi.html</id>
+    <link href="https://okra2saber.github.io/2023-02-10-shi-yan-ensp-bgp-yi.html"/>
+    <id>https://okra2saber.github.io/2023-02-10-shi-yan-ensp-bgp-yi.html</id>
     <published>2023-02-10T11:45:12.000Z</published>
     <updated>2023-06-02T03:36:46.362Z</updated>
     
     
     
     
-    <category term="ensp实验" scheme="https://uprightokra.github.io/categories/ensp%E5%AE%9E%E9%AA%8C/"/>
+    <category term="ensp实验" scheme="https://okra2saber.github.io/categories/ensp%E5%AE%9E%E9%AA%8C/"/>
     
     
-    <category term="BGP" scheme="https://uprightokra.github.io/tags/BGP/"/>
+    <category term="BGP" scheme="https://okra2saber.github.io/tags/BGP/"/>
     
   </entry>
   
   <entry>
     <title>数通 22-BGP</title>
-    <link href="https://uprightokra.github.io/2023-02-09-shu-tong-22-bgp.html"/>
-    <id>https://uprightokra.github.io/2023-02-09-shu-tong-22-bgp.html</id>
+    <link href="https://okra2saber.github.io/2023-02-09-shu-tong-22-bgp.html"/>
+    <id>https://okra2saber.github.io/2023-02-09-shu-tong-22-bgp.html</id>
     <published>2023-02-09T13:17:45.000Z</published>
     <updated>2023-06-02T03:40:44.302Z</updated>
     
@@ -52,17 +52,17 @@
     
     
     
-    <category term="Datacom" scheme="https://uprightokra.github.io/categories/Datacom/"/>
+    <category term="Datacom" scheme="https://okra2saber.github.io/categories/Datacom/"/>
     
     
-    <category term="BGP" scheme="https://uprightokra.github.io/tags/BGP/"/>
+    <category term="BGP" scheme="https://okra2saber.github.io/tags/BGP/"/>
     
   </entry>
   
   <entry>
     <title>实验ensp 双点双向路由引入导致的次优路径和环路问题</title>
-    <link href="https://uprightokra.github.io/2023-02-05-shi-yan-ensp-shuang-dian-shuang-xiang-lu-you-yin-ru-dao-zhi-de-ci-you-lu-jing-he-huan-lu-wen-ti.html"/>
-    <id>https://uprightokra.github.io/2023-02-05-shi-yan-ensp-shuang-dian-shuang-xiang-lu-you-yin-ru-dao-zhi-de-ci-you-lu-jing-he-huan-lu-wen-ti.html</id>
+    <link href="https://okra2saber.github.io/2023-02-05-shi-yan-ensp-shuang-dian-shuang-xiang-lu-you-yin-ru-dao-zhi-de-ci-you-lu-jing-he-huan-lu-wen-ti.html"/>
+    <id>https://okra2saber.github.io/2023-02-05-shi-yan-ensp-shuang-dian-shuang-xiang-lu-you-yin-ru-dao-zhi-de-ci-you-lu-jing-he-huan-lu-wen-ti.html</id>
     <published>2023-02-05T09:33:25.000Z</published>
     <updated>2023-06-02T03:36:22.379Z</updated>
     
@@ -77,17 +77,17 @@
     
     
     
-    <category term="ensp实验" scheme="https://uprightokra.github.io/categories/ensp%E5%AE%9E%E9%AA%8C/"/>
+    <category term="ensp实验" scheme="https://okra2saber.github.io/categories/ensp%E5%AE%9E%E9%AA%8C/"/>
     
     
-    <category term="双点双向" scheme="https://uprightokra.github.io/tags/%E5%8F%8C%E7%82%B9%E5%8F%8C%E5%90%91/"/>
+    <category term="双点双向" scheme="https://okra2saber.github.io/tags/%E5%8F%8C%E7%82%B9%E5%8F%8C%E5%90%91/"/>
     
   </entry>
   
   <entry>
     <title>实验ensp route-policy路由加表和路由引入</title>
-    <link href="https://uprightokra.github.io/2023-02-05-shi-yan-ensp-route-policy-lu-you-jia-biao-he-lu-you-yin-ru.html"/>
-    <id>https://uprightokra.github.io/2023-02-05-shi-yan-ensp-route-policy-lu-you-jia-biao-he-lu-you-yin-ru.html</id>
+    <link href="https://okra2saber.github.io/2023-02-05-shi-yan-ensp-route-policy-lu-you-jia-biao-he-lu-you-yin-ru.html"/>
+    <id>https://okra2saber.github.io/2023-02-05-shi-yan-ensp-route-policy-lu-you-jia-biao-he-lu-you-yin-ru.html</id>
     <published>2023-02-05T03:27:43.000Z</published>
     <updated>2023-06-02T03:37:54.382Z</updated>
     
@@ -102,17 +102,17 @@
     
     
     
-    <category term="ensp实验" scheme="https://uprightokra.github.io/categories/ensp%E5%AE%9E%E9%AA%8C/"/>
+    <category term="ensp实验" scheme="https://okra2saber.github.io/categories/ensp%E5%AE%9E%E9%AA%8C/"/>
     
     
-    <category term="route-policy" scheme="https://uprightokra.github.io/tags/route-policy/"/>
+    <category term="route-policy" scheme="https://okra2saber.github.io/tags/route-policy/"/>
     
   </entry>
   
   <entry>
     <title>WireShark抓包实操</title>
-    <link href="https://uprightokra.github.io/2023-01-31-wireshark-zhua-bao-shi-cao.html"/>
-    <id>https://uprightokra.github.io/2023-01-31-wireshark-zhua-bao-shi-cao.html</id>
+    <link href="https://okra2saber.github.io/2023-01-31-wireshark-zhua-bao-shi-cao.html"/>
+    <id>https://okra2saber.github.io/2023-01-31-wireshark-zhua-bao-shi-cao.html</id>
     <published>2023-01-31T07:20:49.000Z</published>
     <updated>2023-06-02T03:42:37.104Z</updated>
     
@@ -127,17 +127,17 @@
     
     
     
-    <category term="软件教程" scheme="https://uprightokra.github.io/categories/%E8%BD%AF%E4%BB%B6%E6%95%99%E7%A8%8B/"/>
+    <category term="软件教程" scheme="https://okra2saber.github.io/categories/%E8%BD%AF%E4%BB%B6%E6%95%99%E7%A8%8B/"/>
     
     
-    <category term="WiraShark" scheme="https://uprightokra.github.io/tags/WiraShark/"/>
+    <category term="WiraShark" scheme="https://okra2saber.github.io/tags/WiraShark/"/>
     
   </entry>
   
   <entry>
     <title>专业能力考试</title>
-    <link href="https://uprightokra.github.io/2022-12-13-a-zhuan-ye-neng-li-kao-shi.html"/>
-    <id>https://uprightokra.github.io/2022-12-13-a-zhuan-ye-neng-li-kao-shi.html</id>
+    <link href="https://okra2saber.github.io/2022-12-13-a-zhuan-ye-neng-li-kao-shi.html"/>
+    <id>https://okra2saber.github.io/2022-12-13-a-zhuan-ye-neng-li-kao-shi.html</id>
     <published>2022-12-13T10:48:01.000Z</published>
     <updated>2023-06-02T03:41:03.153Z</updated>
     
@@ -154,17 +154,17 @@
     
     
     
-    <category term="期末" scheme="https://uprightokra.github.io/categories/%E6%9C%9F%E6%9C%AB/"/>
+    <category term="期末" scheme="https://okra2saber.github.io/categories/%E6%9C%9F%E6%9C%AB/"/>
     
     
-    <category term="Datacom" scheme="https://uprightokra.github.io/tags/Datacom/"/>
+    <category term="Datacom" scheme="https://okra2saber.github.io/tags/Datacom/"/>
     
   </entry>
   
   <entry>
     <title>网络安全产品配置期末试题</title>
-    <link href="https://uprightokra.github.io/2022-12-13-wang-luo-an-quan-chan-pin-pei-zhi-qi-mo-shi-ti.html"/>
-    <id>https://uprightokra.github.io/2022-12-13-wang-luo-an-quan-chan-pin-pei-zhi-qi-mo-shi-ti.html</id>
+    <link href="https://okra2saber.github.io/2022-12-13-wang-luo-an-quan-chan-pin-pei-zhi-qi-mo-shi-ti.html"/>
+    <id>https://okra2saber.github.io/2022-12-13-wang-luo-an-quan-chan-pin-pei-zhi-qi-mo-shi-ti.html</id>
     <published>2022-12-13T10:48:01.000Z</published>
     <updated>2023-06-02T03:40:50.741Z</updated>
     
@@ -182,17 +182,17 @@
     
     
     
-    <category term="期末" scheme="https://uprightokra.github.io/categories/%E6%9C%9F%E6%9C%AB/"/>
+    <category term="期末" scheme="https://okra2saber.github.io/categories/%E6%9C%9F%E6%9C%AB/"/>
     
     
-    <category term="Datacom" scheme="https://uprightokra.github.io/tags/Datacom/"/>
+    <category term="Datacom" scheme="https://okra2saber.github.io/tags/Datacom/"/>
     
   </entry>
   
   <entry>
     <title>实验ensp 路由引入导致的环路问题</title>
-    <link href="https://uprightokra.github.io/2022-12-03-shi-yan-ensp-lu-you-yin-ru-dao-zhi-de-huan-lu-wen-ti.html"/>
-    <id>https://uprightokra.github.io/2022-12-03-shi-yan-ensp-lu-you-yin-ru-dao-zhi-de-huan-lu-wen-ti.html</id>
+    <link href="https://okra2saber.github.io/2022-12-03-shi-yan-ensp-lu-you-yin-ru-dao-zhi-de-huan-lu-wen-ti.html"/>
+    <id>https://okra2saber.github.io/2022-12-03-shi-yan-ensp-lu-you-yin-ru-dao-zhi-de-huan-lu-wen-ti.html</id>
     <published>2022-12-03T07:38:46.000Z</published>
     <updated>2023-06-02T03:35:20.740Z</updated>
     
@@ -207,17 +207,17 @@
     
     
     
-    <category term="ensp实验" scheme="https://uprightokra.github.io/categories/ensp%E5%AE%9E%E9%AA%8C/"/>
+    <category term="ensp实验" scheme="https://okra2saber.github.io/categories/ensp%E5%AE%9E%E9%AA%8C/"/>
     
     
-    <category term="路由引入" scheme="https://uprightokra.github.io/tags/%E8%B7%AF%E7%94%B1%E5%BC%95%E5%85%A5/"/>
+    <category term="路由引入" scheme="https://okra2saber.github.io/tags/%E8%B7%AF%E7%94%B1%E5%BC%95%E5%85%A5/"/>
     
   </entry>
   
   <entry>
     <title>实验ensp PBR</title>
-    <link href="https://uprightokra.github.io/2022-12-01-shi-yan-ensp-pbr.html"/>
-    <id>https://uprightokra.github.io/2022-12-01-shi-yan-ensp-pbr.html</id>
+    <link href="https://okra2saber.github.io/2022-12-01-shi-yan-ensp-pbr.html"/>
+    <id>https://okra2saber.github.io/2022-12-01-shi-yan-ensp-pbr.html</id>
     <published>2022-12-01T13:00:25.000Z</published>
     <updated>2023-06-02T03:37:48.789Z</updated>
     
@@ -232,17 +232,17 @@
     
     
     
-    <category term="ensp实验" scheme="https://uprightokra.github.io/categories/ensp%E5%AE%9E%E9%AA%8C/"/>
+    <category term="ensp实验" scheme="https://okra2saber.github.io/categories/ensp%E5%AE%9E%E9%AA%8C/"/>
     
     
-    <category term="PBR" scheme="https://uprightokra.github.io/tags/PBR/"/>
+    <category term="PBR" scheme="https://okra2saber.github.io/tags/PBR/"/>
     
   </entry>
   
   <entry>
     <title>数通 21-Route-Policy、Filter-Policy、ip-prefix</title>
-    <link href="https://uprightokra.github.io/2022-11-26-shu-tong-21-route-policy-filter-policy-ip-prefix.html"/>
-    <id>https://uprightokra.github.io/2022-11-26-shu-tong-21-route-policy-filter-policy-ip-prefix.html</id>
+    <link href="https://okra2saber.github.io/2022-11-26-shu-tong-21-route-policy-filter-policy-ip-prefix.html"/>
+    <id>https://okra2saber.github.io/2022-11-26-shu-tong-21-route-policy-filter-policy-ip-prefix.html</id>
     <published>2022-11-26T06:24:18.000Z</published>
     <updated>2023-06-02T03:40:38.199Z</updated>
     
@@ -257,17 +257,17 @@
     
     
     
-    <category term="Datacom" scheme="https://uprightokra.github.io/categories/Datacom/"/>
+    <category term="Datacom" scheme="https://okra2saber.github.io/categories/Datacom/"/>
     
     
-    <category term="路由策略" scheme="https://uprightokra.github.io/tags/%E8%B7%AF%E7%94%B1%E7%AD%96%E7%95%A5/"/>
+    <category term="路由策略" scheme="https://okra2saber.github.io/tags/%E8%B7%AF%E7%94%B1%E7%AD%96%E7%95%A5/"/>
     
   </entry>
   
   <entry>
     <title>ISIS为啥支持DIS的抢占？</title>
-    <link href="https://uprightokra.github.io/2022-11-21-isis-wei-sha-zhi-chi-dis-de-qiang-zhan.html"/>
-    <id>https://uprightokra.github.io/2022-11-21-isis-wei-sha-zhi-chi-dis-de-qiang-zhan.html</id>
+    <link href="https://okra2saber.github.io/2022-11-21-isis-wei-sha-zhi-chi-dis-de-qiang-zhan.html"/>
+    <id>https://okra2saber.github.io/2022-11-21-isis-wei-sha-zhi-chi-dis-de-qiang-zhan.html</id>
     <published>2022-11-21T14:55:16.000Z</published>
     <updated>2023-06-02T03:41:44.116Z</updated>
     
@@ -282,17 +282,17 @@
     
     
     
-    <category term="Datacom" scheme="https://uprightokra.github.io/categories/Datacom/"/>
+    <category term="Datacom" scheme="https://okra2saber.github.io/categories/Datacom/"/>
     
     
-    <category term="ISIS" scheme="https://uprightokra.github.io/tags/ISIS/"/>
+    <category term="ISIS" scheme="https://okra2saber.github.io/tags/ISIS/"/>
     
   </entry>
   
   <entry>
     <title>实验ensp IS-IS基础配置</title>
-    <link href="https://uprightokra.github.io/2022-11-21-shi-yan-ensp-is-is-ji-chu-pei-zhi.html"/>
-    <id>https://uprightokra.github.io/2022-11-21-shi-yan-ensp-is-is-ji-chu-pei-zhi.html</id>
+    <link href="https://okra2saber.github.io/2022-11-21-shi-yan-ensp-is-is-ji-chu-pei-zhi.html"/>
+    <id>https://okra2saber.github.io/2022-11-21-shi-yan-ensp-is-is-ji-chu-pei-zhi.html</id>
     <published>2022-11-21T12:36:22.000Z</published>
     <updated>2023-06-02T03:37:06.166Z</updated>
     
@@ -307,17 +307,17 @@
     
     
     
-    <category term="ensp实验" scheme="https://uprightokra.github.io/categories/ensp%E5%AE%9E%E9%AA%8C/"/>
+    <category term="ensp实验" scheme="https://okra2saber.github.io/categories/ensp%E5%AE%9E%E9%AA%8C/"/>
     
     
-    <category term="IS-IS" scheme="https://uprightokra.github.io/tags/IS-IS/"/>
+    <category term="IS-IS" scheme="https://okra2saber.github.io/tags/IS-IS/"/>
     
   </entry>
   
   <entry>
     <title>数通 20-IS-IS</title>
-    <link href="https://uprightokra.github.io/2022-11-18-shu-tong-20-is-is.html"/>
-    <id>https://uprightokra.github.io/2022-11-18-shu-tong-20-is-is.html</id>
+    <link href="https://okra2saber.github.io/2022-11-18-shu-tong-20-is-is.html"/>
+    <id>https://okra2saber.github.io/2022-11-18-shu-tong-20-is-is.html</id>
     <published>2022-11-18T07:07:02.000Z</published>
     <updated>2023-06-02T03:40:31.649Z</updated>
     
@@ -332,17 +332,17 @@
     
     
     
-    <category term="Datacom" scheme="https://uprightokra.github.io/categories/Datacom/"/>
+    <category term="Datacom" scheme="https://okra2saber.github.io/categories/Datacom/"/>
     
     
-    <category term="IS-IS" scheme="https://uprightokra.github.io/tags/IS-IS/"/>
+    <category term="IS-IS" scheme="https://okra2saber.github.io/tags/IS-IS/"/>
     
   </entry>
   
   <entry>
     <title>实验ensp OSPF多进程</title>
-    <link href="https://uprightokra.github.io/2022-11-15-shi-yan-ensp-ospf-duo-jin-cheng.html"/>
-    <id>https://uprightokra.github.io/2022-11-15-shi-yan-ensp-ospf-duo-jin-cheng.html</id>
+    <link href="https://okra2saber.github.io/2022-11-15-shi-yan-ensp-ospf-duo-jin-cheng.html"/>
+    <id>https://okra2saber.github.io/2022-11-15-shi-yan-ensp-ospf-duo-jin-cheng.html</id>
     <published>2022-11-15T06:52:50.000Z</published>
     <updated>2023-06-02T03:37:35.882Z</updated>
     
@@ -357,17 +357,17 @@
     
     
     
-    <category term="ensp实验" scheme="https://uprightokra.github.io/categories/ensp%E5%AE%9E%E9%AA%8C/"/>
+    <category term="ensp实验" scheme="https://okra2saber.github.io/categories/ensp%E5%AE%9E%E9%AA%8C/"/>
     
     
-    <category term="OSPF" scheme="https://uprightokra.github.io/tags/OSPF/"/>
+    <category term="OSPF" scheme="https://okra2saber.github.io/tags/OSPF/"/>
     
   </entry>
   
   <entry>
     <title>实验ensp OSPF报文认证</title>
-    <link href="https://uprightokra.github.io/2022-11-14-shi-yan-ensp-ospf-bao-wen-ren-zheng.html"/>
-    <id>https://uprightokra.github.io/2022-11-14-shi-yan-ensp-ospf-bao-wen-ren-zheng.html</id>
+    <link href="https://okra2saber.github.io/2022-11-14-shi-yan-ensp-ospf-bao-wen-ren-zheng.html"/>
+    <id>https://okra2saber.github.io/2022-11-14-shi-yan-ensp-ospf-bao-wen-ren-zheng.html</id>
     <published>2022-11-14T07:20:35.000Z</published>
     <updated>2023-06-02T03:37:30.743Z</updated>
     
@@ -382,17 +382,17 @@
     
     
     
-    <category term="ensp实验" scheme="https://uprightokra.github.io/categories/ensp%E5%AE%9E%E9%AA%8C/"/>
+    <category term="ensp实验" scheme="https://okra2saber.github.io/categories/ensp%E5%AE%9E%E9%AA%8C/"/>
     
     
-    <category term="报文认证" scheme="https://uprightokra.github.io/tags/%E6%8A%A5%E6%96%87%E8%AE%A4%E8%AF%81/"/>
+    <category term="报文认证" scheme="https://okra2saber.github.io/tags/%E6%8A%A5%E6%96%87%E8%AE%A4%E8%AF%81/"/>
     
   </entry>
   
   <entry>
     <title>实验ensp Virtual Link的配置(二)</title>
-    <link href="https://uprightokra.github.io/2022-11-14-shi-yan-ensp-virtual-link-de-pei-zhi-er.html"/>
-    <id>https://uprightokra.github.io/2022-11-14-shi-yan-ensp-virtual-link-de-pei-zhi-er.html</id>
+    <link href="https://okra2saber.github.io/2022-11-14-shi-yan-ensp-virtual-link-de-pei-zhi-er.html"/>
+    <id>https://okra2saber.github.io/2022-11-14-shi-yan-ensp-virtual-link-de-pei-zhi-er.html</id>
     <published>2022-11-14T02:58:00.000Z</published>
     <updated>2023-06-02T03:38:06.269Z</updated>
     
@@ -407,17 +407,17 @@
     
     
     
-    <category term="ensp实验" scheme="https://uprightokra.github.io/categories/ensp%E5%AE%9E%E9%AA%8C/"/>
+    <category term="ensp实验" scheme="https://okra2saber.github.io/categories/ensp%E5%AE%9E%E9%AA%8C/"/>
     
     
-    <category term="Virtual Link" scheme="https://uprightokra.github.io/tags/Virtual-Link/"/>
+    <category term="Virtual Link" scheme="https://okra2saber.github.io/tags/Virtual-Link/"/>
     
   </entry>
   
   <entry>
     <title>实验ensp Virtual Link的配置(一)</title>
-    <link href="https://uprightokra.github.io/2022-11-14-shi-yan-ensp-virtual-link-de-pei-zhi-yi.html"/>
-    <id>https://uprightokra.github.io/2022-11-14-shi-yan-ensp-virtual-link-de-pei-zhi-yi.html</id>
+    <link href="https://okra2saber.github.io/2022-11-14-shi-yan-ensp-virtual-link-de-pei-zhi-yi.html"/>
+    <id>https://okra2saber.github.io/2022-11-14-shi-yan-ensp-virtual-link-de-pei-zhi-yi.html</id>
     <published>2022-11-14T01:29:01.000Z</published>
     <updated>2023-06-02T03:38:16.404Z</updated>
     
@@ -432,17 +432,17 @@
     
     
     
-    <category term="ensp实验" scheme="https://uprightokra.github.io/categories/ensp%E5%AE%9E%E9%AA%8C/"/>
+    <category term="ensp实验" scheme="https://okra2saber.github.io/categories/ensp%E5%AE%9E%E9%AA%8C/"/>
     
     
-    <category term="Virtual Link" scheme="https://uprightokra.github.io/tags/Virtual-Link/"/>
+    <category term="Virtual Link" scheme="https://okra2saber.github.io/tags/Virtual-Link/"/>
     
   </entry>
   
   <entry>
     <title>数通 19-OSPF协议特性</title>
-    <link href="https://uprightokra.github.io/2022-11-12-shu-tong-19-ospf-xie-yi-te-xing.html"/>
-    <id>https://uprightokra.github.io/2022-11-12-shu-tong-19-ospf-xie-yi-te-xing.html</id>
+    <link href="https://okra2saber.github.io/2022-11-12-shu-tong-19-ospf-xie-yi-te-xing.html"/>
+    <id>https://okra2saber.github.io/2022-11-12-shu-tong-19-ospf-xie-yi-te-xing.html</id>
     <published>2022-11-12T14:10:30.000Z</published>
     <updated>2023-06-02T03:40:24.289Z</updated>
     
@@ -457,17 +457,17 @@
     
     
     
-    <category term="Datacom" scheme="https://uprightokra.github.io/categories/Datacom/"/>
+    <category term="Datacom" scheme="https://okra2saber.github.io/categories/Datacom/"/>
     
     
-    <category term="OSPF" scheme="https://uprightokra.github.io/tags/OSPF/"/>
+    <category term="OSPF" scheme="https://okra2saber.github.io/tags/OSPF/"/>
     
   </entry>
   
   <entry>
     <title>数通 18-OSPF LSA及特殊区域</title>
-    <link href="https://uprightokra.github.io/2022-11-12-shu-tong-18-ospf-lsa-ji-te-shu-qu-yu.html"/>
-    <id>https://uprightokra.github.io/2022-11-12-shu-tong-18-ospf-lsa-ji-te-shu-qu-yu.html</id>
+    <link href="https://okra2saber.github.io/2022-11-12-shu-tong-18-ospf-lsa-ji-te-shu-qu-yu.html"/>
+    <id>https://okra2saber.github.io/2022-11-12-shu-tong-18-ospf-lsa-ji-te-shu-qu-yu.html</id>
     <published>2022-11-12T11:18:28.000Z</published>
     <updated>2023-06-02T03:40:19.332Z</updated>
     
@@ -482,17 +482,17 @@
     
     
     
-    <category term="Datacom" scheme="https://uprightokra.github.io/categories/Datacom/"/>
+    <category term="Datacom" scheme="https://okra2saber.github.io/categories/Datacom/"/>
     
     
-    <category term="OSPF" scheme="https://uprightokra.github.io/tags/OSPF/"/>
+    <category term="OSPF" scheme="https://okra2saber.github.io/tags/OSPF/"/>
     
   </entry>
   
   <entry>
     <title>数通 17-OSPF的报文格式</title>
-    <link href="https://uprightokra.github.io/2022-11-12-shu-tong-17-ospf-de-bao-wen-ge-shi.html"/>
-    <id>https://uprightokra.github.io/2022-11-12-shu-tong-17-ospf-de-bao-wen-ge-shi.html</id>
+    <link href="https://okra2saber.github.io/2022-11-12-shu-tong-17-ospf-de-bao-wen-ge-shi.html"/>
+    <id>https://okra2saber.github.io/2022-11-12-shu-tong-17-ospf-de-bao-wen-ge-shi.html</id>
     <published>2022-11-12T07:39:41.000Z</published>
     <updated>2023-06-02T03:40:14.027Z</updated>
     
@@ -507,10 +507,10 @@
     
     
     
-    <category term="Datacom" scheme="https://uprightokra.github.io/categories/Datacom/"/>
+    <category term="Datacom" scheme="https://okra2saber.github.io/categories/Datacom/"/>
     
     
-    <category term="OSPF" scheme="https://uprightokra.github.io/tags/OSPF/"/>
+    <category term="OSPF" scheme="https://okra2saber.github.io/tags/OSPF/"/>
     
   </entry>
   
