@@ -38,7 +38,7 @@
 
    <style>
     body{
-       background-image: url(https://img-blog.csdnimg.cn/037c9770f141489aa27e18162f873c68.jpeg);
+       background-image: url(https://gitee.com/SAR_Okra/pic-go/raw/master/img/202306021029445.jpg);
        background-repeat:no-repeat;
        background-size:cover;
        background-attachment:fixed;
@@ -129,7 +129,7 @@
             <div class="brand-logo">
                 <a href="/" class="waves-effect waves-light">
                     
-                    <img src="https://img-blog.csdnimg.cn/cd7067b17dc74e46beea354fa2212bef.gif" data-original="https://aimer666.oss-cn-hangzhou.aliyuncs.com/logo.png" class="logo-img" alt="LOGO">
+                    <img src="https://gitee.com/SAR_Okra/pic-go/raw/master/img/202306021406743.gif" data-original="https://aimer666.oss-cn-hangzhou.aliyuncs.com/logo.png" class="logo-img" alt="LOGO">
                     
                     <span class="logo-span">Okraの筆記</span>
                 </a>
@@ -274,7 +274,7 @@
 
     <div class="mobile-head bg-color">
         
-        <img src="https://img-blog.csdnimg.cn/cd7067b17dc74e46beea354fa2212bef.gif" data-original="https://aimer666.oss-cn-hangzhou.aliyuncs.com/logo.png" class="logo-img circle responsive-img">
+        <img src="https://gitee.com/SAR_Okra/pic-go/raw/master/img/202306021406743.gif" data-original="https://aimer666.oss-cn-hangzhou.aliyuncs.com/logo.png" class="logo-img circle responsive-img">
         
         <div class="logo-name">Okraの筆記</div>
         <div class="logo-desc">
@@ -693,14 +693,14 @@
             <div id="articleContent">
                 <h3 id="一、DR简介："><a href="#一、DR简介：" class="headerlink" title="一、DR简介："></a>一、DR简介：</h3><p>一个广播性、多接入网络中的指定路由器（Designated Router）</p>
 <h3 id="二、BDR简介："><a href="#二、BDR简介：" class="headerlink" title="二、BDR简介："></a>二、BDR简介：</h3><p>为减小多路访问网络中OSPF流量，OSPF会选择一个指定路由器（DR）和一个备份指定路由器（BDR）。当多路访问网络发生变化时，DR负责更新其他所有OSPF路由器。BDR会监控DR 的状态，并在当前DR发生故障时接替其角色。</p>
-<h3 id="三、OSPF邻居关系规律及缺点："><a href="#三、OSPF邻居关系规律及缺点：" class="headerlink" title="三、OSPF邻居关系规律及缺点："></a>三、OSPF邻居关系规律及缺点：</h3><p><img src="https://img-blog.csdnimg.cn/cd7067b17dc74e46beea354fa2212bef.gif" data-original="https://img-blog.csdnimg.cn/961bc626034140feaa54c21a3e3bf7de.png?x-oss-process=image/watermark,type_d3F5LXplbmhlaQ,shadow_50,text_Q1NETiBA5a2k5Z-OMjg2,size_20,color_FFFFFF,t_70,g_se,x_16"></p>
+<h3 id="三、OSPF邻居关系规律及缺点："><a href="#三、OSPF邻居关系规律及缺点：" class="headerlink" title="三、OSPF邻居关系规律及缺点："></a>三、OSPF邻居关系规律及缺点：</h3><p><img src="https://gitee.com/SAR_Okra/pic-go/raw/master/img/202306021406743.gif" data-original="https://img-blog.csdnimg.cn/961bc626034140feaa54c21a3e3bf7de.png?x-oss-process=image/watermark,type_d3F5LXplbmhlaQ,shadow_50,text_Q1NETiBA5a2k5Z-OMjg2,size_20,color_FFFFFF,t_70,g_se,x_16"></p>
 <h4 id="（１）、-邻居关系数量变化规律："><a href="#（１）、-邻居关系数量变化规律：" class="headerlink" title="（１）、 邻居关系数量变化规律："></a><strong>（１）、 邻居关系数量变化规律：</strong></h4><pre class="line-numbers language-none"><code class="language-none">n*（n-1）/2  		//n当前路由器个数<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 
 <h4 id="（２）、邻居关系过多缺点："><a href="#（２）、邻居关系过多缺点：" class="headerlink" title="（２）、邻居关系过多缺点："></a><strong>（２）、邻居关系过多缺点：</strong></h4><p>（1）大量产生hello包，消耗CPU性能</p>
 <p>（2）产生重复路由通告，消耗CPU性能（R4将路由通告给R1、R2、R3，然后R2又查找邻居，继 续通告4.4.4.0的路由，导致通告重复）</p>
 <p>（3）任何一台路由器的路由变化都会导致多次传递,浪费了带宽资源</p>
 <h3 id="四、为什么选举DR和BDR"><a href="#四、为什么选举DR和BDR" class="headerlink" title="四、为什么选举DR和BDR:"></a>四、为什么选举DR和BDR:</h3><p>在一个共享的广播网络多台路由器建立OSPF，有可能会产生大量的OSPF邻居<br>在这些大量的OSPF邻居发送大量的OSPF报文，造成其他路<br>器接收到大量的OSPF重复报文浪费带宽资源和设备CPU计算资源<br>.</p>
-<h3 id="五、解决方法：引入DR、BDR"><a href="#五、解决方法：引入DR、BDR" class="headerlink" title="五、解决方法：引入DR、BDR"></a>五、解决方法：引入DR、BDR</h3><h4 id="解决过程："><a href="#解决过程：" class="headerlink" title="解决过程："></a><strong>解决过程：</strong></h4><p><img src="https://img-blog.csdnimg.cn/cd7067b17dc74e46beea354fa2212bef.gif" data-original="https://img-blog.csdnimg.cn/72ef356584274f1e8b367f59b6074023.png?x-oss-process=image/watermark,type_d3F5LXplbmhlaQ,shadow_50,text_Q1NETiBA5a2k5Z-OMjg2,size_20,color_FFFFFF,t_70,g_se,x_16"></p>
+<h3 id="五、解决方法：引入DR、BDR"><a href="#五、解决方法：引入DR、BDR" class="headerlink" title="五、解决方法：引入DR、BDR"></a>五、解决方法：引入DR、BDR</h3><h4 id="解决过程："><a href="#解决过程：" class="headerlink" title="解决过程："></a><strong>解决过程：</strong></h4><p><img src="https://gitee.com/SAR_Okra/pic-go/raw/master/img/202306021406743.gif" data-original="https://img-blog.csdnimg.cn/72ef356584274f1e8b367f59b6074023.png?x-oss-process=image/watermark,type_d3F5LXplbmhlaQ,shadow_50,text_Q1NETiBA5a2k5Z-OMjg2,size_20,color_FFFFFF,t_70,g_se,x_16"></p>
 <p> 如图：当DR和BDR选举完成之后，R4将路由通告给R1和R2，然而R2作为BDR，此时他知道DR还在（不会去代替DR，去通告其他DRother），所以R2收到路由存放在本地之后不会通告出去，而是由BR通告给R3。此时减少了重复通告，优化设备性能。</p>
 <hr>
 <h3 id="六、DR及BDR的选举："><a href="#六、DR及BDR的选举：" class="headerlink" title="六、DR及BDR的选举："></a>六、DR及BDR的选举：</h3><p>1、DR/BDR的选举是基于接口的。</p>
@@ -716,11 +716,11 @@ ip ospf priority 2
 <p>DR是没有抢占性的，当BDR变为老大时，DR无法自动再次成为老大，当某天DR挂了，则BDR会升级为DR，然后再DRother中选择一个作为BDR。</p>
 <p>从宏观角度来说，一开始先选择BDR出来，然后BDR判断网络中有没有DR，没有DR，则BDR升级为DR，再选择一个BDR出来</p>
 <hr>
-<h3 id="七、DR和BDR选举情况："><a href="#七、DR和BDR选举情况：" class="headerlink" title="七、DR和BDR选举情况："></a>七、DR和BDR选举情况：</h3><p><img src="https://img-blog.csdnimg.cn/cd7067b17dc74e46beea354fa2212bef.gif" data-original="https://img-blog.csdnimg.cn/e6ef4ab3c3064c92a5a491750a4d6920.png?x-oss-process=image/watermark,type_d3F5LXplbmhlaQ,shadow_50,text_Q1NETiBA5a2k5Z-OMjg2,size_20,color_FFFFFF,t_70,g_se,x_16"></p>
+<h3 id="七、DR和BDR选举情况："><a href="#七、DR和BDR选举情况：" class="headerlink" title="七、DR和BDR选举情况："></a>七、DR和BDR选举情况：</h3><p><img src="https://gitee.com/SAR_Okra/pic-go/raw/master/img/202306021406743.gif" data-original="https://img-blog.csdnimg.cn/e6ef4ab3c3064c92a5a491750a4d6920.png?x-oss-process=image/watermark,type_d3F5LXplbmhlaQ,shadow_50,text_Q1NETiBA5a2k5Z-OMjg2,size_20,color_FFFFFF,t_70,g_se,x_16"></p>
 <p>DR和BDR选举在广播的网络类型， 只有在广播的网络才会选举DR和BDR</p>
-<p><img src="https://img-blog.csdnimg.cn/cd7067b17dc74e46beea354fa2212bef.gif" data-original="https://img-blog.csdnimg.cn/0363c965e4134ff5aceb586c50d01e0c.png?x-oss-process=image/watermark,type_d3F5LXplbmhlaQ,shadow_50,text_Q1NETiBA5a2k5Z-OMjg2,size_20,color_FFFFFF,t_70,g_se,x_16"></p>
+<p><img src="https://gitee.com/SAR_Okra/pic-go/raw/master/img/202306021406743.gif" data-original="https://img-blog.csdnimg.cn/0363c965e4134ff5aceb586c50d01e0c.png?x-oss-process=image/watermark,type_d3F5LXplbmhlaQ,shadow_50,text_Q1NETiBA5a2k5Z-OMjg2,size_20,color_FFFFFF,t_70,g_se,x_16"></p>
 <p> 查看图：</p>
-<p><img src="https://img-blog.csdnimg.cn/cd7067b17dc74e46beea354fa2212bef.gif" data-original="https://img-blog.csdnimg.cn/0c19c42dee3346c9b429528777d31cf1.png?x-oss-process=image/watermark,type_d3F5LXplbmhlaQ,shadow_50,text_Q1NETiBA5a2k5Z-OMjg2,size_20,color_FFFFFF,t_70,g_se,x_16"></p>
+<p><img src="https://gitee.com/SAR_Okra/pic-go/raw/master/img/202306021406743.gif" data-original="https://img-blog.csdnimg.cn/0c19c42dee3346c9b429528777d31cf1.png?x-oss-process=image/watermark,type_d3F5LXplbmhlaQ,shadow_50,text_Q1NETiBA5a2k5Z-OMjg2,size_20,color_FFFFFF,t_70,g_se,x_16"></p>
 <h3 id="八、拓展："><a href="#八、拓展：" class="headerlink" title="八、拓展："></a>八、拓展：</h3><p>（1）、OSPF协议采用组播，组播地址:224.0.0.5和224.0.0.6，其中DR /BDR监听目的IP地址为224.0.0.6的数据包，DRother监听目的IP地址为224.0.0.5的数据包;LSDBD、LSU发送的单播地址（在路由更新的时候，如果说路由IP地址为224.0.0.6的，仅仅只有DR和BDR能够接收目的IP地址为224.0.0.6的数据包，然后进行处理｜｜如果我DR和BDR想给普通DRother发送一些路由同步，当DRother查看发现路由IP地址为224.0.0.5，肯定是DR和BDR发的，然后处理）</p>
 <p>（２）、hello包通常发送目的IP地址为224.0.0.5，TＴL为1（只能传一跳），点对点和广播网络类型下heｌlo包发送间隔时间10秒，死亡超时时间为40秒，在帧中继网络环境hello包发送间隔时间30秒，死亡超时为120秒<br>－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－</p>
 <h3 id="九、DR和BDR出现的环境下"><a href="#九、DR和BDR出现的环境下" class="headerlink" title="九、DR和BDR出现的环境下"></a>九、DR和BDR出现的环境下</h3><p>—在广播链路类型下选出DR BDR和DR DRother;什么接口才是广播类型?以太接口(E\F\G\T)<br>—-选举DR和BDR有个等待的40秒时间，我等待了40秒次链路还没有选举出来DR，我就成为DR;DR没有抢占<br>——先比较接口优先级，接口优先级默认为1，如果接口优先级相同在比较RID，数值越大越好;（接口优先级为0代表不参与DR和BDR选举）在华为里面优先级0代表最小的数值;<br>.—–RID可以手工指定或者自动选举，如果自动选举则优先使用环回接口，如果有多个环回接口选择数值最大的那个，没有环回接口选择物理接口数值最大的那个作为自己的RID<br>-－－先选择BDR出来，再由BDR判断当前网络有没有DR，如果没有则升级为DR，重新选举一个BDR出来<br>-－－DR和BDR一旦选举出来，为了OSPF的稳定性，新加入一台路由器就算优先级比我当前DR和BDR都高也没有用，除非O6SF协议重收敛!没有抢占性!<br>—–DRohter 要和DR以及BDR形成完全邻接关系full，只有完全邻接关系full才能互相通告同步数据库，DRother之间邻居关系只能到达2-WAY状态（双向邻居状态）在2-WAY状态下不能同步数据库</p>
@@ -921,10 +921,10 @@ ip ospf priority 2
                         <li class="tab col s6 wechat-tab waves-effect waves-light"><a href="#wechat">微 信</a></li>
                     </ul>
                     <div id="alipay">
-                        <img src="https://img-blog.csdnimg.cn/cd7067b17dc74e46beea354fa2212bef.gif" data-original="/medias/reward/alipay.jpg" class="reward-img" alt="支付宝打赏二维码">
+                        <img src="https://gitee.com/SAR_Okra/pic-go/raw/master/img/202306021406743.gif" data-original="/medias/reward/alipay.jpg" class="reward-img" alt="支付宝打赏二维码">
                     </div>
                     <div id="wechat">
-                        <img src="https://img-blog.csdnimg.cn/cd7067b17dc74e46beea354fa2212bef.gif" data-original="/medias/reward/wechat.png" class="reward-img" alt="微信打赏二维码">
+                        <img src="https://gitee.com/SAR_Okra/pic-go/raw/master/img/202306021406743.gif" data-original="/medias/reward/wechat.png" class="reward-img" alt="微信打赏二维码">
                     </div>
                 </div>
             </div>
@@ -1299,7 +1299,7 @@ ip ospf priority 2
                     <div class="card-image">
                         
                         
-                        <img src="https://img-blog.csdnimg.cn/cd7067b17dc74e46beea354fa2212bef.gif" data-original="https://aimer666.oss-cn-hangzhou.aliyuncs.com/32.jpg" class="responsive-img" alt="实验ensp-VLAN-Hybrid的配置">
+                        <img src="https://gitee.com/SAR_Okra/pic-go/raw/master/img/202306021406743.gif" data-original="https://aimer666.oss-cn-hangzhou.aliyuncs.com/32.jpg" class="responsive-img" alt="实验ensp-VLAN-Hybrid的配置">
                         
                         <span class="card-title">实验ensp-VLAN-Hybrid的配置</span>
                     </div>
@@ -1348,7 +1348,7 @@ ip ospf priority 2
                     <div class="card-image">
                         
                         
-                        <img src="https://img-blog.csdnimg.cn/cd7067b17dc74e46beea354fa2212bef.gif" data-original="https://aimer666.oss-cn-hangzhou.aliyuncs.com/21.jpg" class="responsive-img" alt="loopback本地回环接口">
+                        <img src="https://gitee.com/SAR_Okra/pic-go/raw/master/img/202306021406743.gif" data-original="https://aimer666.oss-cn-hangzhou.aliyuncs.com/21.jpg" class="responsive-img" alt="loopback本地回环接口">
                         
                         <span class="card-title">loopback本地回环接口</span>
                     </div>

@@ -38,7 +38,7 @@
 
    <style>
     body{
-       background-image: url(https://img-blog.csdnimg.cn/037c9770f141489aa27e18162f873c68.jpeg);
+       background-image: url(https://gitee.com/SAR_Okra/pic-go/raw/master/img/202306021029445.jpg);
        background-repeat:no-repeat;
        background-size:cover;
        background-attachment:fixed;
@@ -129,7 +129,7 @@
             <div class="brand-logo">
                 <a href="/" class="waves-effect waves-light">
                     
-                    <img src="https://img-blog.csdnimg.cn/cd7067b17dc74e46beea354fa2212bef.gif" data-original="https://aimer666.oss-cn-hangzhou.aliyuncs.com/logo.png" class="logo-img" alt="LOGO">
+                    <img src="https://gitee.com/SAR_Okra/pic-go/raw/master/img/202306021406743.gif" data-original="https://aimer666.oss-cn-hangzhou.aliyuncs.com/logo.png" class="logo-img" alt="LOGO">
                     
                     <span class="logo-span">Okraの筆記</span>
                 </a>
@@ -274,7 +274,7 @@
 
     <div class="mobile-head bg-color">
         
-        <img src="https://img-blog.csdnimg.cn/cd7067b17dc74e46beea354fa2212bef.gif" data-original="https://aimer666.oss-cn-hangzhou.aliyuncs.com/logo.png" class="logo-img circle responsive-img">
+        <img src="https://gitee.com/SAR_Okra/pic-go/raw/master/img/202306021406743.gif" data-original="https://aimer666.oss-cn-hangzhou.aliyuncs.com/logo.png" class="logo-img circle responsive-img">
         
         <div class="logo-name">Okraの筆記</div>
         <div class="logo-desc">
@@ -691,7 +691,7 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h1 id="PBR"><a href="#PBR" class="headerlink" title="PBR"></a><center>PBR<center></center></center></h1><h2 id="拓扑图"><a href="#拓扑图" class="headerlink" title="拓扑图"></a>拓扑图</h2><p><img src="https://img-blog.csdnimg.cn/cd7067b17dc74e46beea354fa2212bef.gif" data-original="https://img-blog.csdnimg.cn/d8bb53c79ce34bb5bbaa3a90aa462efb.png"></p>
+                <h1 id="PBR"><a href="#PBR" class="headerlink" title="PBR"></a><center>PBR<center></center></center></h1><h2 id="拓扑图"><a href="#拓扑图" class="headerlink" title="拓扑图"></a>拓扑图</h2><p><img src="https://gitee.com/SAR_Okra/pic-go/raw/master/img/202306021406743.gif" data-original="https://img-blog.csdnimg.cn/d8bb53c79ce34bb5bbaa3a90aa462efb.png"></p>
 <h2 id="实验目的"><a href="#实验目的" class="headerlink" title="实验目的"></a>实验目的</h2><p>使用PBR调整路由选路，在缺省情况下PC1、PC2在OSPF的路由计算下前往8.8.8.8的路径都是从AR2走。这样就导致上半段线路压力大，而下半段链路空闲。现在需要强制让PC2访问8.8.8.8，选择从AR3走，而其他路由还是通过路由表进行选路。那么我们需要怎样配置接口PBR策略路由来实现呢？</p>
 <h2 id="实验步骤"><a href="#实验步骤" class="headerlink" title="实验步骤"></a>实验步骤</h2><p><strong>1.实现全网路由互通</strong></p>
 <p>S1：</p>
@@ -815,20 +815,20 @@ ospf 1 router-id 4.4.4.4
  #未来当流量进入G0/0/0后，会执行PBR匹配，若匹配上了就按照流行为去执行，若匹配不上，则该PBR对该流量报文无效，报文将继续执行路由表转发规则。<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
 
 <p>4.PC2上tracert 8.8.8.8,可以看见PC2发往8.8.8.8的报文是从R3转发出去的。</p>
-<p><img src="https://img-blog.csdnimg.cn/cd7067b17dc74e46beea354fa2212bef.gif" data-original="https://img-blog.csdnimg.cn/39e4ccc2b4ad4fec97edadbae68a6dff.png"></p>
+<p><img src="https://gitee.com/SAR_Okra/pic-go/raw/master/img/202306021406743.gif" data-original="https://img-blog.csdnimg.cn/39e4ccc2b4ad4fec97edadbae68a6dff.png"></p>
 <h6 id="现在让我们思考一下，PC2发往8-8-8-8后，8-8-8-8会选择从那条路径给PC2回包呢？"><a href="#现在让我们思考一下，PC2发往8-8-8-8后，8-8-8-8会选择从那条路径给PC2回包呢？" class="headerlink" title="现在让我们思考一下，PC2发往8.8.8.8后，8.8.8.8会选择从那条路径给PC2回包呢？"></a>现在让我们思考一下，PC2发往8.8.8.8后，8.8.8.8会选择从那条路径给PC2回包呢？</h6><p>在R4上tracertPC2看看，可以看到还是从R3回包的。</p>
-<p><img src="https://img-blog.csdnimg.cn/cd7067b17dc74e46beea354fa2212bef.gif" data-original="https://img-blog.csdnimg.cn/9e776098545c4cb59e8355ae93c04c47.png"></p>
+<p><img src="https://gitee.com/SAR_Okra/pic-go/raw/master/img/202306021406743.gif" data-original="https://img-blog.csdnimg.cn/9e776098545c4cb59e8355ae93c04c47.png"></p>
 <h2 id="实验拓展"><a href="#实验拓展" class="headerlink" title="实验拓展"></a>实验拓展</h2><p>在现实中路由器和路由器之间一般不会直接相连，中间会有像交换机、光猫等设备相连。那么我们来模拟一下实际情况。在R1和R3间加上一台交换机。</p>
-<p><img src="https://img-blog.csdnimg.cn/cd7067b17dc74e46beea354fa2212bef.gif" data-original="https://img-blog.csdnimg.cn/211245b43d72422c8f709eafd3240d4d.png"></p>
+<p><img src="https://gitee.com/SAR_Okra/pic-go/raw/master/img/202306021406743.gif" data-original="https://img-blog.csdnimg.cn/211245b43d72422c8f709eafd3240d4d.png"></p>
 <p>1.shutdown掉R3的G0/0/0接口</p>
 <pre class="line-numbers language-none"><code class="language-none">[R3-GigabitEthernet0/0/0]shutdown <span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 
 <p>2.可以看见虽然交换机和R3之间的链路断了，但R1和交换机的链路还是正常的。</p>
-<img src="https://img-blog.csdnimg.cn/cd7067b17dc74e46beea354fa2212bef.gif" data-original="https://img-blog.csdnimg.cn/3e3772672f6c47daa70ae12b5c29dbbc.png" style="zoom:67%;">
+<img src="https://gitee.com/SAR_Okra/pic-go/raw/master/img/202306021406743.gif" data-original="https://img-blog.csdnimg.cn/3e3772672f6c47daa70ae12b5c29dbbc.png" style="zoom:67%;">
 
 <p>现在PC2上tracert8.8.8.8看看。</p>
 <p><strong>发现PC2访问8.8.8.8还是走的R3，那么现在就出现了路由黑洞。</strong></p>
-<p><img src="https://img-blog.csdnimg.cn/cd7067b17dc74e46beea354fa2212bef.gif" data-original="https://img-blog.csdnimg.cn/1406806912e645738d91bd57e30cadfa.png"></p>
+<p><img src="https://gitee.com/SAR_Okra/pic-go/raw/master/img/202306021406743.gif" data-original="https://img-blog.csdnimg.cn/1406806912e645738d91bd57e30cadfa.png"></p>
 <h2 id="有什么解决方法呢？"><a href="#有什么解决方法呢？" class="headerlink" title="有什么解决方法呢？"></a>有什么解决方法呢？</h2><p>先让我们分析一下，现在R3与交换机之间的链路已经断开了，但是PC2依旧还是通过PBR规则向R3转发流量。我们需要的就是在PC2执行PBR规则时能够检测链路的连通性。</p>
 <p>解决方法：在流行为上挂载NQA链路检测，检测链路到达R3的10.0.13.3连通性。</p>
 <p>1.NQA配置</p>
@@ -844,7 +844,7 @@ ospf 1 router-id 4.4.4.4
 [R1-behavior-AR3]redirect ip-nexthop 10.0.13.3 track nqa test icmp<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
 
 <p>3.现在tracert，可以看见PC2已经从R2走了。</p>
-<p><img src="https://img-blog.csdnimg.cn/cd7067b17dc74e46beea354fa2212bef.gif" data-original="https://img-blog.csdnimg.cn/0b5f1745441444c2807a7525d6e27c39.png"></p>
+<p><img src="https://gitee.com/SAR_Okra/pic-go/raw/master/img/202306021406743.gif" data-original="https://img-blog.csdnimg.cn/0b5f1745441444c2807a7525d6e27c39.png"></p>
 <h1 id="本地始发PBR"><a href="#本地始发PBR" class="headerlink" title="本地始发PBR"></a>本地始发PBR</h1><p>上面的实验我们配的是一个接口PBR，是在R1的g0/0/0口是上配置的。</p>
 <p>现在我们尝试配置一个本地始发的PBR</p>
 <p>1.ACL2000，匹配R1上的环回地址1.1.1.1</p>
@@ -860,7 +860,7 @@ ospf 1 router-id 4.4.4.4
 <pre class="line-numbers language-none"><code class="language-none">[R1]ip local policy-based-route PBR-2<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 
 <p>4.现在本地始发的PBR-2就实现了，我们在R1上尝试tracert -a 1.1.1.1 8.8.8.8，可以看见走的是10.0.13.3。</p>
-<p><img src="https://img-blog.csdnimg.cn/cd7067b17dc74e46beea354fa2212bef.gif" data-original="https://img-blog.csdnimg.cn/76251d208a7d4280adf20c356c4bbf55.png"></p>
+<p><img src="https://gitee.com/SAR_Okra/pic-go/raw/master/img/202306021406743.gif" data-original="https://img-blog.csdnimg.cn/76251d208a7d4280adf20c356c4bbf55.png"></p>
 <p>5.但是当我们把PBR-2删除后，1.1.1.1到8.8.8.8的选路就会变成从R2走。因为R2的cost小。</p>
 
                 
@@ -1057,10 +1057,10 @@ ospf 1 router-id 4.4.4.4
                         <li class="tab col s6 wechat-tab waves-effect waves-light"><a href="#wechat">微 信</a></li>
                     </ul>
                     <div id="alipay">
-                        <img src="https://img-blog.csdnimg.cn/cd7067b17dc74e46beea354fa2212bef.gif" data-original="/medias/reward/alipay.jpg" class="reward-img" alt="支付宝打赏二维码">
+                        <img src="https://gitee.com/SAR_Okra/pic-go/raw/master/img/202306021406743.gif" data-original="/medias/reward/alipay.jpg" class="reward-img" alt="支付宝打赏二维码">
                     </div>
                     <div id="wechat">
-                        <img src="https://img-blog.csdnimg.cn/cd7067b17dc74e46beea354fa2212bef.gif" data-original="/medias/reward/wechat.png" class="reward-img" alt="微信打赏二维码">
+                        <img src="https://gitee.com/SAR_Okra/pic-go/raw/master/img/202306021406743.gif" data-original="/medias/reward/wechat.png" class="reward-img" alt="微信打赏二维码">
                     </div>
                 </div>
             </div>
@@ -1435,7 +1435,7 @@ ospf 1 router-id 4.4.4.4
                     <div class="card-image">
                         
                         
-                        <img src="https://img-blog.csdnimg.cn/cd7067b17dc74e46beea354fa2212bef.gif" data-original="https://aimer666.oss-cn-hangzhou.aliyuncs.com/29.jpg" class="responsive-img" alt="实验ensp 路由引入导致的环路问题">
+                        <img src="https://gitee.com/SAR_Okra/pic-go/raw/master/img/202306021406743.gif" data-original="https://aimer666.oss-cn-hangzhou.aliyuncs.com/29.jpg" class="responsive-img" alt="实验ensp 路由引入导致的环路问题">
                         
                         <span class="card-title">实验ensp 路由引入导致的环路问题</span>
                     </div>
@@ -1484,7 +1484,7 @@ ospf 1 router-id 4.4.4.4
                     <div class="card-image">
                         
                         
-                        <img src="https://img-blog.csdnimg.cn/cd7067b17dc74e46beea354fa2212bef.gif" data-original="https://aimer666.oss-cn-hangzhou.aliyuncs.com/12.jpg" class="responsive-img" alt="数通 21-Route-Policy、Filter-Policy、ip-prefix">
+                        <img src="https://gitee.com/SAR_Okra/pic-go/raw/master/img/202306021406743.gif" data-original="https://aimer666.oss-cn-hangzhou.aliyuncs.com/12.jpg" class="responsive-img" alt="数通 21-Route-Policy、Filter-Policy、ip-prefix">
                         
                         <span class="card-title">数通 21-Route-Policy、Filter-Policy、ip-prefix</span>
                     </div>

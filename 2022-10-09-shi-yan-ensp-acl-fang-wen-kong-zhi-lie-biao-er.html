@@ -38,7 +38,7 @@
 
    <style>
     body{
-       background-image: url(https://img-blog.csdnimg.cn/037c9770f141489aa27e18162f873c68.jpeg);
+       background-image: url(https://gitee.com/SAR_Okra/pic-go/raw/master/img/202306021029445.jpg);
        background-repeat:no-repeat;
        background-size:cover;
        background-attachment:fixed;
@@ -129,7 +129,7 @@
             <div class="brand-logo">
                 <a href="/" class="waves-effect waves-light">
                     
-                    <img src="https://img-blog.csdnimg.cn/cd7067b17dc74e46beea354fa2212bef.gif" data-original="https://aimer666.oss-cn-hangzhou.aliyuncs.com/logo.png" class="logo-img" alt="LOGO">
+                    <img src="https://gitee.com/SAR_Okra/pic-go/raw/master/img/202306021406743.gif" data-original="https://aimer666.oss-cn-hangzhou.aliyuncs.com/logo.png" class="logo-img" alt="LOGO">
                     
                     <span class="logo-span">Okraの筆記</span>
                 </a>
@@ -274,7 +274,7 @@
 
     <div class="mobile-head bg-color">
         
-        <img src="https://img-blog.csdnimg.cn/cd7067b17dc74e46beea354fa2212bef.gif" data-original="https://aimer666.oss-cn-hangzhou.aliyuncs.com/logo.png" class="logo-img circle responsive-img">
+        <img src="https://gitee.com/SAR_Okra/pic-go/raw/master/img/202306021406743.gif" data-original="https://aimer666.oss-cn-hangzhou.aliyuncs.com/logo.png" class="logo-img circle responsive-img">
         
         <div class="logo-name">Okraの筆記</div>
         <div class="logo-desc">
@@ -695,7 +695,7 @@
 <p>2.Client1——&gt;无法访问Server -icmp服务（Ping不通），但是可以访问其他服务</p>
 <h4 id="ACL步骤："><a href="#ACL步骤：" class="headerlink" title="ACL步骤："></a>ACL步骤：</h4><p>1.创建一个访问控制规则</p>
 <p>2.调用这个规则</p>
-<h3 id="拓扑图"><a href="#拓扑图" class="headerlink" title="拓扑图"></a>拓扑图</h3><p><img src="https://img-blog.csdnimg.cn/cd7067b17dc74e46beea354fa2212bef.gif" data-original="https://img-blog.csdnimg.cn/11329296c4a2481ca0426286e87aba73.png"></p>
+<h3 id="拓扑图"><a href="#拓扑图" class="headerlink" title="拓扑图"></a>拓扑图</h3><p><img src="https://gitee.com/SAR_Okra/pic-go/raw/master/img/202306021406743.gif" data-original="https://img-blog.csdnimg.cn/11329296c4a2481ca0426286e87aba73.png"></p>
 <h3 id="实验步骤"><a href="#实验步骤" class="headerlink" title="实验步骤"></a><strong>实验步骤</strong></h3><p>1.按照拓扑搭建实验环境，为PC配置好IP地址，单区域OSPF（ospf1 area 0）实现各设备之间互通。</p>
 <table>
 <thead>
@@ -778,11 +778,11 @@ Acl's step is 5
 
 <p>可以看到有5条数据被拦截</p>
 <p>6.在Server 1上启动Http服务，选择文件（这里以桌面上的电子书为例），点击启动按钮，打开服务</p>
-<p><img src="https://img-blog.csdnimg.cn/cd7067b17dc74e46beea354fa2212bef.gif" data-original="https://img-blog.csdnimg.cn/ecd7ba801aa84a3d88daf7f71aa737fb.png"></p>
+<p><img src="https://gitee.com/SAR_Okra/pic-go/raw/master/img/202306021406743.gif" data-original="https://img-blog.csdnimg.cn/ecd7ba801aa84a3d88daf7f71aa737fb.png"></p>
 <p>7.在Client上尝试访问Server1 ，选择客户端信息——&gt;HttpClient——&gt;输入server1的ip192.168.4.100——&gt;点击获取，可以看到成功获取到server上的内容，且出现保存弹窗。</p>
-<p><img src="https://img-blog.csdnimg.cn/cd7067b17dc74e46beea354fa2212bef.gif" data-original="https://img-blog.csdnimg.cn/266a0894eb954401a228d743202247ca.png"></p>
+<p><img src="https://gitee.com/SAR_Okra/pic-go/raw/master/img/202306021406743.gif" data-original="https://img-blog.csdnimg.cn/266a0894eb954401a228d743202247ca.png"></p>
 <p>8.使用Client去Ping Server，同样可以Ping通</p>
-<p><img src="https://img-blog.csdnimg.cn/cd7067b17dc74e46beea354fa2212bef.gif" data-original="https://img-blog.csdnimg.cn/6e5f2290f5704d1badc183c72f711b11.png"></p>
+<p><img src="https://gitee.com/SAR_Okra/pic-go/raw/master/img/202306021406743.gif" data-original="https://img-blog.csdnimg.cn/6e5f2290f5704d1badc183c72f711b11.png"></p>
 <p>9.创建acl规则，Client1——&gt;无法访问Server -icmp服务（Ping不通），但是可以访问其他服务。</p>
 <p><strong>思路</strong></p>
 <pre class="line-numbers language-none"><code class="language-none">拒绝ICMP      拒绝 源地址 192.168.1.200————&gt;192.168.4.100<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
@@ -812,11 +812,11 @@ Error: A simplified ACL has been applied in this view.<span aria-hidden="true" c
 [R2-GigabitEthernet0/0/0]traffic-filter inbound acl 3999<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
 
 <p>12.现在使用Client去Ping Server，不可以Ping通</p>
-<p><img src="https://img-blog.csdnimg.cn/cd7067b17dc74e46beea354fa2212bef.gif" data-original="https://img-blog.csdnimg.cn/d8ac61ea3bfa423c950da616cc783c76.png"></p>
+<p><img src="https://gitee.com/SAR_Okra/pic-go/raw/master/img/202306021406743.gif" data-original="https://img-blog.csdnimg.cn/d8ac61ea3bfa423c950da616cc783c76.png"></p>
 <p>13.在Client上尝试访问Server1 ，选择客户端信息——&gt;HttpClient——&gt;输入server1的ip192.168.4.100——&gt;点击获取，可以看到依旧成功获取到server上的内容，且出现保存弹窗。</p>
-<p><img src="https://img-blog.csdnimg.cn/cd7067b17dc74e46beea354fa2212bef.gif" data-original="https://img-blog.csdnimg.cn/266a0894eb954401a228d743202247ca.png"></p>
+<p><img src="https://gitee.com/SAR_Okra/pic-go/raw/master/img/202306021406743.gif" data-original="https://img-blog.csdnimg.cn/266a0894eb954401a228d743202247ca.png"></p>
 <p>14.思考一下，现在从Server1可以Ping通Client1吗？显然是不可以的</p>
-<p><img src="https://img-blog.csdnimg.cn/cd7067b17dc74e46beea354fa2212bef.gif" data-original="https://img-blog.csdnimg.cn/1d457d6c452b48c5a2e1188547846f81.png"></p>
+<p><img src="https://gitee.com/SAR_Okra/pic-go/raw/master/img/202306021406743.gif" data-original="https://img-blog.csdnimg.cn/1d457d6c452b48c5a2e1188547846f81.png"></p>
 <p>15.那么要如何实现，在Client1无法ping通Server1的同时，Server1却可以Ping通Client1呢</p>
 <p>这里就要我们了解ICMP-Echo/Echo reply。</p>
 <pre class="line-numbers language-none"><code class="language-none">[R2-acl-adv-3999]rule deny 1 source 192.168.1.200 0 destination 192.168.4.100 0 
@@ -833,8 +833,8 @@ interface GigabitEthernet0/0/0
 #
 return<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
-<p><img src="https://img-blog.csdnimg.cn/cd7067b17dc74e46beea354fa2212bef.gif" data-original="https://img-blog.csdnimg.cn/e415b0d9293a41129c8f0252184a5156.png"></p>
-<p><img src="https://img-blog.csdnimg.cn/cd7067b17dc74e46beea354fa2212bef.gif" data-original="https://img-blog.csdnimg.cn/56a860e9fdbc4c64a9f96dbcb3c68b77.png"></p>
+<p><img src="https://gitee.com/SAR_Okra/pic-go/raw/master/img/202306021406743.gif" data-original="https://img-blog.csdnimg.cn/e415b0d9293a41129c8f0252184a5156.png"></p>
+<p><img src="https://gitee.com/SAR_Okra/pic-go/raw/master/img/202306021406743.gif" data-original="https://img-blog.csdnimg.cn/56a860e9fdbc4c64a9f96dbcb3c68b77.png"></p>
 
                 
             </div>
@@ -1030,10 +1030,10 @@ return<span aria-hidden="true" class="line-numbers-rows"><span></span><span></sp
                         <li class="tab col s6 wechat-tab waves-effect waves-light"><a href="#wechat">微 信</a></li>
                     </ul>
                     <div id="alipay">
-                        <img src="https://img-blog.csdnimg.cn/cd7067b17dc74e46beea354fa2212bef.gif" data-original="/medias/reward/alipay.jpg" class="reward-img" alt="支付宝打赏二维码">
+                        <img src="https://gitee.com/SAR_Okra/pic-go/raw/master/img/202306021406743.gif" data-original="/medias/reward/alipay.jpg" class="reward-img" alt="支付宝打赏二维码">
                     </div>
                     <div id="wechat">
-                        <img src="https://img-blog.csdnimg.cn/cd7067b17dc74e46beea354fa2212bef.gif" data-original="/medias/reward/wechat.png" class="reward-img" alt="微信打赏二维码">
+                        <img src="https://gitee.com/SAR_Okra/pic-go/raw/master/img/202306021406743.gif" data-original="/medias/reward/wechat.png" class="reward-img" alt="微信打赏二维码">
                     </div>
                 </div>
             </div>
@@ -1408,7 +1408,7 @@ return<span aria-hidden="true" class="line-numbers-rows"><span></span><span></sp
                     <div class="card-image">
                         
                         
-                        <img src="https://img-blog.csdnimg.cn/cd7067b17dc74e46beea354fa2212bef.gif" data-original="https://aimer666.oss-cn-hangzhou.aliyuncs.com/22.jpg" class="responsive-img" alt="数通 00-小知识点">
+                        <img src="https://gitee.com/SAR_Okra/pic-go/raw/master/img/202306021406743.gif" data-original="https://aimer666.oss-cn-hangzhou.aliyuncs.com/22.jpg" class="responsive-img" alt="数通 00-小知识点">
                         
                         <span class="card-title">数通 00-小知识点</span>
                     </div>
@@ -1457,7 +1457,7 @@ return<span aria-hidden="true" class="line-numbers-rows"><span></span><span></sp
                     <div class="card-image">
                         
                         
-                        <img src="https://img-blog.csdnimg.cn/cd7067b17dc74e46beea354fa2212bef.gif" data-original="https://aimer666.oss-cn-hangzhou.aliyuncs.com/15.jpg" class="responsive-img" alt="实验ensp-二层链路聚合配置">
+                        <img src="https://gitee.com/SAR_Okra/pic-go/raw/master/img/202306021406743.gif" data-original="https://aimer666.oss-cn-hangzhou.aliyuncs.com/15.jpg" class="responsive-img" alt="实验ensp-二层链路聚合配置">
                         
                         <span class="card-title">实验ensp-二层链路聚合配置</span>
                     </div>

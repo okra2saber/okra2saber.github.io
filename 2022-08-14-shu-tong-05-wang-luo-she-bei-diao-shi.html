@@ -38,7 +38,7 @@
 
    <style>
     body{
-       background-image: url(https://img-blog.csdnimg.cn/037c9770f141489aa27e18162f873c68.jpeg);
+       background-image: url(https://gitee.com/SAR_Okra/pic-go/raw/master/img/202306021029445.jpg);
        background-repeat:no-repeat;
        background-size:cover;
        background-attachment:fixed;
@@ -129,7 +129,7 @@
             <div class="brand-logo">
                 <a href="/" class="waves-effect waves-light">
                     
-                    <img src="https://img-blog.csdnimg.cn/cd7067b17dc74e46beea354fa2212bef.gif" data-original="https://aimer666.oss-cn-hangzhou.aliyuncs.com/logo.png" class="logo-img" alt="LOGO">
+                    <img src="https://gitee.com/SAR_Okra/pic-go/raw/master/img/202306021406743.gif" data-original="https://aimer666.oss-cn-hangzhou.aliyuncs.com/logo.png" class="logo-img" alt="LOGO">
                     
                     <span class="logo-span">Okraの筆記</span>
                 </a>
@@ -274,7 +274,7 @@
 
     <div class="mobile-head bg-color">
         
-        <img src="https://img-blog.csdnimg.cn/cd7067b17dc74e46beea354fa2212bef.gif" data-original="https://aimer666.oss-cn-hangzhou.aliyuncs.com/logo.png" class="logo-img circle responsive-img">
+        <img src="https://gitee.com/SAR_Okra/pic-go/raw/master/img/202306021406743.gif" data-original="https://aimer666.oss-cn-hangzhou.aliyuncs.com/logo.png" class="logo-img circle responsive-img">
         
         <div class="logo-name">Okraの筆記</div>
         <div class="logo-desc">
@@ -692,7 +692,7 @@
         <div class="card-content article-card-content">
             <div id="articleContent">
                 <h1 id="网络设备调试"><a href="#网络设备调试" class="headerlink" title="网络设备调试"></a><center>网络设备调试</center></h1><h3 id="Ping-ICMP差错检测"><a href="#Ping-ICMP差错检测" class="headerlink" title="Ping(ICMP差错检测)"></a>Ping(ICMP差错检测)</h3><p>ICMP Echo Request和ICMP Echo Reply分别用来查询和响应某些信息，进行差错检测。</p>
-<h3 id="Tracert（越点追踪）"><a href="#Tracert（越点追踪）" class="headerlink" title="Tracert（越点追踪）"></a>Tracert（越点追踪）</h3><p><img src="https://img-blog.csdnimg.cn/cd7067b17dc74e46beea354fa2212bef.gif" data-original="https://img-blog.csdnimg.cn/eacb2d4116b74351b286221046be086d.png" alt="Tracert"></p>
+<h3 id="Tracert（越点追踪）"><a href="#Tracert（越点追踪）" class="headerlink" title="Tracert（越点追踪）"></a>Tracert（越点追踪）</h3><p><img src="https://gitee.com/SAR_Okra/pic-go/raw/master/img/202306021406743.gif" data-original="https://img-blog.csdnimg.cn/eacb2d4116b74351b286221046be086d.png" alt="Tracert"></p>
 <pre class="line-numbers language-none"><code class="language-none">ICMP的另一个典型应用是Tracert， Tracert基于报文头中的TTL值来逐跳很踪报文的转发路径。为了跟综到达某特定目的地址的路径，源端首先将报文的TTL值设置为1，该报文到达第一个节点后，TTL超时，于是该节点向源端发送TTL超时消息，消息中携带时间截。然后源端将报文的TTL值设置为2，报文到达第二个节点后超时，该节点同样返回TTL超时消，息，以此类推，直到报文到达目的地。这样，源端根据返回的报文中的信息可以跟踪到报文经过的每一个节点，并根据时间截信息计算往返时间。Tracert是检测网络丢包及时延的有效手段，同时可以帮助管理员发现网络中的路由环路。
 Tracert常用的配置参数说明如下：
 —a source—ip—address指定tracert报文的源地址。
@@ -701,7 +701,7 @@ Tracert常用的配置参数说明如下：
 —name使能显示每一跳的主机名。
 —P port指定目的主机的UDP端口号<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
-<p><img src="https://img-blog.csdnimg.cn/cd7067b17dc74e46beea354fa2212bef.gif" data-original="https://img-blog.csdnimg.cn/a412779415bf4a5984b24aa438006813.png" alt="tracert"></p>
+<p><img src="https://gitee.com/SAR_Okra/pic-go/raw/master/img/202306021406743.gif" data-original="https://img-blog.csdnimg.cn/a412779415bf4a5984b24aa438006813.png" alt="tracert"></p>
 <h3 id="Debug"><a href="#Debug" class="headerlink" title="Debug"></a>Debug</h3><p>定义：对相应的协议所收发的所有报文全部在屏幕上输出显示；用于网络排错</p>
 <p>开启命令：</p>
 <pre class="line-numbers language-none"><code class="language-none">terminal monitor
@@ -721,7 +721,7 @@ terminal debugging
 debugging  ip icmp<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
 
 <p>再R2pingR1可以看到</p>
-<p><img src="https://img-blog.csdnimg.cn/cd7067b17dc74e46beea354fa2212bef.gif" data-original="https://img-blog.csdnimg.cn/8f4195438385430c9b98ac2015b99169.png"></p>
+<p><img src="https://gitee.com/SAR_Okra/pic-go/raw/master/img/202306021406743.gif" data-original="https://img-blog.csdnimg.cn/8f4195438385430c9b98ac2015b99169.png"></p>
 </li>
 </ul>
 
@@ -919,10 +919,10 @@ debugging  ip icmp<span aria-hidden="true" class="line-numbers-rows"><span></spa
                         <li class="tab col s6 wechat-tab waves-effect waves-light"><a href="#wechat">微 信</a></li>
                     </ul>
                     <div id="alipay">
-                        <img src="https://img-blog.csdnimg.cn/cd7067b17dc74e46beea354fa2212bef.gif" data-original="/medias/reward/alipay.jpg" class="reward-img" alt="支付宝打赏二维码">
+                        <img src="https://gitee.com/SAR_Okra/pic-go/raw/master/img/202306021406743.gif" data-original="/medias/reward/alipay.jpg" class="reward-img" alt="支付宝打赏二维码">
                     </div>
                     <div id="wechat">
-                        <img src="https://img-blog.csdnimg.cn/cd7067b17dc74e46beea354fa2212bef.gif" data-original="/medias/reward/wechat.png" class="reward-img" alt="微信打赏二维码">
+                        <img src="https://gitee.com/SAR_Okra/pic-go/raw/master/img/202306021406743.gif" data-original="/medias/reward/wechat.png" class="reward-img" alt="微信打赏二维码">
                     </div>
                 </div>
             </div>
@@ -1297,7 +1297,7 @@ debugging  ip icmp<span aria-hidden="true" class="line-numbers-rows"><span></spa
                     <div class="card-image">
                         
                         
-                        <img src="https://img-blog.csdnimg.cn/cd7067b17dc74e46beea354fa2212bef.gif" data-original="https://aimer666.oss-cn-hangzhou.aliyuncs.com/23.jpg" class="responsive-img" alt="实验ensp-DHCP以及DNS域名解析配置实验">
+                        <img src="https://gitee.com/SAR_Okra/pic-go/raw/master/img/202306021406743.gif" data-original="https://aimer666.oss-cn-hangzhou.aliyuncs.com/23.jpg" class="responsive-img" alt="实验ensp-DHCP以及DNS域名解析配置实验">
                         
                         <span class="card-title">实验ensp-DHCP以及DNS域名解析配置实验</span>
                     </div>
@@ -1346,7 +1346,7 @@ debugging  ip icmp<span aria-hidden="true" class="line-numbers-rows"><span></spa
                     <div class="card-image">
                         
                         
-                        <img src="https://img-blog.csdnimg.cn/cd7067b17dc74e46beea354fa2212bef.gif" data-original="https://aimer666.oss-cn-hangzhou.aliyuncs.com/18.jpg" class="responsive-img" alt="实验HCL 配置管理实验">
+                        <img src="https://gitee.com/SAR_Okra/pic-go/raw/master/img/202306021406743.gif" data-original="https://aimer666.oss-cn-hangzhou.aliyuncs.com/18.jpg" class="responsive-img" alt="实验HCL 配置管理实验">
                         
                         <span class="card-title">实验HCL 配置管理实验</span>
                     </div>

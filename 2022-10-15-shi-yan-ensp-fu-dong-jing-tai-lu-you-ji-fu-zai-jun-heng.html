@@ -38,7 +38,7 @@
 
    <style>
     body{
-       background-image: url(https://img-blog.csdnimg.cn/037c9770f141489aa27e18162f873c68.jpeg);
+       background-image: url(https://gitee.com/SAR_Okra/pic-go/raw/master/img/202306021029445.jpg);
        background-repeat:no-repeat;
        background-size:cover;
        background-attachment:fixed;
@@ -129,7 +129,7 @@
             <div class="brand-logo">
                 <a href="/" class="waves-effect waves-light">
                     
-                    <img src="https://img-blog.csdnimg.cn/cd7067b17dc74e46beea354fa2212bef.gif" data-original="https://aimer666.oss-cn-hangzhou.aliyuncs.com/logo.png" class="logo-img" alt="LOGO">
+                    <img src="https://gitee.com/SAR_Okra/pic-go/raw/master/img/202306021406743.gif" data-original="https://aimer666.oss-cn-hangzhou.aliyuncs.com/logo.png" class="logo-img" alt="LOGO">
                     
                     <span class="logo-span">Okraの筆記</span>
                 </a>
@@ -274,7 +274,7 @@
 
     <div class="mobile-head bg-color">
         
-        <img src="https://img-blog.csdnimg.cn/cd7067b17dc74e46beea354fa2212bef.gif" data-original="https://aimer666.oss-cn-hangzhou.aliyuncs.com/logo.png" class="logo-img circle responsive-img">
+        <img src="https://gitee.com/SAR_Okra/pic-go/raw/master/img/202306021406743.gif" data-original="https://aimer666.oss-cn-hangzhou.aliyuncs.com/logo.png" class="logo-img circle responsive-img">
         
         <div class="logo-name">Okraの筆記</div>
         <div class="logo-desc">
@@ -693,12 +693,12 @@
             <div id="articleContent">
                 <h1 id="浮动静态路由及负载均衡"><a href="#浮动静态路由及负载均衡" class="headerlink" title="浮动静态路由及负载均衡"></a><center><strong>浮动静态路由及负载均衡</strong></center></h1><h2 id="实验原理"><a href="#实验原理" class="headerlink" title="实验原理"></a><strong>实验原理</strong></h2><p>浮动静态路由是一种特殊的静态路由，通过配置去往相同的目的网段，但优先级不同的静态路由，以保证在网络中优先级较高的路由，即主路由失效的情况下，提供备份路由。正常情况下，备份路由不会出现在路由表中。</p>
 <p>负载均衡，当数据有多条可选路径前往同一目的网络，可以通过配置相同优先级和开销的静态路由实现负载均衡，使得数据的传输均衡地分配到多条路径上，从而实现数据分流、减轻单条路径负载过重的效果。而当其中某一条路径失效时，其他路径仍然能够正常传输数据，也起到了冗余作用。</p>
-<h2 id="拓扑图"><a href="#拓扑图" class="headerlink" title="拓扑图"></a>拓扑图</h2><p><img src="https://img-blog.csdnimg.cn/cd7067b17dc74e46beea354fa2212bef.gif" data-original="https://img-blog.csdnimg.cn/89838c966a854df9a6fbd231cc86016c.png"></p>
+<h2 id="拓扑图"><a href="#拓扑图" class="headerlink" title="拓扑图"></a>拓扑图</h2><p><img src="https://gitee.com/SAR_Okra/pic-go/raw/master/img/202306021406743.gif" data-original="https://img-blog.csdnimg.cn/89838c966a854df9a6fbd231cc86016c.png"></p>
 <p>实验内容：</p>
 <p>R2为某公司总部，R1与R3是两个分部，主机PC-1与PC-2所在的网段分别模拟两个分部中的办公网络。现需要总部与各个分部、分部与分部之间都能够通信，且分部之间在通信时，之间的直连链路为主用链路，通过总部的链路为备份链路。要求使用浮动静态路由实现需求，并再根据实际需求实现负载均衡来优化网络。</p>
 <p>实验编址：</p>
-<p><img src="https://img-blog.csdnimg.cn/cd7067b17dc74e46beea354fa2212bef.gif" data-original="https://img-blog.csdnimg.cn/05135d71813a4b3daab0a600785ba832.png"></p>
-<h2 id="实验步骤"><a href="#实验步骤" class="headerlink" title="实验步骤"></a>实验步骤</h2><p>1 基本配置<br>根据实验编址表进行相应的基本IP地址配置，并使用ping命令检测各直连链路的连通性。<br> <img src="https://img-blog.csdnimg.cn/cd7067b17dc74e46beea354fa2212bef.gif" data-original="https://img-blog.csdnimg.cn/9f35c8010c574256818ffc20dbb16d06.png"><br>2 实现两分部间、总部与两分部间的通信<br>[R1]ip route-static 192.168.20.0  24  10.0.13.3<br> <img src="https://img-blog.csdnimg.cn/cd7067b17dc74e46beea354fa2212bef.gif" data-original="https://img-blog.csdnimg.cn/744d00b4b8fb46b5ab4111bfa34fc9e3.png"><br>[R2]ip route-static 192.168.20.0  24  10.0.13.3<br>[R2]ip route-static 192.168.10.0  24  10.0.12.1<br> <img src="https://img-blog.csdnimg.cn/cd7067b17dc74e46beea354fa2212bef.gif" data-original="https://img-blog.csdnimg.cn/6954588f08bd4fd7845cb1eaf44ce13f.png"><br>[R3]ip route-static 192.168.10.0  24  10.0.13.1<br> <img src="https://img-blog.csdnimg.cn/cd7067b17dc74e46beea354fa2212bef.gif" data-original="https://img-blog.csdnimg.cn/80ed366a24d74bfa98e5990a0412ea99.png"><br>[R1]display ip routing-table<br>显示截图<br> <img src="https://img-blog.csdnimg.cn/cd7067b17dc74e46beea354fa2212bef.gif" data-original="https://img-blog.csdnimg.cn/90ff79c4478145c58175b5626c8d056f.png"><br>测试PC-1与PC-2之间可以互通。<br>在PC-1上：tracert 192.168.20.20，可以发现数据包是经过R1和R3到达主机PC-2的。<br>测试截图<br> <img src="https://img-blog.csdnimg.cn/cd7067b17dc74e46beea354fa2212bef.gif" data-original="https://img-blog.csdnimg.cn/42919ac7600549348c99123308f80df0.png"><br>[R2]display ip routing-table<br>显示截图<br> <img src="https://img-blog.csdnimg.cn/cd7067b17dc74e46beea354fa2212bef.gif" data-original="https://img-blog.csdnimg.cn/08dce6ef83594457b10bd77cd70599ed.png"><br>[R3]display ip routing-table<br>显示截图<br><img src="https://img-blog.csdnimg.cn/cd7067b17dc74e46beea354fa2212bef.gif" data-original="https://img-blog.csdnimg.cn/2aabd329ca8e4a58913f69fc09bc9603.png"><br>在PC-2上：tracert 192.168.10.10，可以发现数据包是经过R3和R1到达主机PC-1的。<br>测试截图<br> <img src="https://img-blog.csdnimg.cn/cd7067b17dc74e46beea354fa2212bef.gif" data-original="https://img-blog.csdnimg.cn/63426eb7f6554ffa817eca52ad36d779.png"><br>在总部R2上可以正常访问PC-1和PC-2。<br>测试截图<br> <img src="https://img-blog.csdnimg.cn/cd7067b17dc74e46beea354fa2212bef.gif" data-original="https://img-blog.csdnimg.cn/82dc089c2def42289b7372966715d23b.png"><br>3 配置浮动静态路由实现路由备份<br>[R1]ip route-static 192.168.20.0 24 10.0.12.2 preference 100<br>[R1]display ip routing-table<br>显示截图<br> <img src="https://img-blog.csdnimg.cn/cd7067b17dc74e46beea354fa2212bef.gif" data-original="https://img-blog.csdnimg.cn/7893d52bea1b4b76920d7f79cc7756ec.png"><br>发现上面的路由没有添加进路由表，路由表没变化。<br>[R1]display ip routing-table protocol static<br>显示截图<br> <img src="https://img-blog.csdnimg.cn/cd7067b17dc74e46beea354fa2212bef.gif" data-original="https://img-blog.csdnimg.cn/2b2ce65974204eee80cfac8caa7f4df7.png"><br>可以发现两条路由的不同的优先级，优先级高的在路由表中。<br>[R3]ip route-static 192.168.10.0 24 10.0.23.2 preference 100<br> <img src="https://img-blog.csdnimg.cn/cd7067b17dc74e46beea354fa2212bef.gif" data-original="https://img-blog.csdnimg.cn/2cc711dc6f824688993e5f9eda696406.png"><br>将路由R1的S 1/0/1接口关闭，验证使用备份链路。<br>[R1]interface Serial 1/0/1<br>[R1-Serial 1/0/1]shutdown<br>[R1]display ip routing-table<br>显示截图<br> <img src="https://img-blog.csdnimg.cn/cd7067b17dc74e46beea354fa2212bef.gif" data-original="https://img-blog.csdnimg.cn/9e7ff8b876e040f691e258f8afa9fa7b.png"><br>优先级为100的路由条目出现在路由表中。<br>[R1]display ip routing-table protocol static<br>在PC-1上：tracert 192.168.20.20，可以发现数据包是经过R1、R2和R3到达主机PC-2的。<br>测试截图<br> <img src="https://img-blog.csdnimg.cn/cd7067b17dc74e46beea354fa2212bef.gif" data-original="https://img-blog.csdnimg.cn/d975ee258e5b415bb64219cba18a580d.png"><br>4 通过负载均衡实现网络优化<br>[R1]interface Serial 1/0/1<br>[R1-Serial 1/0/1]undo shutdown<br>[R1]ip route-static 192.168.20.0 24 10.0.12.2<br>[R1]display ip routing-table<br>显示截图<br> <img src="https://img-blog.csdnimg.cn/cd7067b17dc74e46beea354fa2212bef.gif" data-original="https://img-blog.csdnimg.cn/920f344f80db4090bee4f1feda6fbcfd.png"><br>发现去往192.168.20.0网段拥有两条下一跳不同的路由条目，即实现了负载均衡。<br>测试PC-1与PC-2间的通信，正常。<br>[R3]ip route-static 192.168.10.0 24 10.0.23.2<br>[R3]display ip routing-table<br>显示截图<br> <img src="https://img-blog.csdnimg.cn/cd7067b17dc74e46beea354fa2212bef.gif" data-original="https://img-blog.csdnimg.cn/94ce6bfd2f1546a6be69ca86a009ca5e.png"><br>发现去往192.168.20.0网段拥有两条下一跳不同的路由条目，即实现了负载均衡。</p>
+<p><img src="https://gitee.com/SAR_Okra/pic-go/raw/master/img/202306021406743.gif" data-original="https://img-blog.csdnimg.cn/05135d71813a4b3daab0a600785ba832.png"></p>
+<h2 id="实验步骤"><a href="#实验步骤" class="headerlink" title="实验步骤"></a>实验步骤</h2><p>1 基本配置<br>根据实验编址表进行相应的基本IP地址配置，并使用ping命令检测各直连链路的连通性。<br> <img src="https://gitee.com/SAR_Okra/pic-go/raw/master/img/202306021406743.gif" data-original="https://img-blog.csdnimg.cn/9f35c8010c574256818ffc20dbb16d06.png"><br>2 实现两分部间、总部与两分部间的通信<br>[R1]ip route-static 192.168.20.0  24  10.0.13.3<br> <img src="https://gitee.com/SAR_Okra/pic-go/raw/master/img/202306021406743.gif" data-original="https://img-blog.csdnimg.cn/744d00b4b8fb46b5ab4111bfa34fc9e3.png"><br>[R2]ip route-static 192.168.20.0  24  10.0.13.3<br>[R2]ip route-static 192.168.10.0  24  10.0.12.1<br> <img src="https://gitee.com/SAR_Okra/pic-go/raw/master/img/202306021406743.gif" data-original="https://img-blog.csdnimg.cn/6954588f08bd4fd7845cb1eaf44ce13f.png"><br>[R3]ip route-static 192.168.10.0  24  10.0.13.1<br> <img src="https://gitee.com/SAR_Okra/pic-go/raw/master/img/202306021406743.gif" data-original="https://img-blog.csdnimg.cn/80ed366a24d74bfa98e5990a0412ea99.png"><br>[R1]display ip routing-table<br>显示截图<br> <img src="https://gitee.com/SAR_Okra/pic-go/raw/master/img/202306021406743.gif" data-original="https://img-blog.csdnimg.cn/90ff79c4478145c58175b5626c8d056f.png"><br>测试PC-1与PC-2之间可以互通。<br>在PC-1上：tracert 192.168.20.20，可以发现数据包是经过R1和R3到达主机PC-2的。<br>测试截图<br> <img src="https://gitee.com/SAR_Okra/pic-go/raw/master/img/202306021406743.gif" data-original="https://img-blog.csdnimg.cn/42919ac7600549348c99123308f80df0.png"><br>[R2]display ip routing-table<br>显示截图<br> <img src="https://gitee.com/SAR_Okra/pic-go/raw/master/img/202306021406743.gif" data-original="https://img-blog.csdnimg.cn/08dce6ef83594457b10bd77cd70599ed.png"><br>[R3]display ip routing-table<br>显示截图<br><img src="https://gitee.com/SAR_Okra/pic-go/raw/master/img/202306021406743.gif" data-original="https://img-blog.csdnimg.cn/2aabd329ca8e4a58913f69fc09bc9603.png"><br>在PC-2上：tracert 192.168.10.10，可以发现数据包是经过R3和R1到达主机PC-1的。<br>测试截图<br> <img src="https://gitee.com/SAR_Okra/pic-go/raw/master/img/202306021406743.gif" data-original="https://img-blog.csdnimg.cn/63426eb7f6554ffa817eca52ad36d779.png"><br>在总部R2上可以正常访问PC-1和PC-2。<br>测试截图<br> <img src="https://gitee.com/SAR_Okra/pic-go/raw/master/img/202306021406743.gif" data-original="https://img-blog.csdnimg.cn/82dc089c2def42289b7372966715d23b.png"><br>3 配置浮动静态路由实现路由备份<br>[R1]ip route-static 192.168.20.0 24 10.0.12.2 preference 100<br>[R1]display ip routing-table<br>显示截图<br> <img src="https://gitee.com/SAR_Okra/pic-go/raw/master/img/202306021406743.gif" data-original="https://img-blog.csdnimg.cn/7893d52bea1b4b76920d7f79cc7756ec.png"><br>发现上面的路由没有添加进路由表，路由表没变化。<br>[R1]display ip routing-table protocol static<br>显示截图<br> <img src="https://gitee.com/SAR_Okra/pic-go/raw/master/img/202306021406743.gif" data-original="https://img-blog.csdnimg.cn/2b2ce65974204eee80cfac8caa7f4df7.png"><br>可以发现两条路由的不同的优先级，优先级高的在路由表中。<br>[R3]ip route-static 192.168.10.0 24 10.0.23.2 preference 100<br> <img src="https://gitee.com/SAR_Okra/pic-go/raw/master/img/202306021406743.gif" data-original="https://img-blog.csdnimg.cn/2cc711dc6f824688993e5f9eda696406.png"><br>将路由R1的S 1/0/1接口关闭，验证使用备份链路。<br>[R1]interface Serial 1/0/1<br>[R1-Serial 1/0/1]shutdown<br>[R1]display ip routing-table<br>显示截图<br> <img src="https://gitee.com/SAR_Okra/pic-go/raw/master/img/202306021406743.gif" data-original="https://img-blog.csdnimg.cn/9e7ff8b876e040f691e258f8afa9fa7b.png"><br>优先级为100的路由条目出现在路由表中。<br>[R1]display ip routing-table protocol static<br>在PC-1上：tracert 192.168.20.20，可以发现数据包是经过R1、R2和R3到达主机PC-2的。<br>测试截图<br> <img src="https://gitee.com/SAR_Okra/pic-go/raw/master/img/202306021406743.gif" data-original="https://img-blog.csdnimg.cn/d975ee258e5b415bb64219cba18a580d.png"><br>4 通过负载均衡实现网络优化<br>[R1]interface Serial 1/0/1<br>[R1-Serial 1/0/1]undo shutdown<br>[R1]ip route-static 192.168.20.0 24 10.0.12.2<br>[R1]display ip routing-table<br>显示截图<br> <img src="https://gitee.com/SAR_Okra/pic-go/raw/master/img/202306021406743.gif" data-original="https://img-blog.csdnimg.cn/920f344f80db4090bee4f1feda6fbcfd.png"><br>发现去往192.168.20.0网段拥有两条下一跳不同的路由条目，即实现了负载均衡。<br>测试PC-1与PC-2间的通信，正常。<br>[R3]ip route-static 192.168.10.0 24 10.0.23.2<br>[R3]display ip routing-table<br>显示截图<br> <img src="https://gitee.com/SAR_Okra/pic-go/raw/master/img/202306021406743.gif" data-original="https://img-blog.csdnimg.cn/94ce6bfd2f1546a6be69ca86a009ca5e.png"><br>发现去往192.168.20.0网段拥有两条下一跳不同的路由条目，即实现了负载均衡。</p>
 
                 
             </div>
@@ -894,10 +894,10 @@
                         <li class="tab col s6 wechat-tab waves-effect waves-light"><a href="#wechat">微 信</a></li>
                     </ul>
                     <div id="alipay">
-                        <img src="https://img-blog.csdnimg.cn/cd7067b17dc74e46beea354fa2212bef.gif" data-original="/medias/reward/alipay.jpg" class="reward-img" alt="支付宝打赏二维码">
+                        <img src="https://gitee.com/SAR_Okra/pic-go/raw/master/img/202306021406743.gif" data-original="/medias/reward/alipay.jpg" class="reward-img" alt="支付宝打赏二维码">
                     </div>
                     <div id="wechat">
-                        <img src="https://img-blog.csdnimg.cn/cd7067b17dc74e46beea354fa2212bef.gif" data-original="/medias/reward/wechat.png" class="reward-img" alt="微信打赏二维码">
+                        <img src="https://gitee.com/SAR_Okra/pic-go/raw/master/img/202306021406743.gif" data-original="/medias/reward/wechat.png" class="reward-img" alt="微信打赏二维码">
                     </div>
                 </div>
             </div>
@@ -1272,7 +1272,7 @@
                     <div class="card-image">
                         
                         
-                        <img src="https://img-blog.csdnimg.cn/cd7067b17dc74e46beea354fa2212bef.gif" data-original="https://aimer666.oss-cn-hangzhou.aliyuncs.com/16.jpg" class="responsive-img" alt="Typora快捷键使用">
+                        <img src="https://gitee.com/SAR_Okra/pic-go/raw/master/img/202306021406743.gif" data-original="https://aimer666.oss-cn-hangzhou.aliyuncs.com/16.jpg" class="responsive-img" alt="Typora快捷键使用">
                         
                         <span class="card-title">Typora快捷键使用</span>
                     </div>
@@ -1321,7 +1321,7 @@
                     <div class="card-image">
                         
                         
-                        <img src="https://img-blog.csdnimg.cn/cd7067b17dc74e46beea354fa2212bef.gif" data-original="https://aimer666.oss-cn-hangzhou.aliyuncs.com/29.jpg" class="responsive-img" alt="Centos 7常用命令">
+                        <img src="https://gitee.com/SAR_Okra/pic-go/raw/master/img/202306021406743.gif" data-original="https://aimer666.oss-cn-hangzhou.aliyuncs.com/29.jpg" class="responsive-img" alt="Centos 7常用命令">
                         
                         <span class="card-title">Centos 7常用命令</span>
                     </div>

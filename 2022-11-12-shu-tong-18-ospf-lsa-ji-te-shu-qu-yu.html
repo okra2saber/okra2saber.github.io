@@ -38,7 +38,7 @@
 
    <style>
     body{
-       background-image: url(https://img-blog.csdnimg.cn/037c9770f141489aa27e18162f873c68.jpeg);
+       background-image: url(https://gitee.com/SAR_Okra/pic-go/raw/master/img/202306021029445.jpg);
        background-repeat:no-repeat;
        background-size:cover;
        background-attachment:fixed;
@@ -129,7 +129,7 @@
             <div class="brand-logo">
                 <a href="/" class="waves-effect waves-light">
                     
-                    <img src="https://img-blog.csdnimg.cn/cd7067b17dc74e46beea354fa2212bef.gif" data-original="https://aimer666.oss-cn-hangzhou.aliyuncs.com/logo.png" class="logo-img" alt="LOGO">
+                    <img src="https://gitee.com/SAR_Okra/pic-go/raw/master/img/202306021406743.gif" data-original="https://aimer666.oss-cn-hangzhou.aliyuncs.com/logo.png" class="logo-img" alt="LOGO">
                     
                     <span class="logo-span">Okraの筆記</span>
                 </a>
@@ -274,7 +274,7 @@
 
     <div class="mobile-head bg-color">
         
-        <img src="https://img-blog.csdnimg.cn/cd7067b17dc74e46beea354fa2212bef.gif" data-original="https://aimer666.oss-cn-hangzhou.aliyuncs.com/logo.png" class="logo-img circle responsive-img">
+        <img src="https://gitee.com/SAR_Okra/pic-go/raw/master/img/202306021406743.gif" data-original="https://aimer666.oss-cn-hangzhou.aliyuncs.com/logo.png" class="logo-img circle responsive-img">
         
         <div class="logo-name">Okraの筆記</div>
         <div class="logo-desc">
@@ -911,7 +911,7 @@
 <blockquote>
 <p>1类LSA的链路状态信息主要由链路类型、Link ID、Link Data、Cost三个值来进行描述。</p>
 <p>描述P2P型网络自身的邻居，以及广播型网络自身连着的伪节点</p>
-<p><img src="https://img-blog.csdnimg.cn/cd7067b17dc74e46beea354fa2212bef.gif" data-original="https://img-blog.csdnimg.cn/6aa548ee276f49dca64a733a7383816a.png" alt="img"></p>
+<p><img src="https://gitee.com/SAR_Okra/pic-go/raw/master/img/202306021406743.gif" data-original="https://img-blog.csdnimg.cn/6aa548ee276f49dca64a733a7383816a.png" alt="img"></p>
 <p>华为设备中Ospf默认认为LoopBack接口是只有一台主机的接口（<font color="red"><strong>即使配置Loopback为24位，但是Ospf在描述路由信息时描述的掩码还是32位，因为loopback接口在OSPF的网络类型为P2P，要想将掩码恢复到真实的24，就要将网络类型修改为广播或者NBMA</strong></font>）</p>
 <ul>
 <li><p><strong>P2P</strong>：             有ospf邻居，且网络类型为P2P与P2MP接口的链路类型</p>
@@ -925,7 +925,7 @@
 <ul>
 <li><p><strong>Vitrual Link</strong>：描述OSPF的虚链路的链路类型（只有配置了V-link才会产生）</p>
 </li>
-<li><img src="https://img-blog.csdnimg.cn/cd7067b17dc74e46beea354fa2212bef.gif" data-original="https://img-blog.csdnimg.cn/08dcb48e8df54091891363c3898cc3fd.png" style="zoom:67%;"></li>
+<li><img src="https://gitee.com/SAR_Okra/pic-go/raw/master/img/202306021406743.gif" data-original="https://img-blog.csdnimg.cn/08dcb48e8df54091891363c3898cc3fd.png" style="zoom:67%;"></li>
 </ul>
 </blockquote>
 <p><strong>OSPF伪节点</strong></p>
@@ -982,7 +982,7 @@
 <td>连接在同一个网络上的所有路由器的Router ID，也包括DR的Router ID。</td>
 </tr>
 </tbody></table>
-<img src="https://img-blog.csdnimg.cn/cd7067b17dc74e46beea354fa2212bef.gif" data-original="https://img-blog.csdnimg.cn/899dc536ccf54f2f91fd660288fdbf1b.png" style="zoom:67%;">
+<img src="https://gitee.com/SAR_Okra/pic-go/raw/master/img/202306021406743.gif" data-original="https://img-blog.csdnimg.cn/899dc536ccf54f2f91fd660288fdbf1b.png" style="zoom:67%;">
 
 <h4 id="Type-3-LSA"><a href="#Type-3-LSA" class="headerlink" title="Type-3 LSA"></a>Type-3 LSA</h4><p>Type-3 LSA报文结构：</p>
 <pre class="line-numbers language-none"><code class="language-none">+-------------------------------+---------------+---------------+
@@ -1007,16 +1007,16 @@
 <blockquote>
 <p>由ABR将自身直连区域的区域内路由转化成其他直连区域的3类LSA，完成区域间路由的计算</p>
 <p><strong><font color="red">汇总网络LSA，用于描述区域间的路由（描述ABR所知道的路由以及开销，并没有携带任何关于邻居的拓扑结构，所以携带的是纯粹的路由信息）</font></strong></p>
-<img src="https://img-blog.csdnimg.cn/cd7067b17dc74e46beea354fa2212bef.gif" data-original="https://img-blog.csdnimg.cn/d182e02c610b4f4aa500de36a62dd0f6.png" style="zoom:67%;">
+<img src="https://gitee.com/SAR_Okra/pic-go/raw/master/img/202306021406743.gif" data-original="https://img-blog.csdnimg.cn/d182e02c610b4f4aa500de36a62dd0f6.png" style="zoom:67%;">
 
 <p>注意：每经过一次ABR，都会更改Adv rtr字段和开销字段，（即没经过一个ABR，都会重新成3类LSA）</p>
 <p>每有1条二类LSA或Stub类型的一类LSA，都会产生1条三类LSA</p>
 </blockquote>
 <h4 id="Type-4-LSA"><a href="#Type-4-LSA" class="headerlink" title="Type-4 LSA"></a>Type-4 LSA</h4><blockquote>
 <p>对于与ASBR所在区域不同的设备，当设备收到5类LSA后，由于ASBR无法让其知道自己的信息，去往ASBR路由不可达。此时就需要通过ABR将5类LSA转为4类LSA再发送给设备，描述如何到达ASBR</p>
-<img src="https://img-blog.csdnimg.cn/cd7067b17dc74e46beea354fa2212bef.gif" data-original="https://img-blog.csdnimg.cn/13404c191753420ca1d883a3ba1a50fa.png" style="zoom:50%;">
+<img src="https://gitee.com/SAR_Okra/pic-go/raw/master/img/202306021406743.gif" data-original="https://img-blog.csdnimg.cn/13404c191753420ca1d883a3ba1a50fa.png" style="zoom:50%;">
 
-<img src="https://img-blog.csdnimg.cn/cd7067b17dc74e46beea354fa2212bef.gif" data-original="https://img-blog.csdnimg.cn/e2d0e405509a4956950a7e57556b1f28.png" style="zoom:67%;">
+<img src="https://gitee.com/SAR_Okra/pic-go/raw/master/img/202306021406743.gif" data-original="https://img-blog.csdnimg.cn/e2d0e405509a4956950a7e57556b1f28.png" style="zoom:67%;">
 </blockquote>
 <h4 id="Type-5-LSA"><a href="#Type-5-LSA" class="headerlink" title="Type-5 LSA"></a>Type-5 LSA</h4><p>Type-5 LSA报文结构：</p>
 <pre class="line-numbers language-none"><code class="language-none">+-------------------------------+---------------+---------------+
@@ -1047,16 +1047,16 @@
 |                              ...                              |<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
 <blockquote>
-<img src="https://img-blog.csdnimg.cn/cd7067b17dc74e46beea354fa2212bef.gif" data-original="https://img-blog.csdnimg.cn/bd2fc10c228146d597a90c0b058fc22e.png" style="zoom:67%;">
+<img src="https://gitee.com/SAR_Okra/pic-go/raw/master/img/202306021406743.gif" data-original="https://img-blog.csdnimg.cn/bd2fc10c228146d597a90c0b058fc22e.png" style="zoom:67%;">
 
-<img src="https://img-blog.csdnimg.cn/cd7067b17dc74e46beea354fa2212bef.gif" data-original="https://img-blog.csdnimg.cn/39b1c98496364111af9263c705ca8233.png" style="zoom: 67%;">
+<img src="https://gitee.com/SAR_Okra/pic-go/raw/master/img/202306021406743.gif" data-original="https://img-blog.csdnimg.cn/39b1c98496364111af9263c705ca8233.png" style="zoom: 67%;">
 </blockquote>
 <h4 id="Type-7-LSA"><a href="#Type-7-LSA" class="headerlink" title="Type-7 LSA"></a>Type-7 LSA</h4><blockquote>
 <p>Type-7 LSA也就是非完全末梢区域外部LSA，这是一种特殊的LSA，也是用来描述OSPF外部路由，其报文格式与Type-5 LSA一致。</p>
 <p>Type-7 LSA只能在NSSA内泛洪，并不能进入Area0.</p>
-<img src="https://img-blog.csdnimg.cn/cd7067b17dc74e46beea354fa2212bef.gif" data-original="https://img-blog.csdnimg.cn/743e1b37bb224c0f8ef2c02ee76a2bd6.png" style="zoom:67%;">
+<img src="https://gitee.com/SAR_Okra/pic-go/raw/master/img/202306021406743.gif" data-original="https://img-blog.csdnimg.cn/743e1b37bb224c0f8ef2c02ee76a2bd6.png" style="zoom:67%;">
 
-<img src="https://img-blog.csdnimg.cn/cd7067b17dc74e46beea354fa2212bef.gif" data-original="https://img-blog.csdnimg.cn/e4aa38bafa1545d5b2163c5a6f1641c9.png" style="zoom:67%;">
+<img src="https://gitee.com/SAR_Okra/pic-go/raw/master/img/202306021406743.gif" data-original="https://img-blog.csdnimg.cn/e4aa38bafa1545d5b2163c5a6f1641c9.png" style="zoom:67%;">
 </blockquote>
 <h4 id="OSPF-LSDB的交互原则："><a href="#OSPF-LSDB的交互原则：" class="headerlink" title="OSPF LSDB的交互原则："></a>OSPF LSDB的交互原则：</h4><blockquote>
 <p>互相交互自身没有的LSA，以及使用新的LSA 替换掉旧的LSA。</p>
@@ -1086,20 +1086,20 @@
 <h4 id="OSPF-LSA的删除机制："><a href="#OSPF-LSA的删除机制：" class="headerlink" title="OSPF LSA的删除机制："></a>OSPF LSA的删除机制：</h4><blockquote>
 <p>当OSPF需要删除一条LSA的时候，将会把LSA的age时间变为3600s，当其他路由器接收到这条LSA之后，将会把自身LSDB中对应的LSA删除掉</p>
 </blockquote>
-<h2 id="OSPF区域类型"><a href="#OSPF区域类型" class="headerlink" title="OSPF区域类型"></a>OSPF区域类型</h2><img src="https://img-blog.csdnimg.cn/cd7067b17dc74e46beea354fa2212bef.gif" data-original="https://img-blog.csdnimg.cn/20210110121031941.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80NTc5Mzc4Mg==,size_16,color_FFFFFF,t_70" style="zoom:67%;">
+<h2 id="OSPF区域类型"><a href="#OSPF区域类型" class="headerlink" title="OSPF区域类型"></a>OSPF区域类型</h2><img src="https://gitee.com/SAR_Okra/pic-go/raw/master/img/202306021406743.gif" data-original="https://img-blog.csdnimg.cn/20210110121031941.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80NTc5Mzc4Mg==,size_16,color_FFFFFF,t_70" style="zoom:67%;">
 
 <h4 id="骨干区域-Backbone-Area"><a href="#骨干区域-Backbone-Area" class="headerlink" title="骨干区域( Backbone Area)"></a>骨干区域( Backbone Area)</h4><p>骨干区域是Area 0,是整个OSPF域的中心枢纽。一个OSPF域有且只能拥有一个 Area 0,所有的区域间路由必须通过Area0中转。</p>
 <h4 id="常规区域-Normal-Area"><a href="#常规区域-Normal-Area" class="headerlink" title="常规区域( Normal Area)"></a>常规区域( Normal Area)</h4><p>所有的OSPF区域缺省情况下都是常规区域,当然, Area 0是常规区域中比较特殊的一个。</p>
-<p>OSPF要求所有的非骨干区域(非0常规区域)都必须与Area 0直接相连。常规区域中允许Type-1, Type-2. Type-3, Type-4以及Type-5 LSA泛洪, Type-7 LSA禁止出现在常规区域内。<br><img src="https://img-blog.csdnimg.cn/cd7067b17dc74e46beea354fa2212bef.gif" data-original="https://img-blog.csdnimg.cn/20210110121017891.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80NTc5Mzc4Mg==,size_16,color_FFFFFF,t_70" style="zoom:67%;"></p>
+<p>OSPF要求所有的非骨干区域(非0常规区域)都必须与Area 0直接相连。常规区域中允许Type-1, Type-2. Type-3, Type-4以及Type-5 LSA泛洪, Type-7 LSA禁止出现在常规区域内。<br><img src="https://gitee.com/SAR_Okra/pic-go/raw/master/img/202306021406743.gif" data-original="https://img-blog.csdnimg.cn/20210110121017891.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80NTc5Mzc4Mg==,size_16,color_FFFFFF,t_70" style="zoom:67%;"></p>
 <h4 id="末梢区域-Stub-Area"><a href="#末梢区域-Stub-Area" class="headerlink" title="末梢区域(Stub Area)"></a>末梢区域(Stub Area)</h4><p>末梢区域也被称为Stub区域,当一个非0常规区域只有单一的出口(例如该区域只有一个ABR),或者区域内的路由器不需要根据特定的外部路由来选择离开区域的出口时,该区域可以被配置为Stub区域。</p>
 <p>当一个区域被配置为Stub区域后,这个区域的ABR将阻挡Type-5 LSA进入该区域(禁止外部路由被发布到该区域),通过这种方式可减少区域内所泛洪的LSA数量,同时该区域的ABR自动下发一条使用Type-3 LSA描述的默认路由,使得区域内的路由器能够通过这条默认路由到达域外,因此既减小了区域内网络设备的路由表规模,又保证了其访问外部网络的数据可达性。</p>
 <p>在一个大量引入外部路由的OSPF网络中,将适当的区域配置为Stub区域可以极大地减小该区域内路由器的路由表规模,从而降低设备的资源消耗。另外,对于Stub区域而言,到达OSPF域内其他区域的路,由依然能够被注入,即ABR依然会将描述区域间路由的Type-3 LSA注入到Stub区域中。</p>
-<p>Area 1被配置为Stub区域,这样Area 1的ABR(CO-SW1及Co-sw2)便不能再将Type-5 LSA注入这个区域。由于Type-5 LSA无法进入该区域,因此Type-4LSA也就没有必要再在该区域内泛洪,所以Co-sw1及Co-sw2也就不会再向该区域内注入Type-4 LSA,进而, Router-X的路由表将不会再出现到达省公司(OSPF域外)的具体路由,路由表的规模减小了,设备的资源消耗也就降低了。当然, Router-X访问省公司的需求还是存在的,为了让Router-X发往省公司的流量能顺利到达目的地, ABR会自动向Areal中注入默认路由,该条默认路由使用Type-3 LSA描述, co-SW1及CO-Sw2都会下发默认路由,网络管理员可以通过把控默认路由的Cost从而控制Routerx选择的出口。Router-X发往省公司的流量能够通过该默认路由先到达co-sW1或co-sw2,再通过它们转发到省公司。<br><img src="https://img-blog.csdnimg.cn/cd7067b17dc74e46beea354fa2212bef.gif" data-original="https://img-blog.csdnimg.cn/2021011012214366.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80NTc5Mzc4Mg==,size_16,color_FFFFFF,t_70" style="zoom:67%;"><br>设置末梢区域后ASBR生成Type-5 LSA无法进入，ABR也没有必要生成描述ASBR位置的Type-4 LSA，取而代之的是ABR生成一条描述外部路由的默认路由Type-3 LSA，让stub里的路由器转发发往外部网络的数据时把数据都发给ABR，由ABR统一转发。减小stub区域里的路由器的路由表大小。</p>
+<p>Area 1被配置为Stub区域,这样Area 1的ABR(CO-SW1及Co-sw2)便不能再将Type-5 LSA注入这个区域。由于Type-5 LSA无法进入该区域,因此Type-4LSA也就没有必要再在该区域内泛洪,所以Co-sw1及Co-sw2也就不会再向该区域内注入Type-4 LSA,进而, Router-X的路由表将不会再出现到达省公司(OSPF域外)的具体路由,路由表的规模减小了,设备的资源消耗也就降低了。当然, Router-X访问省公司的需求还是存在的,为了让Router-X发往省公司的流量能顺利到达目的地, ABR会自动向Areal中注入默认路由,该条默认路由使用Type-3 LSA描述, co-SW1及CO-Sw2都会下发默认路由,网络管理员可以通过把控默认路由的Cost从而控制Routerx选择的出口。Router-X发往省公司的流量能够通过该默认路由先到达co-sW1或co-sw2,再通过它们转发到省公司。<br><img src="https://gitee.com/SAR_Okra/pic-go/raw/master/img/202306021406743.gif" data-original="https://img-blog.csdnimg.cn/2021011012214366.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80NTc5Mzc4Mg==,size_16,color_FFFFFF,t_70" style="zoom:67%;"><br>设置末梢区域后ASBR生成Type-5 LSA无法进入，ABR也没有必要生成描述ASBR位置的Type-4 LSA，取而代之的是ABR生成一条描述外部路由的默认路由Type-3 LSA，让stub里的路由器转发发往外部网络的数据时把数据都发给ABR，由ABR统一转发。减小stub区域里的路由器的路由表大小。</p>
 <p>所有连接到stub区域的路由器，对于该区域的stub属性要有一致的认知，否则OSPF邻居关系的建立将会出现问题。</p>
 <p>还可以在ABR上配置，进一步阻挡描述区域间路由的Type-3 LSA进入，区域内的路由器访问区域外的网络时，统一把数据发给ABR。这样，这个区域内只有Type-1 LSA、Type-2 LSA及描述默认路由的Type-3 LSA存在,这意味着区域内路由器的路由表都将只有到达区域内部的路由,以及指向ABR的默认路由,路由器的路由表被极大程度地精简了。这种特殊区域也被称为<strong>完全末梢区域(Totally Stub Area)</strong></p>
 <h4 id="非完全末梢区域-Not-So-Stubby-Area"><a href="#非完全末梢区域-Not-So-Stubby-Area" class="headerlink" title="非完全末梢区域(Not-So-Stubby Area)"></a>非完全末梢区域(Not-So-Stubby Area)</h4><p><strong>NSSA (Not-So-Stubby Area)即非完全末梢区域</strong>,可以理解为Stub区域的变种,它拥有Stub区域的特点—阻挡Type-4及Type-5 LSA进入,从而在一定程度上减少区域内泛洪的LSA数量,同时它还有另一个特点,那就是允许该区域的路由器将少量外部路由引入OSPF,被引入的外部路由,以Type-7 LSA描述,并且这些Type-7 LSA只能够在当前的NSSA内泛洪,不允许直接进入Area0,为了使这些被引入NSSA的外部路由能让OSPF域内的其他区域学习到, NSSA的ABR会将Type-7 LSA转换成Type-5 LSA然后注入Areao,从而泛洪到整个OSPF域。</p>
 <p>Area 1被配置成了NSSA。这样Area 1的ABR将阻挡Type-5 LSA进入这个区域。另一方面, Router-X连接到一个RIP网络,它将路由表中的RIP路由引入OSPF,这些被引入的外部路由以Type-7 LSA描述,这些LSA在Area 1内泛洪,并且禁止进入Area 0.co-sW1及CO-SW2作为NSSA的ABR, 自然也是能收到这些Type-7 LSA的,它们能够根据这些LSA计算出到达RIP网络的路由。</p>
-<p>另外它们也负责将Type-7 LSA转换成Type-5 LSA并将后者注入Area 0,这样这些外部路由便能够被整个OSPF域中的路由器学习到。另一方面, CO-SW1及CO-SW2会向NSSA内下发一条Type-7 LSA的默认路由,使得Router-X能够通过这条默认路由到达省公司。<br><img src="https://img-blog.csdnimg.cn/cd7067b17dc74e46beea354fa2212bef.gif" data-original="https://img-blog.csdnimg.cn/20210110124852964.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80NTc5Mzc4Mg==,size_16,color_FFFFFF,t_70" style="zoom:67%;"><br>RIP通过RX生成的Type-7 LSA来描述，生成的Type-7在NSSA区域内泛洪。ABR收到Type-7后生成Type-5 LSA注入到Area 0中，让其他区域的路由器可以知道这个RIP，同时ABR也会生成一条Type-7 LSA默认路由给RX可以访问省公司。</p>
+<p>另外它们也负责将Type-7 LSA转换成Type-5 LSA并将后者注入Area 0,这样这些外部路由便能够被整个OSPF域中的路由器学习到。另一方面, CO-SW1及CO-SW2会向NSSA内下发一条Type-7 LSA的默认路由,使得Router-X能够通过这条默认路由到达省公司。<br><img src="https://gitee.com/SAR_Okra/pic-go/raw/master/img/202306021406743.gif" data-original="https://img-blog.csdnimg.cn/20210110124852964.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80NTc5Mzc4Mg==,size_16,color_FFFFFF,t_70" style="zoom:67%;"><br>RIP通过RX生成的Type-7 LSA来描述，生成的Type-7在NSSA区域内泛洪。ABR收到Type-7后生成Type-5 LSA注入到Area 0中，让其他区域的路由器可以知道这个RIP，同时ABR也会生成一条Type-7 LSA默认路由给RX可以访问省公司。</p>
 <p>我们还可以在NSSA的基础上进一步减少LSA的泛洪。在NSSA的ABR上,可以进一步将Type-3 LSA阻挡掉,从而将区域间的路由都过滤掉,而NSSA的ABR会自动,下发一条默认路由(使用Type-3 LSA描述)到该区域,使得区域内的路由器能够通过这条默认路由访问OSPF域内的其他区域,以及域外的网络。这种类型的特殊区域也被称为Totally NSSA。</p>
 <h4 id="各种区域类型中允许出现的LSA"><a href="#各种区域类型中允许出现的LSA" class="headerlink" title="各种区域类型中允许出现的LSA"></a>各种区域类型中允许出现的LSA</h4><p>表中列举出了在每种OSPF区域类型中,允许出现以及禁止出现的LSA.</p>
 <table>
@@ -1361,10 +1361,10 @@
                         <li class="tab col s6 wechat-tab waves-effect waves-light"><a href="#wechat">微 信</a></li>
                     </ul>
                     <div id="alipay">
-                        <img src="https://img-blog.csdnimg.cn/cd7067b17dc74e46beea354fa2212bef.gif" data-original="/medias/reward/alipay.jpg" class="reward-img" alt="支付宝打赏二维码">
+                        <img src="https://gitee.com/SAR_Okra/pic-go/raw/master/img/202306021406743.gif" data-original="/medias/reward/alipay.jpg" class="reward-img" alt="支付宝打赏二维码">
                     </div>
                     <div id="wechat">
-                        <img src="https://img-blog.csdnimg.cn/cd7067b17dc74e46beea354fa2212bef.gif" data-original="/medias/reward/wechat.png" class="reward-img" alt="微信打赏二维码">
+                        <img src="https://gitee.com/SAR_Okra/pic-go/raw/master/img/202306021406743.gif" data-original="/medias/reward/wechat.png" class="reward-img" alt="微信打赏二维码">
                     </div>
                 </div>
             </div>
@@ -1739,7 +1739,7 @@
                     <div class="card-image">
                         
                         
-                        <img src="https://img-blog.csdnimg.cn/cd7067b17dc74e46beea354fa2212bef.gif" data-original="https://aimer666.oss-cn-hangzhou.aliyuncs.com/20.jpg" class="responsive-img" alt="数通 19-OSPF协议特性">
+                        <img src="https://gitee.com/SAR_Okra/pic-go/raw/master/img/202306021406743.gif" data-original="https://aimer666.oss-cn-hangzhou.aliyuncs.com/20.jpg" class="responsive-img" alt="数通 19-OSPF协议特性">
                         
                         <span class="card-title">数通 19-OSPF协议特性</span>
                     </div>
@@ -1788,7 +1788,7 @@
                     <div class="card-image">
                         
                         
-                        <img src="https://img-blog.csdnimg.cn/cd7067b17dc74e46beea354fa2212bef.gif" data-original="https://aimer666.oss-cn-hangzhou.aliyuncs.com/3.jpg" class="responsive-img" alt="数通 17-OSPF的报文格式">
+                        <img src="https://gitee.com/SAR_Okra/pic-go/raw/master/img/202306021406743.gif" data-original="https://aimer666.oss-cn-hangzhou.aliyuncs.com/3.jpg" class="responsive-img" alt="数通 17-OSPF的报文格式">
                         
                         <span class="card-title">数通 17-OSPF的报文格式</span>
                     </div>

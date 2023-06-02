@@ -38,7 +38,7 @@
 
    <style>
     body{
-       background-image: url(https://img-blog.csdnimg.cn/037c9770f141489aa27e18162f873c68.jpeg);
+       background-image: url(https://gitee.com/SAR_Okra/pic-go/raw/master/img/202306021029445.jpg);
        background-repeat:no-repeat;
        background-size:cover;
        background-attachment:fixed;
@@ -129,7 +129,7 @@
             <div class="brand-logo">
                 <a href="/" class="waves-effect waves-light">
                     
-                    <img src="https://img-blog.csdnimg.cn/cd7067b17dc74e46beea354fa2212bef.gif" data-original="https://aimer666.oss-cn-hangzhou.aliyuncs.com/logo.png" class="logo-img" alt="LOGO">
+                    <img src="https://gitee.com/SAR_Okra/pic-go/raw/master/img/202306021406743.gif" data-original="https://aimer666.oss-cn-hangzhou.aliyuncs.com/logo.png" class="logo-img" alt="LOGO">
                     
                     <span class="logo-span">Okraの筆記</span>
                 </a>
@@ -274,7 +274,7 @@
 
     <div class="mobile-head bg-color">
         
-        <img src="https://img-blog.csdnimg.cn/cd7067b17dc74e46beea354fa2212bef.gif" data-original="https://aimer666.oss-cn-hangzhou.aliyuncs.com/logo.png" class="logo-img circle responsive-img">
+        <img src="https://gitee.com/SAR_Okra/pic-go/raw/master/img/202306021406743.gif" data-original="https://aimer666.oss-cn-hangzhou.aliyuncs.com/logo.png" class="logo-img circle responsive-img">
         
         <div class="logo-name">Okraの筆記</div>
         <div class="logo-desc">
@@ -724,7 +724,7 @@
 <li><p>每一个激活OSPF的接口都有一个cost值。OSPF接口cost=100M/接口带宽，其中100M为OSPF的参考带宽（reference-bandwidth）。</p>
 </li>
 <li><p>一条OSPF路由的cost由该路由从路由的起源一路到达本地的所有入接口cost值的总和。</p>
-<p><img src="https://img-blog.csdnimg.cn/cd7067b17dc74e46beea354fa2212bef.gif" data-original="https://download.huawei.com/mdl/image/download?uuid=4d039cad0996458293e1ef379d855fed" alt="img"> </p>
+<p><img src="https://gitee.com/SAR_Okra/pic-go/raw/master/img/202306021406743.gif" data-original="https://download.huawei.com/mdl/image/download?uuid=4d039cad0996458293e1ef379d855fed" alt="img"> </p>
 <p>由于默认的参考带宽是100M，这意味着更高带宽的传输介质（高于100M）在OSPF协议中将会计算出一个小于1的分数，这在OSPF协议中是不允许的（会被四舍五入为1）。而现今网络设备很多都是大于100M带宽的接口，这时候路由cost的计算其实就不精确了。所以可以使用<strong>bandwidth-reference</strong>命令修改，但是这条命令要谨慎使用，一旦要配置，则建议全网OSPF路由器都配置。</p>
 </li>
 </ul>
@@ -828,10 +828,10 @@ Auth Data：ospf的加密密钥<span aria-hidden="true" class="line-numbers-rows
 <li>邻接关系：形成邻居关系后，如果两端设备成功交换DD报文和LSA，才建立邻接关系。</li>
 </ul>
 <p>OSPF共有8种状态机，分别是：Down、Attempt、Init、2-way、Exstart、Exchange、Loading、Full。</p>
-<img src="https://img-blog.csdnimg.cn/cd7067b17dc74e46beea354fa2212bef.gif" data-original="https://img-blog.csdnimg.cn/5a78f91af1c042fe85362759d4e35ce9.png" style="zoom: 67%;">
+<img src="https://gitee.com/SAR_Okra/pic-go/raw/master/img/202306021406743.gif" data-original="https://img-blog.csdnimg.cn/5a78f91af1c042fe85362759d4e35ce9.png" style="zoom: 67%;">
 
 <p><strong>注意：DR和BDR的选举时间是在2-Way和Exstart之间，而在Exstart开始后发送的第一个空DD报文，用于协商两台路由器之间的主从(Master/Slave)，也称为DD的隐式确认。</strong></p>
-<p><img src="https://img-blog.csdnimg.cn/cd7067b17dc74e46beea354fa2212bef.gif" data-original="https://img-blog.csdnimg.cn/d75270e9dbd4446ab490bda56c649da0.png"></p>
+<p><img src="https://gitee.com/SAR_Okra/pic-go/raw/master/img/202306021406743.gif" data-original="https://img-blog.csdnimg.cn/d75270e9dbd4446ab490bda56c649da0.png"></p>
 <ul>
 <li><p>Down(失效)：邻居会话的初始阶段，表明没有在邻居失效时间间隔内收到来自邻居路由器的Hello数据包。</p>
 </li>
@@ -897,7 +897,7 @@ Auth Data：ospf的加密密钥<span aria-hidden="true" class="line-numbers-rows
 <li>NBMA网络采用单播发送报文，需要手工配置邻居。P2MP网络采用组播方式发送报文。</li>
 </ul>
 <h3 id="DR和BDR"><a href="#DR和BDR" class="headerlink" title="DR和BDR"></a>DR和BDR</h3><p>在广播网和NBMA网络中，任意两台路由器之间都要传递路由信息。如图所示，网络中有n台路由器，则需要建立n*(n-1)/2个邻接关系。这使得任何一台路由器的路由变化都会导致多次传递，浪费了带宽资源。为解决这一问题，OSPF定义了指定路由器DR和备份指定路由器BDR。通过选举产生DR（Designated Router）后，所有路由器都只将信息发送给DR，由DR将网络链路状态LSA广播出去。除DR和BDR之外的路由器（称为DR  Other）之间将不再建立邻接关系，也不再交换任何路由信息，这样就减少了广播网和NBMA网络上各路由器之间邻接关系的数量。</p>
-<p> 选举DR前后对比图<br><img src="https://img-blog.csdnimg.cn/cd7067b17dc74e46beea354fa2212bef.gif" data-original="https://download.huawei.com/mdl/image/download?uuid=cbb680e5ce9649548861b65001616f40" alt="img"></p>
+<p> 选举DR前后对比图<br><img src="https://gitee.com/SAR_Okra/pic-go/raw/master/img/202306021406743.gif" data-original="https://download.huawei.com/mdl/image/download?uuid=cbb680e5ce9649548861b65001616f40" alt="img"></p>
 <p>如果DR由于某种故障而失效，则网络中的路由器必须重新选举DR，并与新的DR同步。这需要较长的时间，在这段时间内，路由的计算有可能是不正确的。为了能够缩短这个过程，OSPF提出了BDR（Backup Designated  Router）的概念。BDR是对DR的一个备份，在选举DR的同时也选举出BDR，BDR也和本网段内的所有路由器建立邻接关系并交换路由信息。当DR失效后，BDR会立即成为DR。由于不需要重新选举，并且邻接关系已建立，所以这个过程非常短暂，这时还需要再重新选举出一个新的BDR，虽然一样需要较长的时间，但并不会影响路由的计算。</p>
 <p>DR和BDR不是人为指定的，而是由本网段中所有的路由器共同选举出来的。路由器接口的DR优先级决定了该接口在选举DR、BDR时所具有的资格。本网段内DR优先级大于0的路由器都可作为“候选人”。选举中使用的“选票”就是Hello报文。每台路由器将自己选出的DR写入Hello报文中，发给网段上的其他路由器。当处于同一网段的两台路由器同时宣布自己是DR时，DR优先级高者胜出。如果优先级相等，则Router ID大者胜出。如果一台路由器的优先级为0，则它不会被选举为DR或BDR。</p>
 <h4 id="DR-BDR选举过程"><a href="#DR-BDR选举过程" class="headerlink" title="DR/BDR选举过程"></a>DR/BDR选举过程</h4><p>DR和BDR是由同一网段中所有的路由器根据路由器优先级、Router ID通过HELLO报文选举出来的，只有优先级大于0的路由器才具有选取资格。</p>
@@ -1022,7 +1022,7 @@ Auth Data：ospf的加密密钥<span aria-hidden="true" class="line-numbers-rows
 <td>是</td>
 </tr>
 </tbody></table>
-<h3 id="路由器类型"><a href="#路由器类型" class="headerlink" title="路由器类型"></a>路由器类型</h3><p>OSPF协议中常用到的路由器类型如图所示。<br><img src="https://img-blog.csdnimg.cn/cd7067b17dc74e46beea354fa2212bef.gif" data-original="https://download.huawei.com/mdl/image/download?uuid=a1b351c20c5748b9b00f0b1d8277e33e" alt="img"></p>
+<h3 id="路由器类型"><a href="#路由器类型" class="headerlink" title="路由器类型"></a>路由器类型</h3><p>OSPF协议中常用到的路由器类型如图所示。<br><img src="https://gitee.com/SAR_Okra/pic-go/raw/master/img/202306021406743.gif" data-original="https://download.huawei.com/mdl/image/download?uuid=a1b351c20c5748b9b00f0b1d8277e33e" alt="img"></p>
 <table>
 <thead>
 <tr>
@@ -1101,7 +1101,7 @@ Auth Data：ospf的加密密钥<span aria-hidden="true" class="line-numbers-rows
 <td>Totally NSSA区域允许引入自治系统外部路由，由ASBR发布Type7 LSA通告给本区域，这些Type7 LSA在ABR上转换成Type5 LSA，并且泛洪到整个OSPF域中。 Totally NSSA区域同时保留自治系统内的Totally STUB Area区域的特征。 该区域的ABR发布Type3和Type7缺省路由传播到区域内，所有域间路由都必须通过ABR才能发布。</td>
 </tr>
 </tbody></table>
-<p><img src="https://img-blog.csdnimg.cn/cd7067b17dc74e46beea354fa2212bef.gif" data-original="https://img-blog.csdnimg.cn/61e4f55618a94d3e80544ef26100501d.png"></p>
+<p><img src="https://gitee.com/SAR_Okra/pic-go/raw/master/img/202306021406743.gif" data-original="https://img-blog.csdnimg.cn/61e4f55618a94d3e80544ef26100501d.png"></p>
 <pre class="line-numbers language-none"><code class="language-none">1、stub
 [AR2—ospf—1—area—0. 0.0. 1]stub //配置该区域为stub区域。
 	1)在该区域下所有的接口发送的OSPF Hello报文E bit等于0.
@@ -1351,10 +1351,10 @@ Auth Data：ospf的加密密钥<span aria-hidden="true" class="line-numbers-rows
                         <li class="tab col s6 wechat-tab waves-effect waves-light"><a href="#wechat">微 信</a></li>
                     </ul>
                     <div id="alipay">
-                        <img src="https://img-blog.csdnimg.cn/cd7067b17dc74e46beea354fa2212bef.gif" data-original="/medias/reward/alipay.jpg" class="reward-img" alt="支付宝打赏二维码">
+                        <img src="https://gitee.com/SAR_Okra/pic-go/raw/master/img/202306021406743.gif" data-original="/medias/reward/alipay.jpg" class="reward-img" alt="支付宝打赏二维码">
                     </div>
                     <div id="wechat">
-                        <img src="https://img-blog.csdnimg.cn/cd7067b17dc74e46beea354fa2212bef.gif" data-original="/medias/reward/wechat.png" class="reward-img" alt="微信打赏二维码">
+                        <img src="https://gitee.com/SAR_Okra/pic-go/raw/master/img/202306021406743.gif" data-original="/medias/reward/wechat.png" class="reward-img" alt="微信打赏二维码">
                     </div>
                 </div>
             </div>
@@ -1729,7 +1729,7 @@ Auth Data：ospf的加密密钥<span aria-hidden="true" class="line-numbers-rows
                     <div class="card-image">
                         
                         
-                        <img src="https://img-blog.csdnimg.cn/cd7067b17dc74e46beea354fa2212bef.gif" data-original="https://aimer666.oss-cn-hangzhou.aliyuncs.com/3.jpg" class="responsive-img" alt="数通 17-OSPF的报文格式">
+                        <img src="https://gitee.com/SAR_Okra/pic-go/raw/master/img/202306021406743.gif" data-original="https://aimer666.oss-cn-hangzhou.aliyuncs.com/3.jpg" class="responsive-img" alt="数通 17-OSPF的报文格式">
                         
                         <span class="card-title">数通 17-OSPF的报文格式</span>
                     </div>
@@ -1778,7 +1778,7 @@ Auth Data：ospf的加密密钥<span aria-hidden="true" class="line-numbers-rows
                     <div class="card-image">
                         
                         
-                        <img src="https://img-blog.csdnimg.cn/cd7067b17dc74e46beea354fa2212bef.gif" data-original="https://aimer666.oss-cn-hangzhou.aliyuncs.com/23.jpg" class="responsive-img" alt="实验ensp NQA">
+                        <img src="https://gitee.com/SAR_Okra/pic-go/raw/master/img/202306021406743.gif" data-original="https://aimer666.oss-cn-hangzhou.aliyuncs.com/23.jpg" class="responsive-img" alt="实验ensp NQA">
                         
                         <span class="card-title">实验ensp NQA</span>
                     </div>

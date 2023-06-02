@@ -38,7 +38,7 @@
 
    <style>
     body{
-       background-image: url(https://img-blog.csdnimg.cn/037c9770f141489aa27e18162f873c68.jpeg);
+       background-image: url(https://gitee.com/SAR_Okra/pic-go/raw/master/img/202306021029445.jpg);
        background-repeat:no-repeat;
        background-size:cover;
        background-attachment:fixed;
@@ -129,7 +129,7 @@
             <div class="brand-logo">
                 <a href="/" class="waves-effect waves-light">
                     
-                    <img src="https://img-blog.csdnimg.cn/cd7067b17dc74e46beea354fa2212bef.gif" data-original="https://aimer666.oss-cn-hangzhou.aliyuncs.com/logo.png" class="logo-img" alt="LOGO">
+                    <img src="https://gitee.com/SAR_Okra/pic-go/raw/master/img/202306021406743.gif" data-original="https://aimer666.oss-cn-hangzhou.aliyuncs.com/logo.png" class="logo-img" alt="LOGO">
                     
                     <span class="logo-span">Okraの筆記</span>
                 </a>
@@ -274,7 +274,7 @@
 
     <div class="mobile-head bg-color">
         
-        <img src="https://img-blog.csdnimg.cn/cd7067b17dc74e46beea354fa2212bef.gif" data-original="https://aimer666.oss-cn-hangzhou.aliyuncs.com/logo.png" class="logo-img circle responsive-img">
+        <img src="https://gitee.com/SAR_Okra/pic-go/raw/master/img/202306021406743.gif" data-original="https://aimer666.oss-cn-hangzhou.aliyuncs.com/logo.png" class="logo-img circle responsive-img">
         
         <div class="logo-name">Okraの筆記</div>
         <div class="logo-desc">
@@ -700,7 +700,7 @@
 <li>优点：避免外网设备的攻击，仅提高了安全性</li>
 </ul>
 <hr>
-<p><img src="https://img-blog.csdnimg.cn/cd7067b17dc74e46beea354fa2212bef.gif" data-original="https://img2022.cnblogs.com/blog/2823710/202206/2823710-20220611203536417-1391640044.png" alt="img"></p>
+<p><img src="https://gitee.com/SAR_Okra/pic-go/raw/master/img/202306021406743.gif" data-original="https://img2022.cnblogs.com/blog/2823710/202206/2823710-20220611203536417-1391640044.png" alt="img"></p>
 <pre class="line-numbers language-c" data-language="c"><code class="language-c">注意：
 nat <span class="token keyword">static</span> enable  
 nat <span class="token keyword">static</span> global 公网地址 inside 私网地址
@@ -726,7 +726,7 @@ nat <span class="token keyword">static</span> global <span class="token number">
 <li>当内部主机访问外部网络时，临时分配一个地址池中的未使用的公网IP地址，并将该地址标记为“In Use”。当该主机不再访问外部网络时回收分配的地址，重新标记为“Not Use”。</li>
 <li>动态NAT选择地址池中的地址进行地址转换时，不会转换端口，即No-PAT，导致了公网地址与私网地址还是1:1的映射关系，无法提高公网地址利用率</li>
 </ul>
-<p><img src="https://img-blog.csdnimg.cn/cd7067b17dc74e46beea354fa2212bef.gif" data-original="https://img2022.cnblogs.com/blog/2823710/202206/2823710-20220611203600999-1191581879.png" alt="img"></p>
+<p><img src="https://gitee.com/SAR_Okra/pic-go/raw/master/img/202306021406743.gif" data-original="https://img2022.cnblogs.com/blog/2823710/202206/2823710-20220611203600999-1191581879.png" alt="img"></p>
 <hr>
 <pre class="line-numbers language-c" data-language="c"><code class="language-c">出口网关设备的NAT数据配置：
 nat address<span class="token operator">-</span>group <span class="token number">1</span> <span class="token number">12.1</span><span class="token number">.1</span><span class="token number">.2</span> <span class="token number">12.1</span><span class="token number">.1</span><span class="token number">.5</span>  <span class="token comment">//创建一个地址池address-group 1，共有4个公网IP地址</span>
@@ -742,7 +742,7 @@ nat outbound <span class="token number">2000</span> address<span class="token op
 
 
 
-<h3 id="拓扑图（动态NAT）"><a href="#拓扑图（动态NAT）" class="headerlink" title="拓扑图（动态NAT）"></a>拓扑图（动态NAT）</h3><p><img src="https://img-blog.csdnimg.cn/cd7067b17dc74e46beea354fa2212bef.gif" data-original="https://img-blog.csdnimg.cn/210a5e3865ae43dcb2f7a90a4f76043b.png"></p>
+<h3 id="拓扑图（动态NAT）"><a href="#拓扑图（动态NAT）" class="headerlink" title="拓扑图（动态NAT）"></a>拓扑图（动态NAT）</h3><p><img src="https://gitee.com/SAR_Okra/pic-go/raw/master/img/202306021406743.gif" data-original="https://img-blog.csdnimg.cn/210a5e3865ae43dcb2f7a90a4f76043b.png"></p>
 <h3 id="实验步骤"><a href="#实验步骤" class="headerlink" title="实验步骤"></a>实验步骤</h3><p>1.按照拓扑图搭建实验环境，从PC去Ping外网ip。可以看见64.1.1.1可以ping通，但是64.1.1.10超时。</p>
 <p>原因：在PC发送报文时发现64.1.1.10和自己不在同一网段，就将数据包发给网关，网关发现64.1.1.1和64.1.1.10是直连路由，数据包就发送给1.10；但是R2作为公网路由器是没有去私网IP192.168.1.1的路由，所以无法将报文转发回来。</p>
 <p>解决方法：Nat将内网192.168.1.1的IP转换为64.1的公网IP。</p>
@@ -804,11 +804,11 @@ Destination/Mask    Proto   Pre  Cost      Flags NextHop         Interface
 <pre class="line-numbers language-none"><code class="language-none">[R1-GigabitEthernet0/0/1]nat outbound 2000 address-group 1<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 
 <ul>
-<li><img src="https://img-blog.csdnimg.cn/cd7067b17dc74e46beea354fa2212bef.gif" data-original="https://img-blog.csdnimg.cn/1488f9ae75c046aeac6ed7ffc7e85313.png"></li>
+<li><img src="https://gitee.com/SAR_Okra/pic-go/raw/master/img/202306021406743.gif" data-original="https://img-blog.csdnimg.cn/1488f9ae75c046aeac6ed7ffc7e85313.png"></li>
 <li>NO-PAT 是不做端口转换，只作<a target="_blank" rel="noopener" href="https://www.baidu.com/s?wd=IP%E5%9C%B0%E5%9D%80%E8%BD%AC%E6%8D%A2&amp;tn=SE_PcZhidaonwhc_ngpagmjz&amp;rsv_dl=gh_pc_zhidao">IP地址转换</a>，也就是BASIC NAT 。而如果是NAPT的话，NO-PAT是不配置的。建议不要配置NO-PAT，不然同一个进程只能使用一个IP地址 </li>
 </ul>
 <p>5.现在就可以Ping通了</p>
-<h3 id="拓扑图（静态NAT）"><a href="#拓扑图（静态NAT）" class="headerlink" title="拓扑图（静态NAT）"></a>拓扑图（静态NAT）</h3><p><img src="https://img-blog.csdnimg.cn/cd7067b17dc74e46beea354fa2212bef.gif" data-original="https://img-blog.csdnimg.cn/2f4d50eafcc64db6acf7338db762637a.png"></p>
+<h3 id="拓扑图（静态NAT）"><a href="#拓扑图（静态NAT）" class="headerlink" title="拓扑图（静态NAT）"></a>拓扑图（静态NAT）</h3><p><img src="https://gitee.com/SAR_Okra/pic-go/raw/master/img/202306021406743.gif" data-original="https://img-blog.csdnimg.cn/2f4d50eafcc64db6acf7338db762637a.png"></p>
 <h3 id="实验步骤-1"><a href="#实验步骤-1" class="headerlink" title="实验步骤"></a>实验步骤</h3><p>1.配置IP</p>
 <p>2.在AR1上配置静态路由</p>
 <pre class="line-numbers language-none"><code class="language-none">[R1]ip route-static 200.200.200.0 24 119.1.1.2<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
@@ -1037,10 +1037,10 @@ Request timeout!<span aria-hidden="true" class="line-numbers-rows"><span></span>
                         <li class="tab col s6 wechat-tab waves-effect waves-light"><a href="#wechat">微 信</a></li>
                     </ul>
                     <div id="alipay">
-                        <img src="https://img-blog.csdnimg.cn/cd7067b17dc74e46beea354fa2212bef.gif" data-original="/medias/reward/alipay.jpg" class="reward-img" alt="支付宝打赏二维码">
+                        <img src="https://gitee.com/SAR_Okra/pic-go/raw/master/img/202306021406743.gif" data-original="/medias/reward/alipay.jpg" class="reward-img" alt="支付宝打赏二维码">
                     </div>
                     <div id="wechat">
-                        <img src="https://img-blog.csdnimg.cn/cd7067b17dc74e46beea354fa2212bef.gif" data-original="/medias/reward/wechat.png" class="reward-img" alt="微信打赏二维码">
+                        <img src="https://gitee.com/SAR_Okra/pic-go/raw/master/img/202306021406743.gif" data-original="/medias/reward/wechat.png" class="reward-img" alt="微信打赏二维码">
                     </div>
                 </div>
             </div>
@@ -1415,7 +1415,7 @@ Request timeout!<span aria-hidden="true" class="line-numbers-rows"><span></span>
                     <div class="card-image">
                         
                         
-                        <img src="https://img-blog.csdnimg.cn/cd7067b17dc74e46beea354fa2212bef.gif" data-original="https://aimer666.oss-cn-hangzhou.aliyuncs.com/21.jpg" class="responsive-img" alt="实验ensp-Telnet远程登录实验">
+                        <img src="https://gitee.com/SAR_Okra/pic-go/raw/master/img/202306021406743.gif" data-original="https://aimer666.oss-cn-hangzhou.aliyuncs.com/21.jpg" class="responsive-img" alt="实验ensp-Telnet远程登录实验">
                         
                         <span class="card-title">实验ensp-Telnet远程登录实验</span>
                     </div>
@@ -1464,7 +1464,7 @@ Request timeout!<span aria-hidden="true" class="line-numbers-rows"><span></span>
                     <div class="card-image">
                         
                         
-                        <img src="https://img-blog.csdnimg.cn/cd7067b17dc74e46beea354fa2212bef.gif" data-original="https://aimer666.oss-cn-hangzhou.aliyuncs.com/19.jpg" class="responsive-img" alt="实验ensp-ACL访问控制列表(一)">
+                        <img src="https://gitee.com/SAR_Okra/pic-go/raw/master/img/202306021406743.gif" data-original="https://aimer666.oss-cn-hangzhou.aliyuncs.com/19.jpg" class="responsive-img" alt="实验ensp-ACL访问控制列表(一)">
                         
                         <span class="card-title">实验ensp-ACL访问控制列表(一)</span>
                     </div>

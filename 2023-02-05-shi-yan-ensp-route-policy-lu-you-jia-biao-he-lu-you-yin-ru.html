@@ -38,7 +38,7 @@
 
    <style>
     body{
-       background-image: url(https://img-blog.csdnimg.cn/037c9770f141489aa27e18162f873c68.jpeg);
+       background-image: url(https://gitee.com/SAR_Okra/pic-go/raw/master/img/202306021029445.jpg);
        background-repeat:no-repeat;
        background-size:cover;
        background-attachment:fixed;
@@ -129,7 +129,7 @@
             <div class="brand-logo">
                 <a href="/" class="waves-effect waves-light">
                     
-                    <img src="https://img-blog.csdnimg.cn/cd7067b17dc74e46beea354fa2212bef.gif" data-original="https://aimer666.oss-cn-hangzhou.aliyuncs.com/logo.png" class="logo-img" alt="LOGO">
+                    <img src="https://gitee.com/SAR_Okra/pic-go/raw/master/img/202306021406743.gif" data-original="https://aimer666.oss-cn-hangzhou.aliyuncs.com/logo.png" class="logo-img" alt="LOGO">
                     
                     <span class="logo-span">Okraの筆記</span>
                 </a>
@@ -274,7 +274,7 @@
 
     <div class="mobile-head bg-color">
         
-        <img src="https://img-blog.csdnimg.cn/cd7067b17dc74e46beea354fa2212bef.gif" data-original="https://aimer666.oss-cn-hangzhou.aliyuncs.com/logo.png" class="logo-img circle responsive-img">
+        <img src="https://gitee.com/SAR_Okra/pic-go/raw/master/img/202306021406743.gif" data-original="https://aimer666.oss-cn-hangzhou.aliyuncs.com/logo.png" class="logo-img circle responsive-img">
         
         <div class="logo-name">Okraの筆記</div>
         <div class="logo-desc">
@@ -691,7 +691,7 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h1 id="route-policy路由加表和路由引入"><a href="#route-policy路由加表和路由引入" class="headerlink" title="route-policy路由加表和路由引入"></a><center>route-policy路由加表和路由引入</center></h1><h2 id="拓扑图"><a href="#拓扑图" class="headerlink" title="拓扑图"></a>拓扑图</h2><p><img src="https://img-blog.csdnimg.cn/cd7067b17dc74e46beea354fa2212bef.gif" data-original="https://img-blog.csdnimg.cn/1c1b6057491548bd912acd121b2a3397.png"></p>
+                <h1 id="route-policy路由加表和路由引入"><a href="#route-policy路由加表和路由引入" class="headerlink" title="route-policy路由加表和路由引入"></a><center>route-policy路由加表和路由引入</center></h1><h2 id="拓扑图"><a href="#拓扑图" class="headerlink" title="拓扑图"></a>拓扑图</h2><p><img src="https://gitee.com/SAR_Okra/pic-go/raw/master/img/202306021406743.gif" data-original="https://img-blog.csdnimg.cn/1c1b6057491548bd912acd121b2a3397.png"></p>
 <h2 id="实验目的"><a href="#实验目的" class="headerlink" title="实验目的"></a>实验目的</h2><pre class="line-numbers language-none"><code class="language-none">a．在R2上将4条静态路由引入OSPF，要求
 1、192.168.1.0/24引入后cost＝100，type 1，其他默认 
 2、192.168.2.0/24引入后cost＝200，type 2，其他默认
@@ -831,7 +831,7 @@ Info: New Sequence of this List.
 [R1]ospf 
 [R1-ospf-1]filter-policy route-policy tag import 	#在R1的ospf上使用filter-policy调用route-policy  tag进行路由引入<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
-<p><img src="https://img-blog.csdnimg.cn/cd7067b17dc74e46beea354fa2212bef.gif" data-original="https://img-blog.csdnimg.cn/8d62009162c245b1be788efccb60409b.png"></p>
+<p><img src="https://gitee.com/SAR_Okra/pic-go/raw/master/img/202306021406743.gif" data-original="https://img-blog.csdnimg.cn/8d62009162c245b1be788efccb60409b.png"></p>
 <blockquote>
 <p>这个时候使用dis ip routing-table pro ospf 发现路由表是空的，那这是为神马呢？？?</p>
 <p>原来在filter-policy中是根据后面的route-policy来过滤路由的，而在这里的tag中我们只匹配了tag=500的路由，其他的1.0、2.0…都无法匹配上，所以默认是拒绝其他未匹配的路由，需要在写配置时在最后加上一个兜底的允许所有</p>
@@ -840,8 +840,8 @@ Info: New Sequence of this List.
 <pre class="line-numbers language-none"><code class="language-none">[R1]route-policy tag permit node 20<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 
 <p>现在再查看路由表，除tag为500的其他路由成功加表</p>
-<p><img src="https://img-blog.csdnimg.cn/cd7067b17dc74e46beea354fa2212bef.gif" data-original="https://img-blog.csdnimg.cn/3fed8cbcac414d8587394fcdb613eb68.png"></p>
-<p><img src="https://img-blog.csdnimg.cn/cd7067b17dc74e46beea354fa2212bef.gif" data-original="https://img-blog.csdnimg.cn/7c8daade336f4d188b24a9427b4eca8c.png"></p>
+<p><img src="https://gitee.com/SAR_Okra/pic-go/raw/master/img/202306021406743.gif" data-original="https://img-blog.csdnimg.cn/3fed8cbcac414d8587394fcdb613eb68.png"></p>
+<p><img src="https://gitee.com/SAR_Okra/pic-go/raw/master/img/202306021406743.gif" data-original="https://img-blog.csdnimg.cn/7c8daade336f4d188b24a9427b4eca8c.png"></p>
 <p>9.在R1上，192.168.3.0／24的路由条目优先级单独改成20，其他条目优先级默认</p>
 <p>R1</p>
 <pre class="line-numbers language-none"><code class="language-none">[R1]ip ip-prefix 192.168.3.0 permit 192.168.3.0 24			#前缀列表匹配92.168.3.0
@@ -857,7 +857,7 @@ Info: New Sequence of this List.
 <p>R1</p>
 <pre class="line-numbers language-none"><code class="language-none">[R1]dis ip routing-table protocol ospf verbose <span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 
-<p><img src="https://img-blog.csdnimg.cn/cd7067b17dc74e46beea354fa2212bef.gif" data-original="https://img-blog.csdnimg.cn/44ca38ace6d144dd8999be78e5f45ef7.png"></p>
+<p><img src="https://gitee.com/SAR_Okra/pic-go/raw/master/img/202306021406743.gif" data-original="https://img-blog.csdnimg.cn/44ca38ace6d144dd8999be78e5f45ef7.png"></p>
 
                 
             </div>
@@ -1053,10 +1053,10 @@ Info: New Sequence of this List.
                         <li class="tab col s6 wechat-tab waves-effect waves-light"><a href="#wechat">微 信</a></li>
                     </ul>
                     <div id="alipay">
-                        <img src="https://img-blog.csdnimg.cn/cd7067b17dc74e46beea354fa2212bef.gif" data-original="/medias/reward/alipay.jpg" class="reward-img" alt="支付宝打赏二维码">
+                        <img src="https://gitee.com/SAR_Okra/pic-go/raw/master/img/202306021406743.gif" data-original="/medias/reward/alipay.jpg" class="reward-img" alt="支付宝打赏二维码">
                     </div>
                     <div id="wechat">
-                        <img src="https://img-blog.csdnimg.cn/cd7067b17dc74e46beea354fa2212bef.gif" data-original="/medias/reward/wechat.png" class="reward-img" alt="微信打赏二维码">
+                        <img src="https://gitee.com/SAR_Okra/pic-go/raw/master/img/202306021406743.gif" data-original="/medias/reward/wechat.png" class="reward-img" alt="微信打赏二维码">
                     </div>
                 </div>
             </div>
@@ -1431,7 +1431,7 @@ Info: New Sequence of this List.
                     <div class="card-image">
                         
                         
-                        <img src="https://img-blog.csdnimg.cn/cd7067b17dc74e46beea354fa2212bef.gif" data-original="https://aimer666.oss-cn-hangzhou.aliyuncs.com/19.jpg" class="responsive-img" alt="实验ensp 双点双向路由引入导致的次优路径和环路问题">
+                        <img src="https://gitee.com/SAR_Okra/pic-go/raw/master/img/202306021406743.gif" data-original="https://aimer666.oss-cn-hangzhou.aliyuncs.com/19.jpg" class="responsive-img" alt="实验ensp 双点双向路由引入导致的次优路径和环路问题">
                         
                         <span class="card-title">实验ensp 双点双向路由引入导致的次优路径和环路问题</span>
                     </div>
@@ -1480,7 +1480,7 @@ Info: New Sequence of this List.
                     <div class="card-image">
                         
                         
-                        <img src="https://img-blog.csdnimg.cn/cd7067b17dc74e46beea354fa2212bef.gif" data-original="https://aimer666.oss-cn-hangzhou.aliyuncs.com/6.jpg" class="responsive-img" alt="WireShark抓包实操">
+                        <img src="https://gitee.com/SAR_Okra/pic-go/raw/master/img/202306021406743.gif" data-original="https://aimer666.oss-cn-hangzhou.aliyuncs.com/6.jpg" class="responsive-img" alt="WireShark抓包实操">
                         
                         <span class="card-title">WireShark抓包实操</span>
                     </div>

@@ -38,7 +38,7 @@
 
    <style>
     body{
-       background-image: url(https://img-blog.csdnimg.cn/037c9770f141489aa27e18162f873c68.jpeg);
+       background-image: url(https://gitee.com/SAR_Okra/pic-go/raw/master/img/202306021029445.jpg);
        background-repeat:no-repeat;
        background-size:cover;
        background-attachment:fixed;
@@ -129,7 +129,7 @@
             <div class="brand-logo">
                 <a href="/" class="waves-effect waves-light">
                     
-                    <img src="https://img-blog.csdnimg.cn/cd7067b17dc74e46beea354fa2212bef.gif" data-original="https://aimer666.oss-cn-hangzhou.aliyuncs.com/logo.png" class="logo-img" alt="LOGO">
+                    <img src="https://gitee.com/SAR_Okra/pic-go/raw/master/img/202306021406743.gif" data-original="https://aimer666.oss-cn-hangzhou.aliyuncs.com/logo.png" class="logo-img" alt="LOGO">
                     
                     <span class="logo-span">Okraの筆記</span>
                 </a>
@@ -274,7 +274,7 @@
 
     <div class="mobile-head bg-color">
         
-        <img src="https://img-blog.csdnimg.cn/cd7067b17dc74e46beea354fa2212bef.gif" data-original="https://aimer666.oss-cn-hangzhou.aliyuncs.com/logo.png" class="logo-img circle responsive-img">
+        <img src="https://gitee.com/SAR_Okra/pic-go/raw/master/img/202306021406743.gif" data-original="https://aimer666.oss-cn-hangzhou.aliyuncs.com/logo.png" class="logo-img circle responsive-img">
         
         <div class="logo-name">Okraの筆記</div>
         <div class="logo-desc">
@@ -704,7 +704,7 @@ TCP443  HTTPS  HTTP over SSL<span aria-hidden="true" class="line-numbers-rows"><
 
 
 
-<p><img src="https://img-blog.csdnimg.cn/cd7067b17dc74e46beea354fa2212bef.gif" data-original="https://img-blog.csdnimg.cn/c42dd2caa99b416d82155f60a610bad3.png" alt="tcp"></p>
+<p><img src="https://gitee.com/SAR_Okra/pic-go/raw/master/img/202306021406743.gif" data-original="https://img-blog.csdnimg.cn/c42dd2caa99b416d82155f60a610bad3.png" alt="tcp"></p>
 <h2 id="2-TCP原理"><a href="#2-TCP原理" class="headerlink" title="2.TCP原理"></a>2.TCP原理</h2><h3 id="TCP的建立连接"><a href="#TCP的建立连接" class="headerlink" title="TCP的建立连接"></a>TCP的建立连接</h3><p>TCP运输连接有以下三个阶段：</p>
 <ul>
 <li><strong>建立TCP连接，也就是通过三报文握手来建立TCP连接。</strong></li>
@@ -712,9 +712,9 @@ TCP443  HTTPS  HTTP over SSL<span aria-hidden="true" class="line-numbers-rows"><
 <li><strong>释放连接，也就是在数据传输结束后，还要通过四报文挥手来释放TCP连接。</strong></li>
 </ul>
 <p>TCP的运输连接管理就是使运输连接的建立和释放都能正常的进行。</p>
-<p><img src="https://img-blog.csdnimg.cn/cd7067b17dc74e46beea354fa2212bef.gif" data-original="https://img-blog.csdnimg.cn/151effa7cc8b4f7ba2354d40ff950d53.png"></p>
-<h3 id="2-1-TCP头部封装格式"><a href="#2-1-TCP头部封装格式" class="headerlink" title="2.1 TCP头部封装格式"></a>2.1 TCP头部封装格式</h3><p><img src="https://img-blog.csdnimg.cn/cd7067b17dc74e46beea354fa2212bef.gif" data-original="https://img-blog.csdnimg.cn/c968845dd62847269f83cfd01ef5e08e.png"></p>
-<p><img src="https://img-blog.csdnimg.cn/cd7067b17dc74e46beea354fa2212bef.gif" data-original="https://img-blog.csdnimg.cn/351a6fd138af4226accc458a72adfa3c.png"></p>
+<p><img src="https://gitee.com/SAR_Okra/pic-go/raw/master/img/202306021406743.gif" data-original="https://img-blog.csdnimg.cn/151effa7cc8b4f7ba2354d40ff950d53.png"></p>
+<h3 id="2-1-TCP头部封装格式"><a href="#2-1-TCP头部封装格式" class="headerlink" title="2.1 TCP头部封装格式"></a>2.1 TCP头部封装格式</h3><p><img src="https://gitee.com/SAR_Okra/pic-go/raw/master/img/202306021406743.gif" data-original="https://img-blog.csdnimg.cn/c968845dd62847269f83cfd01ef5e08e.png"></p>
+<p><img src="https://gitee.com/SAR_Okra/pic-go/raw/master/img/202306021406743.gif" data-original="https://img-blog.csdnimg.cn/351a6fd138af4226accc458a72adfa3c.png"></p>
 <p><strong>源端口:</strong> 占16比特，写入源端口号，用来 <strong>标识发送该TCP报文段的应用进程。</strong> <strong>目的端口：</strong> 占16比特，写入目的端口号，用来<strong>标识接收该TCP报文段的应用进程。</strong></p>
 <p><strong>序号:</strong> 占32比特，取值范围[0,2^32-1]，序号增加到最后一个后，下一个序号就又回到0。<strong>指出本TCP报文段数据载荷的第一个字节的序号。</strong></p>
 <p><strong>确认号：</strong> 占32比特，取值范围[0,2^32-1]，确认号增加到最后一个后，下一个确认号就又回到0。指出期望收到对方下一个TCP报文段的数据载荷的第一个字节的序号，同时也是对之前收到的所有数据的确认。若确认号=n，则表明到序号n-1为止的所有数据都已正确接收，期望接收序号为n的数据。</p>
@@ -730,12 +730,12 @@ TCP443  HTTPS  HTTP over SSL<span aria-hidden="true" class="line-numbers-rows"><
 Ack = 上一次Seq+length
 如果没有接到，或接收到是不完整数据，会再次发送Ack请求对方重发<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
 
-<p><img src="https://img-blog.csdnimg.cn/cd7067b17dc74e46beea354fa2212bef.gif" data-original="https://img-blog.csdnimg.cn/f873b11e3d7c489ca3ea77e3bced08ba.png"></p>
-<p><img src="https://img-blog.csdnimg.cn/cd7067b17dc74e46beea354fa2212bef.gif" data-original="https://img-blog.csdnimg.cn/9379e0e7efc64e8e9b249d88e45ff56e.png"></p>
-<p><img src="https://img-blog.csdnimg.cn/cd7067b17dc74e46beea354fa2212bef.gif" data-original="https://img-blog.csdnimg.cn/66e4abf2a09b426ba81600bb948f6b42.png"></p>
-<h4 id="2-2-2-三次握手"><a href="#2-2-2-三次握手" class="headerlink" title="2.2.2 三次握手"></a>2.2.2 三次握手</h4><p><img src="https://img-blog.csdnimg.cn/cd7067b17dc74e46beea354fa2212bef.gif" data-original="https://img-blog.csdnimg.cn/5442b0bc75314cfc9c681de53a335e86.png"></p>
-<p><img src="https://img-blog.csdnimg.cn/cd7067b17dc74e46beea354fa2212bef.gif" data-original="https://img-blog.csdnimg.cn/46c892eed45e46918fc160d1c4b386c0.png"></p>
-<h4 id="2-2-3-四次挥手"><a href="#2-2-3-四次挥手" class="headerlink" title="2.2.3 四次挥手"></a>2.2.3 四次挥手</h4><p><img src="https://img-blog.csdnimg.cn/cd7067b17dc74e46beea354fa2212bef.gif" data-original="https://img-blog.csdnimg.cn/172ea1a5659947628f990dc21fc8c89a.png"></p>
+<p><img src="https://gitee.com/SAR_Okra/pic-go/raw/master/img/202306021406743.gif" data-original="https://img-blog.csdnimg.cn/f873b11e3d7c489ca3ea77e3bced08ba.png"></p>
+<p><img src="https://gitee.com/SAR_Okra/pic-go/raw/master/img/202306021406743.gif" data-original="https://img-blog.csdnimg.cn/9379e0e7efc64e8e9b249d88e45ff56e.png"></p>
+<p><img src="https://gitee.com/SAR_Okra/pic-go/raw/master/img/202306021406743.gif" data-original="https://img-blog.csdnimg.cn/66e4abf2a09b426ba81600bb948f6b42.png"></p>
+<h4 id="2-2-2-三次握手"><a href="#2-2-2-三次握手" class="headerlink" title="2.2.2 三次握手"></a>2.2.2 三次握手</h4><p><img src="https://gitee.com/SAR_Okra/pic-go/raw/master/img/202306021406743.gif" data-original="https://img-blog.csdnimg.cn/5442b0bc75314cfc9c681de53a335e86.png"></p>
+<p><img src="https://gitee.com/SAR_Okra/pic-go/raw/master/img/202306021406743.gif" data-original="https://img-blog.csdnimg.cn/46c892eed45e46918fc160d1c4b386c0.png"></p>
+<h4 id="2-2-3-四次挥手"><a href="#2-2-3-四次挥手" class="headerlink" title="2.2.3 四次挥手"></a>2.2.3 四次挥手</h4><p><img src="https://gitee.com/SAR_Okra/pic-go/raw/master/img/202306021406743.gif" data-original="https://img-blog.csdnimg.cn/172ea1a5659947628f990dc21fc8c89a.png"></p>
 <p> 由于TCP连接是全双工的,断开一个TCP连接,需要客户端与服务器发送四个包来确认连接的断开<br>简述四次挥手的过程:</p>
 <pre><code>1·因为TCP是全双工的,因此,每个方向都要单独关闭
 2·当一方完成数据发送任务后,发送一个FIN来终止这一方向的连接,收到一个FIN只是意味着
@@ -762,7 +762,7 @@ Ack = 上一次Seq+length
 <p>发出RST置位的包后，不必等待对方的确认，直接结束TCP连接。</p>
 <h4 id="2-2-5-窗口机制"><a href="#2-2-5-窗口机制" class="headerlink" title="2.2.5 窗口机制"></a>2.2.5 窗口机制</h4><p>滑动窗口 </p>
 <p>​    通过通告对方本机接收能力，来实现流量控制。</p>
-<p><img src="https://img-blog.csdnimg.cn/cd7067b17dc74e46beea354fa2212bef.gif" data-original="https://img-blog.csdnimg.cn/7750e03a85f845a299bf0682ff566020.png"></p>
+<p><img src="https://gitee.com/SAR_Okra/pic-go/raw/master/img/202306021406743.gif" data-original="https://img-blog.csdnimg.cn/7750e03a85f845a299bf0682ff566020.png"></p>
 <h4 id="2-2-6-完整性校验"><a href="#2-2-6-完整性校验" class="headerlink" title="2.2.6 完整性校验"></a>2.2.6 完整性校验</h4><p>通过Checksum来检查数据完整性。</p>
 <h3 id="2-3-TCP特征"><a href="#2-3-TCP特征" class="headerlink" title="2.3 TCP特征"></a>2.3 TCP特征</h3><p>优点：传输可靠性高</p>
 <p>缺点：占用带宽高，传输延迟高</p>
@@ -770,7 +770,7 @@ Ack = 上一次Seq+length
 <h2 id="3-UDP的原理"><a href="#3-UDP的原理" class="headerlink" title="3. UDP的原理"></a>3. UDP的原理</h2><h3 id="3-1-UDP特征"><a href="#3-1-UDP特征" class="headerlink" title="3.1 UDP特征"></a>3.1 UDP特征</h3><p>优点：占用带宽低，传输延迟高</p>
 <p>缺点：没有任何可靠性机制</p>
 <h3 id="3-2-UDP的适用场景"><a href="#3-2-UDP的适用场景" class="headerlink" title="3.2 UDP的适用场景"></a>3.2 UDP的适用场景</h3><p>对传输延迟要求高，但数据完整性要求低</p>
-<p><img src="https://img-blog.csdnimg.cn/cd7067b17dc74e46beea354fa2212bef.gif" data-original="https://img-blog.csdnimg.cn/cc2ef2ca90174b119453359cfa688f9f.png"></p>
+<p><img src="https://gitee.com/SAR_Okra/pic-go/raw/master/img/202306021406743.gif" data-original="https://img-blog.csdnimg.cn/cc2ef2ca90174b119453359cfa688f9f.png"></p>
 
                 
             </div>
@@ -966,10 +966,10 @@ Ack = 上一次Seq+length
                         <li class="tab col s6 wechat-tab waves-effect waves-light"><a href="#wechat">微 信</a></li>
                     </ul>
                     <div id="alipay">
-                        <img src="https://img-blog.csdnimg.cn/cd7067b17dc74e46beea354fa2212bef.gif" data-original="/medias/reward/alipay.jpg" class="reward-img" alt="支付宝打赏二维码">
+                        <img src="https://gitee.com/SAR_Okra/pic-go/raw/master/img/202306021406743.gif" data-original="/medias/reward/alipay.jpg" class="reward-img" alt="支付宝打赏二维码">
                     </div>
                     <div id="wechat">
-                        <img src="https://img-blog.csdnimg.cn/cd7067b17dc74e46beea354fa2212bef.gif" data-original="/medias/reward/wechat.png" class="reward-img" alt="微信打赏二维码">
+                        <img src="https://gitee.com/SAR_Okra/pic-go/raw/master/img/202306021406743.gif" data-original="/medias/reward/wechat.png" class="reward-img" alt="微信打赏二维码">
                     </div>
                 </div>
             </div>
@@ -1344,7 +1344,7 @@ Ack = 上一次Seq+length
                     <div class="card-image">
                         
                         
-                        <img src="https://img-blog.csdnimg.cn/cd7067b17dc74e46beea354fa2212bef.gif" data-original="https://aimer666.oss-cn-hangzhou.aliyuncs.com/9.jpg" class="responsive-img" alt="实验ensp-IP和TCP抓包分析实验">
+                        <img src="https://gitee.com/SAR_Okra/pic-go/raw/master/img/202306021406743.gif" data-original="https://aimer666.oss-cn-hangzhou.aliyuncs.com/9.jpg" class="responsive-img" alt="实验ensp-IP和TCP抓包分析实验">
                         
                         <span class="card-title">实验ensp-IP和TCP抓包分析实验</span>
                     </div>
@@ -1393,7 +1393,7 @@ Ack = 上一次Seq+length
                     <div class="card-image">
                         
                         
-                        <img src="https://img-blog.csdnimg.cn/cd7067b17dc74e46beea354fa2212bef.gif" data-original="https://aimer666.oss-cn-hangzhou.aliyuncs.com/15.jpg" class="responsive-img" alt="数通 02-IP基本原理">
+                        <img src="https://gitee.com/SAR_Okra/pic-go/raw/master/img/202306021406743.gif" data-original="https://aimer666.oss-cn-hangzhou.aliyuncs.com/15.jpg" class="responsive-img" alt="数通 02-IP基本原理">
                         
                         <span class="card-title">数通 02-IP基本原理</span>
                     </div>

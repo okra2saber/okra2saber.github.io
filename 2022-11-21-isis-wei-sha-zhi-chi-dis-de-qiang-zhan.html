@@ -38,7 +38,7 @@
 
    <style>
     body{
-       background-image: url(https://img-blog.csdnimg.cn/037c9770f141489aa27e18162f873c68.jpeg);
+       background-image: url(https://gitee.com/SAR_Okra/pic-go/raw/master/img/202306021029445.jpg);
        background-repeat:no-repeat;
        background-size:cover;
        background-attachment:fixed;
@@ -129,7 +129,7 @@
             <div class="brand-logo">
                 <a href="/" class="waves-effect waves-light">
                     
-                    <img src="https://img-blog.csdnimg.cn/cd7067b17dc74e46beea354fa2212bef.gif" data-original="https://aimer666.oss-cn-hangzhou.aliyuncs.com/logo.png" class="logo-img" alt="LOGO">
+                    <img src="https://gitee.com/SAR_Okra/pic-go/raw/master/img/202306021406743.gif" data-original="https://aimer666.oss-cn-hangzhou.aliyuncs.com/logo.png" class="logo-img" alt="LOGO">
                     
                     <span class="logo-span">Okraの筆記</span>
                 </a>
@@ -274,7 +274,7 @@
 
     <div class="mobile-head bg-color">
         
-        <img src="https://img-blog.csdnimg.cn/cd7067b17dc74e46beea354fa2212bef.gif" data-original="https://aimer666.oss-cn-hangzhou.aliyuncs.com/logo.png" class="logo-img circle responsive-img">
+        <img src="https://gitee.com/SAR_Okra/pic-go/raw/master/img/202306021406743.gif" data-original="https://aimer666.oss-cn-hangzhou.aliyuncs.com/logo.png" class="logo-img circle responsive-img">
         
         <div class="logo-name">Okraの筆記</div>
         <div class="logo-desc">
@@ -701,12 +701,12 @@
 <p>1、ISIS相对于OSPF在路由交互方面没有这么复杂。</p>
 <p>2、ISIS运行在数据链路层，不受上层协议影响。而OSPF直接运行在IP协议上，有IPv4和V6等较多不稳定因素。同样在设备割接方面没有ISIS那么平滑，这也是网络运营商在骨干网运行ISIS的原因之一。</p>
 <h1 id="为啥OSPF邻居建立要求网段和掩码一致，而ISIS邻居建立只要求网段一致，不要求掩码一致？"><a href="#为啥OSPF邻居建立要求网段和掩码一致，而ISIS邻居建立只要求网段一致，不要求掩码一致？" class="headerlink" title="为啥OSPF邻居建立要求网段和掩码一致，而ISIS邻居建立只要求网段一致，不要求掩码一致？"></a>为啥OSPF邻居建立要求网段和掩码一致，而ISIS邻居建立只要求网段一致，不要求掩码一致？</h1><p>判断是否在同一个网段的关键在于收到对方的Hello报文，查看对方接口IP地址，是否在本端收包接口的子网范围内。</p>
-<p><img src="https://img-blog.csdnimg.cn/cd7067b17dc74e46beea354fa2212bef.gif" data-original="https://img-blog.csdnimg.cn/475898c5dcba4d05baf0afde5351eece.png"></p>
+<p><img src="https://gitee.com/SAR_Okra/pic-go/raw/master/img/202306021406743.gif" data-original="https://img-blog.csdnimg.cn/475898c5dcba4d05baf0afde5351eece.png"></p>
 <blockquote>
 <p>在ISIS同一个广播网内，路由器设置相同网段、掩码不同的IP地址。</p>
 <p>查看每台路由器的LSDB对其自身接口网段的描述，再查看与这三台路由器相连的R1LSDB下，存在这三台路由器不同掩码的路由信息</p>
 </blockquote>
-<p><img src="https://img-blog.csdnimg.cn/cd7067b17dc74e46beea354fa2212bef.gif" data-original="https://img-blog.csdnimg.cn/1ab13cc86ee647028c8b0c7f74bfef7d.png"></p>
+<p><img src="https://gitee.com/SAR_Okra/pic-go/raw/master/img/202306021406743.gif" data-original="https://img-blog.csdnimg.cn/1ab13cc86ee647028c8b0c7f74bfef7d.png"></p>
 <p>原因：ISIS的LSP信息是由网络中每台实节点设备单独发出的，故不受掩码影响。而OSPF中的LSDB由DR产生，会受到掩码不一致的影响。</p>
 <h1 id="骨干区域如何访问非骨干区域？"><a href="#骨干区域如何访问非骨干区域？" class="headerlink" title="骨干区域如何访问非骨干区域？"></a>骨干区域如何访问非骨干区域？</h1><p>L1/2的路由器会将L1的路由当做叶子信息放入L2的LSP中注入骨干区域，骨干区域的路由器收到这一LSP，会将该路由当做L1/2路由器的叶子信息。</p>
 <h1 id="非骨干区域如何访问骨干区域呢？"><a href="#非骨干区域如何访问骨干区域呢？" class="headerlink" title="非骨干区域如何访问骨干区域呢？"></a>非骨干区域如何访问骨干区域呢？</h1><p>非骨干区域内部的路由器，通过缺省路由访问骨干区域。</p>
@@ -725,7 +725,7 @@
 <p>＠缺省路由的下一跳地址，是自身去往该LSP产生者最短路径的下一跳。</p>
 <p>＠缺省路由的Cost值，是自身去往该LSP产生着的最短路径树的cost。</p>
 </blockquote>
-<p><img src="https://img-blog.csdnimg.cn/cd7067b17dc74e46beea354fa2212bef.gif" data-original="https://img-blog.csdnimg.cn/3ba18ccd30604e2e8c7277b0ee450b54.png"></p>
+<p><img src="https://gitee.com/SAR_Okra/pic-go/raw/master/img/202306021406743.gif" data-original="https://img-blog.csdnimg.cn/3ba18ccd30604e2e8c7277b0ee450b54.png"></p>
 <p>注意：L1/2路由器默认开启attached-bit avoid-learning,目的是为了防止环路的产生。</p>
 <p>如果出现L1/2路由器在骨干区域没有L2的邻居，Att比特位就无法置1，L1/2路由器就会取消该命令自动生成一条缺省到达最近的Att为1的路由器路由。</p>
 
@@ -923,10 +923,10 @@
                         <li class="tab col s6 wechat-tab waves-effect waves-light"><a href="#wechat">微 信</a></li>
                     </ul>
                     <div id="alipay">
-                        <img src="https://img-blog.csdnimg.cn/cd7067b17dc74e46beea354fa2212bef.gif" data-original="/medias/reward/alipay.jpg" class="reward-img" alt="支付宝打赏二维码">
+                        <img src="https://gitee.com/SAR_Okra/pic-go/raw/master/img/202306021406743.gif" data-original="/medias/reward/alipay.jpg" class="reward-img" alt="支付宝打赏二维码">
                     </div>
                     <div id="wechat">
-                        <img src="https://img-blog.csdnimg.cn/cd7067b17dc74e46beea354fa2212bef.gif" data-original="/medias/reward/wechat.png" class="reward-img" alt="微信打赏二维码">
+                        <img src="https://gitee.com/SAR_Okra/pic-go/raw/master/img/202306021406743.gif" data-original="/medias/reward/wechat.png" class="reward-img" alt="微信打赏二维码">
                     </div>
                 </div>
             </div>
@@ -1301,7 +1301,7 @@
                     <div class="card-image">
                         
                         
-                        <img src="https://img-blog.csdnimg.cn/cd7067b17dc74e46beea354fa2212bef.gif" data-original="https://aimer666.oss-cn-hangzhou.aliyuncs.com/12.jpg" class="responsive-img" alt="数通 21-Route-Policy、Filter-Policy、ip-prefix">
+                        <img src="https://gitee.com/SAR_Okra/pic-go/raw/master/img/202306021406743.gif" data-original="https://aimer666.oss-cn-hangzhou.aliyuncs.com/12.jpg" class="responsive-img" alt="数通 21-Route-Policy、Filter-Policy、ip-prefix">
                         
                         <span class="card-title">数通 21-Route-Policy、Filter-Policy、ip-prefix</span>
                     </div>
@@ -1350,7 +1350,7 @@
                     <div class="card-image">
                         
                         
-                        <img src="https://img-blog.csdnimg.cn/cd7067b17dc74e46beea354fa2212bef.gif" data-original="https://aimer666.oss-cn-hangzhou.aliyuncs.com/12.jpg" class="responsive-img" alt="实验ensp IS-IS基础配置">
+                        <img src="https://gitee.com/SAR_Okra/pic-go/raw/master/img/202306021406743.gif" data-original="https://aimer666.oss-cn-hangzhou.aliyuncs.com/12.jpg" class="responsive-img" alt="实验ensp IS-IS基础配置">
                         
                         <span class="card-title">实验ensp IS-IS基础配置</span>
                     </div>

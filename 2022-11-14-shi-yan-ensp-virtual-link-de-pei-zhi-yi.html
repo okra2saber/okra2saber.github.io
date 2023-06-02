@@ -38,7 +38,7 @@
 
    <style>
     body{
-       background-image: url(https://img-blog.csdnimg.cn/037c9770f141489aa27e18162f873c68.jpeg);
+       background-image: url(https://gitee.com/SAR_Okra/pic-go/raw/master/img/202306021029445.jpg);
        background-repeat:no-repeat;
        background-size:cover;
        background-attachment:fixed;
@@ -129,7 +129,7 @@
             <div class="brand-logo">
                 <a href="/" class="waves-effect waves-light">
                     
-                    <img src="https://img-blog.csdnimg.cn/cd7067b17dc74e46beea354fa2212bef.gif" data-original="https://aimer666.oss-cn-hangzhou.aliyuncs.com/logo.png" class="logo-img" alt="LOGO">
+                    <img src="https://gitee.com/SAR_Okra/pic-go/raw/master/img/202306021406743.gif" data-original="https://aimer666.oss-cn-hangzhou.aliyuncs.com/logo.png" class="logo-img" alt="LOGO">
                     
                     <span class="logo-span">Okraの筆記</span>
                 </a>
@@ -274,7 +274,7 @@
 
     <div class="mobile-head bg-color">
         
-        <img src="https://img-blog.csdnimg.cn/cd7067b17dc74e46beea354fa2212bef.gif" data-original="https://aimer666.oss-cn-hangzhou.aliyuncs.com/logo.png" class="logo-img circle responsive-img">
+        <img src="https://gitee.com/SAR_Okra/pic-go/raw/master/img/202306021406743.gif" data-original="https://aimer666.oss-cn-hangzhou.aliyuncs.com/logo.png" class="logo-img circle responsive-img">
         
         <div class="logo-name">Okraの筆記</div>
         <div class="logo-desc">
@@ -691,11 +691,11 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h1 id="Virtual-Link的配置-一"><a href="#Virtual-Link的配置-一" class="headerlink" title="Virtual Link的配置(一)"></a><center>Virtual Link的配置(一)</center></h1><h2 id="拓扑图"><a href="#拓扑图" class="headerlink" title="拓扑图"></a>拓扑图</h2><img src="https://img-blog.csdnimg.cn/cd7067b17dc74e46beea354fa2212bef.gif" data-original="https://img-blog.csdnimg.cn/41f5d37971e84e61a919c2141686ba96.png" alt="img" style="zoom:67%;">
+                <h1 id="Virtual-Link的配置-一"><a href="#Virtual-Link的配置-一" class="headerlink" title="Virtual Link的配置(一)"></a><center>Virtual Link的配置(一)</center></h1><h2 id="拓扑图"><a href="#拓扑图" class="headerlink" title="拓扑图"></a>拓扑图</h2><img src="https://gitee.com/SAR_Okra/pic-go/raw/master/img/202306021406743.gif" data-original="https://img-blog.csdnimg.cn/41f5d37971e84e61a919c2141686ba96.png" alt="img" style="zoom:67%;">
 
 <p>在图中，R1、R2及R3三台路由器运行了OSPF，网络中规划了两个区域，其中R2及R3在Area23中建立了邻接关系。现在R2将直连接口 GE0/0/0在Area0 中激活OSPF，这样R2在Area0中泛洪Type-1 LSA将包含描述其直连接口GE0/0/0的信息。R3可以通过Area0内泛洪的Type-1、Type-2 LSA计算出到达192.168.2.0/24的区域内路由。另一方面，R2作为ABR，也会描述区域间路由192.168.2.0/24的Type-3 LSA注入Area23。那么R3就会通过该Type-3 LSA计算出到达192.168.2.0/24的区域间路由，且该路由比R3在Area0中计算出到达192.168.2.0/24的路由Cost要更优。</p>
 <p>此时R3的OSPF路由表</p>
-<p><img src="https://img-blog.csdnimg.cn/cd7067b17dc74e46beea354fa2212bef.gif" data-original="https://img-blog.csdnimg.cn/2b6b229e2b794984ab9564a1ad4d31a2.png" alt="img"></p>
+<p><img src="https://gitee.com/SAR_Okra/pic-go/raw/master/img/202306021406743.gif" data-original="https://img-blog.csdnimg.cn/2b6b229e2b794984ab9564a1ad4d31a2.png" alt="img"></p>
 <p>但是，R3同样是一台ABR，他不能够使用自己在非0区域中收到的Type-3 LSA来计算区域间路由，因此无论路径的Cost如何，R3都会选择从R1到达192.168.2.0/24.</p>
 <p>实验目的：通过配置V-Link解决OSPF的次优路径选择问题，在R2和R3之间跨越Area23建立一条Virtual Link，使得R2能借助这一条Virtual link直接将Type-1 LSA发送给R3，而不是Area0中经过R1的Type-1 LSA。</p>
 <blockquote>
@@ -721,10 +721,10 @@
 [R3-ospf-1-area-0.0.0.23]vlink-peer 2.2.2.2<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
 
 <p>2.使用display ospf vlink 命令查看关于Virtual Link的相关信息。</p>
-<p><img src="https://img-blog.csdnimg.cn/cd7067b17dc74e46beea354fa2212bef.gif" data-original="https://img-blog.csdnimg.cn/d26846c36e0b4378bce0fa49648a4966.png" alt="img"></p>
+<p><img src="https://gitee.com/SAR_Okra/pic-go/raw/master/img/202306021406743.gif" data-original="https://img-blog.csdnimg.cn/d26846c36e0b4378bce0fa49648a4966.png" alt="img"></p>
 <p>从图片可以看出，R2与R3之间已经建立了一条Virtual Link线路，状态为Full，而且Cost为1.</p>
 <p>3.使用display ospf routing命令，查看ospf路由表</p>
-<img src="https://img-blog.csdnimg.cn/cd7067b17dc74e46beea354fa2212bef.gif" data-original="C:\Users\Okra\AppData\Roaming\Typora\typora-user-images\image-20221114102622900.png" alt="image-20221114102622900" style="zoom: 80%;">
+<img src="https://gitee.com/SAR_Okra/pic-go/raw/master/img/202306021406743.gif" data-original="C:\Users\Okra\AppData\Roaming\Typora\typora-user-images\image-20221114102622900.png" alt="image-20221114102622900" style="zoom: 80%;">
 
 <p>现在我们可以发现，R3到达192.168.2.0/24的路由下一条已经变成了R2的192.168.23.2/24接口，即使用高带宽链路转发去往目标网段的流量。</p>
 
@@ -922,10 +922,10 @@
                         <li class="tab col s6 wechat-tab waves-effect waves-light"><a href="#wechat">微 信</a></li>
                     </ul>
                     <div id="alipay">
-                        <img src="https://img-blog.csdnimg.cn/cd7067b17dc74e46beea354fa2212bef.gif" data-original="/medias/reward/alipay.jpg" class="reward-img" alt="支付宝打赏二维码">
+                        <img src="https://gitee.com/SAR_Okra/pic-go/raw/master/img/202306021406743.gif" data-original="/medias/reward/alipay.jpg" class="reward-img" alt="支付宝打赏二维码">
                     </div>
                     <div id="wechat">
-                        <img src="https://img-blog.csdnimg.cn/cd7067b17dc74e46beea354fa2212bef.gif" data-original="/medias/reward/wechat.png" class="reward-img" alt="微信打赏二维码">
+                        <img src="https://gitee.com/SAR_Okra/pic-go/raw/master/img/202306021406743.gif" data-original="/medias/reward/wechat.png" class="reward-img" alt="微信打赏二维码">
                     </div>
                 </div>
             </div>
@@ -1300,7 +1300,7 @@
                     <div class="card-image">
                         
                         
-                        <img src="https://img-blog.csdnimg.cn/cd7067b17dc74e46beea354fa2212bef.gif" data-original="https://aimer666.oss-cn-hangzhou.aliyuncs.com/38.jpg" class="responsive-img" alt="实验ensp Virtual Link的配置(二)">
+                        <img src="https://gitee.com/SAR_Okra/pic-go/raw/master/img/202306021406743.gif" data-original="https://aimer666.oss-cn-hangzhou.aliyuncs.com/38.jpg" class="responsive-img" alt="实验ensp Virtual Link的配置(二)">
                         
                         <span class="card-title">实验ensp Virtual Link的配置(二)</span>
                     </div>
@@ -1349,7 +1349,7 @@
                     <div class="card-image">
                         
                         
-                        <img src="https://img-blog.csdnimg.cn/cd7067b17dc74e46beea354fa2212bef.gif" data-original="https://aimer666.oss-cn-hangzhou.aliyuncs.com/20.jpg" class="responsive-img" alt="数通 19-OSPF协议特性">
+                        <img src="https://gitee.com/SAR_Okra/pic-go/raw/master/img/202306021406743.gif" data-original="https://aimer666.oss-cn-hangzhou.aliyuncs.com/20.jpg" class="responsive-img" alt="数通 19-OSPF协议特性">
                         
                         <span class="card-title">数通 19-OSPF协议特性</span>
                     </div>
