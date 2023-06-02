@@ -41,7 +41,7 @@ body {
     overflow-x: hidden;
     overflow-y: auto;
 	*/
-    background: linear-gradient(60deg, rgba(255, 165, 150, 0.5) 5%, rgba(0, 228, 255, 0.35)) 0% 0% / cover, url("https://img-blog.csdnimg.cn/d63b49f33d8f49a5a6f96444c2309ec1.png?x-oss-process=image/watermark,type_ZHJvaWRzYW5zZmFsbGJhY2s,shadow_50,text_Q1NETiBA6IC_55u056eL6JG1,size_20,color_FFFFFF,t_70,g_se,x_16"), url("https://img-blog.csdnimg.cn/6819818104c5416ea347c079e2dc9891.jpg?x-oss-process=image/watermark,type_ZHJvaWRzYW5zZmFsbGJhY2s,shadow_50,text_Q1NETiBA6IC_55u056eL6JG1,size_20,color_FFFFFF,t_70,g_se,x_16") 0px 0px;
+    background: linear-gradient(60deg, rgba(255, 165, 150, 0.5) 5%, rgba(0, 228, 255, 0.35)) 0% 0% / cover, url("https://gitee.com/SAR_Okra/pic-go/raw/master/img/202306021540738.jpg?x-oss-process=image/watermark,type_ZHJvaWRzYW5zZmFsbGJhY2s,shadow_50,text_Q1NETiBA6IC_55u056eL6JG1,size_20,color_FFFFFF,t_70,g_se,x_16"), url("https://gitee.com/SAR_Okra/pic-go/raw/master/img/202306021540708.jpg?x-oss-process=image/watermark,type_ZHJvaWRzYW5zZmFsbGJhY2s,shadow_50,text_Q1NETiBA6IC_55u056eL6JG1,size_20,color_FFFFFF,t_70,g_se,x_16") 0px 0px;
     background-attachment: fixed;
     margin: 0;
     color: #000000;
