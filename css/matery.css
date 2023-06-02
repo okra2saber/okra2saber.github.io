@@ -563,7 +563,7 @@ header .go-back i {
 }*/
 
 /*黑色蒙版遮罩*/
-/*
+
 .bg-cover:after {
     position: absolute;
     z-index: 1;
@@ -576,7 +576,7 @@ header .go-back i {
     backdrop-filter: blur(0.1vw);
     background: rgba(0, 0, 0, 0.1);
 }
-*/
+
 
 .bg-cover:before,
 .bg-cover:after {
